@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2m27g07dopmf"]
+
+[ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_w2u7n"]
+[ext_resource type="Script" path="res://Scenarios/Tuto/tuto_scenario.gd" id="2_7au58"]
+[ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/Tuto/TutoChar.tscn" id="2_u8suj"]
+
+[node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_w2u7n")]
+script = ExtResource("2_7au58")
+Patient = NodePath("Character")
+
+[node name="Character" parent="." index="0" instance=ExtResource("2_u8suj")]

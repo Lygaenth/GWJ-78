@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2g0ktyjv8npa"]
+
+[ext_resource type="Script" path="res://Scenarios/Factories/ScenarioFactory.gd" id="1_2d878"]
+
+[node name="ScenarioFactory" type="Node"]
+script = ExtResource("1_2d878")

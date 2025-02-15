@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://t0ysv31mbg0s"]
+
+[ext_resource type="PackedScene" uid="uid://cdqpi3x0oacs" path="res://Scenarios/Base/CharacterBase.tscn" id="1_iykk1"]
+
+[node name="Character" instance=ExtResource("1_iykk1")]
+FamilyName = "Tutot"
+FirstName = "Tutou"
+BirthDate = "02/05/3456"
+Notes = "Anxious, First time here ?"

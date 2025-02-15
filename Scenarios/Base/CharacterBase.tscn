@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdqpi3x0oacs"]
+
+[ext_resource type="Script" path="res://Scenarios/Base/character.gd" id="1_tyvfq"]
+
+[node name="Character" type="Node"]
+script = ExtResource("1_tyvfq")
+FamilyName = "Tuto"
+FirstName = "Testix"
+BirthDate = "14/02/4756"
+Notes = "Anxious, Brutish"

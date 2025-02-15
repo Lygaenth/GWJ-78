@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://gshf0npu78rd"]
+
+[ext_resource type="PackedScene" uid="uid://cf3unc30pl34t" path="res://ChatRoom/PatientInformation.tscn" id="1_5n8ao"]
+[ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/Tuto/TutoChar.tscn" id="2_8o7bd"]
+
+[node name="VisuScene" type="Node"]
+
+[node name="Character" parent="." instance=ExtResource("2_8o7bd")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" parent="CanvasLayer/PanelContainer" node_paths=PackedStringArray("Character") instance=ExtResource("1_5n8ao")]
+layout_mode = 2
+Character = NodePath("../../../Character")

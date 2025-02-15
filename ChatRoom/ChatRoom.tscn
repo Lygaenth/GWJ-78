@@ -1,15 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=10 format=3 uid="uid://d0qgq1jw3fwrt"]
 
+[ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="Texture2D" uid="uid://1mqqsoj4ka2c" path="res://ChatRoom/Assets/mockup_cyberpunk_souvenir.png" id="1_mjiwe"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_6atam"]
 [ext_resource type="StyleBox" uid="uid://drcnk08k078lc" path="res://ChatRoom/Assets/PatientTextBox.tres" id="3_vap84"]
 [ext_resource type="LabelSettings" uid="uid://dcqvu4l5j25aa" path="res://ChatRoom/Assets/PatientTextDialog.tres" id="4_jdpaq"]
-[ext_resource type="Texture2D" uid="uid://ds7qd2iea1vrp" path="res://icon.svg" id="5_w7kef"]
-[ext_resource type="LabelSettings" uid="uid://0kbo3uxeglki" path="res://ChatRoom/Assets/PatientDescription.tres" id="6_riqaw"]
+[ext_resource type="PackedScene" uid="uid://cf3unc30pl34t" path="res://ChatRoom/PatientInformation.tscn" id="6_y6lsd"]
 [ext_resource type="StyleBox" uid="uid://ddi324rmxgjd2" path="res://ChatRoom/Assets/DoctorTextBox.tres" id="7_57520"]
 [ext_resource type="LabelSettings" uid="uid://ctvfej0ou1v2r" path="res://ChatRoom/Assets/DoctorTextDialog.tres" id="8_v3iwd"]
+[ext_resource type="PackedScene" uid="uid://c2g0ktyjv8npa" path="res://Scenarios/Factories/ScenarioFactory.tscn" id="10_ciqa5"]
 
 [node name="ChatRoom" type="CanvasLayer"]
+script = ExtResource("1_d005w")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
@@ -48,7 +50,9 @@ layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
 
-[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer2/MarginContainer"]
+[node name="PatientDialog" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer2/MarginContainer"]
+unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_styles/normal = ExtResource("3_vap84")
@@ -67,96 +71,9 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.37
 theme_override_styles/panel = ExtResource("2_6atam")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3"]
+[node name="PatientInfo" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3" instance=ExtResource("6_y6lsd")]
+unique_name_in_owner = true
 layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_6atam")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer"]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.14
-theme_override_styles/panel = ExtResource("2_6atam")
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_right = 10
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer/VBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = ExtResource("5_w7kef")
-stretch_mode = 5
-
-[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_6atam")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer2"]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 1.43
-theme_override_styles/panel = ExtResource("2_6atam")
-
-[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 2.51
-theme_override_styles/panel = ExtResource("2_6atam")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2"]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="PatientFileLabel" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "Patient file"
-label_settings = ExtResource("6_riqaw")
-horizontal_alignment = 1
-
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme_override_styles/panel = ExtResource("2_6atam")
-
-[node name="PatienNameLabel" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "Tektor"
-label_settings = ExtResource("6_riqaw")
-horizontal_alignment = 1
-
-[node name="PatientSurnameLabel" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "Vladonis"
-label_settings = ExtResource("6_riqaw")
-horizontal_alignment = 1
-
-[node name="PatientBirthDateLabel" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "14/02/4255"
-label_settings = ExtResource("6_riqaw")
-horizontal_alignment = 1
-
-[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.05
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -165,8 +82,12 @@ size_flags_vertical = 3
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/CenterContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/CenterContainer/PanelContainer"]
+[node name="DoctorDialog" type="Label" parent="VBoxContainer/CenterContainer/PanelContainer"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_styles/normal = ExtResource("7_57520")
 text = "Yes."
 label_settings = ExtResource("8_v3iwd")
+
+[node name="ScenarioFactory" parent="." instance=ExtResource("10_ciqa5")]
