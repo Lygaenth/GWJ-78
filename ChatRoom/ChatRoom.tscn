@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=12 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="Texture2D" uid="uid://1mqqsoj4ka2c" path="res://ChatRoom/Assets/mockup_cyberpunk_souvenir.png" id="1_mjiwe"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cf3unc30pl34t" path="res://ChatRoom/PatientInformation.tscn" id="6_y6lsd"]
 [ext_resource type="StyleBox" uid="uid://ddi324rmxgjd2" path="res://ChatRoom/Assets/DoctorTextBox.tres" id="7_57520"]
 [ext_resource type="LabelSettings" uid="uid://ctvfej0ou1v2r" path="res://ChatRoom/Assets/DoctorTextDialog.tres" id="8_v3iwd"]
-[ext_resource type="Theme" uid="uid://26i86b5u38c2" path="res://ConsoleButton.tres" id="9_iln06"]
+[ext_resource type="Theme" uid="uid://26i86b5u38c2" path="res://ChatRoom/Assets/ConsoleButton.tres" id="9_iln06"]
 [ext_resource type="Script" path="res://ChatRoom/money_label.gd" id="10_qn2xg"]
+[ext_resource type="Script" path="res://OperationRoom/operation_room_factory.gd" id="11_kwves"]
 
 [node name="ChatRoom" type="CanvasLayer"]
 script = ExtResource("1_d005w")
@@ -250,6 +251,9 @@ layout_mode = 2
 theme_override_styles/normal = ExtResource("7_57520")
 text = "Yes."
 label_settings = ExtResource("8_v3iwd")
+
+[node name="OperationRoomFactory" type="Node" parent="."]
+script = ExtResource("11_kwves")
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/HBoxContainer/VBoxContainer/JackInBtn" to="." method="OnJackPressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/VBoxContainer/ShopBtn" to="." method="OnShopPressed"]

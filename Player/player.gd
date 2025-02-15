@@ -3,6 +3,7 @@ class_name Player
 
 const StartMoney : int = 0
 @onready var _scenarioProvider : ScenarioFactory = $ScenarioProvider
+@onready var _memoryBank : MemoryBank = $MemoryBank
 
 var _money : int = 1000
 var _errors : Array[String] = []
@@ -28,11 +29,14 @@ func AddError(person : String):
 	_errors.append(person)
 	_lastErrorManaged = false
 
-func AddInventory() -> void:
-	pass
+func BuyMemory(memory : MemoryData) -> bool:
+	if(UpdateMoney(-memory.memory_cost)):
+		_memoryBank.AddMemory(memory)
+		return true
+	return false
 	
-func GetInventory():
-	pass
+func GetAvailableMemories():
+	return _memoryBank.GetCurrentMemories()
 		
 func GetNextScenario() -> ScenarioBase:
 	return _scenarioProvider.GetNextScenario()

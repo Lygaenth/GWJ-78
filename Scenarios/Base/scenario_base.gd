@@ -10,6 +10,8 @@ var _state : Enums.ScenarioState
 var _pay : int = 50
 var _completed : bool = false
 
+@export var Memories : MemoryThread
+
 var AvailabilityCounter : int = 0
 var AvailabilityCondition : bool = true
 
@@ -34,3 +36,6 @@ func GetLine() -> DialogLine:
 
 func GetState() -> Enums.ScenarioState:
 	return _state
+
+func GetMemories() -> MemoryThread:
+	return Memories

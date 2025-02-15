@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjdfvyty0ldbq"]
+
+[ext_resource type="Script" path="res://OperationRoom/operation_room_factory.gd" id="1_1crg8"]
+
+[node name="OperationRoomFactory" type="Node"]
+script = ExtResource("1_1crg8")

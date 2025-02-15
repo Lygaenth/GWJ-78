@@ -8,6 +8,8 @@ class_name ChatRoom
 @onready var _shopButton : Button = $"%ShopBtn"
 @onready var _jackInButton : Button = $"%JackInBtn"
 
+@onready var _operationRoomFactory = $OperationRoomFactory
+
 var _gameState : Enums.GameState = Enums.GameState.WaitingForPatient
 var _scenario : ScenarioBase
 	
@@ -102,5 +104,12 @@ func OnShopPressed():
 	_shopButton.release_focus()
 
 func OnJackPressed():
+	
+	var operationRoom = _operationRoomFactory.CreateOperationRoom(_scenario.GetMemories())
+	add_child(operationRoom)
+	
+	await get_tree().create_timer(2.0).timeout
+	operationRoom.queue_free()
+
 	_scenario.Resolve(0)
 	_jackInButton.release_focus()

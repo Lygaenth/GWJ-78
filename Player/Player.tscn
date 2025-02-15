@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://coygwobxignvt"]
+[gd_scene load_steps=4 format=3 uid="uid://coygwobxignvt"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_xj0os"]
 [ext_resource type="PackedScene" uid="uid://c2g0ktyjv8npa" path="res://Scenarios/Factories/ScenarioFactory.tscn" id="2_p7866"]
+[ext_resource type="Script" path="res://Player/memory_bank.gd" id="3_c35e4"]
 
 [node name="Player" type="Node"]
 script = ExtResource("1_xj0os")
 
 [node name="ScenarioProvider" parent="." instance=ExtResource("2_p7866")]
+
+[node name="MemoryBank" type="Node" parent="."]
+script = ExtResource("3_c35e4")
