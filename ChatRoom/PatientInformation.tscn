@@ -123,6 +123,14 @@ text = "14/02/4255"
 label_settings = ExtResource("3_vb0ut")
 horizontal_alignment = 1
 
+[node name="PatientInfoLabel" type="Label" parent="HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+text = "Anxious"
+label_settings = ExtResource("3_vb0ut")
+horizontal_alignment = 1
+
 [node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
