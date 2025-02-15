@@ -7,6 +7,6 @@ func CreateOperationRoom(memoryThread : MemoryThread) -> OperationRoom:
 	var operationRoom = operationRoomPs.instantiate() as OperationRoom
 	var data = OperationData.new()
 	data.customer_query = memoryThread.Query
-	data.memory_data = memoryThread.ToArray()
+	data.memory_data_array = memoryThread.ToArray()
 	operationRoom.operation_data = data
 	return operationRoom

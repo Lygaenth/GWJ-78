@@ -1,7 +1,10 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://ctvfej0ou1v2r"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ctvfej0ou1v2r"]
+
+[ext_resource type="FontFile" uid="uid://byg6a8n87eqot" path="res://ChatRoom/Assets/Fonts/ChakraPetch-Medium.ttf" id="1_kftqj"]
 
 [resource]
 line_spacing = 5.0
+font = ExtResource("1_kftqj")
 font_size = 43
 font_color = Color(0.741961, 0.110334, 0.146852, 1)
 outline_color = Color(0.0940307, 0.319278, 0.28686, 1)

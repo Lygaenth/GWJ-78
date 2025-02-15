@@ -6,6 +6,7 @@ class_name PatientInformation
 @onready var _patientNameLabel : Label = $"%PatienNameLabel"
 @onready var _patientFirstNameLabel : Label = $"%PatientSurnameLabel"
 @onready var _patientBirthdayLabel : Label = $"%PatientBirthDateLabel"
+@onready var _patientInfoLabel : Label = $"%PatientInfoLabel"
 
 @export var Character : CharacterBase
 
@@ -24,6 +25,7 @@ func DisplayPatient(character : CharacterBase):
 	_patientNameLabel.text = character.FamilyName
 	_patientFirstNameLabel.text = character.FirstName
 	_patientBirthdayLabel.text = character.BirthDate
+	_patientInfoLabel.text = character.Notes
 
 func DisplayWait():
 	_patientFileLabel.text = "A patient is waiting"
@@ -32,6 +34,7 @@ func DisplayWait():
 	_patientNameLabel.text = ""
 	_patientFirstNameLabel.text = ""
 	_patientBirthdayLabel.text = ""
+	_patientInfoLabel.text = ""
 	
 func DisplayDeconnection():
 	DisplayWait()
