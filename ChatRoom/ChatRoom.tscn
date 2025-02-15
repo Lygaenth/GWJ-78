@@ -6,25 +6,17 @@
 [ext_resource type="LabelSettings" uid="uid://dcqvu4l5j25aa" path="res://ChatRoom/Assets/PatientTextDialog.tres" id="4_jdpaq"]
 [ext_resource type="Texture2D" uid="uid://ds7qd2iea1vrp" path="res://icon.svg" id="5_w7kef"]
 [ext_resource type="LabelSettings" uid="uid://0kbo3uxeglki" path="res://ChatRoom/Assets/PatientDescription.tres" id="6_riqaw"]
-[ext_resource type="StyleBox" path="res://ChatRoom/Assets/DoctorTextBox.tres" id="7_57520"]
-[ext_resource type="LabelSettings" path="res://ChatRoom/Assets/DoctorTextDialog.tres" id="8_v3iwd"]
+[ext_resource type="StyleBox" uid="uid://ddi324rmxgjd2" path="res://ChatRoom/Assets/DoctorTextBox.tres" id="7_57520"]
+[ext_resource type="LabelSettings" uid="uid://ctvfej0ou1v2r" path="res://ChatRoom/Assets/DoctorTextDialog.tres" id="8_v3iwd"]
 
-[node name="ChatRoom" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ChatRoom" type="CanvasLayer"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("1_mjiwe")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
