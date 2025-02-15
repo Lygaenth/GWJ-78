@@ -4,4 +4,4 @@ class_name OperationData extends Resource
 @export var customer_query: String
 
 @export_category("Memories")
-@export var memory_data: Array[MemoryData] = []
+@export var memory_data_array: Array[MemoryData] = []

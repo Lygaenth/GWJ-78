@@ -1,28 +1,23 @@
-[gd_scene load_steps=21 format=3 uid="uid://em14hkafk6r"]
+[gd_scene load_steps=12 format=3 uid="uid://em14hkafk6r"]
 
-[ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="1_732d5"]
 [ext_resource type="Script" path="res://OperationRoom/operation_room.gd" id="1_v3cl8"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_1ymtu"]
-[ext_resource type="LabelSettings" uid="uid://d1txgejx1airs" path="res://OperationRoom/Assets/OkTextDialog.tres" id="2_fn00n"]
-[ext_resource type="StyleBox" uid="uid://be4v1qi110xaq" path="res://OperationRoom/Assets/OperationText.tres" id="2_iol27"]
-[ext_resource type="LabelSettings" uid="uid://cr34ftfcx6o5w" path="res://OperationRoom/Assets/OperationLabel.tres" id="3_6mkju"]
 [ext_resource type="Script" path="res://OperationRoom/OperationData.gd" id="3_yb8xg"]
-[ext_resource type="LabelSettings" uid="uid://p2eafnvernyn" path="res://OperationRoom/Assets/DangerLabel.tres" id="4_qcuh7"]
-[ext_resource type="StyleBox" uid="uid://dpl41d0uj4oaa" path="res://OperationRoom/Assets/OkTextBox.tres" id="4_qitv8"]
-[ext_resource type="StyleBox" uid="uid://drepwkccwcqer" path="res://OperationRoom/Assets/DangerTextBox.tres" id="6_eqfse"]
-[ext_resource type="PackedScene" uid="uid://dknh24q1qdxtn" path="res://OperationRoom/mem_queue_button.tscn" id="8_4eprk"]
 [ext_resource type="Texture2D" uid="uid://ds7qd2iea1vrp" path="res://icon.svg" id="10_ls4q0"]
-
-[sub_resource type="Resource" id="Resource_6067t"]
-script = ExtResource("2_1ymtu")
-memory_title = ""
-memory_description = ""
-memory_cost = 0
 
 [sub_resource type="Resource" id="Resource_7mbc4"]
 script = ExtResource("3_yb8xg")
 customer_query = "Vladonis Textor wants to change they memory of their brother at their 170th birthday."
-memory_data = Array[ExtResource("2_1ymtu")]([SubResource("Resource_6067t")])
+memory_data_array = Array[ExtResource("2_1ymtu")]([])
+
+[sub_resource type="Resource" id="Resource_abcnn"]
+script = ExtResource("2_1ymtu")
+memory_title = "Present"
+memory_description = "I was given the nicest present of my life: a real sized giraffe. I felt so happy I could cry!"
+memory_cost = 15
+memory_thumbnail = ExtResource("10_ls4q0")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ad1ke"]
 
 [sub_resource type="Gradient" id="Gradient_65smh"]
 interpolation_mode = 2
@@ -34,312 +29,16 @@ gradient = SubResource("Gradient_65smh")
 fill = 1
 fill_from = Vector2(0.481651, 0.513761)
 
-[sub_resource type="Gradient" id="Gradient_g6xoh"]
-offsets = PackedFloat32Array(0, 0.636364)
-colors = PackedColorArray(1, 1, 0.0980392, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5emk6"]
-gradient = SubResource("Gradient_g6xoh")
-width = 150
-height = 150
-fill = 2
-fill_from = Vector2(0.518349, 0.522936)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ad1ke"]
-
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_opaq5"]
 color = Color(1, 1, 1, 1)
 thickness = 5
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_alhu2"]
+
 [node name="OperationRoom" type="CanvasLayer"]
 script = ExtResource("1_v3cl8")
 operation_data = SubResource("Resource_7mbc4")
-
-[node name="PanelContainer" type="PanelContainer" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
-layout_mode = 2
-texture = SubResource("GradientTexture2D_lmfp8")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.35
-theme_override_styles/panel = ExtResource("1_732d5")
-
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.8
-
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer2"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_styles/normal = ExtResource("2_iol27")
-text = "Vladonis Textor want to change its memory of its brother during its birthday."
-label_settings = ExtResource("3_6mkju")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 2.5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer3"]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-tooltip_text = "A deep and happy brotherhood"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer/PanelContainer4"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer/PanelContainer4/VBoxContainer"]
-layout_mode = 2
-text = "Origin"
-label_settings = ExtResource("3_6mkju")
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer/PanelContainer4/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-texture = SubResource("GradientTexture2D_5emk6")
-expand_mode = 4
-
-[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-size_flags_stretch_ratio = 0.0
-
-[node name="ColorRect" type="ColorRect" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer/Panel"]
-custom_minimum_size = Vector2(1, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -2.0
-offset_right = 20.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.415684, 0.415636, 0, 1)
-
-[node name="PanelContainer6" type="PanelContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer/PanelContainer2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
-layout_mode = 2
-text = "Trauma"
-label_settings = ExtResource("3_6mkju")
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-texture = SubResource("GradientTexture2D_5emk6")
-expand_mode = 4
-
-[node name="Panel2" type="Panel" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-size_flags_stretch_ratio = 0.0
-
-[node name="ColorRect" type="ColorRect" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer/Panel2"]
-custom_minimum_size = Vector2(1, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -2.0
-offset_right = 20.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.415684, 0.415636, 0, 1)
-
-[node name="PanelContainer5" type="PanelContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer/PanelContainer5"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer/PanelContainer5/VBoxContainer"]
-layout_mode = 2
-text = "Consequences"
-label_settings = ExtResource("3_6mkju")
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer/PanelContainer5/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-texture = SubResource("GradientTexture2D_5emk6")
-expand_mode = 4
-
-[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.4
-
-[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 2.15
-theme_override_styles/panel = ExtResource("1_732d5")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer4"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_styles/normal = ExtResource("2_iol27")
-text = "Mems+"
-label_settings = ExtResource("3_6mkju")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PanelContainer4" type="PanelContainer" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 3.01
-
-[node name="VScrollBar" type="VScrollBar" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer/PanelContainer4"]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-
-[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer/PanelContainer4"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer/PanelContainer4/HFlowContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer/PanelContainer4/HFlowContainer/VBoxContainer"]
-layout_mode = 2
-text = "HpyBDay400"
-label_settings = ExtResource("3_6mkju")
-horizontal_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer/PanelContainer4/HFlowContainer/VBoxContainer"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_vertical = 3
-texture = SubResource("GradientTexture2D_5emk6")
-expand_mode = 4
-stretch_mode = 2
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer/PanelContainer4/HFlowContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer/PanelContainer4/HFlowContainer/VBoxContainer2"]
-layout_mode = 2
-text = "ForTrip150"
-label_settings = ExtResource("3_6mkju")
-horizontal_alignment = 1
-
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer/PanelContainer4/HFlowContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_vertical = 3
-texture = SubResource("GradientTexture2D_5emk6")
-expand_mode = 4
-stretch_mode = 2
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer/PanelContainer4/HFlowContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer/PanelContainer4/HFlowContainer/VBoxContainer3"]
-layout_mode = 2
-text = "Consequences"
-label_settings = ExtResource("3_6mkju")
-horizontal_alignment = 1
-
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer4/VBoxContainer/PanelContainer4/HFlowContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_vertical = 3
-texture = SubResource("GradientTexture2D_5emk6")
-expand_mode = 4
-stretch_mode = 2
-
-[node name="PanelContainer5" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/VBoxContainer/PanelContainer5"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer5/CenterContainer"]
-layout_mode = 2
-
-[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/VBoxContainer/PanelContainer5/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.886275, 0.0509804, 1)
-theme_override_font_sizes/font_size = 38
-theme_override_styles/background = ExtResource("2_iol27")
-theme_override_styles/fill = ExtResource("2_iol27")
-value = 30.0
-
-[node name="OkLabel" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer5/CenterContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-theme_override_styles/normal = ExtResource("4_qitv8")
-text = "OK"
-label_settings = ExtResource("2_fn00n")
-horizontal_alignment = 1
-
-[node name="DangerLabel" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer5/CenterContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_styles/normal = ExtResource("6_eqfse")
-text = "Danger"
-label_settings = ExtResource("4_qcuh7")
+memory_bank = Array[ExtResource("2_1ymtu")]([SubResource("Resource_abcnn")])
 
 [node name="OuterFrame" type="Control" parent="."]
 layout_mode = 3
@@ -350,6 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 
 [node name="TextureFrame" type="TextureRect" parent="OuterFrame"]
 layout_mode = 1
@@ -367,6 +67,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -378,6 +79,7 @@ texture = SubResource("GradientTexture2D_lmfp8")
 
 [node name="OperationWindow" type="Control" parent="OuterFrame/InnerFrame"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="WindowTexture" type="TextureRect" parent="OuterFrame/InnerFrame/OperationWindow"]
 layout_mode = 1
@@ -395,6 +97,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -428,27 +131,18 @@ theme_override_styles/separator = SubResource("StyleBoxLine_opaq5")
 [node name="MemoryQueue" type="Control" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
+mouse_filter = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryQueue"]
+[node name="HBoxContainer_memory_queue" type="HBoxContainer" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryQueue"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 alignment = 1
-
-[node name="MemQueueButton" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryQueue/HBoxContainer" instance=ExtResource("8_4eprk")]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="MemQueueButton2" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryQueue/HBoxContainer" instance=ExtResource("8_4eprk")]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="MemQueueButton3" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryQueue/HBoxContainer" instance=ExtResource("8_4eprk")]
-layout_mode = 2
-size_flags_horizontal = 4
 
 [node name="HSeparator2" type="HSeparator" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -459,8 +153,10 @@ theme_override_styles/separator = SubResource("StyleBoxLine_opaq5")
 [node name="MemoryBank" type="Control" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryBank"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.245
@@ -470,16 +166,13 @@ offset_top = -3.065
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_ls4q0")
+texture = SubResource("PlaceholderTexture2D_alhu2")
 
-[node name="MarginContainer" type="MarginContainer" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryBank/TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryBank"]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = -0.19
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 1.19
-offset_top = -0.0299988
-offset_bottom = 0.0299835
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
@@ -487,19 +180,10 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryBank/TextureRect/MarginContainer"]
+[node name="HBoxContainer_memory_bank" type="HBoxContainer" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryBank/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 20
-
-[node name="MemQueueButton2" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryBank/TextureRect/MarginContainer/HBoxContainer" instance=ExtResource("8_4eprk")]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="MemQueueButton3" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryBank/TextureRect/MarginContainer/HBoxContainer" instance=ExtResource("8_4eprk")]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
 [node name="HSeparator3" type="HSeparator" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer"]
 layout_mode = 2
