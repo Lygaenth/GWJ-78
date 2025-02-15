@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends PanelContainer
 class_name PatientInformation
 
 @onready var _portrait : TextureRect = $"%Portrait"

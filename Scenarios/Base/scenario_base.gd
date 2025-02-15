@@ -8,15 +8,19 @@ var _lineIndex: int = 0
 var _lines : Array[DialogLine]
 var _state : Enums.ScenarioState
 var _pay : int = 50
+var _completed : bool = false
 
 var AvailabilityCounter : int = 0
-var AvailabilityCondition : bool
+var AvailabilityCondition : bool = true
 
-func UnlockScenario() -> Array[int]:
-	return []
+func UnlockScenario(passedScenario : int):
+	pass
 
 func Resolve(souvenir):
-	pass
+	_completed = true
+
+func IsAvailable() -> bool:
+	return !_completed && AvailabilityCounter == 0 && AvailabilityCondition
 
 func GetPay():
 	if (_state == Enums.ScenarioState.OperationResult):

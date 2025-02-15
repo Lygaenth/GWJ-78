@@ -3,15 +3,17 @@ class_name ChatRoom
 
 @onready var _patientDialog : Label = $"%PatientDialog"
 @onready var _doctorDialog : Label = $"%DoctorDialog"
-@onready var _scenarioFactory : ScenarioFactory = $ScenarioFactory
 @onready var _patientInfo : PatientInformation = $"%PatientInfo"
+@onready var _payLabel : Label = $"%MoneyLabel"
+@onready var _shopButton : Button = $"%ShopBtn"
+@onready var _jackInButton : Button = $"%JackInBtn"
 
 var _gameState : Enums.GameState = Enums.GameState.WaitingForPatient
 var _scenario : ScenarioBase
-
-func _ready():
-	pass
 	
+func _ready():
+	PlayerSingleton.UpdateMoney(0)
+
 func _process(delta):
 	if (Input.is_action_just_pressed("ui_accept")):
 		Next()
@@ -28,8 +30,10 @@ func Next():
 			DisplayLine(_scenario.GetLine())
 		elif (scenarioState == Enums.ScenarioState.Operation):
 			HideDialog()
-			_scenario.Resolve(0)
+			EnableShoppingAndJacking()
+
 		elif (scenarioState == Enums.ScenarioState.OperationResult):
+			EnableShoppingAndJacking()
 			DisplayPay(_scenario.GetPay())
 		elif (scenarioState == Enums.ScenarioState.Closed):
 			HideDialog()
@@ -56,14 +60,34 @@ func DisplayLine(line : DialogLine):
 		_doctorDialog.text = line.Text
 		_doctorDialog.show()
 
+func EnableShoppingAndJacking():
+	_jackInButton.disabled = false
+	_shopButton.disabled = false
+
+func DisableShoppingAndJacking():
+	_jackInButton.disabled = true
+	_shopButton.disabled = true
+
 func LoadNextScenario():
-	_scenario = _scenarioFactory.GetNextScenario()
+	_scenario = PlayerSingleton.GetNextScenario()
 	if (_scenario != null):
 		_patientInfo.DisplayPatient(_scenario.Patient)
 	else:
 		_patientInfo.DisplayWait()
 	
 func DisplayPay(pay : int):
+	var label = Label.new()
+	label.label_settings = load("res://ChatRoom/Assets/PatientTextDialog.tres")
+
+	label.global_position = Vector2(1600, 850)
+	call_deferred("add_child", label)
+	
+	await get_tree().create_timer(1.0)
+	label.queue_free()
+	
+	PlayerSingleton.UpdateMoney(pay)
+	
+	await get_tree().create_timer(2.0).timeout
 	pass
 	
 func DisplayPatientDepart():
@@ -72,3 +96,11 @@ func DisplayPatientDepart():
 func CheckEvent():
 	await get_tree().create_timer(2.0).timeout
 	_patientInfo.DisplayWait()
+
+func OnShopPressed():
+	print("Open shop")
+	_shopButton.release_focus()
+
+func OnJackPressed():
+	_scenario.Resolve(0)
+	_jackInButton.release_focus()
