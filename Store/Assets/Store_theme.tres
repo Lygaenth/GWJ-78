@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dcho8yr3orscl"]
+
+[ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://ChatRoom/Assets/Fonts/ChakraPetch-Bold.ttf" id="1_shkh8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5nvl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0.422122, 0.24785, 1)
+
+[resource]
+Button/colors/font_color = Color(0, 0.422122, 0.24785, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_shkh8")
+Button/styles/normal = SubResource("StyleBoxFlat_h5nvl")
+Label/colors/font_color = Color(0, 0.422122, 0.24785, 1)
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_shkh8")

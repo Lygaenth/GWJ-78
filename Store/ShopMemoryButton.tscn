@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://f5dyin6l8bj7"]
+
+[ext_resource type="PackedScene" uid="uid://dknh24q1qdxtn" path="res://OperationRoom/memory_button.tscn" id="1_qyurk"]
+[ext_resource type="Script" path="res://Store/shop_memory_button.gd" id="2_fju4j"]
+
+[node name="MemoryButton" instance=ExtResource("1_qyurk")]
+script = ExtResource("2_fju4j")

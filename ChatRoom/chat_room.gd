@@ -7,6 +7,7 @@ class_name ChatRoom
 @onready var _payLabel : Label = $"%MoneyLabel"
 @onready var _shopButton : Button = $"%ShopBtn"
 @onready var _jackInButton : Button = $"%JackInBtn"
+@onready var _store : MemsStore = $Store
 
 @onready var _operationRoomFactory = $OperationRoomFactory
 
@@ -56,6 +57,7 @@ func DisplayLine(line : DialogLine):
 	if (line.Talker == Enums.Talker.Patient):
 		_doctorDialog.hide()
 		_patientDialog.text = line.Text
+		_patientDialog.label_settings.font = _scenario.Patient.TalkFont
 		_patientDialog.show()
 	elif line.Talker == Enums.Talker.Doctor:
 		_patientDialog.hide()
@@ -100,7 +102,7 @@ func CheckEvent():
 	_patientInfo.DisplayWait()
 
 func OnShopPressed():
-	print("Open shop")
+	_store.show()
 	_shopButton.release_focus()
 
 func OnJackPressed():
@@ -108,7 +110,7 @@ func OnJackPressed():
 	var operationRoom = _operationRoomFactory.CreateOperationRoom(_scenario.GetMemories())
 	add_child(operationRoom)
 	
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(20.0).timeout
 	operationRoom.queue_free()
 
 	_scenario.Resolve(0)
