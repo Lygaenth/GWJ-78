@@ -23,4 +23,9 @@ func _on_mouse_exited():
 
 func _on_pressed():
 	_isSelected = !_isSelected
+	if (_isSelected):
+		modulate = Color("bf195f")
+	else:
+		modulate = Color("ffffff")
+	
 	Selected.emit(_isSelected, on_ready_memory)
