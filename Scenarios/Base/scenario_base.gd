@@ -15,11 +15,16 @@ var _completed : bool = false
 var AvailabilityCounter : int = 0
 var AvailabilityCondition : bool = true
 
-func UnlockScenario(passedScenario : int):
-	pass
+signal UnlockScenario(unlockedId : int)
 
-func Resolve(souvenir):
+func ReduceAvailabilityCounter():
+	if (!AvailabilityCondition):
+		return
+	AvailabilityCounter -= 1
+
+func Resolve(_memories : Array[MemoryData]) -> bool:
 	_completed = true
+	return false
 
 func IsAvailable() -> bool:
 	return !_completed && AvailabilityCounter == 0 && AvailabilityCondition

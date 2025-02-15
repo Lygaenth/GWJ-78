@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://dcho8yr3orscl"]
 
-[ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://ChatRoom/Assets/Fonts/ChakraPetch-Bold.ttf" id="1_shkh8"]
+[ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="1_shkh8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h5nvl"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

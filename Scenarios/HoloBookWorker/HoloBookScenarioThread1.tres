@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryThread" load_steps=7 format=3 uid="uid://dgq2h8b46t4tb"]
+
+[ext_resource type="Resource" uid="uid://bf50mgnawkqu0" path="res://Scenarios/HoloBookWorker/HoloBookScenarioEnd1Thread.tres" id="1_0xq7i"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_kcciw"]
+[ext_resource type="Script" path="res://Scenarios/Base/memoryThread.gd" id="2_6pmw0"]
+[ext_resource type="Resource" uid="uid://318vufegqjkv" path="res://Scenarios/HoloBookWorker/HoloBookScenarioInt1Thread.tres" id="3_jj4ap"]
+[ext_resource type="Resource" uid="uid://btjrjcv327w2s" path="res://Scenarios/HoloBookWorker/HoloBookScenarioInt2Thread.tres" id="4_4jkdd"]
+[ext_resource type="Resource" uid="uid://b7btmo2qc0ha2" path="res://Scenarios/HoloBookWorker/HoloBookScenearionThreadStart1.tres" id="5_hdmcc"]
+
+[resource]
+script = ExtResource("2_6pmw0")
+Query = "Alk wants to erase traumatic memories from moderation"
+StartMemory = ExtResource("5_hdmcc")
+IntermediateMemories = Array[ExtResource("1_kcciw")]([ExtResource("3_jj4ap"), ExtResource("4_4jkdd")])
+EndMemory = ExtResource("1_0xq7i")

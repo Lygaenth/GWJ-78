@@ -9,7 +9,7 @@ class_name ChatRoom
 @onready var _jackInButton : Button = $"%JackInBtn"
 @onready var _store : MemsStore = $Store
 
-@onready var _operationRoomFactory = $OperationRoomFactory
+@onready var _operationRoomFactory : OperationRoomFactory = $OperationRoomFactory
 
 var _gameState : Enums.GameState = Enums.GameState.WaitingForPatient
 var _scenario : ScenarioBase
@@ -28,7 +28,7 @@ func Next():
 		return
 		
 	if (_gameState == Enums.GameState.OnGoingScenario):
-		var scenarioState = _scenario.GetState()
+		var scenarioState = _scenario.GetState() 
 		if (scenarioState == Enums.ScenarioState.Opening || scenarioState == Enums.ScenarioState.Closing):
 			DisplayLine(_scenario.GetLine())
 		elif (scenarioState == Enums.ScenarioState.Operation):
@@ -68,8 +68,10 @@ func EnableShoppingAndJacking():
 	_jackInButton.disabled = false
 	_shopButton.disabled = false
 
-func DisableShoppingAndJacking():
+func DisableJacking():
 	_jackInButton.disabled = true
+
+func DisableShopping():
 	_shopButton.disabled = true
 
 func LoadNextScenario():
@@ -106,12 +108,13 @@ func OnShopPressed():
 	_shopButton.release_focus()
 
 func OnJackPressed():
-	
-	var operationRoom = _operationRoomFactory.CreateOperationRoom(_scenario.GetMemories())
+	var operationRoom : OperationRoom = _operationRoomFactory.CreateOperationRoom(_scenario.GetMemories())
 	add_child(operationRoom)
 	
 	await get_tree().create_timer(20.0).timeout
+	var modifiedMemories = operationRoom.operation_data.memory_data_array
 	operationRoom.queue_free()
 
-	_scenario.Resolve(0)
+	_scenario.Resolve(modifiedMemories)
+	
 	_jackInButton.release_focus()

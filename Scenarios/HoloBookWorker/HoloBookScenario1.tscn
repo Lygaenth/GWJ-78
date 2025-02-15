@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://4j771td7sjsw"]
+
+[ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_213sn"]
+[ext_resource type="Script" path="res://Scenarios/HoloBookWorker/holoBookScenario1.gd" id="2_tmo0u"]
+[ext_resource type="Resource" uid="uid://dgq2h8b46t4tb" path="res://Scenarios/HoloBookWorker/HoloBookScenarioThread1.tres" id="3_dbo3s"]
+[ext_resource type="PackedScene" uid="uid://blb58ks4ca5n0" path="res://Scenarios/HoloBookWorker/HoloBookChar1.tscn" id="4_3p08v"]
+
+[node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_213sn")]
+script = ExtResource("2_tmo0u")
+Patient = NodePath("Character")
+Id = 2
+Memories = ExtResource("3_dbo3s")
+
+[node name="Character" parent="." index="0" instance=ExtResource("4_3p08v")]

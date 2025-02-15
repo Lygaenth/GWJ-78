@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=4 format=3 uid="uid://cmcf2pudwbxoy"]
+
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_mkw10"]
+
+[sub_resource type="Gradient" id="Gradient_gligr"]
+colors = PackedColorArray(0.701961, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7yjim"]
+gradient = SubResource("Gradient_gligr")
+width = 200
+height = 200
+fill = 2
+fill_from = Vector2(0.5, 0.519802)
+fill_to = Vector2(0.881188, 0.594059)
+
+[resource]
+script = ExtResource("1_mkw10")
+memory_title = "Looking for work"
+memory_description = "Alk is desperatly trying to find money."
+memory_cost = 0
+memory_thumbnail = SubResource("GradientTexture2D_7yjim")

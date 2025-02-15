@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://t0ysv31mbg0s"]
+[gd_scene load_steps=4 format=3 uid="uid://t0ysv31mbg0s"]
 
 [ext_resource type="PackedScene" uid="uid://cdqpi3x0oacs" path="res://Scenarios/Base/CharacterBase.tscn" id="1_iykk1"]
-[ext_resource type="FontFile" uid="uid://cndj6xbgwc61b" path="res://ChatRoom/Assets/Fonts/RubikGlitch-Regular.ttf" id="2_qfrmh"]
+[ext_resource type="FontFile" uid="uid://cndj6xbgwc61b" path="res://Fonts/RubikGlitch-Regular.ttf" id="2_qfrmh"]
+[ext_resource type="Texture2D" uid="uid://cnmhaess3har8" path="res://Scenarios/Tuto/Tutor.png" id="2_u7qou"]
 
 [node name="Character" instance=ExtResource("1_iykk1")]
 FamilyName = "Tutor"
 FirstName = "Valdonis"
 BirthDate = "02/05/3456"
 Notes = "Anxious, First time here ?"
+Picture = ExtResource("2_u7qou")
 TalkFont = ExtResource("2_qfrmh")

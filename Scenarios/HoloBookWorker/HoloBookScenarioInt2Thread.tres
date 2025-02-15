@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=2 format=3 uid="uid://btjrjcv327w2s"]
+
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_e0u1q"]
+
+[resource]
+script = ExtResource("1_e0u1q")
+memory_title = "Trauma"
+memory_description = "Censored content."
+memory_cost = 0

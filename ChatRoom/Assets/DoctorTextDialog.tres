@@ -1,6 +1,6 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ctvfej0ou1v2r"]
 
-[ext_resource type="FontFile" uid="uid://byg6a8n87eqot" path="res://ChatRoom/Assets/Fonts/ChakraPetch-Medium.ttf" id="1_kftqj"]
+[ext_resource type="FontFile" uid="uid://byg6a8n87eqot" path="res://Fonts/ChakraPetch-Medium.ttf" id="1_kftqj"]
 
 [resource]
 line_spacing = 5.0

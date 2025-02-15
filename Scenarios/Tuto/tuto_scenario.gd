@@ -38,3 +38,4 @@ func Resolve(souvenir):
 	_state = Enums.ScenarioState.OperationResult
 	_pay = 50
 	_lineIndex = 9
+	_completed = true

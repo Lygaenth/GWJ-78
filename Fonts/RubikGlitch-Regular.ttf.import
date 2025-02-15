@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://byg6a8n87eqot"
-path="res://.godot/imported/ChakraPetch-Medium.ttf-e8c1763e53094064d228617309882e66.fontdata"
+uid="uid://cndj6xbgwc61b"
+path="res://.godot/imported/RubikGlitch-Regular.ttf-50270f76dcdc0d1aa1b958d69f156164.fontdata"
 
 [deps]
 
-source_file="res://ChatRoom/Assets/Fonts/ChakraPetch-Medium.ttf"
-dest_files=["res://.godot/imported/ChakraPetch-Medium.ttf-e8c1763e53094064d228617309882e66.fontdata"]
+source_file="res://Fonts/RubikGlitch-Regular.ttf"
+dest_files=["res://.godot/imported/RubikGlitch-Regular.ttf-50270f76dcdc0d1aa1b958d69f156164.fontdata"]
 
 [params]
 
