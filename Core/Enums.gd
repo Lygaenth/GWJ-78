@@ -12,7 +12,8 @@ enum ScenarioState {
 	Operation,
 	OperationResult,
 	Closing,
-	Closed
+	Closed,
+	Frying
 }
 
 enum GameState {
@@ -20,5 +21,11 @@ enum GameState {
 	OnGoingScenario,
 	OperatingPatient,	
 	PatientLeaving,
-	CheckEvent
+	CheckEvent,
+	Ending
 } 
+
+enum Endings {
+	NoMorescenario,
+	TooManyMistakes
+}

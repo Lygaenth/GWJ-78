@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=26 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="Texture2D" uid="uid://1mqqsoj4ka2c" path="res://ChatRoom/Assets/mockup_cyberpunk_souvenir.png" id="1_mjiwe"]
@@ -19,6 +19,8 @@
 [ext_resource type="StyleBox" uid="uid://rq1ibx6o7p7" path="res://ChatRoom/Assets/PayTextBox.tres" id="12_6uipq"]
 [ext_resource type="PackedScene" uid="uid://dydpnhpyidmsa" path="res://Store/Store.tscn" id="12_dhdup"]
 [ext_resource type="LabelSettings" uid="uid://c6dthqsp0oqq5" path="res://ChatRoom/Assets/PayTextDialog.tres" id="13_xh7ih"]
+[ext_resource type="Script" path="res://Scenarios/Base/dialog_line.gd" id="20_7pt2x"]
+[ext_resource type="PackedScene" uid="uid://c2sn3o6choeux" path="res://Endings/EndingScreen.tscn" id="21_4bn51"]
 
 [sub_resource type="Gradient" id="Gradient_wd23k"]
 offsets = PackedFloat32Array(0.883117, 1)
@@ -360,6 +362,14 @@ autowrap_mode = 2
 script = ExtResource("11_kwves")
 
 [node name="Store" parent="." instance=ExtResource("12_dhdup")]
+visible = false
+
+[node name="OopsLine" type="Node" parent="."]
+script = ExtResource("20_7pt2x")
+Talker = 1
+Text = "Oops... Better disconnect quicky..."
+
+[node name="EndingScreen" parent="." instance=ExtResource("21_4bn51")]
 visible = false
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/HBoxContainer/VBoxContainer/HBoxContainer/GreetBtn" to="." method="OnGreetPressed"]

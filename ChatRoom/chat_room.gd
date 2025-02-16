@@ -10,6 +10,7 @@ class_name ChatRoom
 @onready var _jackInButton : AttractAttentionButton = $"%JackInBtn"
 @onready var _greetButton : AttractAttentionButton = $"%GreetBtn"
 @onready var _store : MemsStore = $Store
+@onready var _endingsScreen : EndingsScreen = $EndingScreen
 
 @onready var _operationRoomFactory : OperationRoomFactory = $OperationRoomFactory
 
@@ -29,12 +30,13 @@ func _process(delta):
 func Next():
 	if (_gameState == Enums.GameState.OnGoingScenario):
 		var scenarioState = _scenario.GetState() 
-		if (scenarioState == Enums.ScenarioState.Opening || scenarioState == Enums.ScenarioState.Closing):
+		if (scenarioState == Enums.ScenarioState.Opening 
+			|| scenarioState == Enums.ScenarioState.Closing
+			|| scenarioState == Enums.ScenarioState.Frying):
 			DisplayLine(_scenario.GetLine())
 		elif (scenarioState == Enums.ScenarioState.Operation):
 			HideDialog()
 			EnableShoppingAndJacking()
-
 		elif (scenarioState == Enums.ScenarioState.OperationResult):
 			DisableJacking()
 			await DisplayPay(_scenario.GetPay())
@@ -42,7 +44,12 @@ func Next():
 			HideDialog()
 			DisplayPatientDepart()
 			_gameState = Enums.GameState.CheckEvent
-			CheckEvent()
+			var eventBlocking = await CheckEvent()
+			if(eventBlocking):
+				return
+				
+			await Wait(2.0)
+			_patientInfo.DisplayWait()
 			_gameState = Enums.GameState.WaitingForPatient
 			EnableGreetButton()
 			
@@ -86,7 +93,8 @@ func LoadNextScenario():
 		_patientInfo.DisplayPatient(_scenario.Patient)
 	else:
 		_patientInfo.DisplayWait()
-	
+		DisplayEnding(Enums.Endings.NoMorescenario)
+		
 func DisplayPay(pay : int):
 	_gainLabel.UpdateMoney(pay)
 	_gainLabel.show()
@@ -97,9 +105,13 @@ func DisplayPay(pay : int):
 func DisplayPatientDepart():
 	_patientInfo.DisplayDeconnection()
 	
-func CheckEvent():
-	await Wait(2.0)
-	_patientInfo.DisplayWait()
+func CheckEvent() -> bool:
+	var errors = PlayerSingleton.GetCharactersError()
+	if (errors.size() >= 3):
+		DisplayEnding(Enums.Endings.TooManyMistakes)
+		return false
+	
+	return true
 
 func OnShopPressed():
 	_store.show()
@@ -124,9 +136,13 @@ func StartOperation():
 func OnOperationTerminated():
 	var modifiedMemories = _operationRoom.operation_data.memory_data_array
 	_operationRoom.queue_free()
-	_scenario.ResolveAndCheckIfFried(modifiedMemories)
-	await Next()
-	await Next()
+	var isFried = _scenario.ResolveAndCheckIfFried(modifiedMemories)
+	if (isFried):
+		_patientInfo.Fry()
+		_gameState = Enums.GameState.OnGoingScenario
+	else:
+		await Next()
+		await Next()
 	EnableShopping()
 
 func EnableGreetButton() -> void:
@@ -147,3 +163,10 @@ func OnGreetPressed() -> void:
 
 func Wait(time : float):
 	await get_tree().create_timer(time).timeout
+
+func DisplayEnding(ending : Enums.Endings):
+	_gameState = Enums.GameState.Ending
+	DisableJacking()
+	DisableGreeButton()
+	DisableShopping()
+	_endingsScreen.RaiseEnding(ending)

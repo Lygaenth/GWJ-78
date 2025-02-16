@@ -6,8 +6,10 @@ const StartMoney : int = 0
 @onready var _memoryBank : MemoryBank = $MemoryBank
 
 var _money : int = 1000
-var _errors : Array[String] = []
+var _errors : Array[CharacterBase] = []
 var _lastErrorManaged : bool = true
+
+var _savedPersons : int = 0
 
 signal UpdatedMoney(amount : int)
 	
@@ -25,7 +27,7 @@ func Reset() -> void:
 	_money = StartMoney
 	_errors = []
 
-func AddError(person : String):
+func AddError(person : CharacterBase):
 	_errors.append(person)
 	_lastErrorManaged = false
 
@@ -46,3 +48,9 @@ func GetAvailableMemories():
 		
 func GetNextScenario() -> ScenarioBase:
 	return _scenarioProvider.GetNextScenario()
+
+func StoreFriedPerson(character : CharacterBase):
+	_errors.append(character)
+
+func GetCharactersError() -> Array[CharacterBase]:
+	return _errors.duplicate()

@@ -1,0 +1,128 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2sn3o6choeux"]
+
+[ext_resource type="FontFile" uid="uid://byg6a8n87eqot" path="res://Fonts/ChakraPetch-Medium.ttf" id="1_73e20"]
+[ext_resource type="StyleBox" uid="uid://bfgjey2hg7u13" path="res://Endings/Assets/CyanStyle.tres" id="1_ebxtq"]
+[ext_resource type="Script" path="res://Endings/ending_screen.gd" id="1_x3hui"]
+[ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_qotdy"]
+[ext_resource type="LabelSettings" uid="uid://c4i4amqx8ghhl" path="res://Endings/Assets/CyanLabel.tres" id="4_pn7na"]
+[ext_resource type="StyleBox" uid="uid://bahka6mnwv82p" path="res://Endings/Assets/RedStyle.tres" id="5_pvacl"]
+[ext_resource type="LabelSettings" uid="uid://dyg7dk8x8tsgq" path="res://Endings/Assets/RedLabel.tres" id="7_6ythr"]
+
+[node name="EndingScreen" type="CanvasLayer"]
+script = ExtResource("1_x3hui")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="NoMoreScenarioEnding" type="PanelContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_ebxtq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/NoMoreScenarioEnding"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/NoMoreScenarioEnding/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_qotdy")
+
+[node name="Label" type="Label" parent="MarginContainer/NoMoreScenarioEnding/VBoxContainer"]
+layout_mode = 2
+text = "You have reached the end of all our stories written for Godot Wild jam #78.
+
+You didn't commit too many mistakes and avoided the bad endings. Congratulations !
+
+You can try to play again to see other endings or stories you have missed.
+
+We hope you enjoyed this game.
+
+Nialsig (Dev, Art, Text),
+Gly (Dev, Audio, Text)
+Mélissa (Characters, Graphism)"
+label_settings = ExtResource("4_pn7na")
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/NoMoreScenarioEnding/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="MarginContainer/NoMoreScenarioEnding/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0, 0.8, 0.8, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.8, 0.8, 1)
+theme_override_colors/font_color = Color(0, 0.8, 0.8, 1)
+theme_override_fonts/font = ExtResource("1_73e20")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = ExtResource("1_ebxtq")
+theme_override_styles/pressed = ExtResource("1_ebxtq")
+theme_override_styles/normal = ExtResource("1_ebxtq")
+text = "Quit"
+
+[node name="TooManyMistakesEnding" type="PanelContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("5_pvacl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TooManyMistakesEnding"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/TooManyMistakesEnding/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_qotdy")
+
+[node name="Label" type="Label" parent="MarginContainer/TooManyMistakesEnding/VBoxContainer"]
+layout_mode = 2
+text = "You have made too many mistakes and got caught by the cops.
+
+You can try to play again to see other endings or stories you have missed.
+
+We hope you enjoyed this game.
+
+Nialsig (Dev, Art, Text),
+Gly (Dev, Audio, Text)
+Mélissa (Characters, Graphism)"
+label_settings = ExtResource("7_6ythr")
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/TooManyMistakesEnding/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="MarginContainer/TooManyMistakesEnding/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_color = Color(0.562556, 0, 0.099028, 1)
+theme_override_colors/font_pressed_color = Color(0.562556, 0, 0.099028, 1)
+theme_override_colors/font_color = Color(0.562556, 0, 0.099028, 1)
+theme_override_fonts/font = ExtResource("1_73e20")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = ExtResource("5_pvacl")
+theme_override_styles/pressed = ExtResource("5_pvacl")
+theme_override_styles/normal = ExtResource("5_pvacl")
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/NoMoreScenarioEnding/VBoxContainer/CenterContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/TooManyMistakesEnding/VBoxContainer/CenterContainer/Button" to="." method="_on_button_pressed"]

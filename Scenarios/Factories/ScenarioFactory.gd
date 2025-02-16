@@ -23,7 +23,9 @@ func GetNextScenario() -> ScenarioBase:
 			availableScenars.append(scenar)
 		else:
 			scenar.ReduceAvailabilityCounter()
-			
+	if (availableScenars.size() == 0):
+		return null
+
 	return availableScenars.pick_random()
 
 func AddScenarioFromPackedScene(ps : PackedScene):

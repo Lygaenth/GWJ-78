@@ -20,8 +20,13 @@ func _ready():
 	# Good ending
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Thanks doctor, I feel better"))
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Good bye !"))
-
-	# BAd E
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.None, ""))
+	
+	# Bad ending
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "God damnit ! I messed it up... I'll quicky erase all traces of me."))
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Here it is, it never happened"))
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Probably should wipe my own memories to be safe."))
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.None, ""))
 	
 func GetLine() -> DialogLine:
 	var dialogLine = _lines[_lineIndex]
@@ -31,11 +36,24 @@ func GetLine() -> DialogLine:
 	
 	if _lineIndex == 11:
 		_state = Enums.ScenarioState.Closed
+
+	if (_lineIndex == 14):
+		_state = Enums.ScenarioState.Closed
 	
 	return dialogLine
 
-func ResolveAndCheckIfFried(souvenir):
+func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
+	var isFried = _isFried(souvenirs)
+	if(isFried):
+		ManageFry()
+		_lineIndex = 12
+		return true
+
 	_state = Enums.ScenarioState.OperationResult
 	_pay = 50
 	_lineIndex = 9
 	_completed = true
+	return isFried
+
+func _isFried(souvenirs : Array[MemoryData]) -> bool:
+	return true

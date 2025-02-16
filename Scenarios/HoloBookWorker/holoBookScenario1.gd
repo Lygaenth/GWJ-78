@@ -34,6 +34,16 @@ func _ready():
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I don't remember why I'm here, but I guess that means you did your job well."))
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Maybe I should'nt have left that job."))
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I feel sleepy, g'night Doc !"))
+
+	# Fried ending
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Poor boy... What did I miss ?"))
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Hope a partial reset will work."))
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I'll remove traces of my intervention..."))
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Then send an anonymous alert at his place."))
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I'll do better next time."))
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I'll erase my own memory to stay confident..."))
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "..."))
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Oh, I didn't have patient today. Day passed so fast"))
 	
 func GetLine() -> DialogLine:
 	var dialogLine = _lines[_lineIndex]
@@ -46,7 +56,12 @@ func GetLine() -> DialogLine:
 	
 	return dialogLine
 
-func Resolve(memories :  Array[MemoryData]):
+func ResolveAndCheckIfFried(memories : Array[MemoryData]) -> bool:
+	var isFried = _isFried(memories)
+	if(_isFried):
+		ManageFry()
+		return true
+	
 	var intermediate1 = memories[1]
 	var intermediate2 = memories[2]
 	if (memories[1].memory_title == "Working at MetaBooX"): #only trauma erased
@@ -58,3 +73,7 @@ func Resolve(memories :  Array[MemoryData]):
 	_state = Enums.ScenarioState.OperationResult
 	UnlockScenario.emit(3)
 	_completed = true
+	return false
+
+func _isFried(souvenirs : Array[MemoryData]) -> bool:
+	return true

@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c4i4amqx8ghhl"]
+
+[ext_resource type="FontFile" uid="uid://byg6a8n87eqot" path="res://Fonts/ChakraPetch-Medium.ttf" id="1_c8o5i"]
+
+[resource]
+font = ExtResource("1_c8o5i")
+font_size = 40
+font_color = Color(0, 0.8, 0.8, 1)

@@ -21,6 +21,7 @@ func DisplayPatient(character : CharacterBase):
 		
 	_patientFileLabel.text = "Patient file:"
 	_portrait.texture = character.Picture
+	GetShader().set_shader_parameter("isBugged", false)
 	_portrait.show()
 	
 	var tween = get_tree().create_tween()
@@ -32,7 +33,13 @@ func DisplayPatient(character : CharacterBase):
 	_patientFirstNameLabel.text = character.FirstName
 	_patientBirthdayLabel.text = character.BirthDate
 	_patientInfoLabel.text = character.Notes
+	
+func Fry():
+	GetShader().set_shader_parameter("isBugged", true)
 
+func GetShader() -> ShaderMaterial:
+	return _portrait.material as ShaderMaterial
+	
 func DisplayWait():
 	_patientFileLabel.text = "A patient is waiting..."
 	_portrait.hide()

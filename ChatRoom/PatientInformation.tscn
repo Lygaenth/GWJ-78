@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cf3unc30pl34t"]
+[gd_scene load_steps=11 format=3 uid="uid://cf3unc30pl34t"]
 
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="1_1qgj0"]
 [ext_resource type="Script" path="res://ChatRoom/patient_information.gd" id="1_b3cfa"]
+[ext_resource type="Shader" path="res://ChatRoom/Patient.gdshader" id="3_eubsr"]
 [ext_resource type="Texture2D" uid="uid://dto1au7i7aggo" path="res://Scenarios/HoloBookWorker/Alk.png" id="3_m54g1"]
 [ext_resource type="LabelSettings" uid="uid://0kbo3uxeglki" path="res://ChatRoom/Assets/PatientDescription.tres" id="3_vb0ut"]
+[ext_resource type="Texture2D" uid="uid://cvrhkmq8mtmtv" path="res://ChatRoom/Assets/BlueScreen.png" id="4_ulsdo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3550m"]
 bg_color = Color(0, 0, 0, 1)
@@ -28,6 +30,11 @@ height = 410
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.600917, 0.821101)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gljxb"]
+shader = ExtResource("3_eubsr")
+shader_parameter/isBugged = false
+shader_parameter/Texture = ExtResource("4_ulsdo")
 
 [node name="PatientInformation" type="PanelContainer"]
 anchors_preset = 15
@@ -78,7 +85,7 @@ expand_mode = 1
 
 [node name="Portrait" type="TextureRect" parent="HBoxContainer/PanelContainer/VBoxContainer/MarginContainer/PanelContainer"]
 unique_name_in_owner = true
-visible = false
+material = SubResource("ShaderMaterial_gljxb")
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("3_m54g1")
