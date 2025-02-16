@@ -10,6 +10,8 @@ class_name OperationRoom extends CanvasLayer
 @onready var memory_prefab = load("res://OperationRoom/memory_button.tscn")
 @onready var empty_memory_thumbnail = load("res://icon.svg")
 
+signal confirm_operation(data: OperationData)
+
 func _ready():
 	UpdateLabel()
 	UpdateMemoryQueue()
@@ -30,14 +32,18 @@ func UpdateMemoryBank():
 		memory_bank_container.add_child(memory_instance)
 		memory_instance.DisplayInShop(memory)
 
-func AddMemoryToQueue(memory: MemoryData, position: int):
+func AddMemoryToQueue(memory: MemoryData):
 	pass
 
-func RemoveMemoryFromQueue(position: int):
-	var memory_data: MemoryData = operation_data.memory_data_array[position]
-	memory_data.memory_description = ""
-	memory_data.memory_title = "[empty]"
-	memory_data.memory_thumbnail = empty_memory_thumbnail
+func RemoveMemoryFromQueue(memory: MemoryData):
+	pass
 
 func AddMemoryToBank(memory: MemoryData):
 	pass
+
+func RemoveMemoryFromBank(memory: MemoryData):
+	pass
+
+
+func _on_button_pressed():
+	confirm_operation.emit(operation_data)

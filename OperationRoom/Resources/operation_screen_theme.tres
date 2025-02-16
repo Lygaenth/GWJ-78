@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://d0ivnsvutnp7v"]
+
+[ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="1_hc5d8"]
+
+[resource]
+default_font = ExtResource("1_hc5d8")
