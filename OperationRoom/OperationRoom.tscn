@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://em14hkafk6r"]
+[gd_scene load_steps=14 format=3 uid="uid://em14hkafk6r"]
 
 [ext_resource type="Script" path="res://OperationRoom/operation_room.gd" id="1_v3cl8"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_1ymtu"]
 [ext_resource type="Script" path="res://OperationRoom/OperationData.gd" id="3_yb8xg"]
 [ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="5_0yljb"]
-[ext_resource type="PackedScene" uid="uid://dknh24q1qdxtn" path="res://OperationRoom/memory_button.tscn" id="6_4rgf2"]
 [ext_resource type="Texture2D" uid="uid://ds7qd2iea1vrp" path="res://icon.svg" id="10_ls4q0"]
 
 [sub_resource type="Resource" id="Resource_7mbc4"]
@@ -154,9 +153,6 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="MemoryButton" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryQueue/HBoxContainer_memory_queue" instance=ExtResource("6_4rgf2")]
-layout_mode = 2
-
 [node name="HSeparator2" type="HSeparator" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
@@ -197,9 +193,6 @@ theme_override_constants/margin_bottom = 20
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 20
-
-[node name="MemoryButton" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/MemoryBank/MarginContainer/HBoxContainer_memory_bank" instance=ExtResource("6_4rgf2")]
-layout_mode = 2
 
 [node name="HSeparator3" type="HSeparator" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer"]
 layout_mode = 2
