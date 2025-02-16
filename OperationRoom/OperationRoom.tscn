@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://em14hkafk6r"]
+[gd_scene load_steps=14 format=3 uid="uid://em14hkafk6r"]
 
 [ext_resource type="Script" path="res://OperationRoom/operation_room.gd" id="1_v3cl8"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_1ymtu"]
 [ext_resource type="Script" path="res://OperationRoom/OperationData.gd" id="3_yb8xg"]
+[ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="5_0yljb"]
 [ext_resource type="Texture2D" uid="uid://ds7qd2iea1vrp" path="res://icon.svg" id="10_ls4q0"]
 
 [sub_resource type="Resource" id="Resource_7mbc4"]
@@ -16,6 +17,7 @@ memory_title = "Present"
 memory_description = "I was given the nicest present of my life: a real sized giraffe. I felt so happy I could cry!"
 memory_cost = 15
 memory_thumbnail = ExtResource("10_ls4q0")
+can_be_clicked = true
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ad1ke"]
 
@@ -28,6 +30,10 @@ colors = PackedColorArray(0.617945, 0.831122, 0.94655, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_65smh")
 fill = 1
 fill_from = Vector2(0.481651, 0.513761)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h3gys"]
+font = ExtResource("5_0yljb")
+font_size = 36
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_opaq5"]
 color = Color(1, 1, 1, 1)
@@ -111,14 +117,16 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="OperationLabel" type="Label" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/TopFrame"]
+[node name="CustomerQueryLabel" type="Label" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/TopFrame"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Vladonis Textor want to change its memory of its brother during its birthday."
+text = "This is a placeholder text"
+label_settings = SubResource("LabelSettings_h3gys")
 horizontal_alignment = 1
 vertical_alignment = 1
 
