@@ -39,6 +39,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 tooltip_text = "A deep and happy brotherhood"
+mouse_default_cursor_shape = 2
 script = ExtResource("1_7sere")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
