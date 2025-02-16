@@ -108,15 +108,14 @@ vertical_alignment = 1
 [node name="ContextualMenu" type="PanelContainer" parent="."]
 visible = false
 z_index = 10
-custom_minimum_size = Vector2(385, 330)
+custom_minimum_size = Vector2(385, 200)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -330.0
+offset_top = -235.0
 offset_right = 385.0
 grow_vertical = 0
-mouse_filter = 2
 mouse_default_cursor_shape = 2
 theme_override_styles/panel = ExtResource("3_pj36h")
 
@@ -130,6 +129,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ContextualMenu/MarginContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="ContextTitleLabel" type="Label" parent="ContextualMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -138,6 +138,7 @@ horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="ContextualMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 20
 theme_override_styles/separator = SubResource("StyleBoxLine_nyu8u")
 
@@ -145,6 +146,7 @@ theme_override_styles/separator = SubResource("StyleBoxLine_nyu8u")
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 0
+mouse_filter = 2
 bbcode_enabled = true
 text = "This is a description
 3 lines maximum
@@ -152,6 +154,7 @@ text = "This is a description
 
 [node name="HSeparator2" type="HSeparator" parent="ContextualMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 20
 theme_override_styles/separator = SubResource("StyleBoxLine_nyu8u")
 
@@ -159,14 +162,15 @@ theme_override_styles/separator = SubResource("StyleBoxLine_nyu8u")
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 size_flags_horizontal = 8
+mouse_filter = 1
 theme = ExtResource("4_8bv4w")
 text = "Send to memory bank"
 
 [node name="InsertButton" type="Button" parent="ContextualMenu/MarginContainer/VBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 size_flags_horizontal = 8
+mouse_filter = 1
 theme = ExtResource("4_8bv4w")
 text = "Insert into [empty]"
 
@@ -174,6 +178,7 @@ text = "Insert into [empty]"
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 size_flags_horizontal = 8
+mouse_filter = 1
 theme = ExtResource("4_8bv4w")
 text = "Sell for $0"
 
@@ -181,6 +186,7 @@ text = "Sell for $0"
 custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 size_flags_horizontal = 8
+mouse_filter = 1
 theme = ExtResource("4_8bv4w")
 text = "Erase"
 

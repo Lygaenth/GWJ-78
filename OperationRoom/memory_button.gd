@@ -6,25 +6,43 @@ class_name MemoryButton extends TextureButton
 @onready var context_title: Label = $ContextualMenu/MarginContainer/VBoxContainer/ContextTitleLabel
 @onready var context_description: RichTextLabel = $ContextualMenu/MarginContainer/VBoxContainer/RichTextLabel
 @onready var on_ready_memory: MemoryData
+
 @onready var keep_button: Button = $ContextualMenu/MarginContainer/VBoxContainer/KeepButton
 @onready var insert_button: Button = $ContextualMenu/MarginContainer/VBoxContainer/InsertButton
 @onready var sell_button: Button = $ContextualMenu/MarginContainer/VBoxContainer/SellButton
+@onready var erase_button: Button = $ContextualMenu/MarginContainer/VBoxContainer/EraseButton
 
 #region Methods to display memory buttons
-#...in the shop
+#...in the shop or in the bank
 func DisplayInShop(memory: MemoryData):
 	Update(memory)
-	cost_label.show()
 	keep_button.hide()
-	insert_button.show()
+	insert_button.hide()
+	cost_label.show()
+	sell_button.show()
+	erase_button.show()
 
 #...in the memory eraser
 func DisplayInEraser(memory: MemoryData):
 	Update(memory)
 	cost_label.hide()
-	self.disabled = !memory.can_be_clicked
-	keep_button.show()
-	insert_button.hide()
+	if !memory.can_be_clicked:
+		keep_button.hide()
+		insert_button.hide()
+		sell_button.hide()
+		erase_button.hide()
+	if memory.can_be_clicked and !memory.is_empty:
+		keep_button.show()
+		insert_button.hide()
+		sell_button.hide()
+		erase_button.show()
+		pass
+	if memory.can_be_clicked and memory.is_empty:
+		keep_button.hide()
+		insert_button.show()
+		sell_button.hide()
+		erase_button.hide()
+		pass
 #endregion
 
 func Update(memory: MemoryData):
@@ -49,6 +67,9 @@ func _on_pressed():
 	context_menu.show()
 	print("a button has been pressed!")
 
+func _on_contextual_menu_mouse_exited():
+	context_menu.hide()
+
 func _on_button_down():
 	scale = Vector2(.8, .8)
 
@@ -60,6 +81,3 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	scale = Vector2(1, 1)
-
-func _on_contextual_menu_mouse_exited():
-	context_menu.hide()

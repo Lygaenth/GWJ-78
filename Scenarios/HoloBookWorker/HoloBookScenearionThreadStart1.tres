@@ -19,4 +19,5 @@ memory_title = "Looking for work"
 memory_description = "Alk is desperatly trying to find money."
 memory_cost = 0
 memory_thumbnail = SubResource("GradientTexture2D_7yjim")
-can_be_clicked = true
+can_be_clicked = false
+is_empty = false

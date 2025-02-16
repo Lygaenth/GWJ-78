@@ -19,6 +19,7 @@ memory_description = "I was given the nicest present of my life: a real sized gi
 memory_cost = 15
 memory_thumbnail = ExtResource("10_ls4q0")
 can_be_clicked = true
+is_empty = false
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ad1ke"]
 
