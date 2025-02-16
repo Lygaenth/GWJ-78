@@ -22,13 +22,19 @@ func DisplayPatient(character : CharacterBase):
 	_patientFileLabel.text = "Patient file:"
 	_portrait.texture = character.Picture
 	_portrait.show()
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(_portrait, "visible", true, 0.5)
+	tween.tween_property(_portrait, "visible", false, 0.02)
+	tween.tween_property(_portrait, "visible", true, 0.3)
+	
 	_patientNameLabel.text = character.FamilyName
 	_patientFirstNameLabel.text = character.FirstName
 	_patientBirthdayLabel.text = character.BirthDate
 	_patientInfoLabel.text = character.Notes
 
 func DisplayWait():
-	_patientFileLabel.text = "A patient is waiting"
+	_patientFileLabel.text = "A patient is waiting..."
 	_portrait.hide()
 	_portrait.texture = null
 	_patientNameLabel.text = ""

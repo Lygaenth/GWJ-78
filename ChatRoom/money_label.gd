@@ -1,4 +1,5 @@
 extends Label
+class_name MoneyLabel
 
 func _ready():
 	PlayerSingleton.UpdatedMoney.connect(UpdateMoney)
