@@ -38,7 +38,7 @@ func BuyMemory(memories : Array[MemoryData]) -> bool:
 		return false
 
 	for memory in memories:
-		_memoryBank.AddMemory(memory)
+		_memoryBank.AddMemory(memory)	
 	return true
 	
 func GetAvailableMemories():

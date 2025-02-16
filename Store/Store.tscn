@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dydpnhpyidmsa"]
+[gd_scene load_steps=11 format=3 uid="uid://dydpnhpyidmsa"]
 
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="1_kori1"]
 [ext_resource type="Script" path="res://Store/store.gd" id="1_ualnb"]
@@ -20,6 +20,26 @@ PanelContainer/styles/panel = SubResource("StyleBoxFlat_hlfyv")
 font = ExtResource("2_831lh")
 font_size = 40
 font_color = Color(0, 0.422122, 0.24785, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8qrj"]
+bg_color = Color(0.435294, 0.0313726, 0, 0.368627)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.8, 0.0431373, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvg1q"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_trk5o"]
+font_size = 50
+font_color = Color(1, 0.0509804, 0, 1)
 
 [node name="Store" type="CanvasLayer"]
 script = ExtResource("1_ualnb")
@@ -120,7 +140,8 @@ theme = ExtResource("3_lxllq")
 text = "$ 100000"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer3/HBoxContainer2"]
+[node name="BuyButton" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer3/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
@@ -137,5 +158,63 @@ theme_override_styles/panel = ExtResource("1_kori1")
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="ErrorPanel" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="ErrorPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_kori1")
+
+[node name="ErrorPanel" type="PanelContainer" parent="ErrorPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.6
+theme_override_styles/panel = ExtResource("1_kori1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ErrorPanel/ErrorPanel"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="ErrorPanel/ErrorPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_kori1")
+
+[node name="PanelContainer" type="PanelContainer" parent="ErrorPanel/ErrorPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 7.66
+theme_override_styles/panel = SubResource("StyleBoxFlat_s8qrj")
+
+[node name="CenterContainer" type="CenterContainer" parent="ErrorPanel/ErrorPanel/HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ErrorPanel/ErrorPanel/HBoxContainer/PanelContainer/CenterContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvg1q")
+text = " /!\\ TRANSACTION FAILED : NOT ENOUGH MONEY /!\\ "
+label_settings = SubResource("LabelSettings_trk5o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="ErrorPanel/ErrorPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_kori1")
+
+[node name="PanelContainer2" type="PanelContainer" parent="ErrorPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_kori1")
+
 [connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer/Button2" to="." method="OnClosePressed"]
-[connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer3/HBoxContainer2/Button" to="." method="OnBuy"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer3/HBoxContainer2/BuyButton" to="." method="OnBuy"]
