@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="MemoryThread" load_steps=12 format=3 uid="uid://2nn888o477gg"]
+
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_vfpmv"]
+[ext_resource type="Script" path="res://Scenarios/Base/memoryThread.gd" id="2_2imh4"]
+
+[sub_resource type="Gradient" id="Gradient_5p62q"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q51ia"]
+gradient = SubResource("Gradient_5p62q")
+width = 100
+height = 100
+fill = 1
+fill_from = Vector2(0.504951, 0.519802)
+fill_to = Vector2(0.514852, 0.79703)
+
+[sub_resource type="Resource" id="Resource_t1rio"]
+script = ExtResource("1_vfpmv")
+memory_title = "Broken brothers"
+memory_description = "Tutor is uneasy with his brother and misses the old day. Patch him up."
+memory_cost = 0
+memory_thumbnail = SubResource("GradientTexture2D_q51ia")
+can_be_clicked = true
+is_empty = false
+
+[sub_resource type="Gradient" id="Gradient_n2ye4"]
+offsets = PackedFloat32Array(0.363636, 0.636364, 0.878788, 1)
+colors = PackedColorArray(0.866667, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 3.60766e-05, 0, 0.0074045, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o7lbx"]
+gradient = SubResource("Gradient_n2ye4")
+width = 100
+height = 100
+fill = 1
+fill_from = Vector2(0.469231, 0.523077)
+fill_to = Vector2(0.630769, 0.915385)
+
+[sub_resource type="Resource" id="Resource_2b4ol"]
+script = ExtResource("1_vfpmv")
+memory_title = "Cake splash"
+memory_description = "A cake splashed agressively by an enraged brother"
+memory_cost = 0
+memory_thumbnail = SubResource("GradientTexture2D_o7lbx")
+can_be_clicked = true
+is_empty = false
+
+[sub_resource type="Gradient" id="Gradient_gligr"]
+colors = PackedColorArray(0.701961, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7yjim"]
+gradient = SubResource("Gradient_gligr")
+width = 100
+height = 100
+fill = 2
+fill_from = Vector2(0.5, 0.519802)
+fill_to = Vector2(0.881188, 0.594059)
+
+[sub_resource type="Resource" id="Resource_m6gh4"]
+script = ExtResource("1_vfpmv")
+memory_title = "Brotherhood"
+memory_description = "Fond memories of brothers"
+memory_cost = 0
+memory_thumbnail = SubResource("GradientTexture2D_7yjim")
+can_be_clicked = true
+is_empty = false
+
+[resource]
+script = ExtResource("2_2imh4")
+Query = "Tutor wants to erase the bad memories of his brother"
+StartMemory = SubResource("Resource_m6gh4")
+IntermediateMemories = Array[ExtResource("1_vfpmv")]([SubResource("Resource_2b4ol")])
+EndMemory = SubResource("Resource_t1rio")
