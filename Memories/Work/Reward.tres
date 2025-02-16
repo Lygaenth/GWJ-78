@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://d1rkoxdp2jr72"]
+
+[ext_resource type="Texture2D" uid="uid://cogllhcey82qh" path="res://Memories/Work/Gear.png" id="1_f7a61"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_3vtsf"]
+
+[resource]
+script = ExtResource("2_3vtsf")
+memory_title = "Reward"
+memory_description = "You worked hard and for once it paid. You at least got a sincere \"Thanks\"."
+memory_cost = 300
+memory_thumbnail = ExtResource("1_f7a61")

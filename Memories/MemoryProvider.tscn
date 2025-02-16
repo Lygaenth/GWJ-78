@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgj3v17pw0b8a"]
+
+[ext_resource type="Script" path="res://Memories/memory_provider.gd" id="1_xsyhe"]
+
+[node name="MemoryProvider" type="Node"]
+script = ExtResource("1_xsyhe")

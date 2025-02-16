@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dydpnhpyidmsa"]
+[gd_scene load_steps=8 format=3 uid="uid://dydpnhpyidmsa"]
 
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="1_kori1"]
 [ext_resource type="Script" path="res://Store/store.gd" id="1_ualnb"]
 [ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="2_831lh"]
 [ext_resource type="Theme" uid="uid://dcho8yr3orscl" path="res://Store/Assets/Store_theme.tres" id="3_lxllq"]
-[ext_resource type="PackedScene" uid="uid://f5dyin6l8bj7" path="res://Store/ShopMemoryButton.tscn" id="5_ikyq7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlfyv"]
 bg_color = Color(0.00258182, 0.059683, 0.0173768, 1)
@@ -94,15 +93,6 @@ unique_name_in_owner = true
 clip_contents = true
 layout_mode = 2
 columns = 5
-
-[node name="MemoryButton" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2/GridContainer" instance=ExtResource("5_ikyq7")]
-layout_mode = 2
-
-[node name="MemoryButton2" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2/GridContainer" instance=ExtResource("5_ikyq7")]
-layout_mode = 2
-
-[node name="MemoryButton3" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer2/GridContainer" instance=ExtResource("5_ikyq7")]
-layout_mode = 2
 
 [node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer"]
 layout_mode = 2

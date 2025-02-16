@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://b2gxer5ksgau6"]
+
+[ext_resource type="Texture2D" uid="uid://bcsg6up6gejj" path="res://Memories/Happy/Assets/BDayParty.png" id="1_lob1x"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_a0o0p"]
+
+[resource]
+script = ExtResource("2_a0o0p")
+memory_title = "Present"
+memory_description = "I was given the nicest present of my life: a real sized giraffe. I felt so happy I could cry!"
+memory_cost = 800
+memory_thumbnail = ExtResource("1_lob1x")

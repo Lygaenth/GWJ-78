@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://l5t2u7hpqbyk"]
+
+[ext_resource type="Texture2D" uid="uid://cogllhcey82qh" path="res://Memories/Work/Gear.png" id="1_5xda1"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_imq1e"]
+
+[resource]
+script = ExtResource("1_imq1e")
+memory_title = "BDay Party"
+memory_description = "A birthday party like no other with loved ones and less loved ones"
+memory_cost = 300
+memory_thumbnail = ExtResource("1_5xda1")
