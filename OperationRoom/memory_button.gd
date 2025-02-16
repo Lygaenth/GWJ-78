@@ -16,6 +16,8 @@ class_name MemoryButton extends TextureButton
 @onready var cancel_button: Button = %CancelMemoryTransferButton
 @onready var grid_container = %GridContainerMemoryChoiceButton
 
+signal Updated()
+
 var shopMemoryButtonPs = load("res://Store/ShopMemoryButton.tscn")
 var _selectedItem: MemoryData
 
@@ -75,11 +77,7 @@ func Update(memory: MemoryData):
 	#texture_focused = memory.memory_thumbnail
 
 func NewEmptyMemory():
-	var memory = MemoryData.new()
-	memory.can_be_clicked = true
-	memory.is_empty = true
-	memory.memory_title = "[empty]"
-	memory.memory_description = "[empty]"
+	var memory = load("res://Memories/Logic/Empty.tres")
 	return memory
 #endregion
 
@@ -109,6 +107,7 @@ func _on_keep_button_pressed():
 	# empty current memory
 	var empty_memory = NewEmptyMemory()
 	DisplayInEraser(empty_memory)
+	Updated.emit()
 
 func _on_insert_button_pressed():
 	context_menu.hide()
@@ -119,6 +118,7 @@ func _on_insert_button_pressed():
 		grid_container.add_child(button)
 		button.Update(m)
 		button.Selected.connect(OnItemStateChanged)
+
 
 func _on_sell_button_pressed():
 	send_memory_to_shop.emit(on_ready_memory)
@@ -132,6 +132,9 @@ func _on_erase_button_pressed():
 
 func OnItemStateChanged(isSelected : bool, memory : MemoryData):
 	if (isSelected):
+		for shopButton : ShopMemoryButton in grid_container.get_children():
+			if shopButton.IsSelected() && shopButton.on_ready_memory != memory:
+				shopButton.UpdateSelection()
 		_selectedItem = memory
 		accept_button.disabled = false
 	else:
@@ -144,9 +147,10 @@ func _on_accept_button_pressed():
 	for memoryButton : ShopMemoryButton in grid_container.get_children():
 		if (memoryButton.IsSelected()):
 			PlayerSingleton._memoryBank.Consume(_selectedItem)
-			memoryButton.queue_free()
+		memoryButton.queue_free()
 	update_memory_bank.emit()
 	ResetMemoryChoiceMenu()
+	Updated.emit()
 
 func _on_cancel_button_pressed():
 	ResetMemoryChoiceMenu()

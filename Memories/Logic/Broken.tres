@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://dedrjt28u5cr1"]
+
+[ext_resource type="Texture2D" uid="uid://cwqsuqq4ojym6" path="res://Memories/Logic/broken.png" id="1_r20rp"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_xyign"]
+
+[resource]
+script = ExtResource("2_xyign")
+memory_title = "Broken"
+memory_description = "This memory was partially erased. Probably because of old age or bad upkeep. Maybe malevolence. It must be replaced."
+memory_cost = 0
+memory_thumbnail = ExtResource("1_r20rp")
+can_be_clicked = true
+is_empty = true
+tags = Array[int]([6])
+memType = 0

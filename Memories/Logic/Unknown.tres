@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://bjflc7b05wn54"]
+
+[ext_resource type="Texture2D" uid="uid://dkqj55htpsh7y" path="res://Memories/Logic/question_mark_icon.png" id="1_kcops"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_sal3r"]
+
+[resource]
+script = ExtResource("2_sal3r")
+memory_title = "Unkown"
+memory_description = "You extracted a memory. What will you use to fill it and fix or change its identity ?"
+memory_cost = 600
+memory_thumbnail = ExtResource("1_kcops")
+can_be_clicked = false
+is_empty = false
+tags = Array[int]([12])
+memType = 0

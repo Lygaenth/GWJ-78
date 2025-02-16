@@ -30,6 +30,13 @@ enum Endings {
 	TooManyMistakes
 }
 
+enum MemType
+{
+	Any,
+	Start,
+	End
+}
+
 enum MemTag
 {
 	Family,
@@ -42,5 +49,7 @@ enum MemTag
 	LifePath,
 	Confidence,
 	Conflict,
-	Trauma
+	Trauma,
+	Empty,
+	Unknown
 }

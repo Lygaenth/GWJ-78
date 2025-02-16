@@ -161,10 +161,11 @@ size_flags_vertical = 3
 theme = ExtResource("5_dod8x")
 theme_override_styles/panel = ExtResource("6_rwnri")
 
-[node name="Button" type="Button" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame"]
+[node name="ConfirmButton" type="Button" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_akfsh")
 text = "Confirm
 "
 
-[connection signal="pressed" from="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/ConfirmButton" to="." method="_on_button_pressed"]

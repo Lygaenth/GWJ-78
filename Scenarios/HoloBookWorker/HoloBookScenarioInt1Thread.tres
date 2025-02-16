@@ -22,3 +22,5 @@ memory_cost = 0
 memory_thumbnail = SubResource("GradientTexture2D_o7lbx")
 can_be_clicked = true
 is_empty = false
+tags = Array[int]([])
+memType = 0
