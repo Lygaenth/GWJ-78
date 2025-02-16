@@ -132,8 +132,8 @@ func StartOperation():
 	add_child(_operationRoom)
 	_operationRoom.confirm_operation.connect(OnOperationTerminated)
 	
-func OnOperationTerminated(modifiedMemories : OperationData):
-	var isFried = _scenario.ResolveAndCheckIfFried(modifiedMemories.memory_data_array)
+func OnOperationTerminated(modifiedMemories : Array[MemoryData]):
+	var isFried = _scenario.ResolveAndCheckIfFried(modifiedMemories)
 	_operationRoom.queue_free()
 	_gameState = Enums.GameState.OnGoingScenario
 	if (isFried):

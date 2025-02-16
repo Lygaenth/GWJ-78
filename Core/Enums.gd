@@ -29,3 +29,18 @@ enum Endings {
 	NoMorescenario,
 	TooManyMistakes
 }
+
+enum MemTag
+{
+	Family,
+	Love,
+	Work,
+	Happy,
+	Sad,
+	Group,
+	Broken,
+	LifePath,
+	Confidence,
+	Conflict,
+	Trauma
+}

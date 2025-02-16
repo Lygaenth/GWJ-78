@@ -43,4 +43,7 @@ func AddMemoryToBank(memory: MemoryData):
 	UpdateMemoryBank()
 
 func _on_button_pressed():
-	confirm_operation.emit(operation_data)
+	var updatedMemories : Array[MemoryData]
+	for btn : MemoryButton in memory_queue_container.get_children():
+		updatedMemories.append(btn.on_ready_memory)
+	confirm_operation.emit(updatedMemories)

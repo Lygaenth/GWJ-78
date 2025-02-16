@@ -1,11 +1,14 @@
-[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://b2gxer5ksgau6"]
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://l5t2u7hpqbyk"]
 
-[ext_resource type="Texture2D" uid="uid://bcsg6up6gejj" path="res://Memories/Happy/Assets/BDayParty.png" id="1_lob1x"]
-[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_a0o0p"]
+[ext_resource type="Texture2D" uid="uid://bcsg6up6gejj" path="res://Memories/Happy/Assets/BDayParty.png" id="1_2u08l"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_4vt75"]
 
 [resource]
-script = ExtResource("2_a0o0p")
-memory_title = "Present"
-memory_description = "I was given the nicest present of my life: a real sized giraffe. I felt so happy I could cry!"
-memory_cost = 800
-memory_thumbnail = ExtResource("1_lob1x")
+script = ExtResource("2_4vt75")
+memory_title = "BDay Party"
+memory_description = "A birthday party like no other with loved ones and less loved ones"
+memory_cost = 300
+memory_thumbnail = ExtResource("1_2u08l")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([0, 5, 3])

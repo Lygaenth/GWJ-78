@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://dq70g6s7j8vkf"]
+
+[ext_resource type="Texture2D" uid="uid://iwvtmuyanhk6" path="res://Memories/Family/Assets/Family.png" id="1_hdpw5"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_881vj"]
+
+[resource]
+script = ExtResource("2_881vj")
+memory_title = "Familial gathering"
+memory_description = "You maybe a small or a large family. Across multiple generation or born together. Bonded by blood or by life, but you were definitely a supportive group at that moment. This gives you strength to go on."
+memory_cost = 300
+memory_thumbnail = ExtResource("1_hdpw5")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([0, 3])

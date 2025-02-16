@@ -194,6 +194,7 @@ text = "Erase"
 
 [node name="MemoryChoiceMenu" type="PanelContainer" parent="."]
 visible = false
+top_level = true
 z_index = 11
 layout_mode = 1
 anchors_preset = 8
@@ -211,13 +212,16 @@ theme_override_styles/panel = ExtResource("7_otn81")
 
 [node name="MarginContainer" type="MarginContainer" parent="MemoryChoiceMenu"]
 layout_mode = 2
+mouse_filter = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MemoryChoiceMenu/MarginContainer"]
 layout_mode = 2
+mouse_filter = 0
 
 [node name="GridContainerMemoryChoiceButton" type="GridContainer" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 0
 columns = 3
 
 [node name="PanelContainer" type="PanelContainer" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer"]
@@ -226,6 +230,7 @@ theme_override_styles/panel = ExtResource("7_otn81")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
+mouse_filter = 0
 theme_override_constants/separation = 30
 alignment = 1
 
