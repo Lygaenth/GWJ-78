@@ -87,14 +87,16 @@ func DisableJacking():
 func DisableShopping():
 	_shopButton.disabled = true
 
-func LoadNextScenario():
+func LoadNextScenario() -> bool:
 	_scenario = PlayerSingleton.GetNextScenario()
 	if (_scenario != null):
 		_patientInfo.DisplayPatient(_scenario.Patient)
 	else:
 		_patientInfo.DisplayWait()
 		DisplayEnding(Enums.Endings.NoMorescenario)
-		
+
+	return _scenario != null
+
 func DisplayPay(pay : int):
 	_gainLabel.UpdateMoney(pay)
 	_gainLabel.show()
@@ -109,9 +111,9 @@ func CheckEvent() -> bool:
 	var errors = PlayerSingleton.GetCharactersError()
 	if (errors.size() >= 3):
 		DisplayEnding(Enums.Endings.TooManyMistakes)
-		return false
+		return true
 	
-	return true
+	return false
 
 func OnShopPressed():
 	_store.show()
@@ -120,29 +122,26 @@ func OnShopPressed():
 
 func OnJackPressed():
 	_jackInButton.release_focus()
-
 	if (_gameState == Enums.GameState.OnGoingScenario):
 		DisableJacking()
 		StartOperation()
 
 func StartOperation():
+	_gameState = Enums.GameState.OperatingPatient
 	_operationRoom = _operationRoomFactory.CreateOperationRoom(_scenario.GetMemories())
 	add_child(_operationRoom)
-	#_operationRoom.Finished.connect
+	_operationRoom.confirm_operation.connect(OnOperationTerminated)
 	
-	await Wait(30.0)
-	await OnOperationTerminated()
-
-func OnOperationTerminated():
-	var modifiedMemories = _operationRoom.operation_data.memory_data_array
+func OnOperationTerminated(modifiedMemories : OperationData):
+	var isFried = _scenario.ResolveAndCheckIfFried(modifiedMemories.memory_data_array)
 	_operationRoom.queue_free()
-	var isFried = _scenario.ResolveAndCheckIfFried(modifiedMemories)
+	_gameState = Enums.GameState.OnGoingScenario
 	if (isFried):
 		_patientInfo.Fry()
-		_gameState = Enums.GameState.OnGoingScenario
 	else:
 		await Next()
-		await Next()
+
+	await Next()
 	EnableShopping()
 
 func EnableGreetButton() -> void:
@@ -156,10 +155,10 @@ func DisableGreeButton() -> void:
 func OnGreetPressed() -> void:
 	if (_gameState == Enums.GameState.WaitingForPatient):
 		DisableGreeButton()
-		LoadNextScenario()
-		await Wait(1.0)
-		_gameState = Enums.GameState.OnGoingScenario
-		Next()
+		if(LoadNextScenario()):		
+			await Wait(1.0)
+			_gameState = Enums.GameState.OnGoingScenario
+			Next()
 
 func Wait(time : float):
 	await get_tree().create_timer(time).timeout

@@ -11,6 +11,7 @@ func _ready():
 
 func LoadAllScenarios():
 	AddScenarioFromPackedScene(TutoScenarioPs)
+	AddScenarioFromPackedScene(TutoScenarioPs)
 	AddScenarioFromPackedScene(HoloBookScenario1Ps)
 
 func ResetScenario():

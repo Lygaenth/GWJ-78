@@ -22,19 +22,22 @@ func _ready():
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Isn't the whole thing better ?"))
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Depends. It's more expensive and changes you more. I'll see what is best.")) # 8
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Thanks Doc...")) # 13
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.None, "")) # 14
 	
 	# Ending Trauma erased
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I..."))
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I feel tired and want to sleep."))
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I still remember the infinite non-sensical bots, but I feel lighter."))
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I'm gonna do a whole day nap, thanks."))
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.None, "")) # 19
 	
 	# Ending whole job erased
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I..."))
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I don't remember why I'm here, but I guess that means you did your job well."))
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Maybe I should'nt have left that job."))
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I feel sleepy, g'night Doc !"))
-
+	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.None, "")) # 24
+	
 	# Fried ending
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Poor boy... What did I miss ?"))
 	_lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Hope a partial reset will work."))
@@ -48,10 +51,10 @@ func _ready():
 func GetLine() -> DialogLine:
 	var dialogLine = _lines[_lineIndex]
 	_lineIndex += 1
-	if (_lineIndex == 13):
+	if (_lineIndex == 14):
 		_state = Enums.ScenarioState.Operation
 	
-	if _lineIndex == 14 || _lineIndex == 18:
+	if _lineIndex == 15 || _lineIndex == 20 || _lineIndex == 32:
 		_state = Enums.ScenarioState.Closed
 	
 	return dialogLine
@@ -60,15 +63,16 @@ func ResolveAndCheckIfFried(memories : Array[MemoryData]) -> bool:
 	var isFried = _isFried(memories)
 	if(_isFried):
 		ManageFry()
+		_lineIndex = 25
 		return true
 	
 	var intermediate1 = memories[1]
 	var intermediate2 = memories[2]
 	if (memories[1].memory_title == "Working at MetaBooX"): #only trauma erased
-		_lineIndex = 14
+		_lineIndex = 15
 		_pay = 800
 	else: # only trauma erased
-		_lineIndex = 18
+		_lineIndex = 20
 		_pay = 1000
 	_state = Enums.ScenarioState.OperationResult
 	UnlockScenario.emit(3)
