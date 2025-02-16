@@ -194,6 +194,7 @@ text = "Erase"
 
 [node name="MemoryChoiceMenu" type="PanelContainer" parent="."]
 visible = false
+z_index = 11
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -228,12 +229,14 @@ layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="AcceptButton" type="Button" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="AcceptMemoryTransferButton" type="Button" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 text = "Accept"
 
-[node name="CancelButton" type="Button" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="CancelMemoryTransferButton" type="Button" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Cancel"
 
@@ -247,5 +250,5 @@ text = "Cancel"
 [connection signal="pressed" from="ContextualMenu/MarginContainer/VBoxContainer/InsertButton" to="." method="_on_insert_button_pressed"]
 [connection signal="pressed" from="ContextualMenu/MarginContainer/VBoxContainer/SellButton" to="." method="_on_sell_button_pressed"]
 [connection signal="pressed" from="ContextualMenu/MarginContainer/VBoxContainer/EraseButton" to="." method="_on_erase_button_pressed"]
-[connection signal="pressed" from="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/AcceptButton" to="." method="_on_accept_button_pressed"]
-[connection signal="pressed" from="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/AcceptMemoryTransferButton" to="." method="_on_accept_button_pressed"]
+[connection signal="pressed" from="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/CancelMemoryTransferButton" to="." method="_on_cancel_button_pressed"]

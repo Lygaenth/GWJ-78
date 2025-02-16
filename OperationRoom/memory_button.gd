@@ -2,7 +2,7 @@ class_name MemoryButton extends TextureButton
 
 @onready var title_label: Label = $"%MemoryLabel"
 @onready var cost_label: Label = $"%CostLabel"
-@onready var memory_choice_menu: PanelContainer = $MemoryChoiceMenu
+@onready var memory_choice_menu = $MemoryChoiceMenu
 @onready var context_menu: PanelContainer = $ContextualMenu
 @onready var context_title: Label = $ContextualMenu/MarginContainer/VBoxContainer/ContextTitleLabel
 @onready var context_description: RichTextLabel = $ContextualMenu/MarginContainer/VBoxContainer/RichTextLabel
@@ -12,8 +12,8 @@ class_name MemoryButton extends TextureButton
 @onready var insert_button: Button = $ContextualMenu/MarginContainer/VBoxContainer/InsertButton
 @onready var sell_button: Button = $ContextualMenu/MarginContainer/VBoxContainer/SellButton
 @onready var erase_button: Button = $ContextualMenu/MarginContainer/VBoxContainer/EraseButton
-@onready var accept_button: Button = $MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/AcceptButton
-@onready var cancel_button: Button = $MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/CancelButton
+@onready var accept_button: Button = %AcceptMemoryTransferButton
+@onready var cancel_button: Button = %CancelMemoryTransferButton
 @onready var grid_container = %GridContainerMemoryChoiceButton
 
 var shopMemoryButtonPs = load("res://Store/ShopMemoryButton.tscn")
@@ -21,6 +21,7 @@ var _selectedItem: MemoryData
 
 signal send_memory_to_bank(memory: MemoryData)
 signal send_memory_to_shop(memory: MemoryData)
+signal update_memory_bank
 
 #region Methods to display memory buttons
 #...in the shop or in the bank
@@ -103,8 +104,8 @@ func _on_mouse_exited():
 
 #region Context menu buttons
 func _on_keep_button_pressed():
+	# send a signal to operation room - it will add memory to bank
 	send_memory_to_bank.emit(on_ready_memory)
-	print("memory sent to memory bank")
 	# empty current memory
 	var empty_memory = NewEmptyMemory()
 	DisplayInEraser(empty_memory)
@@ -112,10 +113,11 @@ func _on_keep_button_pressed():
 func _on_insert_button_pressed():
 	context_menu.hide()
 	memory_choice_menu.show()
-	var memories = MemorySingleton.GetAllMemories()
+	var memories = PlayerSingleton.GetAvailableMemories()
 	for m in memories:
 		var button : ShopMemoryButton = shopMemoryButtonPs.instantiate() 
 		grid_container.add_child(button)
+		button.Update(m)
 		button.Selected.connect(OnItemStateChanged)
 
 func _on_sell_button_pressed():
@@ -138,6 +140,12 @@ func OnItemStateChanged(isSelected : bool, memory : MemoryData):
 
 func _on_accept_button_pressed():
 	DisplayInEraser(_selectedItem)
+	await get_tree().create_timer(0.2)
+	for memoryButton : ShopMemoryButton in grid_container.get_children():
+		if (memoryButton.IsSelected()):
+			PlayerSingleton._memoryBank.Consume(_selectedItem)
+			memoryButton.queue_free()
+	update_memory_bank.emit()
 	ResetMemoryChoiceMenu()
 
 func _on_cancel_button_pressed():
