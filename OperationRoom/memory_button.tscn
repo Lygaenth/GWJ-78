@@ -1,60 +1,109 @@
-[gd_scene load_steps=8 format=3 uid="uid://dknh24q1qdxtn"]
+[gd_scene load_steps=10 format=3 uid="uid://dknh24q1qdxtn"]
 
 [ext_resource type="LabelSettings" uid="uid://cr34ftfcx6o5w" path="res://OperationRoom/Assets/OperationLabel.tres" id="1_1a5ao"]
 [ext_resource type="Script" path="res://OperationRoom/memory_button.gd" id="1_7sere"]
+[ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="3_k72oc"]
 [ext_resource type="StyleBox" uid="uid://dye10cij8d0en" path="res://OperationRoom/Resources/memory_button_box.tres" id="3_pj36h"]
+[ext_resource type="Texture2D" uid="uid://bcsg6up6gejj" path="res://Memories/Happy/Assets/BDayParty.png" id="3_q6wsp"]
 [ext_resource type="Theme" uid="uid://dcho8yr3orscl" path="res://Store/Assets/Store_theme.tres" id="4_8bv4w"]
 
-[sub_resource type="Gradient" id="Gradient_dnqb7"]
-offsets = PackedFloat32Array(0, 0.636364)
-colors = PackedColorArray(1, 1, 0.0980392, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_whcu2"]
+offsets = PackedFloat32Array(0.798701, 0.902597)
+colors = PackedColorArray(0.941176, 0.92549, 0, 1, 0.0729711, 0.168254, 0.149039, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5emk6"]
-gradient = SubResource("Gradient_dnqb7")
-width = 150
-height = 150
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qwgos"]
+gradient = SubResource("Gradient_whcu2")
+width = 100
+height = 100
 fill = 2
-fill_from = Vector2(0.518349, 0.522936)
+fill_from = Vector2(0.509174, 0.495413)
+fill_to = Vector2(0.894495, 0.114679)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_nyu8u"]
 color = Color(1, 1, 1, 1)
 thickness = 2
 
 [node name="MemoryButton" type="TextureButton"]
-offset_right = 150.0
-offset_bottom = 150.0
+custom_minimum_size = Vector2(140, 160)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -70.0
+offset_right = 70.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 tooltip_text = "A deep and happy brotherhood"
-texture_normal = SubResource("GradientTexture2D_5emk6")
 script = ExtResource("1_7sere")
 
-[node name="MemoryLabel" type="Label" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -75.0
-offset_right = 75.0
-offset_bottom = 30.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("3_k72oc")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_qwgos")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 2.94
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("3_k72oc")
+
+[node name="MemoryLabel" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 text = "Title"
 label_settings = ExtResource("1_1a5ao")
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="CostLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -75.0
-offset_top = -30.0
-offset_right = 75.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Price"
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("3_k72oc")
+
+[node name="Icon" type="TextureRect" parent="PanelContainer/VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("3_q6wsp")
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("3_k72oc")
+
+[node name="CostLabel" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+text = "Cost"
 label_settings = ExtResource("1_1a5ao")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ContextualMenu" type="PanelContainer" parent="."]
 visible = false
@@ -67,11 +116,13 @@ anchor_bottom = 1.0
 offset_top = -330.0
 offset_right = 385.0
 grow_vertical = 0
+mouse_filter = 2
 mouse_default_cursor_shape = 2
 theme_override_styles/panel = ExtResource("3_pj36h")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContextualMenu"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20

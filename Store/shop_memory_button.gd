@@ -9,6 +9,9 @@ func _ready():
 
 signal Selected(isSelected : bool, price : MemoryData)
 
+func IsSelected() -> bool:
+	return _isSelected
+
 func _on_button_down():
 	pass
 

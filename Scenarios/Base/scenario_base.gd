@@ -22,7 +22,8 @@ func ReduceAvailabilityCounter():
 		return
 	AvailabilityCounter -= 1
 
-func Resolve(_memories : Array[MemoryData]) -> bool:
+func ResolveAndCheckIfFried(_memories : Array[MemoryData]) -> bool:
+	_state = Enums.ScenarioState.Closing
 	_completed = true
 	return false
 

@@ -20,6 +20,7 @@ var _operationRoom : OperationRoom
 func _ready():
 	PlayerSingleton.UpdateMoney(0)
 	EnableGreetButton()
+	EnableShopping()
 
 func _process(delta):
 	if (Input.is_action_just_pressed("Next")):
@@ -117,7 +118,7 @@ func StartOperation():
 	add_child(_operationRoom)
 	#_operationRoom.Finished.connect
 	
-	await Wait(5.0)
+	await Wait(30.0)
 	await OnOperationTerminated()
 
 func OnOperationTerminated():

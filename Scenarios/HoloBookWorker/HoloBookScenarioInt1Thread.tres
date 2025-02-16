@@ -20,3 +20,4 @@ memory_title = "Working at MetaBooX"
 memory_description = "Desperately find a job, pay is ok but forced to check endless monotonous AI slop, the same thing self-generated since last 2000 years."
 memory_cost = 0
 memory_thumbnail = SubResource("GradientTexture2D_o7lbx")
+can_be_clicked = true

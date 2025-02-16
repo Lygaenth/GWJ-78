@@ -28,5 +28,11 @@ func GetNextScenario() -> ScenarioBase:
 
 func AddScenarioFromPackedScene(ps : PackedScene):
 	var scenar = ps.instantiate() as ScenarioBase
+	scenar.UnlockScenario.connect(OnUnlockScenario)
 	add_child(scenar)
 	_scenarios.append(scenar)
+
+func OnUnlockScenario(scenarioId : int):
+	for scenario in _scenarios:
+		if (scenario.Id == scenarioId):
+			scenario.AvailabilityCondition = true

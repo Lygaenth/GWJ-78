@@ -18,3 +18,4 @@ memory_title = "Haunted"
 memory_description = "Alk has PTSD from the trauma he received. He came to you for help."
 memory_cost = 0
 memory_thumbnail = SubResource("GradientTexture2D_q51ia")
+can_be_clicked = true

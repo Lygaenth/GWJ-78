@@ -29,11 +29,17 @@ func AddError(person : String):
 	_errors.append(person)
 	_lastErrorManaged = false
 
-func BuyMemory(memory : MemoryData) -> bool:
-	if(UpdateMoney(-memory.memory_cost)):
+func BuyMemory(memories : Array[MemoryData]) -> bool:
+	var amount : int = 0
+	for memory in memories:
+		amount += memory.memory_cost
+
+	if (!UpdateMoney(-amount)):
+		return false
+
+	for memory in memories:
 		_memoryBank.AddMemory(memory)
-		return true
-	return false
+	return true
 	
 func GetAvailableMemories():
 	return _memoryBank.GetCurrentMemories()
