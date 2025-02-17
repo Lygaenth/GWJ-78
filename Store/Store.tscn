@@ -4,6 +4,8 @@
 [ext_resource type="Script" path="res://Store/store.gd" id="1_ualnb"]
 [ext_resource type="FontFile" uid="uid://6vhn43ra26qi" path="res://Fonts/PixelifySans-Regular.ttf" id="3_6ipvt"]
 [ext_resource type="Theme" uid="uid://dcho8yr3orscl" path="res://Store/Assets/Store_theme.tres" id="3_lxllq"]
+[ext_resource type="StyleBox" uid="uid://da00k2s6jcjv" path="res://WarningPanel.tres" id="5_pwy3b"]
+[ext_resource type="LabelSettings" uid="uid://dqewxrfiel10j" path="res://Store/WarningLabel.tres" id="6_t2jdo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlfyv"]
 bg_color = Color(0, 0, 0, 1)
@@ -21,14 +23,6 @@ font = ExtResource("3_6ipvt")
 font_size = 40
 font_color = Color(0.786054, 0.720615, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8qrj"]
-bg_color = Color(0.435294, 0.0313726, 0, 0.368627)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0.8, 0.0431373, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvg1q"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 10
@@ -36,11 +30,6 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.8, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_trk5o"]
-font = ExtResource("3_6ipvt")
-font_size = 50
-font_color = Color(1, 0.0509804, 0, 1)
 
 [node name="Store" type="CanvasLayer"]
 script = ExtResource("1_ualnb")
@@ -211,7 +200,7 @@ theme_override_styles/panel = ExtResource("1_kori1")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 7.66
-theme_override_styles/panel = SubResource("StyleBoxFlat_s8qrj")
+theme_override_styles/panel = ExtResource("5_pwy3b")
 
 [node name="CenterContainer" type="CenterContainer" parent="ErrorPanel/ErrorPanel/HBoxContainer/PanelContainer"]
 layout_mode = 2
@@ -220,7 +209,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_tvg1q")
 text = " /!\\ TRANSACTION FAILED : NOT ENOUGH MONEY /!\\ "
-label_settings = SubResource("LabelSettings_trk5o")
+label_settings = ExtResource("6_t2jdo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
