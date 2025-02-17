@@ -16,7 +16,7 @@ memory_data_array = Array[ExtResource("2_1ymtu")]([])
 [sub_resource type="Gradient" id="Gradient_hh2al"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0, 0.181818, 0.688312)
-colors = PackedColorArray(1, 1, 0, 1, 0.0454545, 0.0454545, 0.00641711, 1, 1, 1, 0.141176, 1)
+colors = PackedColorArray(1, 1, 0, 1, 0.0470588, 0.0470588, 0.00784314, 0, 1, 1, 0.141176, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_o5ou7"]
 noise_type = 2

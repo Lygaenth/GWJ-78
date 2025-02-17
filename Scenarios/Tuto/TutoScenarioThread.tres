@@ -13,7 +13,7 @@ memory_cost = 0
 memory_thumbnail = ExtResource("1_mknf7")
 can_be_clicked = false
 is_empty = false
-tags = Array[int]([])
+tags = Array[int]([0, 4])
 memType = 2
 
 [sub_resource type="Resource" id="Resource_2b4ol"]
@@ -24,7 +24,7 @@ memory_cost = 0
 memory_thumbnail = ExtResource("1_mknf7")
 can_be_clicked = true
 is_empty = false
-tags = Array[int]([])
+tags = Array[int]([0, 4])
 memType = 0
 
 [sub_resource type="Resource" id="Resource_m6gh4"]
@@ -35,7 +35,7 @@ memory_cost = 0
 memory_thumbnail = ExtResource("2_tes3q")
 can_be_clicked = false
 is_empty = false
-tags = Array[int]([])
+tags = Array[int]([0, 3])
 memType = 1
 
 [resource]
