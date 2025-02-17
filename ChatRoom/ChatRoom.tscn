@@ -1,11 +1,15 @@
-[gd_scene load_steps=26 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=34 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="Texture2D" uid="uid://1mqqsoj4ka2c" path="res://ChatRoom/Assets/mockup_cyberpunk_souvenir.png" id="1_mjiwe"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_6atam"]
 [ext_resource type="StyleBox" uid="uid://drcnk08k078lc" path="res://ChatRoom/Assets/PatientTextBox.tres" id="3_vap84"]
 [ext_resource type="LabelSettings" uid="uid://dcqvu4l5j25aa" path="res://ChatRoom/Assets/PatientTextDialog.tres" id="4_jdpaq"]
+[ext_resource type="Shader" path="res://ChatRoom/Assets/ChatRoom.gdshader" id="4_yicy3"]
+[ext_resource type="StyleBox" uid="uid://ceyj0a87l28h8" path="res://ChatRoom/Assets/AquariumPanel.tres" id="5_k1ny5"]
+[ext_resource type="Script" path="res://ChatRoom/aquarium_shader.gd" id="5_qa0ne"]
 [ext_resource type="PackedScene" uid="uid://cf3unc30pl34t" path="res://ChatRoom/PatientInformation.tscn" id="6_y6lsd"]
+[ext_resource type="StyleBox" uid="uid://dhn62cc0neuiu" path="res://ChatRoom/PatientControlPanel.tres" id="7_1fge2"]
 [ext_resource type="StyleBox" uid="uid://ddi324rmxgjd2" path="res://ChatRoom/Assets/DoctorTextBox.tres" id="7_57520"]
 [ext_resource type="Texture2D" uid="uid://v7sct2i6uq6e" path="res://ChatRoom/Assets/Icons/seo-social-web-network-internet_249_icon-icons.com_61487.png" id="8_6tbmc"]
 [ext_resource type="Script" path="res://ChatRoom/AttractAttentionButton.gd" id="8_cdxuj"]
@@ -22,6 +26,38 @@
 [ext_resource type="Script" path="res://Scenarios/Base/dialog_line.gd" id="20_7pt2x"]
 [ext_resource type="PackedScene" uid="uid://c2sn3o6choeux" path="res://Endings/EndingScreen.tscn" id="21_4bn51"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gx8vi"]
+noise_type = 2
+frequency = 0.0175
+offset = Vector3(217.39, 0, 0)
+fractal_type = 0
+fractal_octaves = 8
+cellular_distance_function = 1
+domain_warp_enabled = true
+domain_warp_type = 2
+domain_warp_fractal_gain = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kqn2a"]
+width = 100
+height = 100
+noise = SubResource("FastNoiseLite_gx8vi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vinf7"]
+shader = ExtResource("4_yicy3")
+shader_parameter/_aquarium = SubResource("NoiseTexture2D_kqn2a")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0klmc"]
+bg_color = Color(0.105882, 0.105882, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkfs1"]
+bg_color = Color(0.105882, 0.105882, 0.164706, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
 [sub_resource type="Gradient" id="Gradient_wd23k"]
 offsets = PackedFloat32Array(0.883117, 1)
 colors = PackedColorArray(0, 0, 0, 1, 1, 0.92549, 0, 1)
@@ -32,17 +68,13 @@ fill = 2
 fill_from = Vector2(0.490826, 0.486239)
 fill_to = Vector2(0.949541, 0.00917431)
 
-[sub_resource type="Gradient" id="Gradient_x4i87"]
-offsets = PackedFloat32Array(0.779221, 0.876623, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jjtoi"]
-gradient = SubResource("Gradient_x4i87")
-width = 250
-height = 74
-fill = 2
-fill_from = Vector2(0.495413, 0.503277)
-fill_to = Vector2(0, 0.500417)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q43dp"]
+bg_color = Color(1, 0, 0.478431, 0.109804)
+border_width_left = 2
+border_width_top = 5
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0, 0.478431, 1)
 
 [node name="ChatRoom" type="CanvasLayer"]
 script = ExtResource("1_d005w")
@@ -58,25 +90,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 4.01
+size_flags_stretch_ratio = 4.15
 theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="Aquarium" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+material = SubResource("ShaderMaterial_vinf7")
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("2_6atam")
+theme_override_styles/panel = ExtResource("5_k1ny5")
+script = ExtResource("5_qa0ne")
 
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.09
+size_flags_stretch_ratio = 2.2
 theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer2"]
@@ -102,56 +137,79 @@ autowrap_mode = 2
 [node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 3.37
+size_flags_stretch_ratio = 3.36
 theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 2.0
+size_flags_stretch_ratio = 2.86
 theme_override_styles/panel = ExtResource("2_6atam")
 
-[node name="PatientInfo" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer" instance=ExtResource("6_y6lsd")]
+[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 17.64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="PatientInfo" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer" instance=ExtResource("6_y6lsd")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 10.0
+size_flags_stretch_ratio = 5.45
 
-[node name="PanelContainer7" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer"]
+[node name="PanelContainer7" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0klmc")
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("7_1fge2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.47
+theme_override_styles/panel = ExtResource("2_6atam")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("2_6atam")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7"]
-layout_mode = 2
-
-[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = ExtResource("2_6atam")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/HBoxContainer/VBoxContainer"]
+[node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 theme_override_styles/panel = ExtResource("2_6atam")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.06
 
-[node name="GreetBtn" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="GreetBtn" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(52, 0)
 layout_mode = 2
@@ -162,7 +220,7 @@ disabled = true
 icon = ExtResource("8_6tbmc")
 script = ExtResource("8_cdxuj")
 
-[node name="JackInBtn" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="JackInBtn" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(52, 52)
 layout_mode = 2
@@ -175,23 +233,34 @@ icon = ExtResource("9_2nl3f")
 icon_alignment = 1
 script = ExtResource("8_cdxuj")
 
-[node name="PanelContainer5" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/HBoxContainer/VBoxContainer"]
+[node name="PanelContainer5" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 theme_override_styles/panel = ExtResource("2_6atam")
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/HBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.29
+theme_override_styles/panel = ExtResource("2_6atam")
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
+theme_override_styles/panel = ExtResource("2_6atam")
+
+[node name="PanelContainer4" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.06
 theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
@@ -203,7 +272,7 @@ theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer2"]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_6atam")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xkfs1")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2"]
 layout_mode = 2
@@ -274,17 +343,57 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.0
 theme_override_styles/panel = ExtResource("2_6atam")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q43dp")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer"]
+[node name="PanelContainer5" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+size_flags_stretch_ratio = 5.0
+theme_override_styles/panel = ExtResource("2_6atam")
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/PanelContainer5"]
+layout_mode = 2
+text = " BankWare"
+label_settings = ExtResource("8_v3iwd")
+
+[node name="PanelContainer7" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+size_flags_stretch_ratio = 5.0
+theme_override_styles/panel = ExtResource("2_6atam")
+
+[node name="MoneyLabel" type="Label" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/PanelContainer7"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("7_57520")
+text = "$ 000000"
+label_settings = ExtResource("8_v3iwd")
+horizontal_alignment = 1
+script = ExtResource("10_qn2xg")
+
+[node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 theme_override_styles/panel = ExtResource("2_6atam")
 
-[node name="PayLabel" type="Label" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer6"]
+[node name="PayLabel" type="Label" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/PanelContainer6"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -295,43 +404,6 @@ label_settings = ExtResource("13_xh7ih")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("10_qn2xg")
-
-[node name="PanelContainer7" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 5.0
-theme_override_styles/panel = ExtResource("2_6atam")
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer7"]
-layout_mode = 2
-size_flags_vertical = 4
-texture = SubResource("GradientTexture2D_jjtoi")
-stretch_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer7"]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 7
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 7
-
-[node name="MoneyLabel" type="Label" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer7/MarginContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_styles/normal = ExtResource("7_57520")
-text = "$ 000000"
-label_settings = ExtResource("8_v3iwd")
-horizontal_alignment = 1
-script = ExtResource("10_qn2xg")
-
-[node name="PanelContainer5" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 5.0
-theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer"]
 layout_mode = 2
@@ -375,6 +447,6 @@ Text = "Oops... Better disconnect quicky..."
 [node name="EndingScreen" parent="." instance=ExtResource("21_4bn51")]
 visible = false
 
-[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/HBoxContainer/VBoxContainer/HBoxContainer/GreetBtn" to="." method="OnGreetPressed"]
-[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/HBoxContainer/VBoxContainer/HBoxContainer/JackInBtn" to="." method="OnJackPressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/GreetBtn" to="." method="OnGreetPressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/JackInBtn" to="." method="OnJackPressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/VBoxContainer/PanelContainer3/MarginContainer/ShopBtn" to="." method="OnShopPressed"]

@@ -1,25 +1,14 @@
-[gd_resource type="Resource" script_class="MemoryData" load_steps=4 format=3 uid="uid://318vufegqjkv"]
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://318vufegqjkv"]
 
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_okb8u"]
-
-[sub_resource type="Gradient" id="Gradient_n2ye4"]
-offsets = PackedFloat32Array(0.363636, 0.636364, 0.878788, 1)
-colors = PackedColorArray(0.866667, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 3.60766e-05, 0, 0.0074045, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_o7lbx"]
-gradient = SubResource("Gradient_n2ye4")
-width = 200
-height = 200
-fill = 1
-fill_from = Vector2(0.469231, 0.523077)
-fill_to = Vector2(0.630769, 0.915385)
+[ext_resource type="Texture2D" uid="uid://cogllhcey82qh" path="res://Memories/Work/Gear.png" id="1_sjqit"]
 
 [resource]
 script = ExtResource("1_okb8u")
 memory_title = "Working at MetaBooX"
-memory_description = "Desperately find a job, pay is ok but forced to check endless monotonous AI slop, the same thing self-generated since last 2000 years."
+memory_description = "Alk found a a job, pay is ok but forced to check endless monotonous AI slop, the same thing self-generated since last 2000 years."
 memory_cost = 0
-memory_thumbnail = SubResource("GradientTexture2D_o7lbx")
+memory_thumbnail = ExtResource("1_sjqit")
 can_be_clicked = true
 is_empty = false
 tags = Array[int]([])

@@ -1,9 +1,15 @@
-[gd_resource type="Resource" script_class="MemoryData" load_steps=2 format=3 uid="uid://btjrjcv327w2s"]
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://btjrjcv327w2s"]
 
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_e0u1q"]
+[ext_resource type="Texture2D" uid="uid://dyktvn8bdrn6w" path="res://Memories/Love/Sadness.png" id="1_pxkup"]
 
 [resource]
 script = ExtResource("1_e0u1q")
 memory_title = "Trauma"
 memory_description = "Censored content."
 memory_cost = 0
+memory_thumbnail = ExtResource("1_pxkup")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([])
+memType = 0

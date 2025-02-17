@@ -51,3 +51,8 @@ func ManageFry() -> void:
 	_pay = 0
 	_completed = true
 	PlayerSingleton.AddError(Patient)
+
+func LoadLines(newLines : Array[DialogLine]) -> void:
+	_lineIndex=0
+	_lines.clear()
+	_lines.append_array(newLines)
