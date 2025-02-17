@@ -1,0 +1,43 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dhr6clecf8nir"]
+
+[ext_resource type="FontFile" uid="uid://6vhn43ra26qi" path="res://Fonts/PixelifySans-Regular.ttf" id="1_37nqo"]
+[ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="2_mw2px"]
+
+[sub_resource type="Gradient" id="Gradient_igy1c"]
+offsets = PackedFloat32Array(0.41791)
+colors = PackedColorArray(0.400132, 0.406882, 0.355572, 0.501961)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0b0uw"]
+gradient = SubResource("Gradient_igy1c")
+
+[sub_resource type="Gradient" id="Gradient_11qvo"]
+offsets = PackedFloat32Array(0.320896, 0.686567)
+colors = PackedColorArray(0.956863, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_naxjf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dxo37"]
+color_ramp = SubResource("Gradient_11qvo")
+noise = SubResource("FastNoiseLite_naxjf")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_brmtv"]
+diffuse_texture = SubResource("GradientTexture2D_0b0uw")
+normal_texture = SubResource("NoiseTexture2D_dxo37")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cejk2"]
+texture = SubResource("CanvasTexture_brmtv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55mfh"]
+bg_color = Color(0.10748, 0.10748, 0.10748, 1)
+border_color = Color(0.786054, 0.720615, 0, 1)
+
+[resource]
+default_font = ExtResource("2_mw2px")
+default_font_size = 50
+Button/colors/font_color = Color(0.87451, 0.87451, 0, 1)
+Button/colors/font_disabled_color = Color(0.348983, 0.348983, 1.92523e-07, 1)
+Button/colors/font_hover_color = Color(0.786054, 0.720615, 0, 1)
+Button/font_sizes/font_size = 60
+Button/fonts/font = ExtResource("1_37nqo")
+Button/styles/disabled = SubResource("StyleBoxTexture_cejk2")
+Button/styles/hover = SubResource("StyleBoxFlat_55mfh")

@@ -1,16 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://dknh24q1qdxtn"]
+[gd_scene load_steps=13 format=3 uid="uid://dknh24q1qdxtn"]
 
 [ext_resource type="LabelSettings" uid="uid://cr34ftfcx6o5w" path="res://OperationRoom/Assets/OperationLabel.tres" id="1_1a5ao"]
 [ext_resource type="Script" path="res://OperationRoom/memory_button.gd" id="1_7sere"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="3_k72oc"]
 [ext_resource type="StyleBox" uid="uid://dye10cij8d0en" path="res://OperationRoom/Resources/memory_button_box.tres" id="3_pj36h"]
 [ext_resource type="Texture2D" uid="uid://bcsg6up6gejj" path="res://Memories/Happy/Assets/BDayParty.png" id="3_q6wsp"]
-[ext_resource type="Theme" uid="uid://dcho8yr3orscl" path="res://Store/Assets/Store_theme.tres" id="4_8bv4w"]
+[ext_resource type="Theme" uid="uid://d0ivnsvutnp7v" path="res://OperationRoom/Resources/operation_screen_theme.tres" id="5_ou1su"]
+[ext_resource type="LabelSettings" uid="uid://c3wi2l71vgwof" path="res://OperationRoom/Resources/OperationRoomLarge.tres" id="7_253uj"]
 [ext_resource type="StyleBox" uid="uid://dwqp8yn8o7qvl" path="res://OperationRoom/Resources/operation_box_flat.tres" id="7_otn81"]
+[ext_resource type="Theme" uid="uid://ir51hugafqir" path="res://OperationRoom/Resources/OperationRoomSmallButtonTheme.tres" id="8_fyy10"]
 
 [sub_resource type="Gradient" id="Gradient_whcu2"]
 offsets = PackedFloat32Array(0.798701, 0.902597)
-colors = PackedColorArray(0.941176, 0.92549, 0, 1, 0.0729711, 0.168254, 0.149039, 1)
+colors = PackedColorArray(0.328673, 0.33455, 0.28967, 0.501961, 1, 1, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qwgos"]
 gradient = SubResource("Gradient_whcu2")
@@ -21,7 +23,7 @@ fill_from = Vector2(0.509174, 0.495413)
 fill_to = Vector2(0.894495, 0.114679)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_nyu8u"]
-color = Color(1, 1, 1, 1)
+color = Color(1, 1, 0, 1)
 thickness = 2
 
 [node name="MemoryButton" type="TextureButton"]
@@ -119,6 +121,7 @@ offset_top = -451.0
 offset_right = 460.0
 grow_vertical = 0
 mouse_default_cursor_shape = 2
+theme = ExtResource("5_ou1su")
 theme_override_styles/panel = ExtResource("3_pj36h")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContextualMenu"]
@@ -135,7 +138,9 @@ mouse_filter = 2
 
 [node name="ContextTitleLabel" type="Label" parent="ContextualMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("5_ou1su")
 text = "Title"
+label_settings = ExtResource("7_253uj")
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="ContextualMenu/MarginContainer/VBoxContainer"]
@@ -149,6 +154,7 @@ custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 0
 mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 0, 1)
 bbcode_enabled = true
 text = "This is a description
 3 lines maximum
@@ -165,7 +171,7 @@ custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 1
-theme = ExtResource("4_8bv4w")
+theme = ExtResource("8_fyy10")
 text = "Extract"
 
 [node name="InsertButton" type="Button" parent="ContextualMenu/MarginContainer/VBoxContainer"]
@@ -173,7 +179,7 @@ custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 1
-theme = ExtResource("4_8bv4w")
+theme = ExtResource("8_fyy10")
 text = "Implant memory"
 
 [node name="SellButton" type="Button" parent="ContextualMenu/MarginContainer/VBoxContainer"]
@@ -181,7 +187,7 @@ custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 1
-theme = ExtResource("4_8bv4w")
+theme = ExtResource("8_fyy10")
 text = "Sell for $0"
 
 [node name="EraseButton" type="Button" parent="ContextualMenu/MarginContainer/VBoxContainer"]
@@ -189,7 +195,7 @@ custom_minimum_size = Vector2(400, 40)
 layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 1
-theme = ExtResource("4_8bv4w")
+theme = ExtResource("8_fyy10")
 text = "Erase"
 
 [node name="MemoryChoiceMenu" type="PanelContainer" parent="."]
@@ -237,12 +243,14 @@ alignment = 1
 [node name="AcceptMemoryTransferButton" type="Button" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("8_fyy10")
 disabled = true
 text = "Accept"
 
 [node name="CancelMemoryTransferButton" type="Button" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("8_fyy10")
 text = "Cancel"
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]

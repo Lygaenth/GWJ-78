@@ -1,38 +1,47 @@
-[gd_scene load_steps=14 format=3 uid="uid://em14hkafk6r"]
+[gd_scene load_steps=15 format=3 uid="uid://em14hkafk6r"]
 
 [ext_resource type="Script" path="res://OperationRoom/operation_room.gd" id="1_v3cl8"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_1ymtu"]
 [ext_resource type="Script" path="res://OperationRoom/OperationData.gd" id="3_yb8xg"]
-[ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="5_0yljb"]
 [ext_resource type="Theme" uid="uid://d0ivnsvutnp7v" path="res://OperationRoom/Resources/operation_screen_theme.tres" id="5_dod8x"]
+[ext_resource type="LabelSettings" uid="uid://cspewntvsodtw" path="res://OperationRoom/Resources/OperationRoomLabel.tres" id="6_86tvy"]
 [ext_resource type="StyleBox" uid="uid://dwqp8yn8o7qvl" path="res://OperationRoom/Resources/operation_box_flat.tres" id="6_rwnri"]
+[ext_resource type="Theme" uid="uid://dhr6clecf8nir" path="res://OperationRoom/Resources/OperationRoomButtonTheme.tres" id="7_yx5ry"]
 
 [sub_resource type="Resource" id="Resource_7mbc4"]
 script = ExtResource("3_yb8xg")
 customer_query = "Vladonis Textor wants to change they memory of their brother at their 170th birthday."
 memory_data_array = Array[ExtResource("2_1ymtu")]([])
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ad1ke"]
+[sub_resource type="Gradient" id="Gradient_hh2al"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.181818, 0.688312)
+colors = PackedColorArray(1, 1, 0, 1, 0.0454545, 0.0454545, 0.00641711, 1, 1, 1, 0.141176, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_o5ou7"]
+noise_type = 2
+frequency = 0.1
+fractal_type = 2
+cellular_distance_function = 1
+domain_warp_enabled = true
+domain_warp_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nni77"]
+normalize = false
+color_ramp = SubResource("Gradient_hh2al")
+noise = SubResource("FastNoiseLite_o5ou7")
 
 [sub_resource type="Gradient" id="Gradient_65smh"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.993506)
-colors = PackedColorArray(0.617945, 0.831122, 0.94655, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.993506, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lmfp8"]
 gradient = SubResource("Gradient_65smh")
 fill = 1
 fill_from = Vector2(0.481651, 0.513761)
 
-[sub_resource type="LabelSettings" id="LabelSettings_h3gys"]
-font = ExtResource("5_0yljb")
-font_size = 36
-
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_alhu2"]
-
-[sub_resource type="Theme" id="Theme_akfsh"]
-default_font = ExtResource("5_0yljb")
-default_font_size = 50
 
 [node name="OperationRoom" type="CanvasLayer"]
 script = ExtResource("1_v3cl8")
@@ -56,7 +65,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_ad1ke")
+texture = SubResource("NoiseTexture2D_nni77")
+expand_mode = 2
 
 [node name="InnerFrame" type="MarginContainer" parent="OuterFrame"]
 layout_mode = 1
@@ -71,18 +81,12 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="TextureFrame2" type="TextureRect" parent="OuterFrame/InnerFrame"]
-layout_mode = 2
-texture = SubResource("GradientTexture2D_lmfp8")
-
 [node name="OperationWindow" type="PanelContainer" parent="OuterFrame/InnerFrame"]
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("5_dod8x")
-theme_override_styles/panel = ExtResource("6_rwnri")
 
 [node name="WindowTexture" type="TextureRect" parent="OuterFrame/InnerFrame/OperationWindow"]
-visible = false
 layout_mode = 2
 texture = SubResource("GradientTexture2D_lmfp8")
 
@@ -108,7 +112,7 @@ theme_override_styles/panel = ExtResource("6_rwnri")
 unique_name_in_owner = true
 layout_mode = 2
 text = "This is a placeholder text"
-label_settings = SubResource("LabelSettings_h3gys")
+label_settings = ExtResource("6_86tvy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -164,8 +168,8 @@ theme_override_styles/panel = ExtResource("6_rwnri")
 [node name="ConfirmButton" type="Button" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame"]
 unique_name_in_owner = true
 layout_mode = 2
-theme = SubResource("Theme_akfsh")
-text = "Confirm
+theme = ExtResource("7_yx5ry")
+text = "Implant
 "
 
 [connection signal="pressed" from="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/ConfirmButton" to="." method="_on_button_pressed"]

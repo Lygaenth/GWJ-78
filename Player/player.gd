@@ -9,6 +9,11 @@ var _money : int = 1000
 var _errors : Array[CharacterBase] = []
 var _lastErrorManaged : bool = true
 
+var _hasSeenTuto : bool = false
+
+func ValidateTuto():
+	_hasSeenTuto = true
+
 var _savedPersons : int = 0
 
 signal UpdatedMoney(amount : int)

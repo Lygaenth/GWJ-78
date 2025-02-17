@@ -2,24 +2,24 @@
 
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="1_kori1"]
 [ext_resource type="Script" path="res://Store/store.gd" id="1_ualnb"]
-[ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="2_831lh"]
+[ext_resource type="FontFile" uid="uid://6vhn43ra26qi" path="res://Fonts/PixelifySans-Regular.ttf" id="3_6ipvt"]
 [ext_resource type="Theme" uid="uid://dcho8yr3orscl" path="res://Store/Assets/Store_theme.tres" id="3_lxllq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlfyv"]
-bg_color = Color(0.00258182, 0.059683, 0.0173768, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0, 0.422122, 0.24785, 1)
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.786054, 0.720615, 0, 1)
 
 [sub_resource type="Theme" id="Theme_qasfy"]
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_hlfyv")
 
 [sub_resource type="LabelSettings" id="LabelSettings_hcan1"]
-font = ExtResource("2_831lh")
+font = ExtResource("3_6ipvt")
 font_size = 40
-font_color = Color(0, 0.422122, 0.24785, 1)
+font_color = Color(0.786054, 0.720615, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8qrj"]
 bg_color = Color(0.435294, 0.0313726, 0, 0.368627)
@@ -38,6 +38,7 @@ border_width_bottom = 10
 border_color = Color(0.8, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_trk5o"]
+font = ExtResource("3_6ipvt")
 font_size = 50
 font_color = Color(1, 0.0509804, 0, 1)
 
@@ -96,13 +97,21 @@ size_flags_horizontal = 2
 text = "Mems + 3000"
 label_settings = SubResource("LabelSettings_hcan1")
 
-[node name="Button2" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_lxllq")
-theme_override_colors/font_color = Color(0, 0.422122, 0.24785, 1)
+theme_override_colors/font_color = Color(0.786054, 0.720615, 0, 1)
 text = "X"
 
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer"]
@@ -122,7 +131,9 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 1.22
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer3"]
+custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
+size_flags_stretch_ratio = 8.1
 
 [node name="ItemNumberLabel" type="Label" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer3/HBoxContainer2"]
 unique_name_in_owner = true
@@ -140,7 +151,15 @@ theme = ExtResource("3_lxllq")
 text = "$ 100000"
 horizontal_alignment = 1
 
-[node name="BuyButton" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer3/HBoxContainer2"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer3/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="BuyButton" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer3/HBoxContainer2/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -216,5 +235,5 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("1_kori1")
 
-[connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer/Button2" to="." method="OnClosePressed"]
-[connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer3/HBoxContainer2/BuyButton" to="." method="OnBuy"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/CloseButton" to="." method="OnClosePressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer3/HBoxContainer2/MarginContainer/BuyButton" to="." method="OnBuy"]
