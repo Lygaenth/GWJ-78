@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2m27g07dopmf"]
+[gd_scene load_steps=5 format=3 uid="uid://3ytra6f5lxge"]
 
-[ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_w2u7n"]
-[ext_resource type="Script" path="res://Scenarios/Tuto/tuto_scenario.gd" id="2_7au58"]
-[ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/Tuto/TutoChar.tscn" id="2_u8suj"]
-[ext_resource type="Resource" uid="uid://2nn888o477gg" path="res://Scenarios/Tuto/TutoScenarioThread.tres" id="3_hvj3c"]
+[ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_adlkk"]
+[ext_resource type="Script" path="res://Scenarios/Tuto/tuto_scenario.gd" id="2_inb41"]
+[ext_resource type="PackedScene" uid="uid://ddp1nnojyw5vs" path="res://Scenarios/Tuto/TutoChar.tscn" id="3_226wc"]
+[ext_resource type="Resource" uid="uid://qefmeow8peen" path="res://Scenarios/Tuto/TutoScenarioThread.tres" id="3_cph74"]
 
-[node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_w2u7n")]
-script = ExtResource("2_7au58")
+[node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_adlkk")]
+script = ExtResource("2_inb41")
 Patient = NodePath("Character")
-Memories = ExtResource("3_hvj3c")
+Id = 4
+Memories = ExtResource("3_cph74")
 
-[node name="Character" parent="." index="0" instance=ExtResource("2_u8suj")]
+[node name="Character" parent="." index="0" instance=ExtResource("3_226wc")]

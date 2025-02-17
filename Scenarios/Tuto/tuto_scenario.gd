@@ -2,8 +2,8 @@ extends ScenarioBase
 class_name TutoScenario
 
 var _startLines : Array[DialogLine] = []
-var _goodEndingLines : Array[DialogLine] = []
-var _badEndingLines : Array[DialogLine] = []
+var _drunkEndingLines : Array[DialogLine] = []
+var _thiefEndingLines : Array[DialogLine] = []
 var _noChangeLines : Array[DialogLine] = []
 
 var _dialogBlock = 0
@@ -14,38 +14,54 @@ func _ready():
 	_state = Enums.ScenarioState.Opening 
 	
 	# Opening
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Doctor !"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "What can I do for you ?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I have a problem with an old memory of my brother. !"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "We always had a good relationship and grew up together."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Except on my 170th anniversary where he got into a cyber-rage and slaughtered my psycho-cake."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Hm..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "To this day, I still dream of its hainous gaze and it Pocket-Massacror-3099B splashing cake on the whole party."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I'd like to forget about it and have happy memory to get back my brother."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "It's been 60 years and I still can't look at him normally."))
-
-	# Good ending
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Ah ah ah ! What a nice cream cake battle ! What a memory !"))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Thanks doctor, I feel better."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I'm impatient to see my brother again."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Good bye !"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "... ... ..."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Hi, what can I do for you?"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Hi. My name is... A..ma..no? Someone told me to call this... voicemail?"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Is that... Memory corruption ?)"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Alright, let me ask you a few questions."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Does your memory feel \"fuzzy\"?"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Having trouble learning new information?"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Not knowing exactly where you are?"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "How do you know?"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Partly because of the headjack on your occipital bone."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "But mostly because this is my job. I am a memory fixer."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Ok, next question. What is the last thing you remember before waking up?"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I was in a... bar... and then I... Sorry, I can't remember. It's all..."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Fuzzy, right?"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(He was probably robbed by someone at this bar.)"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(They hijacked his memory to cover their tracks.)"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(But they ended up damaging it)"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "M. Amano, right? Let me help you. First, I want you to connect your scrib to your headjack."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Ok... done."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Great. Now, I will gently introduce myself into your memories."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "First, I will look for a DAMAGED MEMORY slot and ERASE it."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Then, I will select the resulting EMPTY MEMORY slot and IMPLANT a new memory into it."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Does it... hurt?"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Don't worry, it is absolutely painless."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(well, as long as I don't implant an incoherent memory..."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Are you ready?"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Yes, I am ready."))
 	
-	# Bad ending
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Teckno damnit ! I messed it up..."))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I'll quicky erase all traces of me."))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Here it is, it never happened"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Probably should wipe my own memories to be safe."))
-
-	# No change ending
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Doctor ! I still feel uneasy with my brother !"))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "What did you do or not do ?"))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I changed the memory by a less negative one."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But this isn't what I asked for !"))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "This is more protective for your identity"))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "You'll work the rest out yourself."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I won't pay a lot for a small change, I'll ask someone else."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Take care of yourself."))
-
+	# Drunk ending
+	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...a friend?"))
+	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Yes, surely you can think of someone, can you?"))
+	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "They bought you a drink, which led to another... and before you knew it, you got drunk!"))
+	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I-I think you are right. I remember meeting... Vahn at... Lizzie's."))
+	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I bet Vahn likes a good bottle of wham, don't they?"))
+	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Yes. I like wham, too."))
+	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "See? Anyways, you should go home. It will probably pass after a good rest."))
+	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "This time it's for free."))
+	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "But next time you want me to fix your memory, you better come back with credits, okay?"))
+	
+	# Thief ending
+	_thiefEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Oh, stars! How come I don't remember?"))
+	_thiefEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "They probably drugged you at some point. You should not accept drinks from strangers."))
+	_thiefEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I feel... miserable."))
+	_thiefEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Sorry to hear that. Any persistent sense of \"fuzzyness\"?"))
+	_thiefEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Yes... what should I do?"))
+	_thiefEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "You should probably go home and get some rest. If the symptoms persist until tomorrow, you can come back. With credits."))
+	_thiefEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I... will. Goodbye, doctor."))
+	
 	LoadLines(_startLines)
 	
 func GetLine() -> DialogLine:
@@ -63,24 +79,16 @@ func GetLine() -> DialogLine:
 	return dialogLine
 
 func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
-	var isFried = _isFried(souvenirs)
-	if(isFried):
-		ManageFry()
-		LoadLines(_badEndingLines)
-		return true
-
-	var hasHappy = souvenirs[1].tags.find(Enums.MemTag.Happy) >= 0
-	if hasHappy:
-		_pay = 400
-		LoadLines(_goodEndingLines)
+	var hasDrunk = souvenirs[1].tags.find(Enums.MemTag.Consciousness) >= 0
+	_pay = 0
+	if hasDrunk:
+		LoadLines(_drunkEndingLines)
 	else:
-		_pay = 50
-		LoadLines(_noChangeLines)
+		LoadLines(_thiefEndingLines)
 	
 	_state = Enums.ScenarioState.OperationResult
 	_completed = true
-	return isFried
+	return false
 
 func _isFried(souvenirs : Array[MemoryData]) -> bool:
-	var tags = souvenirs[1].tags
-	return tags.find(Enums.MemTag.Family) < 0
+	return false

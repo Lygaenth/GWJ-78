@@ -10,7 +10,6 @@ var _noChangeLines : Array[DialogLine] = []
 var _isPostOpChat = false
 
 func _ready():
-	Id = 3
 	AvailabilityCounter = 1
 	AvailabilityCondition = true
 	_state = Enums.ScenarioState.Opening 

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://ddipqbfk2r6so"]
+
+[ext_resource type="Texture2D" uid="uid://iwvtmuyanhk6" path="res://Memories/Family/Assets/Family.png" id="1_s18k8"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_iwinf"]
+
+[resource]
+script = ExtResource("2_iwinf")
+memory_title = "Family Feud"
+memory_description = "Sometimes, familiy bonds cannot prevent discord among its members. It'as always sad on the moment but it can also be a protection for yourself."
+memory_cost = 700
+memory_thumbnail = ExtResource("1_s18k8")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([0, 4])
+memType = 0

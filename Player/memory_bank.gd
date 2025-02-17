@@ -4,10 +4,8 @@ class_name MemoryBank
 var _memoryBank: Array[MemoryData] = []
 	
 func _ready():
-	_memoryBank.append(load("res://Memories/Happy/BirthDayParty.tres"))
-	_memoryBank.append(load("res://Memories/Family/Gathering.tres"))
-	_memoryBank.append(load("res://Memories/Love/TenderNight.tres"))
-	_memoryBank.append(load("res://Memories/Family/FamiliyFeud.tres"))
+	_memoryBank.append(load("res://Memories/Addictions/Drunk.tres"))
+	_memoryBank.append(load("res://Memories/Crime/Robbed.tres"))	
 	
 func GetCurrentMemories() -> Array[MemoryData]:
 	return _memoryBank.duplicate()

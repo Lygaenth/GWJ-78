@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://dn8jhmsfspv37"]
+
+[ext_resource type="Texture2D" uid="uid://capxptkd4nikx" path="res://Memories/Crime/Robbed.png" id="1_srd26"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_cpwl0"]
+
+[resource]
+script = ExtResource("2_cpwl0")
+memory_title = "Robbed"
+memory_description = "You were robbed. One or people threatened you and got with what you owned."
+memory_cost = 300
+memory_thumbnail = ExtResource("1_srd26")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([4, 10, 14, 13])
+memType = 0

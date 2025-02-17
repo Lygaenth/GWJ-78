@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://t0ysv31mbg0s"]
+
+[ext_resource type="PackedScene" uid="uid://cdqpi3x0oacs" path="res://Scenarios/Base/CharacterBase.tscn" id="1_r820k"]
+[ext_resource type="Texture2D" uid="uid://cnmhaess3har8" path="res://Scenarios/ACakeStory/CakeChan.png" id="2_7tnu2"]
+[ext_resource type="FontFile" uid="uid://cndj6xbgwc61b" path="res://Fonts/RubikGlitch-Regular.ttf" id="3_con1c"]
+
+[node name="Character" instance=ExtResource("1_r820k")]
+FamilyName = "Tutor"
+FirstName = "Valdonis"
+BirthDate = "02/05/3456"
+Notes = "Anxious, First time here ?"
+Picture = ExtResource("2_7tnu2")
+TalkFont = ExtResource("3_con1c")

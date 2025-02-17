@@ -426,7 +426,7 @@ theme_override_styles/panel = ExtResource("2_6atam")
 [node name="DoctorDialog" type="Label" parent="VBoxContainer/PanelContainer2/CenterContainer/PanelContainer"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(600, 0)
+custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0

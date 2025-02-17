@@ -2,8 +2,8 @@ extends ScenarioBase
 class_name HoloBookScenario2
 
 func _ready():
-	Id = 2
 	AvailabilityCounter = 1
+	AvailabilityCondition = false
 	_state = Enums.ScenarioState.Opening 
 	_lines = []
 	# Opening

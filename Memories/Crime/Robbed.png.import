@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbxuvul4bt1xg"
-path="res://.godot/imported/Tutor.png-860e350ebc2ff3e28a52e486a1ef8e2f.ctex"
+uid="uid://capxptkd4nikx"
+path="res://.godot/imported/Robbed.png-0d4970444a919004e1e48873fa375059.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenarios/Tuto/Tutor.png"
-dest_files=["res://.godot/imported/Tutor.png-860e350ebc2ff3e28a52e486a1ef8e2f.ctex"]
+source_file="res://Memories/Crime/Robbed.png"
+dest_files=["res://.godot/imported/Robbed.png-0d4970444a919004e1e48873fa375059.ctex"]
 
 [params]
 

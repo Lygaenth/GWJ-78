@@ -1,8 +1,10 @@
 extends Node
 class_name ScenarioFactory
 
+const CakeStoryScenarioPs : PackedScene = preload("res://Scenarios/ACakeStory/CakeStoryScenario.tscn")
 const TutoScenarioPs : PackedScene = preload("res://Scenarios/Tuto/TutoScenario.tscn")
 const HoloBookScenario1Ps : PackedScene = preload("res://Scenarios/HoloBookWorker/HoloBookScenario1.tscn")
+const HoloBookScenario2Ps : PackedScene = preload("res://Scenarios/HoloBookWorker/Part2/HoloBookScenario2.tscn")
 
 var _scenarios : Array[ScenarioBase] = []
 
@@ -11,8 +13,9 @@ func _ready():
 
 func LoadAllScenarios():
 	AddScenarioFromPackedScene(TutoScenarioPs)
-	AddScenarioFromPackedScene(TutoScenarioPs)
+	AddScenarioFromPackedScene(CakeStoryScenarioPs)
 	AddScenarioFromPackedScene(HoloBookScenario1Ps)
+	AddScenarioFromPackedScene(HoloBookScenario2Ps)
 
 func ResetScenario():
 	LoadAllScenarios()

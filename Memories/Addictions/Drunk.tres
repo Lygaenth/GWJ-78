@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://sciljl7w2vrt"]
+
+[ext_resource type="Texture2D" uid="uid://iwvtmuyanhk6" path="res://Memories/Family/Assets/Family.png" id="1_xg3oa"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_mf44b"]
+
+[resource]
+script = ExtResource("2_mf44b")
+memory_title = "Drink abuse"
+memory_description = "You drank too much that night. You probably had fun but the consequences were important."
+memory_cost = 200
+memory_thumbnail = ExtResource("1_xg3oa")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([3, 16])
+memType = 0

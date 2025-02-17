@@ -51,5 +51,9 @@ enum MemTag
 	Conflict,
 	Trauma,
 	Empty,
-	Unknown
+	Unknown,
+	Aggression,
+	Intense,
+	Friend,
+	Consciousness
 }
