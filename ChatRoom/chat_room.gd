@@ -21,7 +21,6 @@ var _operationRoom : OperationRoom
 func _ready():
 	PlayerSingleton.UpdateMoney(0)
 	EnableGreetButton()
-	EnableShopping()
 
 func _process(delta):
 	if (Input.is_action_just_pressed("Next")):
