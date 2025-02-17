@@ -14,12 +14,17 @@ class_name ChatRoom
 
 @onready var _operationRoomFactory : OperationRoomFactory = $OperationRoomFactory
 
-var _gameState : Enums.GameState = Enums.GameState.WaitingForPatient
+var _gameState : Enums.GameState = Enums.GameState.CheckEvent
 var _scenario : ScenarioBase
 var _operationRoom : OperationRoom
 	
 func _ready():
 	PlayerSingleton.UpdateMoney(0)
+	
+	await Wait(1.0)
+	await _patientInfo.DisplayCheckingForPatient()
+	_gameState = Enums.GameState.WaitingForPatient
+	_patientInfo.DisplayWait()
 	EnableGreetButton()
 
 func _process(delta):

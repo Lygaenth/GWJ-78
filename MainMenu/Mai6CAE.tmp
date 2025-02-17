@@ -6,26 +6,19 @@
 [ext_resource type="Shader" path="res://ChatRoom/Assets/ChatRoom.gdshader" id="2_np0aq"]
 [ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/Click.wav" id="4_piooc"]
 
-[sub_resource type="Gradient" id="Gradient_4qedq"]
+[sub_resource type="Gradient" id="Gradient_r8wl4"]
+offsets = PackedFloat32Array(0, 0.899281)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_lqokq"]
-noise_type = 2
-frequency = 0.1199
-fractal_octaves = 8
-cellular_distance_function = 3
-domain_warp_enabled = true
-domain_warp_frequency = 10.0
-domain_warp_fractal_type = 2
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_e38ev"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_meh0y"]
-color_ramp = SubResource("Gradient_4qedq")
-noise = SubResource("FastNoiseLite_lqokq")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6epxy"]
+color_ramp = SubResource("Gradient_r8wl4")
+noise = SubResource("FastNoiseLite_e38ev")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jlewn"]
 shader = ExtResource("2_np0aq")
-shader_parameter/_isActive = true
-shader_parameter/maxValue = 0.2
-shader_parameter/_aquarium = SubResource("NoiseTexture2D_meh0y")
+shader_parameter/_isActive = null
+shader_parameter/_aquarium = SubResource("NoiseTexture2D_6epxy")
 
 [sub_resource type="Gradient" id="Gradient_agus2"]
 offsets = PackedFloat32Array(0)

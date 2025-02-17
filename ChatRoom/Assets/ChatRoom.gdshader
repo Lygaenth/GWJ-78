@@ -1,10 +1,19 @@
 shader_type canvas_item;
 
+uniform bool _isActive;
 uniform sampler2D _aquarium;
+uniform float maxValue = 1.0;
 
 void vertex() {
-	vec4 color = texture(_aquarium, vec2(UV.x, UV.y));
-	COLOR = vec4(0.0, 1.0, 0.702, abs(sin(TIME + color.b * 200.0)) * 0.7);
+	if(_isActive)
+	{
+		vec4 color = texture(_aquarium, vec2(UV.x, UV.y));
+		float alpha = abs(sin(TIME + color.b * 200.0)) * 0.5;
+		if (alpha < maxValue)
+			alpha = maxValue;
+			
+		COLOR = vec4(0.0, 1.0, 0.702, alpha);
+	}
 }
 
 void fragment() {

@@ -44,6 +44,8 @@ noise = SubResource("FastNoiseLite_gx8vi")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vinf7"]
 shader = ExtResource("4_yicy3")
+shader_parameter/_isActive = true
+shader_parameter/maxValue = 0.0
 shader_parameter/_aquarium = SubResource("NoiseTexture2D_kqn2a")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0klmc"]
