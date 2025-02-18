@@ -26,8 +26,17 @@ signal send_memory_to_shop(memory: MemoryData)
 signal update_memory_bank
 
 #region Methods to display memory buttons
-#...in the shop or in the bank
+#...in the shop
 func DisplayInShop(memory: MemoryData):
+	Update(memory)
+	keep_button.hide()
+	insert_button.hide()
+	cost_label.show()
+	sell_button.show()
+	erase_button.show()
+
+#... in the bank
+func DisplayInBank(memory: MemoryData):
 	Update(memory)
 	keep_button.hide()
 	insert_button.hide()

@@ -37,7 +37,7 @@ func UpdateMemoryBank():
 	for memory in PlayerSingleton.GetAvailableMemories():
 		var memory_instance = memory_prefab.instantiate()
 		memory_bank_container.add_child(memory_instance)
-		memory_instance.DisplayInEraser(memory)
+		memory_instance.DisplayInBank(memory)
 
 func AddMemoryToBank(memory: MemoryData):
 	PlayerSingleton._memoryBank.AddMemory(memory)
