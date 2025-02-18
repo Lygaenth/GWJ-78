@@ -16,9 +16,8 @@ const Picnic1ScenarioPs : PackedScene = preload("res://Scenarios/Picnic/1/Picnic
 const Picnic2ScenarioPs : PackedScene = preload("res://Scenarios/Picnic/2/Picnic2.tscn")
 const MimicScenarioPs : PackedScene = preload("res://Scenarios/Mimic/Mimic.tscn")
 
-
-const HoloBookScenario1Ps : PackedScene = preload("res://Scenarios/HoloBookWorker/HoloBookScenario1.tscn")
-const HoloBookScenario2Ps : PackedScene = preload("res://Scenarios/HoloBookWorker/Part2/HoloBookScenario2.tscn")
+#const HoloBookScenario1Ps : PackedScene = preload("res://Scenarios/HoloBookWorker/HoloBookScenario1.tscn")
+#const HoloBookScenario2Ps : PackedScene = preload("res://Scenarios/HoloBookWorker/Part2/HoloBookScenario2.tscn")
 
 var _scenarios : Array[ScenarioBase] = []
 
@@ -33,16 +32,16 @@ func LoadAllScenarios():
 	AddScenarioFromPackedScene(CakeStoryScenarioPs)
 	AddScenarioFromPackedScene(Alzheimer1ScenarioPs)
 	AddScenarioFromPackedScene(Alzheimer2ScenarioPs)
-	AddScenarioFromPackedScene(AandriskEncounterScenarioPs)
-	AddScenarioFromPackedScene(HarmagianEncounterScenarioPs)
-	AddScenarioFromPackedScene(CriminalScenario2Ps)
-	AddScenarioFromPackedScene(CriminalReturnScenario2Ps)
-	AddScenarioFromPackedScene(Fulberte1Scenario2Ps)
-	AddScenarioFromPackedScene(Fulberte2Scenario2Ps)
-	AddScenarioFromPackedScene(Fulberte3Scenario2Ps)
-	AddScenarioFromPackedScene(Picnic1ScenarioPs)
-	AddScenarioFromPackedScene(Picnic2ScenarioPs)
-	AddScenarioFromPackedScene(MimicScenarioPs)
+	#AddScenarioFromPackedScene(AandriskEncounterScenarioPs)
+	#AddScenarioFromPackedScene(HarmagianEncounterScenarioPs)
+	#AddScenarioFromPackedScene(CriminalScenario2Ps)
+	#AddScenarioFromPackedScene(CriminalReturnScenario2Ps)
+	#AddScenarioFromPackedScene(Fulberte1Scenario2Ps)
+	#AddScenarioFromPackedScene(Fulberte2Scenario2Ps)
+	#AddScenarioFromPackedScene(Fulberte3Scenario2Ps)
+	#AddScenarioFromPackedScene(Picnic1ScenarioPs)
+	#AddScenarioFromPackedScene(Picnic2ScenarioPs)
+	#AddScenarioFromPackedScene(MimicScenarioPs)
 
 	
 	#AddScenarioFromPackedScene(HoloBookScenario1Ps)
