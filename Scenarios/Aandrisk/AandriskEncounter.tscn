@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4kmlbnafuub2"]
+
+[ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_d8x14"]
+[ext_resource type="Script" path="res://Scenarios/Aandrisk/aandrisk_encounter_scenario.gd" id="2_1mahg"]
+[ext_resource type="Resource" uid="uid://bxtnifl4h1h5p" path="res://Scenarios/Aandrisk/AandriskEncounterScenarioThread.tres" id="3_p2nhn"]
+[ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_3ehiy"]
+[ext_resource type="Texture2D" uid="uid://bnlngj840h3q8" path="res://SpriteCharacters/BiancaDelpiastre.png" id="4_mobd1"]
+
+[node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_d8x14")]
+script = ExtResource("2_1mahg")
+Patient = NodePath("Character")
+Memories = ExtResource("3_p2nhn")
+
+[node name="Character" parent="." index="0" instance=ExtResource("4_3ehiy")]
+FamilyName = "Delpiastre"
+FirstName = "Bianca"
+BirthDate = ""
+Notes = "Outraged"
+Picture = ExtResource("4_mobd1")

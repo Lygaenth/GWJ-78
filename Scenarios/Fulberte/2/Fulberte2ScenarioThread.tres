@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="MemoryThread" load_steps=9 format=3 uid="uid://drbsf5kyotauj"]
+
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_o7dqw"]
+[ext_resource type="Script" path="res://Scenarios/Base/memoryThread.gd" id="2_ehjqm"]
+
+[sub_resource type="Resource" id="Resource_8mjrn"]
+metadata/__load_path__ = "res://Memories/Family/Assets/Conflict.png"
+
+[sub_resource type="Resource" id="Resource_t1rio"]
+script = ExtResource("1_o7dqw")
+memory_title = "Broken brothers"
+memory_description = "Today Tutor is uneasy with his brother and misses the old day. Patch him up."
+memory_cost = 0
+memory_thumbnail = SubResource("Resource_8mjrn")
+can_be_clicked = false
+is_empty = false
+tags = Array[int]([0, 4])
+memType = 2
+
+[sub_resource type="Resource" id="Resource_whrn5"]
+metadata/__load_path__ = "res://Memories/Family/Assets/Conflict.png"
+
+[sub_resource type="Resource" id="Resource_2b4ol"]
+script = ExtResource("1_o7dqw")
+memory_title = "Cake splash"
+memory_description = "A cake splashed agressively by an enraged brother"
+memory_cost = 0
+memory_thumbnail = SubResource("Resource_whrn5")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([0, 4])
+memType = 0
+
+[sub_resource type="Resource" id="Resource_wlu6k"]
+metadata/__load_path__ = "res://Memories/Family/Assets/Family.png"
+
+[sub_resource type="Resource" id="Resource_m6gh4"]
+script = ExtResource("1_o7dqw")
+memory_title = "Brotherhood"
+memory_description = "Fond memories of brothers"
+memory_cost = 0
+memory_thumbnail = SubResource("Resource_wlu6k")
+can_be_clicked = false
+is_empty = false
+tags = Array[int]([0, 3])
+memType = 1
+
+[resource]
+script = ExtResource("2_ehjqm")
+Query = "Tutor wants to erase the bad memories of his brother"
+StartMemory = SubResource("Resource_m6gh4")
+IntermediateMemories = Array[ExtResource("1_o7dqw")]([SubResource("Resource_2b4ol")])
+EndMemory = SubResource("Resource_t1rio")

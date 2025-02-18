@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PlayerSingleton="*res://Player/Player.tscn"
 MemorySingleton="*res://Memories/MemoryProvider.tscn"
+MusicSingleton="*res://Sounds/MusicManager.tscn"
 
 [display]
 
