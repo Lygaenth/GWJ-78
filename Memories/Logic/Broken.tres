@@ -10,6 +10,6 @@ memory_description = "This memory was partially erased. Probably because of old 
 memory_cost = 0
 memory_thumbnail = ExtResource("1_r20rp")
 can_be_clicked = true
-is_empty = true
+is_empty = false
 tags = Array[int]([6])
 memType = 0

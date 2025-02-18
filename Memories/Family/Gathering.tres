@@ -12,3 +12,4 @@ memory_thumbnail = ExtResource("1_hdpw5")
 can_be_clicked = true
 is_empty = false
 tags = Array[int]([0, 3])
+memType = 0

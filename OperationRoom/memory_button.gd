@@ -22,7 +22,6 @@ var shopMemoryButtonPs = load("res://Store/ShopMemoryButton.tscn")
 var _selectedItem: MemoryData
 
 signal send_memory_to_bank(memory: MemoryData)
-signal send_memory_to_shop(memory: MemoryData)
 signal update_memory_bank
 
 #region Methods to display memory buttons
@@ -40,7 +39,7 @@ func DisplayInBank(memory: MemoryData):
 	Update(memory)
 	keep_button.hide()
 	insert_button.hide()
-	cost_label.show()
+	cost_label.hide()
 	sell_button.show()
 	erase_button.show()
 
@@ -74,7 +73,7 @@ func Update(memory: MemoryData):
 	context_title.text = memory.memory_title
 	# Cost
 	cost_label.text = str("$", memory.memory_cost)
-	sell_button.text = str("Sell for $", memory.memory_cost)
+	sell_button.text = str("Sell for $", memory.memory_cost / 2)
 	# Description
 	tooltip_text = memory.memory_description
 	%Icon.texture = memory.memory_thumbnail
@@ -134,13 +133,15 @@ func _on_insert_button_pressed():
 
 func _on_sell_button_pressed():
 	%ActionSound.play()
-	send_memory_to_shop.emit(on_ready_memory)
+	PlayerSingleton.UpdateMoney(on_ready_memory.memory_cost / 2)
+	PlayerSingleton._memoryBank.Consume(on_ready_memory)
 	print("memory sent to shop")
 	await get_tree().create_timer(0.2)
 	queue_free()
 
 func _on_erase_button_pressed():
 	%ActionSound.play()
+	PlayerSingleton._memoryBank.Consume(on_ready_memory)
 	await get_tree().create_timer(0.2)
 	queue_free()
 
