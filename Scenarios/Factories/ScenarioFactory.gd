@@ -40,6 +40,7 @@ func LoadAllScenarios():
 	AddScenarioFromPackedScene(Picnic1ScenarioPs)
 	AddScenarioFromPackedScene(Picnic2ScenarioPs)
 	AddScenarioFromPackedScene(MimicScenarioPs)
+
 	
 	#AddScenarioFromPackedScene(HoloBookScenario1Ps)
 	#AddScenarioFromPackedScene(HoloBookScenario2Ps)
