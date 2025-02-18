@@ -45,7 +45,9 @@ func Next():
 			EnableShoppingAndJacking()
 		elif (scenarioState == Enums.ScenarioState.OperationResult):
 			DisableJacking()
-			await DisplayPay(_scenario.GetPay())
+			var pay = _scenario.GetPay()
+			if pay > 0:
+				await DisplayPay(pay)
 		elif (scenarioState == Enums.ScenarioState.Closed):
 			HideDialog()
 			DisplayPatientDepart()
