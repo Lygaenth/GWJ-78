@@ -4,7 +4,7 @@ class_name AlzheimerScenario
 var _startLines : Array[DialogLine] = []
 var _goodEndingLines : Array[DialogLine] = []
 var _badEndingLines : Array[DialogLine] = []
-var _noChangeLines : Array[DialogLine] = []
+var _neutralLines : Array[DialogLine] = []
 
 var _dialogBlock = 0
 
@@ -37,9 +37,9 @@ func _ready():
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I should be more cautious from now on.)"))
 
 	# No change ending
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I got your password. It's 'fireshrimp'."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Oh? Let me try..."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...it works!!! Thank you so much. Have a good day."))
+	_neutralLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I got your password. It's 'fireshrimp'."))
+	_neutralLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Oh? Let me try..."))
+	_neutralLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...it works!!! Thank you so much. Have a good day."))
 	
 	LoadLines(_startLines)
 	
@@ -64,13 +64,13 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 		LoadLines(_badEndingLines)
 		return true
 
-	var hasHappy = souvenirs[1].tags.find(Enums.MemTag.Happy) >= 0
-	if hasHappy:
+	var hasEmpty = souvenirs[1].tags.find(Enums.MemTag.Empty) >= 0
+	if hasEmpty:
+		_pay = 200
+		LoadLines(_neutralLines)
+	else:
 		_pay = 400
 		LoadLines(_goodEndingLines)
-	else:
-		_pay = 50
-		LoadLines(_noChangeLines)
 	
 	_state = Enums.ScenarioState.OperationResult
 	_completed = true
@@ -78,4 +78,4 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 
 func _isFried(souvenirs : Array[MemoryData]) -> bool:
 	var tags = souvenirs[1].tags
-	return tags.find(Enums.MemTag.Family) < 0
+	return tags.find(Enums.MemTag.Family or Enums.MemTag.Love or Enums.MemTag.Friend) < 0

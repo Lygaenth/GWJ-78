@@ -66,13 +66,13 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 		LoadLines(_badEndingLines)
 		return true
 
-	var hasHappy = souvenirs[1].tags.find(Enums.MemTag.Happy) >= 0
-	if hasHappy:
+	var hasUnknown = souvenirs[1].tags.find(Enums.MemTag.Unknown) >= 0
+	if hasUnknown:
+		_pay = 0
+		LoadLines(_noChangeLines)
+	else:
 		_pay = 400
 		LoadLines(_goodEndingLines)
-	else:
-		_pay = 50
-		LoadLines(_noChangeLines)
 	
 	_state = Enums.ScenarioState.OperationResult
 	_completed = true
@@ -80,4 +80,8 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 
 func _isFried(souvenirs : Array[MemoryData]) -> bool:
 	var tags = souvenirs[1].tags
-	return tags.find(Enums.MemTag.Family) < 0
+	return tags.find(Enums.MemTag.Family
+	 or Enums.MemTag.Love
+	 or Enums.MemTag.Friend
+	 or Enums.MemTag.Unknown
+	 or Enums.MemTag.Empty) < 0

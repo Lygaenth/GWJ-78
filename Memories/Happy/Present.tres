@@ -6,9 +6,10 @@
 [resource]
 script = ExtResource("1_imq1e")
 memory_title = "Present"
-memory_description = "I was given the nicest present of my life: a real sized giraffe. I felt so happy I could cry!"
+memory_description = "I was given the nicest present of my life. I felt so happy I could cry."
 memory_cost = 800
 memory_thumbnail = ExtResource("1_6nioc")
 can_be_clicked = true
 is_empty = false
 tags = Array[int]([3])
+memType = 0
