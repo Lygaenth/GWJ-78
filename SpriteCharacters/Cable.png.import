@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jx651j7vqj2"
-path="res://.godot/imported/Cable.jpg-3cac701baedeb6aed316701216b2b228.ctex"
+uid="uid://dma437lrqejr5"
+path="res://.godot/imported/Cable.png-12ac6ccaa0c19230a109d163b499ecc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SpriteCharacters/Cable.jpg"
-dest_files=["res://.godot/imported/Cable.jpg-3cac701baedeb6aed316701216b2b228.ctex"]
+source_file="res://SpriteCharacters/Cable.png"
+dest_files=["res://.godot/imported/Cable.png-12ac6ccaa0c19230a109d163b499ecc0.ctex"]
 
 [params]
 
