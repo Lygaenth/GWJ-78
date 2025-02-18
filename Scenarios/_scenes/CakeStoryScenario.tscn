@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2m27g07dopmf"]
+
+[ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_fwf7v"]
+[ext_resource type="Script" path="res://Scenarios/_scenes/cakeStory_scenario.gd" id="2_h2slk"]
+[ext_resource type="Resource" uid="uid://2nn888o477gg" path="res://Scenarios/_scenes/CakeStoryScenarioThread.tres" id="3_k16ee"]
+[ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_cfqei"]
+
+[node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_fwf7v")]
+script = ExtResource("2_h2slk")
+Patient = NodePath("Character")
+Id = 4
+Memories = ExtResource("3_k16ee")
+
+[node name="Character" parent="." index="0" instance=ExtResource("4_cfqei")]

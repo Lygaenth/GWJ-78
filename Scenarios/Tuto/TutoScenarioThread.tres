@@ -1,28 +1,32 @@
 [gd_resource type="Resource" script_class="MemoryThread" load_steps=8 format=3 uid="uid://qefmeow8peen"]
 
-[ext_resource type="Texture2D" uid="uid://b4wb6bwhxdj6t" path="res://Memories/Family/Assets/Conflict.png" id="1_1i2bw"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_v72la"]
-[ext_resource type="Texture2D" uid="uid://iwvtmuyanhk6" path="res://Memories/Family/Assets/Family.png" id="3_0y34e"]
 [ext_resource type="Resource" uid="uid://dedrjt28u5cr1" path="res://Memories/Logic/Broken.tres" id="3_wli5b"]
 [ext_resource type="Script" path="res://Scenarios/Base/memoryThread.gd" id="4_kjpbe"]
+
+[sub_resource type="Resource" id="Resource_52pw3"]
+metadata/__load_path__ = "res://Memories/Family/Assets/Conflict.png"
 
 [sub_resource type="Resource" id="Resource_t1rio"]
 script = ExtResource("2_v72la")
 memory_title = "Corrupted memory"
 memory_description = "Amano  is suffering from amnesia due to memory corruption. It's up to you to patch him."
 memory_cost = 0
-memory_thumbnail = ExtResource("1_1i2bw")
+memory_thumbnail = SubResource("Resource_52pw3")
 can_be_clicked = false
 is_empty = false
 tags = Array[int]([0, 4])
 memType = 2
+
+[sub_resource type="Resource" id="Resource_w7ij0"]
+metadata/__load_path__ = "res://Memories/Family/Assets/Family.png"
 
 [sub_resource type="Resource" id="Resource_m6gh4"]
 script = ExtResource("2_v72la")
 memory_title = "At a bar"
 memory_description = "Amano went to the bar that night."
 memory_cost = 0
-memory_thumbnail = ExtResource("3_0y34e")
+memory_thumbnail = SubResource("Resource_w7ij0")
 can_be_clicked = false
 is_empty = false
 tags = Array[int]([0, 3])
