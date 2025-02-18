@@ -66,6 +66,7 @@ func DisplayLine(line : DialogLine):
 		HideDialog()
 		return
 	
+	%TalkSound.play()
 	if (line.Talker == Enums.Talker.Patient):
 		_doctorDialog.hide()
 		_patientDialog.text = line.Text
@@ -120,11 +121,13 @@ func CheckEvent() -> bool:
 	return false
 
 func OnShopPressed():
+	%ClickSound.play()
 	_store.show()
 	_shopButton.Stop()
 	_shopButton.release_focus()
 
 func OnJackPressed():
+	%ClickSound.play()
 	_jackInButton.release_focus()
 	if (_gameState == Enums.GameState.OnGoingScenario):
 		DisableJacking()
@@ -157,6 +160,7 @@ func DisableGreeButton() -> void:
 	_greetButton.Stop()
 
 func OnGreetPressed() -> void:
+	%ClickSound.play()
 	if (_gameState == Enums.GameState.WaitingForPatient):
 		DisableGreeButton()
 		if(LoadNextScenario()):		

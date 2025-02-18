@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_v1vy5"]
 [ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="2_4leyl"]
 [ext_resource type="Shader" path="res://ChatRoom/Assets/ChatRoom.gdshader" id="2_np0aq"]
-[ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/Click.wav" id="4_piooc"]
+[ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="4_piooc"]
 
 [sub_resource type="Gradient" id="Gradient_4qedq"]
 
@@ -168,6 +168,7 @@ theme_override_styles/panel = ExtResource("1_fxul4")
 [node name="StartButtonSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_piooc")
+bus = &"SFX"
 
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/PanelContainer2/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/PanelContainer4/QuitButton" to="." method="_on_quit_button_pressed"]

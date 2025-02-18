@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=36 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_6atam"]
@@ -25,6 +25,8 @@
 [ext_resource type="LabelSettings" uid="uid://c6dthqsp0oqq5" path="res://ChatRoom/Assets/PayTextDialog.tres" id="13_xh7ih"]
 [ext_resource type="Script" path="res://Scenarios/Base/dialog_line.gd" id="20_7pt2x"]
 [ext_resource type="PackedScene" uid="uid://c2sn3o6choeux" path="res://Endings/EndingScreen.tscn" id="21_4bn51"]
+[ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="26_h487m"]
+[ext_resource type="AudioStream" uid="uid://1vojkggj52r4" path="res://Sounds/SFX/Talk.wav" id="27_r16be"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gx8vi"]
 noise_type = 2
@@ -61,13 +63,13 @@ border_color = Color(0, 0, 0, 1)
 border_blend = true
 
 [sub_resource type="Gradient" id="Gradient_wd23k"]
-offsets = PackedFloat32Array(0.883117, 1)
-colors = PackedColorArray(0, 0, 0, 1, 1, 0.92549, 0, 1)
+offsets = PackedFloat32Array(0.883117, 0.900585, 0.97076, 0.994152, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.59974, 0.555053, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.92549, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_kgpp4"]
 gradient = SubResource("Gradient_wd23k")
 fill = 2
-fill_from = Vector2(0.490826, 0.486239)
+fill_from = Vector2(0.495726, 0.504274)
 fill_to = Vector2(0.949541, 0.00917431)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q43dp"]
@@ -236,6 +238,8 @@ alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 tooltip_text = "Greet the patient"
 mouse_default_cursor_shape = 2
 theme = ExtResource("9_iln06")
@@ -474,6 +478,15 @@ Text = "Oops... Better disconnect quicky..."
 
 [node name="EndingScreen" parent="." instance=ExtResource("21_4bn51")]
 visible = false
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("26_h487m")
+bus = &"SFX"
+
+[node name="TalkSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("27_r16be")
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/GreetBtn" to="." method="OnGreetPressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/JackInBtn" to="." method="OnJackPressed"]
