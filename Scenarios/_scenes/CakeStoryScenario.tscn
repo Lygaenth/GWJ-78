@@ -12,3 +12,4 @@ Id = 4
 Memories = ExtResource("3_k16ee")
 
 [node name="Character" parent="." index="0" instance=ExtResource("4_cfqei")]
+Notes = "Tense, maybe first memory fix?"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://du8d6efk7tsxv"]
 
 [ext_resource type="PackedScene" uid="uid://cdqpi3x0oacs" path="res://Scenarios/Base/CharacterBase.tscn" id="1_ttwix"]
-[ext_resource type="Texture2D" uid="uid://dto1au7i7aggo" path="res://Scenarios/HoloBookWorker/Alk.png" id="2_b5xyh"]
+[ext_resource type="Texture2D" uid="uid://dto1au7i7aggo" path="res://SpriteCharacters/Alk.png" id="2_b5xyh"]
 [ext_resource type="FontFile" uid="uid://byg6a8n87eqot" path="res://Fonts/ChakraPetch-Medium.ttf" id="3_k8ssh"]
 
 [node name="Character" instance=ExtResource("1_ttwix")]

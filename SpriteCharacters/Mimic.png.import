@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7y63ibvmydqq"
-path="res://.godot/imported/Char4.png-546135c9eb9028d6215c7805aeec350e.ctex"
+uid="uid://cqo0yn0wcmbxk"
+path="res://.godot/imported/Mimic.png-455aa82f3a3096f597ac37dc6843967b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UnusedAssets/Char4.png"
-dest_files=["res://.godot/imported/Char4.png-546135c9eb9028d6215c7805aeec350e.ctex"]
+source_file="res://SpriteCharacters/Mimic.png"
+dest_files=["res://.godot/imported/Mimic.png-455aa82f3a3096f597ac37dc6843967b.ctex"]
 
 [params]
 
