@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://di5q0vgb2yabl"]
+[gd_scene load_steps=18 format=3 uid="uid://di5q0vgb2yabl"]
 
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="1_fxul4"]
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_v1vy5"]
 [ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="2_4leyl"]
 [ext_resource type="Shader" path="res://ChatRoom/Assets/ChatRoom.gdshader" id="2_np0aq"]
-[ext_resource type="StyleBox" uid="uid://cv7wlfnrwx10v" path="res://MainMenu/CyanFlatBox.tres" id="3_o3lbl"]
+[ext_resource type="StyleBox" uid="uid://bx4ev60dxnmk7" path="res://MainMenu/CyanMainMenuFlatBox.tres" id="3_g5dm6"]
+[ext_resource type="StyleBox" uid="uid://cv7wlfnrwx10v" path="res://OperationRoom/Assets/CyanFlatBox.tres" id="3_o3lbl"]
 [ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="4_piooc"]
 [ext_resource type="LabelSettings" uid="uid://v108naiofr1b" path="res://MainMenu/MainMenuTitle.tres" id="5_dt64h"]
 
@@ -89,7 +90,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("3_o3lbl")
+theme_override_styles/panel = ExtResource("3_g5dm6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2

@@ -7,7 +7,7 @@
 [ext_resource type="LabelSettings" uid="uid://cspewntvsodtw" path="res://OperationRoom/Resources/OperationRoomLabel.tres" id="6_86tvy"]
 [ext_resource type="StyleBox" uid="uid://dwqp8yn8o7qvl" path="res://OperationRoom/Resources/operation_box_flat.tres" id="6_rwnri"]
 [ext_resource type="Theme" uid="uid://dhr6clecf8nir" path="res://OperationRoom/Resources/OperationRoomButtonTheme.tres" id="7_yx5ry"]
-[ext_resource type="StyleBox" uid="uid://cv7wlfnrwx10v" path="res://MainMenu/CyanFlatBox.tres" id="8_tjaiy"]
+[ext_resource type="StyleBox" uid="uid://cv7wlfnrwx10v" path="res://OperationRoom/Assets/CyanFlatBox.tres" id="8_tjaiy"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="9_87qxu"]
 [ext_resource type="LabelSettings" uid="uid://bothd7lomrj8g" path="res://OperationRoom/Assets/TutoLabel.tres" id="9_k7ejn"]
 [ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="10_atljc"]
@@ -179,6 +179,7 @@ text = "Implant
 
 [node name="OperationTutoPanel" type="MarginContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 z_index = 30
 anchors_preset = 15
 anchor_right = 1.0
@@ -226,7 +227,8 @@ theme_override_styles/panel = ExtResource("8_tjaiy")
 [node name="Label" type="Label" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer/MarginContainer/PanelContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-text = "This zone sum up your patient's problem, in case you need to remember."
+text = "
+This zone sum up your patient's problem, in case you need to remember."
 label_settings = ExtResource("9_k7ejn")
 horizontal_alignment = 1
 autowrap_mode = 2
