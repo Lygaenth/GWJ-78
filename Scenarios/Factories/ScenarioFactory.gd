@@ -26,6 +26,9 @@ func _ready():
 	LoadAllScenarios()
 
 func LoadAllScenarios():
+	for scenar in _scenarios:
+		scenar.queue_free()
+	_scenarios.clear()
 	AddScenarioFromPackedScene(TutoScenarioPs)
 	AddScenarioFromPackedScene(CakeStoryScenarioPs)
 	AddScenarioFromPackedScene(Alzheimer1ScenarioPs)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://em14hkafk6r"]
+[gd_scene load_steps=18 format=3 uid="uid://em14hkafk6r"]
 
 [ext_resource type="Script" path="res://OperationRoom/operation_room.gd" id="1_v3cl8"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_1ymtu"]
@@ -7,6 +7,9 @@
 [ext_resource type="LabelSettings" uid="uid://cspewntvsodtw" path="res://OperationRoom/Resources/OperationRoomLabel.tres" id="6_86tvy"]
 [ext_resource type="StyleBox" uid="uid://dwqp8yn8o7qvl" path="res://OperationRoom/Resources/operation_box_flat.tres" id="6_rwnri"]
 [ext_resource type="Theme" uid="uid://dhr6clecf8nir" path="res://OperationRoom/Resources/OperationRoomButtonTheme.tres" id="7_yx5ry"]
+[ext_resource type="StyleBox" uid="uid://cv7wlfnrwx10v" path="res://MainMenu/CyanFlatBox.tres" id="8_tjaiy"]
+[ext_resource type="LabelSettings" uid="uid://bothd7lomrj8g" path="res://OperationRoom/Assets/TutoLabel.tres" id="9_k7ejn"]
+[ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="10_atljc"]
 
 [sub_resource type="Resource" id="Resource_7mbc4"]
 script = ExtResource("3_yb8xg")
@@ -173,4 +176,142 @@ theme = ExtResource("7_yx5ry")
 text = "Implant
 "
 
+[node name="OperationTutoPanel" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 30
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="OperationTutoPanel"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("8_tjaiy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OperationTutoPanel/PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="OperationTutoPanel/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.78
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OperationTutoPanel/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("8_tjaiy")
+
+[node name="Label" type="Label" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer/MarginContainer/PanelContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "This zone sum up your patient's problem, in case you need to remember."
+label_settings = ExtResource("9_k7ejn")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("8_tjaiy")
+
+[node name="Label" type="Label" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer/MarginContainer2/PanelContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "This zone displays your patient memories you will interact with. Clicking on the memory will display a description and available actions. First and last memories cannot be modified."
+label_settings = ExtResource("9_k7ejn")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("8_tjaiy")
+
+[node name="Label" type="Label" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer/MarginContainer3/PanelContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "This zone describes your patient query, in case you have a memory problem too.This zone displays the memories you own. Implant them by clicking the empty memory and selecting \"Implant\" then selecting the memory."
+label_settings = ExtResource("9_k7ejn")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("8_tjaiy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer/MarginContainer4/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer/MarginContainer4/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 6
+text = "This button validates the changes you have made (or not made). Patient cannot have empty memories before completing the operation."
+label_settings = ExtResource("9_k7ejn")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CloseTutoBtn" type="Button" parent="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer/MarginContainer4/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(130, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 1, 0.701961, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.701961, 1)
+theme_override_colors/font_color = Color(0, 1, 0.701961, 1)
+theme_override_fonts/font = ExtResource("10_atljc")
+theme_override_styles/hover_pressed_mirrored = ExtResource("8_tjaiy")
+theme_override_styles/hover_pressed = ExtResource("8_tjaiy")
+theme_override_styles/hover = ExtResource("8_tjaiy")
+theme_override_styles/pressed = ExtResource("8_tjaiy")
+theme_override_styles/normal = ExtResource("8_tjaiy")
+text = "Close Tutorial"
+
 [connection signal="pressed" from="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/ConfirmButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="OperationTutoPanel/PanelContainer/HBoxContainer/VBoxContainer/MarginContainer4/PanelContainer/VBoxContainer/CloseTutoBtn" to="." method="_on_close_tuto_btn_pressed"]

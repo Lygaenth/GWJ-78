@@ -16,6 +16,8 @@ func _ready():
 	UpdateLabel()
 	UpdateMemoryQueue()
 	UpdateMemoryBank()
+	if (!PlayerSingleton._hasSeenTuto):
+		%OperationTutoPanel.show()
 
 func UpdateLabel():
 	query_label.text = operation_data.customer_query
@@ -63,3 +65,8 @@ func OnQueueUpdated():
 	var last = btns[btns.size() - 1]
 	if (last.on_ready_memory.tags.find(Enums.MemTag.Unknown) < 0):
 		last.Update(load("res://Memories/Logic/Unknown.tres"))
+
+
+func _on_close_tuto_btn_pressed():
+	%OperationTutoPanel.hide()
+	PlayerSingleton.ValidateTuto()

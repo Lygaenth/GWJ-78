@@ -4,7 +4,9 @@
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_v1vy5"]
 [ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="2_4leyl"]
 [ext_resource type="Shader" path="res://ChatRoom/Assets/ChatRoom.gdshader" id="2_np0aq"]
+[ext_resource type="StyleBox" uid="uid://cv7wlfnrwx10v" path="res://MainMenu/CyanFlatBox.tres" id="3_o3lbl"]
 [ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="4_piooc"]
+[ext_resource type="LabelSettings" uid="uid://v108naiofr1b" path="res://MainMenu/MainMenuTitle.tres" id="5_dt64h"]
 
 [sub_resource type="Gradient" id="Gradient_4qedq"]
 
@@ -33,19 +35,6 @@ colors = PackedColorArray(0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1bg7i"]
 gradient = SubResource("Gradient_agus2")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fs4fc"]
-bg_color = Color(0, 1, 0.701961, 0.129412)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 1, 0.701961, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_xksok"]
-font = ExtResource("2_4leyl")
-font_size = 70
-font_color = Color(0, 1, 0.701961, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlx3g"]
 bg_color = Color(0, 1, 0.701961, 0.196078)
@@ -100,7 +89,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fs4fc")
+theme_override_styles/panel = ExtResource("3_o3lbl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -114,7 +103,7 @@ theme_override_styles/panel = ExtResource("1_fxul4")
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Lethe's Eraser Med"
-label_settings = SubResource("LabelSettings_xksok")
+label_settings = ExtResource("5_dt64h")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -165,6 +154,73 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.29
 theme_override_styles/panel = ExtResource("1_fxul4")
 
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_o3lbl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.08
+theme_override_styles/panel = ExtResource("1_fxul4")
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lethe's Eraser Med"
+label_settings = ExtResource("5_dt64h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_fxul4")
+
+[node name="StartButton" type="Button" parent="MarginContainer/PanelContainer/PanelContainer/VBoxContainer/PanelContainer2"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0.701961, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0.701961, 1)
+theme_override_colors/font_color = Color(0, 1, 0.701961, 1)
+theme_override_fonts/font = ExtResource("2_4leyl")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_rlx3g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o3brj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_i4xlx")
+text = "Start"
+
+[node name="PanelContainer4" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_fxul4")
+
+[node name="QuitButton" type="Button" parent="MarginContainer/PanelContainer/PanelContainer/VBoxContainer/PanelContainer4"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_pressed_color = Color(0, 1, 0.701961, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0.701961, 1)
+theme_override_colors/font_color = Color(0, 1, 0.701961, 1)
+theme_override_fonts/font = ExtResource("2_4leyl")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_rlx3g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o3brj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_i4xlx")
+text = "Quit
+"
+
+[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.29
+theme_override_styles/panel = ExtResource("1_fxul4")
+
 [node name="StartButtonSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_piooc")
@@ -172,3 +228,5 @@ bus = &"SFX"
 
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/PanelContainer2/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/PanelContainer4/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/PanelContainer/VBoxContainer/PanelContainer2/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/PanelContainer/VBoxContainer/PanelContainer4/QuitButton" to="." method="_on_quit_button_pressed"]

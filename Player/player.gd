@@ -5,7 +5,7 @@ const StartMoney : int = 0
 @onready var _scenarioProvider : ScenarioFactory = $ScenarioProvider
 @onready var _memoryBank : MemoryBank = $MemoryBank
 
-var _money : int = 1000
+var _money : int = 5000
 var _errors : Array[CharacterBase] = []
 var _lastErrorManaged : bool = true
 
@@ -31,6 +31,8 @@ func GetMoneyAmount() -> int:
 func Reset() -> void:
 	_money = StartMoney
 	_errors = []
+	_memoryBank.LoadStartingMemory()
+	_scenarioProvider.LoadAllScenarios()
 
 func AddError(person : CharacterBase):
 	_errors.append(person)

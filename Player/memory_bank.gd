@@ -17,3 +17,8 @@ func Consume(memory : MemoryData):
 	var index = _memoryBank.find(memory)
 	if (index >= 0):
 		_memoryBank.erase(memory)		
+
+func LoadStartingMemory():
+	_memoryBank.clear()
+	_memoryBank.append(load("res://Memories/Addictions/Drunk.tres"))
+	_memoryBank.append(load("res://Memories/Crime/Robbed.tres"))	
