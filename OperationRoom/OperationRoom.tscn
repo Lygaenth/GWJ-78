@@ -66,7 +66,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("NoiseTexture2D_nni77")
-expand_mode = 2
 
 [node name="InnerFrame" type="MarginContainer" parent="OuterFrame"]
 layout_mode = 1
@@ -110,11 +109,13 @@ theme_override_styles/panel = ExtResource("6_rwnri")
 
 [node name="CustomerQueryLabel" type="Label" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/TopFrame"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(1080, 0)
 layout_mode = 2
 text = "This is a placeholder text"
 label_settings = ExtResource("6_86tvy")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="MemoryQueue" type="Panel" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer"]
 z_index = 10
