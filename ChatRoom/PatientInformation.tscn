@@ -4,7 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://ccudso2mtwuir" path="res://ChatRoom/PatientInformationPanel.tres" id="1_aqcq6"]
 [ext_resource type="Script" path="res://ChatRoom/patient_information.gd" id="1_b3cfa"]
 [ext_resource type="Shader" path="res://ChatRoom/Patient.gdshader" id="3_eubsr"]
-[ext_resource type="Texture2D" uid="uid://dto1au7i7aggo" path="res://Scenarios/HoloBookWorker/Alk.png" id="3_m54g1"]
+[ext_resource type="Texture2D" uid="uid://dto1au7i7aggo" path="res://SpriteCharacters/Alk.png" id="3_m54g1"]
 [ext_resource type="LabelSettings" uid="uid://0kbo3uxeglki" path="res://ChatRoom/Assets/PatientDescription.tres" id="3_vb0ut"]
 [ext_resource type="Texture2D" uid="uid://cvrhkmq8mtmtv" path="res://ChatRoom/Assets/BlueScreen.png" id="4_ulsdo"]
 [ext_resource type="AudioStream" uid="uid://cgekdi6jlxqib" path="res://Sounds/Waiting.wav" id="8_6pyfc"]

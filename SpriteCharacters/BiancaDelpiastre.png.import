@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4fg5cye847of"
-path="res://.godot/imported/Amano.png-e2ba096747f14371394664e1793dc6e7.ctex"
+uid="uid://bnlngj840h3q8"
+path="res://.godot/imported/BiancaDelpiastre.png-fc90f17f46098620be3ddb89dd19327b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenarios/Tuto/Amano.png"
-dest_files=["res://.godot/imported/Amano.png-e2ba096747f14371394664e1793dc6e7.ctex"]
+source_file="res://SpriteCharacters/BiancaDelpiastre.png"
+dest_files=["res://.godot/imported/BiancaDelpiastre.png-fc90f17f46098620be3ddb89dd19327b.ctex"]
 
 [params]
 

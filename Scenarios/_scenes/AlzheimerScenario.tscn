@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce8gau07omptj"]
+[gd_scene load_steps=6 format=3 uid="uid://ce8gau07omptj"]
 
 [ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_it1do"]
 [ext_resource type="Script" path="res://Scenarios/_scenes/alzheimer_scenario.gd" id="2_jjhwr"]
 [ext_resource type="Resource" uid="uid://dffi3vxxgp0wu" path="res://Scenarios/_scenes/AlzheimerScenarioThread.tres" id="3_rlo2b"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_iip4f"]
+[ext_resource type="Texture2D" uid="uid://c7y63ibvmydqq" path="res://SpriteCharacters/Char4.png" id="5_hemfb"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_it1do")]
 script = ExtResource("2_jjhwr")
@@ -11,3 +12,7 @@ Patient = NodePath("Character")
 Memories = ExtResource("3_rlo2b")
 
 [node name="Character" parent="." index="0" instance=ExtResource("4_iip4f")]
+FamilyName = "Prima"
+FirstName = "Vera"
+Notes = "Seems a little bit... confused?"
+Picture = ExtResource("5_hemfb")

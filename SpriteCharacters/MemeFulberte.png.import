@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnmhaess3har8"
-path="res://.godot/imported/CakeChan.png-f20ce93e85e4a34483010990ece930bb.ctex"
+uid="uid://chqfieqjx3npg"
+path="res://.godot/imported/MemeFulberte.png-1e458ed0a67b964fd4cc04e0baca5733.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenarios/ACakeStory/CakeChan.png"
-dest_files=["res://.godot/imported/CakeChan.png-f20ce93e85e4a34483010990ece930bb.ctex"]
+source_file="res://SpriteCharacters/MemeFulberte.png"
+dest_files=["res://.godot/imported/MemeFulberte.png-1e458ed0a67b964fd4cc04e0baca5733.ctex"]
 
 [params]
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckn5cwb3cpgub"]
+
+[ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_efrqa"]
+[ext_resource type="Script" path="res://Scenarios/_scenes/fulberte3_scenario.gd" id="2_oryot"]
+[ext_resource type="Resource" uid="uid://d3yqtftd8rqst" path="res://Scenarios/_scenes/Fulberte3ScenarioThread.tres" id="3_juwib"]
+[ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_tity8"]
+[ext_resource type="Texture2D" uid="uid://chqfieqjx3npg" path="res://SpriteCharacters/MemeFulberte.png" id="4_uqujj"]
+
+[node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_efrqa")]
+script = ExtResource("2_oryot")
+Patient = NodePath("Character")
+Memories = ExtResource("3_juwib")
+
+[node name="Character" parent="." index="0" instance=ExtResource("4_tity8")]
+FamilyName = "Mémé"
+FirstName = "Fulberte"
+BirthDate = "?"
+Notes = "She seems happy"
+Picture = ExtResource("4_uqujj")
