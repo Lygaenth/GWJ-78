@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cf3unc30pl34t"]
+[gd_scene load_steps=17 format=3 uid="uid://cf3unc30pl34t"]
 
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="1_1qgj0"]
 [ext_resource type="StyleBox" uid="uid://ccudso2mtwuir" path="res://ChatRoom/PatientInformationPanel.tres" id="1_aqcq6"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cgekdi6jlxqib" path="res://Sounds/SFX/Waiting.wav" id="8_6pyfc"]
 [ext_resource type="AudioStream" uid="uid://mr1xym7kks1n" path="res://Sounds/SFX/Fried.wav" id="8_g0734"]
 [ext_resource type="AudioStream" uid="uid://e4jlohb4vscn" path="res://Sounds/SFX/Greet.wav" id="9_fthsf"]
+[ext_resource type="AudioStream" uid="uid://c3i3uyd1o13g8" path="res://Sounds/SFX/Disconnect.wav" id="10_iuduu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf2o6"]
 bg_color = Color(0.105882, 0.105882, 0.164706, 0.54902)
@@ -202,6 +203,11 @@ bus = &"SFX"
 [node name="PatientWaitingSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("8_6pyfc")
+bus = &"SFX"
+
+[node name="PatienDisconnect" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_iuduu")
 bus = &"SFX"
 
 [node name="GreetSound" type="AudioStreamPlayer" parent="."]

@@ -78,6 +78,7 @@ func DisplayWait():
 	
 func DisplayDeconnection():
 	%FriedSound.stop()
+	%PatienDisconnect.play()
 	DisplayWait()
 	_patientFileLabel.text = "Disconnecting..."
 

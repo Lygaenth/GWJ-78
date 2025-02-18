@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dknh24q1qdxtn"]
+[gd_scene load_steps=15 format=3 uid="uid://dknh24q1qdxtn"]
 
 [ext_resource type="LabelSettings" uid="uid://cr34ftfcx6o5w" path="res://OperationRoom/Assets/OperationLabel.tres" id="1_1a5ao"]
 [ext_resource type="Script" path="res://OperationRoom/memory_button.gd" id="1_7sere"]
@@ -9,6 +9,8 @@
 [ext_resource type="LabelSettings" uid="uid://c3wi2l71vgwof" path="res://OperationRoom/Resources/OperationRoomLarge.tres" id="7_253uj"]
 [ext_resource type="StyleBox" uid="uid://dwqp8yn8o7qvl" path="res://OperationRoom/Resources/operation_box_flat.tres" id="7_otn81"]
 [ext_resource type="Theme" uid="uid://ir51hugafqir" path="res://OperationRoom/Resources/OperationRoomSmallButtonTheme.tres" id="8_fyy10"]
+[ext_resource type="AudioStream" uid="uid://d3yowdj7xg6n1" path="res://Sounds/SFX/ShopBlip.wav" id="10_lmer1"]
+[ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="11_44qyu"]
 
 [sub_resource type="Gradient" id="Gradient_whcu2"]
 offsets = PackedFloat32Array(0.798701, 0.902597)
@@ -252,6 +254,16 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("8_fyy10")
 text = "Cancel"
+
+[node name="BlipSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_lmer1")
+bus = &"OperationRoom"
+
+[node name="ActionSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("11_44qyu")
+bus = &"SFX"
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="button_up" from="." to="." method="_on_button_up"]

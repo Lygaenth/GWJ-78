@@ -13,12 +13,14 @@ class_name ChatRoom
 @onready var _endingsScreen : EndingsScreen = $EndingScreen
 
 @onready var _operationRoomFactory : OperationRoomFactory = $OperationRoomFactory
+@onready var _talkers : Array[AudioStreamPlayer]
 
 var _gameState : Enums.GameState = Enums.GameState.CheckEvent
 var _scenario : ScenarioBase
 var _operationRoom : OperationRoom
 	
 func _ready():
+	_talkers = [%TalkSound, %Talk2Sound, %Talk3Sound]
 	PlayerSingleton.UpdateMoney(0)
 	
 	await Wait(1.0)
@@ -66,7 +68,7 @@ func DisplayLine(line : DialogLine):
 		HideDialog()
 		return
 	
-	%TalkSound.play()
+	TalkRandom()
 	if (line.Talker == Enums.Talker.Patient):
 		_doctorDialog.hide()
 		_patientDialog.text = line.Text
@@ -127,7 +129,7 @@ func OnShopPressed():
 	_shopButton.release_focus()
 
 func OnJackPressed():
-	%ClickSound.play()
+	%ClickSound.play()	
 	_jackInButton.release_focus()
 	if (_gameState == Enums.GameState.OnGoingScenario):
 		DisableJacking()
@@ -137,9 +139,11 @@ func StartOperation():
 	_gameState = Enums.GameState.OperatingPatient
 	_operationRoom = _operationRoomFactory.CreateOperationRoom(_scenario.GetMemories())
 	add_child(_operationRoom)
+	MusicSingleton.SwitchToOperationMusic()
 	_operationRoom.confirm_operation.connect(OnOperationTerminated)
 	
 func OnOperationTerminated(modifiedMemories : Array[MemoryData]):
+	MusicSingleton.SwitchToMainMusic()
 	var isFried = _scenario.ResolveAndCheckIfFried(modifiedMemories)
 	_operationRoom.queue_free()
 	_gameState = Enums.GameState.OnGoingScenario
@@ -147,7 +151,6 @@ func OnOperationTerminated(modifiedMemories : Array[MemoryData]):
 		_patientInfo.Fry()
 	else:
 		await Next()
-
 	await Next()
 	EnableShopping()
 
@@ -177,3 +180,7 @@ func DisplayEnding(ending : Enums.Endings):
 	DisableGreeButton()
 	DisableShopping()
 	_endingsScreen.RaiseEnding(ending)
+
+func TalkRandom():
+	var talkerIndex = randi_range(0,2)
+	_talkers[talkerIndex].play()

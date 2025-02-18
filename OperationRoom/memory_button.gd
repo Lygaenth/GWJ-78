@@ -91,6 +91,7 @@ func NewEmptyMemory():
 #endregion
 
 func _on_pressed():
+	%BlipSound.play()
 	context_menu.show()
 
 func _on_contextual_menu_mouse_exited():
@@ -111,6 +112,7 @@ func _on_mouse_exited():
 
 #region Context menu buttons
 func _on_keep_button_pressed():
+	%ActionSound.play()	
 	# send a signal to operation room - it will add memory to bank
 	send_memory_to_bank.emit(on_ready_memory)
 	# empty current memory
@@ -119,6 +121,7 @@ func _on_keep_button_pressed():
 	Updated.emit()
 
 func _on_insert_button_pressed():
+	%ActionSound.play()	
 	context_menu.hide()
 	memory_choice_menu.show()
 	var memories = PlayerSingleton.GetAvailableMemories()
@@ -130,12 +133,14 @@ func _on_insert_button_pressed():
 
 
 func _on_sell_button_pressed():
+	%ActionSound.play()
 	send_memory_to_shop.emit(on_ready_memory)
 	print("memory sent to shop")
 	await get_tree().create_timer(0.2)
 	queue_free()
 
 func _on_erase_button_pressed():
+	%ActionSound.play()
 	await get_tree().create_timer(0.2)
 	queue_free()
 
@@ -151,6 +156,7 @@ func OnItemStateChanged(isSelected : bool, memory : MemoryData):
 		accept_button.disabled = true
 
 func _on_accept_button_pressed():
+	%ActionSound.play()
 	DisplayInEraser(_selectedItem)
 	await get_tree().create_timer(0.2)
 	for memoryButton : ShopMemoryButton in grid_container.get_children():
@@ -162,6 +168,7 @@ func _on_accept_button_pressed():
 	Updated.emit()
 
 func _on_cancel_button_pressed():
+	%ActionSound.play()
 	ResetMemoryChoiceMenu()
 
 func ResetMemoryChoiceMenu():
