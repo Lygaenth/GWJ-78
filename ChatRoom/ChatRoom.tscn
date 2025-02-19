@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=35 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_6atam"]
@@ -17,14 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://dadtjk8kkkm3d" path="res://ChatRoom/Assets/Icons/android-brain_icon-icons.com_66654.png" id="9_2nl3f"]
 [ext_resource type="Theme" uid="uid://26i86b5u38c2" path="res://ChatRoom/Assets/ConsoleButton.tres" id="9_iln06"]
 [ext_resource type="Script" path="res://ChatRoom/money_label.gd" id="10_qn2xg"]
-[ext_resource type="Theme" uid="uid://dcho8yr3orscl" path="res://Store/Assets/Store_theme.tres" id="11_0esj0"]
 [ext_resource type="Script" path="res://OperationRoom/operation_room_factory.gd" id="11_kwves"]
-[ext_resource type="Texture2D" uid="uid://g2dkbn6kigls" path="res://ChatRoom/Assets/Icons/4544843-business-comerce-delivery-shop-trolley_121443.png" id="11_vgqpb"]
 [ext_resource type="StyleBox" uid="uid://rq1ibx6o7p7" path="res://ChatRoom/Assets/PayTextBox.tres" id="12_6uipq"]
 [ext_resource type="PackedScene" uid="uid://dydpnhpyidmsa" path="res://Store/Store.tscn" id="12_dhdup"]
 [ext_resource type="LabelSettings" uid="uid://c6dthqsp0oqq5" path="res://ChatRoom/Assets/PayTextDialog.tres" id="13_xh7ih"]
-[ext_resource type="Script" path="res://Scenarios/Base/dialog_line.gd" id="20_7pt2x"]
+[ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="16_a3s6y"]
 [ext_resource type="PackedScene" uid="uid://c2sn3o6choeux" path="res://Endings/EndingScreen.tscn" id="21_4bn51"]
+[ext_resource type="PackedScene" uid="uid://k0q2aad1mox0" path="res://Inventory/Inventory.tscn" id="23_upsa7"]
 [ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="26_h487m"]
 [ext_resource type="AudioStream" uid="uid://1vojkggj52r4" path="res://Sounds/SFX/Talk.wav" id="27_r16be"]
 [ext_resource type="AudioStream" uid="uid://bb1r36ktwil3b" path="res://Sounds/SFX/Talk2.wav" id="28_3pj3r"]
@@ -63,16 +62,6 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 border_blend = true
-
-[sub_resource type="Gradient" id="Gradient_wd23k"]
-offsets = PackedFloat32Array(0.883117, 0.900585, 0.97076, 0.994152, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.59974, 0.555053, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.92549, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_kgpp4"]
-gradient = SubResource("Gradient_wd23k")
-fill = 2
-fill_from = Vector2(0.495726, 0.504274)
-fill_to = Vector2(0.949541, 0.00917431)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q43dp"]
 bg_color = Color(1, 0, 0.478431, 0.109804)
@@ -322,7 +311,7 @@ theme_override_styles/panel = ExtResource("2_6atam")
 [node name="PanelContainer5" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 4.36
+size_flags_stretch_ratio = 9.19
 theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer"]
@@ -331,47 +320,91 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.35
 theme_override_styles/panel = ExtResource("2_6atam")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_q43dp")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="PanelContainer5" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
+size_flags_vertical = 2
+size_flags_stretch_ratio = 5.0
 theme_override_styles/panel = ExtResource("2_6atam")
 
-[node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer5"]
 layout_mode = 2
+text = "NeuroWare"
+label_settings = ExtResource("8_v3iwd")
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/VBoxContainer/PanelContainer3"]
+[node name="PanelContainer7" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
 layout_mode = 2
-texture = SubResource("GradientTexture2D_kgpp4")
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_styles/panel = ExtResource("2_6atam")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/VBoxContainer/PanelContainer3"]
-layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
-
-[node name="ShopBtn" type="Button" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/VBoxContainer/PanelContainer3/MarginContainer"]
+[node name="ShopBtn" type="Button" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer7"]
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Access shop"
 mouse_default_cursor_shape = 2
-theme = ExtResource("11_0esj0")
+theme_override_colors/font_disabled_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_color = Color(1, 0, 0.478431, 1)
+theme_override_fonts/font = ExtResource("16_a3s6y")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = ExtResource("7_57520")
+theme_override_styles/disabled = ExtResource("7_57520")
+theme_override_styles/hover = ExtResource("7_57520")
+theme_override_styles/normal_mirrored = ExtResource("7_57520")
+theme_override_styles/normal = ExtResource("7_57520")
 disabled = true
-icon = ExtResource("11_vgqpb")
+text = "Shop"
 script = ExtResource("8_cdxuj")
 
-[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/VBoxContainer"]
+[node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
+size_flags_vertical = 4
 theme_override_styles/panel = ExtResource("2_6atam")
+
+[node name="Inventory" type="Button" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer6"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Access shop"
+mouse_default_cursor_shape = 2
+theme_override_colors/font_disabled_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_color = Color(1, 0, 0.478431, 1)
+theme_override_fonts/font = ExtResource("16_a3s6y")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = ExtResource("7_57520")
+theme_override_styles/disabled = ExtResource("7_57520")
+theme_override_styles/hover = ExtResource("7_57520")
+theme_override_styles/normal_mirrored = ExtResource("7_57520")
+theme_override_styles/normal = ExtResource("7_57520")
+text = "Inventory"
+script = ExtResource("8_cdxuj")
 
 [node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.54
+size_flags_stretch_ratio = 0.08
 theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer"]
@@ -409,7 +442,6 @@ label_settings = ExtResource("8_v3iwd")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
-size_flags_stretch_ratio = 5.0
 theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="MoneyLabel" type="Label" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/PanelContainer7"]
@@ -426,7 +458,7 @@ script = ExtResource("10_qn2xg")
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 0
 size_flags_stretch_ratio = 5.0
 theme_override_styles/panel = ExtResource("2_6atam")
 
@@ -445,6 +477,7 @@ script = ExtResource("10_qn2xg")
 [node name="PanelContainer7" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.31
 theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/PanelContainer2"]
@@ -475,10 +508,9 @@ script = ExtResource("11_kwves")
 [node name="Store" parent="." instance=ExtResource("12_dhdup")]
 visible = false
 
-[node name="OopsLine" type="Node" parent="."]
-script = ExtResource("20_7pt2x")
-Talker = 1
-Text = "Oops... Better disconnect quicky..."
+[node name="Inventory" parent="." instance=ExtResource("23_upsa7")]
+unique_name_in_owner = true
+visible = false
 
 [node name="EndingScreen" parent="." instance=ExtResource("21_4bn51")]
 visible = false
@@ -502,4 +534,5 @@ stream = ExtResource("29_fs0kt")
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/GreetBtn" to="." method="OnGreetPressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/JackInBtn" to="." method="OnJackPressed"]
-[connection signal="pressed" from="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/VBoxContainer/PanelContainer3/MarginContainer/ShopBtn" to="." method="OnShopPressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer7/ShopBtn" to="." method="OnShopPressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer6/Inventory" to="." method="_on_inventory_pressed"]

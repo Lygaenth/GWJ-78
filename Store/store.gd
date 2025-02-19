@@ -53,9 +53,8 @@ func OnBuy():
 		await NotifyFailedTransaction()
 	else:
 		for memoryButton : ShopMemoryButton in %GridContainer.get_children():
-			if (memoryButton.IsSelected()):
-				memoryButton.queue_free()
-		_selectedItems.clear()
+			if(memoryButton.IsSelected()):
+				memoryButton._on_pressed()
 		CalculateCost()
 	
 func ClearSelection():

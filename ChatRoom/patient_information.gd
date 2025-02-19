@@ -54,7 +54,7 @@ func DisplayCheckingForPatient():
 	await Wait(0.5)
 	_patientFileLabel.text = "Waiting for patient..."
 	await Wait(0.5)
-	_patientFileLabel.text = "Patient found !"
+	_patientFileLabel.text = "Appointment requested !"
 	await Wait(1.0)
 
 func DisplayNothing():

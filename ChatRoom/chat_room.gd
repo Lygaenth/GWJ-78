@@ -186,3 +186,7 @@ func DisplayEnding(ending : Enums.Endings):
 func TalkRandom():
 	var talkerIndex = randi_range(0,2)
 	_talkers[talkerIndex].play()
+
+
+func _on_inventory_pressed():
+	%Inventory.show()

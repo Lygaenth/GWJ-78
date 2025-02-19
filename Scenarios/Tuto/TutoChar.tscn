@@ -6,7 +6,7 @@
 
 [node name="Character" instance=ExtResource("1_7nbxn")]
 FamilyName = "Amano"
-FirstName = "Yoshitaka"
+FirstName = "Seiki"
 BirthDate = "12/04/3274"
 Notes = "Obsvous symptoms of memory loss"
 Picture = ExtResource("2_x50ww")

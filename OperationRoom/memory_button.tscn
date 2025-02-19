@@ -2,6 +2,7 @@
 
 [ext_resource type="LabelSettings" uid="uid://cr34ftfcx6o5w" path="res://OperationRoom/Assets/OperationLabel.tres" id="1_1a5ao"]
 [ext_resource type="Script" path="res://OperationRoom/memory_button.gd" id="1_7sere"]
+[ext_resource type="Gradient" uid="uid://bd7dwsvfgko3a" path="res://OperationRoom/memoryBtnBg.tres" id="3_3wq4o"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="3_k72oc"]
 [ext_resource type="StyleBox" uid="uid://dye10cij8d0en" path="res://OperationRoom/Resources/memory_button_box.tres" id="3_pj36h"]
 [ext_resource type="Texture2D" uid="uid://bcsg6up6gejj" path="res://Memories/Happy/Assets/BDayParty.png" id="3_q6wsp"]
@@ -12,17 +13,13 @@
 [ext_resource type="AudioStream" uid="uid://d3yowdj7xg6n1" path="res://Sounds/SFX/ShopBlip.wav" id="10_lmer1"]
 [ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="11_44qyu"]
 
-[sub_resource type="Gradient" id="Gradient_whcu2"]
-offsets = PackedFloat32Array(0.798701, 0.902597)
-colors = PackedColorArray(0.328673, 0.33455, 0.28967, 0.501961, 1, 1, 0, 1)
-
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qwgos"]
-gradient = SubResource("Gradient_whcu2")
+gradient = ExtResource("3_3wq4o")
 width = 100
 height = 100
 fill = 2
-fill_from = Vector2(0.509174, 0.495413)
-fill_to = Vector2(0.894495, 0.114679)
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.991453, 0.0042735)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_nyu8u"]
 color = Color(1, 1, 0, 1)
@@ -230,7 +227,7 @@ mouse_filter = 0
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 0
-columns = 3
+columns = 5
 
 [node name="PanelContainer" type="PanelContainer" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2

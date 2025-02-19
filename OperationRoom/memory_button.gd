@@ -73,7 +73,13 @@ func Update(memory: MemoryData):
 	context_title.text = memory.memory_title
 	# Cost
 	cost_label.text = str("$", memory.memory_cost)
-	sell_button.text = str("Sell for $", memory.memory_cost / 2)
+	if (memory.memory_cost > 0):
+		sell_button.text = str("Sell for $", memory.memory_cost / 2)
+		sell_button.disabled = false
+	else:
+		sell_button.text = str("Cannot be sold, no value")
+		sell_button.disabled = true
+		
 	# Description
 	tooltip_text = memory.memory_description
 	%Icon.texture = memory.memory_thumbnail

@@ -16,6 +16,7 @@ func _ready():
 	UpdateLabel()
 	UpdateMemoryQueue()
 	UpdateMemoryBank()
+	CheckConfirmationEnabled()
 	if (!PlayerSingleton._hasSeenTuto):
 		%OperationTutoPanel.show()
 
@@ -52,20 +53,27 @@ func _on_button_pressed():
 		updatedMemories.append(btn.on_ready_memory)
 	confirm_operation.emit(updatedMemories)
 
-func OnQueueUpdated():
+func CheckConfirmationEnabled():
 	var hasEmpty : bool = false
-	var btns : Array[MemoryButton] = []
-
+	var hasBroken : bool = false
 	for btn : MemoryButton in memory_queue_container.get_children():
-		btns.append(btn)
 		if btn.on_ready_memory.tags.find(Enums.MemTag.Empty) >= 0:
 			hasEmpty = true
+		if btn.on_ready_memory.tags.find(Enums.MemTag.Broken) >= 0:
+			hasBroken = true
+	confirmButton.disabled = hasEmpty || hasBroken
 
-	confirmButton.disabled = hasEmpty
+func OnQueueUpdated():
+	var btns : Array[MemoryButton] = []
+	
+	for btn : MemoryButton in memory_queue_container.get_children():
+		btns.append(btn)
+			
 	var last = btns[btns.size() - 1]
 	if (last.on_ready_memory.tags.find(Enums.MemTag.Unknown) < 0):
 		last.Update(load("res://Memories/Logic/Unknown.tres"))
 
+	CheckConfirmationEnabled()
 
 func _on_close_tuto_btn_pressed():
 	%OperationTutoPanel.hide()
