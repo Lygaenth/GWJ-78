@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://btfcsrl2ey8b0"]
+
+[ext_resource type="FontFile" uid="uid://byg6a8n87eqot" path="res://Fonts/ChakraPetch-Medium.ttf" id="1_wg5pm"]
+
+[resource]
+line_spacing = 5.0
+font = ExtResource("1_wg5pm")
+font_size = 43
+font_color = Color(0.192157, 0, 1, 1)
+outline_color = Color(0, 0.254195, 0.605758, 1)

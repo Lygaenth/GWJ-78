@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6um5tqw08ild"]
+
+[ext_resource type="StyleBox" uid="uid://dwqp8yn8o7qvl" path="res://OperationRoom/Resources/operation_box_flat.tres" id="1_y2geq"]
+[ext_resource type="Theme" uid="uid://ir51hugafqir" path="res://OperationRoom/Resources/OperationRoomSmallButtonTheme.tres" id="2_iiavc"]
+[ext_resource type="Script" path="res://OperationRoom/memory_choice_menu.gd" id="2_rydow"]
+
+[node name="MemoryChoiceMenu" type="PanelContainer"]
+top_level = true
+z_index = 11
+layout_direction = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.5
+offset_top = -35.5
+offset_right = 134.5
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_y2geq")
+script = ExtResource("2_rydow")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+mouse_filter = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 0
+
+[node name="GridContainerMemoryChoiceButton" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 0
+columns = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_y2geq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="AcceptMemoryTransferButton" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_iiavc")
+disabled = true
+text = "Accept"
+
+[node name="CancelMemoryTransferButton" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_iiavc")
+text = "Cancel"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/AcceptMemoryTransferButton" to="." method="_on_accept_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/CancelMemoryTransferButton" to="." method="_on_cancel_button_pressed"]

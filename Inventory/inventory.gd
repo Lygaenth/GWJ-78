@@ -16,6 +16,8 @@ func _ready():
 
 func Display():
 	show()
+	%StoreButton.disabled = PlayerSingleton.IsShopLock()
+
 	
 func OnClosePressed():
 	hide()

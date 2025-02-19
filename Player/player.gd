@@ -5,6 +5,10 @@ const StartMoney : int = 0
 @onready var _scenarioProvider : ScenarioFactory = $ScenarioProvider
 @onready var _memoryBank : MemoryBank = $MemoryBank
 
+var _scenarioPlayedCount : int = 0
+var _shopLock : bool = true
+var _shopLocked : bool = true
+
 var _money : int = 10000
 var _errors : Array[CharacterBase] = []
 var _lastErrorManaged : bool = true
@@ -56,6 +60,7 @@ func GetAvailableMemories():
 	return _memoryBank.GetCurrentMemories()
 		
 func GetNextScenario() -> ScenarioBase:
+	_scenarioPlayedCount += 1
 	return _scenarioProvider.GetNextScenario()
 
 func StoreFriedPerson(character : CharacterBase):
@@ -63,3 +68,15 @@ func StoreFriedPerson(character : CharacterBase):
 
 func GetCharactersError() -> Array[CharacterBase]:
 	return _errors.duplicate()
+	
+func IsConnectLock():
+	return _scenarioPlayedCount > 1 && _shopLock
+	
+func IsShopLock():
+	return _shopLocked
+
+func UnlockShop():
+	_shopLocked = false
+	
+func ShopUnlock():
+	_shopLock = false

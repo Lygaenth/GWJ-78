@@ -83,11 +83,13 @@ func DisplayLine(line : DialogLine):
 		_doctorDialog.show()
 
 func EnableShoppingAndJacking():
-	_jackInButton.disabled = false
-	_jackInButton.Attract()
+	if (!PlayerSingleton.IsConnectLock()):
+		_jackInButton.disabled = false
+		_jackInButton.Attract()
 
 func EnableShopping():
-	_shopButton.disabled = false
+	if (!PlayerSingleton.IsShopLock()):
+		_shopButton.disabled = false
 
 func DisableJacking():
 	_jackInButton.Stop()
@@ -98,6 +100,7 @@ func DisableShopping():
 
 func LoadNextScenario() -> bool:
 	_scenario = PlayerSingleton.GetNextScenario()
+	EnableShopping()
 	if (_scenario != null):
 		_patientInfo.DisplayPatient(_scenario.Patient)
 	else:
@@ -118,6 +121,8 @@ func DisplayPatientDepart():
 	_patientInfo.DisplayDeconnection()
 	
 func CheckEvent() -> bool:
+	PlayerSingleton.UnlockShop()
+	EnableShopping()
 	var errors = PlayerSingleton.GetCharactersError()
 	if (errors.size() >= 3):
 		DisplayEnding(Enums.Endings.TooManyMistakes)
@@ -129,6 +134,9 @@ func OnShopPressed():
 	%ClickSound.play()
 	_shopButton.release_focus()
 	_store.show()
+	PlayerSingleton.ShopUnlock()
+	if (_scenario.GetState() == Enums.ScenarioState.Operation):
+		EnableShoppingAndJacking()
 
 func OnJackPressed():
 	%ClickSound.play()	
@@ -189,7 +197,7 @@ func TalkRandom():
 
 
 func _on_inventory_pressed():
-	%Inventory.show()
+	%Inventory.Display()
 
 
 func _on_store_switch_to_inventory():
@@ -200,3 +208,6 @@ func _on_store_switch_to_inventory():
 func _on_inventory_switch_to_store():
 	_store.show()
 	%Inventory.hide()
+	PlayerSingleton.ShopUnlock()
+	if (_scenario.GetState() == Enums.ScenarioState.Operation):
+		EnableShoppingAndJacking()

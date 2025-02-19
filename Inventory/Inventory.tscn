@@ -84,13 +84,15 @@ theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
 [node name="StoreButton" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 mouse_default_cursor_shape = 2
 theme = ExtResource("4_ao11v")
 theme_override_colors/font_color = Color(0.786054, 0.720615, 0, 1)
-text = "Store"
+disabled = true
+text = "  Store   "
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
@@ -130,7 +132,6 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Inventory-3000 - An infinite storage of your virtual properties and much more than that"
 label_settings = SubResource("LabelSettings_hcan1")
 autowrap_mode = 2
 

@@ -22,7 +22,7 @@ func _ready():
 
 func Display():
 	show()
-	
+	PlayerSingleton.ShopUnlock()
 	_buyButton.disabled = true
 
 signal SwitchToInventory()
