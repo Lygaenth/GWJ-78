@@ -19,10 +19,10 @@ func _on_button_up():
 	pass
 
 func _on_mouse_entered():
-	pass
+	DisplayDescription.emit(on_ready_memory.memory_description)
 
 func _on_mouse_exited():
-	pass
+	DisplayDescription.emit("")
 
 func _on_pressed():
 	UpdateSelection()

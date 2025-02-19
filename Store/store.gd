@@ -17,12 +17,16 @@ func _ready():
 		%GridContainer.add_child(button)
 		button.DisplayInShop(memory)
 		button.Selected.connect(OnItemStateChanged)
+		button.DisplayDescription.connect(OnButtonDisplayDesc)
 	CalculateCost()
 
 func Display():
 	show()
 	
 	_buyButton.disabled = true
+
+signal SwitchToInventory()
+
 
 func OnClosePressed():
 	hide()
@@ -66,3 +70,10 @@ func NotifyFailedTransaction():
 	_errorPanel.show()
 	await get_tree().create_timer(1.5).timeout
 	_errorPanel.hide()
+
+
+func _on_inventory_button_pressed():
+	SwitchToInventory.emit()
+
+func OnButtonDisplayDesc(desc : String):
+	%DescLabel.text = desc

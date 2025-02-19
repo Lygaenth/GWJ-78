@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=38 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_6atam"]
@@ -23,10 +23,12 @@
 [ext_resource type="LabelSettings" uid="uid://c6dthqsp0oqq5" path="res://ChatRoom/Assets/PayTextDialog.tres" id="13_xh7ih"]
 [ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="16_a3s6y"]
 [ext_resource type="PackedScene" uid="uid://c2sn3o6choeux" path="res://Endings/EndingScreen.tscn" id="21_4bn51"]
+[ext_resource type="Script" path="res://ChatRoom/pay_label.gd" id="21_c518r"]
 [ext_resource type="PackedScene" uid="uid://k0q2aad1mox0" path="res://Inventory/Inventory.tscn" id="23_upsa7"]
 [ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="26_h487m"]
 [ext_resource type="AudioStream" uid="uid://1vojkggj52r4" path="res://Sounds/SFX/Talk.wav" id="27_r16be"]
 [ext_resource type="AudioStream" uid="uid://bb1r36ktwil3b" path="res://Sounds/SFX/Talk2.wav" id="28_3pj3r"]
+[ext_resource type="AudioStream" uid="uid://cap6f8ajbwejv" path="res://Sounds/SFX/Pay.wav" id="29_e57o1"]
 [ext_resource type="AudioStream" uid="uid://bmhrut38y8mcp" path="res://Sounds/SFX/Talk3.wav" id="29_fs0kt"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gx8vi"]
@@ -70,6 +72,15 @@ border_width_top = 5
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 0, 0.478431, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn334"]
+bg_color = Color(1, 0, 0.478431, 0.0235294)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.420858, 0, 0.187406, 1)
+border_blend = true
 
 [node name="ChatRoom" type="CanvasLayer"]
 script = ExtResource("1_d005w")
@@ -234,6 +245,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 tooltip_text = "Greet the patient"
+focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("9_iln06")
 disabled = true
@@ -245,6 +257,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 tooltip_text = "Operate patient"
+focus_mode = 0
 mouse_default_cursor_shape = 2
 theme = ExtResource("9_iln06")
 theme_override_styles/disabled_mirrored = ExtResource("2_6atam")
@@ -356,8 +369,9 @@ theme_override_styles/panel = ExtResource("2_6atam")
 unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "Access shop"
+focus_mode = 0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_disabled_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_disabled_color = Color(0.553569, 0, 0.252705, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0, 0.478431, 1)
 theme_override_colors/font_hover_color = Color(1, 0, 0.478431, 1)
 theme_override_colors/font_pressed_color = Color(1, 0, 0.478431, 1)
@@ -365,7 +379,7 @@ theme_override_colors/font_color = Color(1, 0, 0.478431, 1)
 theme_override_fonts/font = ExtResource("16_a3s6y")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = ExtResource("7_57520")
-theme_override_styles/disabled = ExtResource("7_57520")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_tn334")
 theme_override_styles/hover = ExtResource("7_57520")
 theme_override_styles/normal_mirrored = ExtResource("7_57520")
 theme_override_styles/normal = ExtResource("7_57520")
@@ -385,6 +399,7 @@ custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_vertical = 4
 tooltip_text = "Access shop"
+focus_mode = 0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_disabled_color = Color(1, 0, 0.478431, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 0, 0.478431, 1)
@@ -454,7 +469,7 @@ label_settings = ExtResource("8_v3iwd")
 horizontal_alignment = 1
 script = ExtResource("10_qn2xg")
 
-[node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="PayContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -462,7 +477,7 @@ size_flags_vertical = 0
 size_flags_stretch_ratio = 5.0
 theme_override_styles/panel = ExtResource("2_6atam")
 
-[node name="PayLabel" type="Label" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/PanelContainer6"]
+[node name="PayLabel" type="Label" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/PayContainer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -472,7 +487,7 @@ text = "$ 000000
 label_settings = ExtResource("13_xh7ih")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("10_qn2xg")
+script = ExtResource("21_c518r")
 
 [node name="PanelContainer7" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer"]
 layout_mode = 2
@@ -515,24 +530,32 @@ visible = false
 [node name="EndingScreen" parent="." instance=ExtResource("21_4bn51")]
 visible = false
 
-[node name="ClickSound" type="AudioStreamPlayer" parent="."]
+[node name="Sounds" type="Node" parent="."]
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="Sounds"]
 unique_name_in_owner = true
 stream = ExtResource("26_h487m")
 bus = &"SFX"
 
-[node name="TalkSound" type="AudioStreamPlayer" parent="."]
+[node name="TalkSound" type="AudioStreamPlayer" parent="Sounds"]
 unique_name_in_owner = true
 stream = ExtResource("27_r16be")
 
-[node name="Talk2Sound" type="AudioStreamPlayer" parent="."]
+[node name="Talk2Sound" type="AudioStreamPlayer" parent="Sounds"]
 unique_name_in_owner = true
 stream = ExtResource("28_3pj3r")
 
-[node name="Talk3Sound" type="AudioStreamPlayer" parent="."]
+[node name="Talk3Sound" type="AudioStreamPlayer" parent="Sounds"]
 unique_name_in_owner = true
 stream = ExtResource("29_fs0kt")
+
+[node name="PayStart" type="AudioStreamPlayer" parent="Sounds"]
+unique_name_in_owner = true
+stream = ExtResource("29_e57o1")
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/GreetBtn" to="." method="OnGreetPressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/JackInBtn" to="." method="OnJackPressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer7/ShopBtn" to="." method="OnShopPressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer6/Inventory" to="." method="_on_inventory_pressed"]
+[connection signal="SwitchToInventory" from="Store" to="." method="_on_store_switch_to_inventory"]
+[connection signal="SwitchToStore" from="Inventory" to="." method="_on_inventory_switch_to_store"]

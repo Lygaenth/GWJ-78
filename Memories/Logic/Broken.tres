@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_xyign")
-memory_title = "Broken"
+memory_title = "Damaged"
 memory_description = "This memory was partially erased. Probably because of old age or bad upkeep. Maybe malevolence. It must be replaced."
 memory_cost = 0
 memory_thumbnail = ExtResource("1_r20rp")

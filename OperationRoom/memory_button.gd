@@ -12,14 +12,13 @@ class_name MemoryButton extends TextureButton
 @onready var insert_button: Button = $ContextualMenu/MarginContainer/VBoxContainer/InsertButton
 @onready var sell_button: Button = $ContextualMenu/MarginContainer/VBoxContainer/SellButton
 @onready var erase_button: Button = $ContextualMenu/MarginContainer/VBoxContainer/EraseButton
-@onready var accept_button: Button = %AcceptMemoryTransferButton
-@onready var cancel_button: Button = %CancelMemoryTransferButton
-@onready var grid_container = %GridContainerMemoryChoiceButton
+
 
 signal Updated()
+signal DisplayDescription(desc : String)
 
 var shopMemoryButtonPs = load("res://Store/ShopMemoryButton.tscn")
-var _selectedItem: MemoryData
+
 
 signal send_memory_to_bank(memory: MemoryData)
 signal update_memory_bank
@@ -81,7 +80,6 @@ func Update(memory: MemoryData):
 		sell_button.disabled = true
 		
 	# Description
-	tooltip_text = memory.memory_description
 	%Icon.texture = memory.memory_thumbnail
 	context_description.text = memory.memory_description
 	# Thumbnail
@@ -103,16 +101,16 @@ func _on_contextual_menu_mouse_exited():
 	context_menu.hide()
 
 func _on_button_down():
-	scale = Vector2(.8, .8)
+	pass
 
 func _on_button_up():
-	scale = Vector2(1, 1)
+	pass
 
 func _on_mouse_entered():
-	scale = Vector2(1.2, 1.2)
+	pass
 
 func _on_mouse_exited():
-	scale = Vector2(1, 1)
+	pass
 
 
 #region Context menu buttons
@@ -129,13 +127,7 @@ func _on_insert_button_pressed():
 	%ActionSound.play()	
 	context_menu.hide()
 	memory_choice_menu.show()
-	var memories = PlayerSingleton.GetAvailableMemories()
-	for m in memories:
-		var button : ShopMemoryButton = shopMemoryButtonPs.instantiate() 
-		grid_container.add_child(button)
-		button.Update(m)
-		button.Selected.connect(OnItemStateChanged)
-
+	memory_choice_menu.Load()
 
 func _on_sell_button_pressed():
 	%ActionSound.play()
@@ -151,35 +143,13 @@ func _on_erase_button_pressed():
 	await get_tree().create_timer(0.2)
 	queue_free()
 
-func OnItemStateChanged(isSelected : bool, memory : MemoryData):
-	if (isSelected):
-		for shopButton : ShopMemoryButton in grid_container.get_children():
-			if shopButton.IsSelected() && shopButton.on_ready_memory != memory:
-				shopButton.UpdateSelection()
-		_selectedItem = memory
-		accept_button.disabled = false
-	else:
-		_selectedItem = null
-		accept_button.disabled = true
-
-func _on_accept_button_pressed():
-	%ActionSound.play()
-	DisplayInEraser(_selectedItem)
-	await get_tree().create_timer(0.2)
-	for memoryButton : ShopMemoryButton in grid_container.get_children():
-		if (memoryButton.IsSelected()):
-			PlayerSingleton._memoryBank.Consume(_selectedItem)
-		memoryButton.queue_free()
-	update_memory_bank.emit()
-	ResetMemoryChoiceMenu()
-	Updated.emit()
-
-func _on_cancel_button_pressed():
-	%ActionSound.play()
-	ResetMemoryChoiceMenu()
-
-func ResetMemoryChoiceMenu():
-	_selectedItem = null
-	accept_button.disabled = true
-	memory_choice_menu.hide()
 #endregion
+
+
+func _on_memory_choice_menu_selected_item(item):
+	%ActionSound.play()
+	DisplayInEraser(item)
+	await get_tree().create_timer(0.2)
+	PlayerSingleton._memoryBank.Consume(item)
+	update_memory_bank.emit()
+	Updated.emit()

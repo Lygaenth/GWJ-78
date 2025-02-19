@@ -5,7 +5,7 @@ class_name ChatRoom
 @onready var _doctorDialog : Label = $"%DoctorDialog"
 @onready var _patientInfo : PatientInformation = $"%PatientInfo"
 @onready var _payLabel : MoneyLabel = $"%MoneyLabel"
-@onready var _gainLabel : MoneyLabel = $"%PayLabel"
+@onready var _gainLabel : PayLabel = $"%PayLabel"
 @onready var _shopButton : AttractAttentionButton = $"%ShopBtn"
 @onready var _jackInButton : AttractAttentionButton = $"%JackInBtn"
 @onready var _greetButton : AttractAttentionButton = $"%GreetBtn"
@@ -45,6 +45,7 @@ func Next():
 			EnableShoppingAndJacking()
 		elif (scenarioState == Enums.ScenarioState.OperationResult):
 			DisableJacking()
+			await Wait(0.5)
 			var pay = _scenario.GetPay()
 			if pay > 0:
 				await DisplayPay(pay)
@@ -87,7 +88,6 @@ func EnableShoppingAndJacking():
 
 func EnableShopping():
 	_shopButton.disabled = false
-	_shopButton.Attract()
 
 func DisableJacking():
 	_jackInButton.Stop()
@@ -107,10 +107,11 @@ func LoadNextScenario() -> bool:
 	return _scenario != null
 
 func DisplayPay(pay : int):
+	%PayStart.play()
 	_gainLabel.UpdateMoney(pay)
-	_gainLabel.show()
+	_gainLabel.Display()
 	await Wait(2.0)
-	_gainLabel.hide()
+	_gainLabel.Hide()
 	PlayerSingleton.UpdateMoney(pay)
 	
 func DisplayPatientDepart():
@@ -126,9 +127,8 @@ func CheckEvent() -> bool:
 
 func OnShopPressed():
 	%ClickSound.play()
-	_store.show()
-	_shopButton.Stop()
 	_shopButton.release_focus()
+	_store.show()
 
 func OnJackPressed():
 	%ClickSound.play()	
@@ -190,3 +190,13 @@ func TalkRandom():
 
 func _on_inventory_pressed():
 	%Inventory.show()
+
+
+func _on_store_switch_to_inventory():
+	%Inventory.show()
+	_store.hide()
+
+
+func _on_inventory_switch_to_store():
+	_store.show()
+	%Inventory.hide()

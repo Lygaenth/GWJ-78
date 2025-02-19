@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bcsg6up6gejj" path="res://Memories/Happy/Assets/BDayParty.png" id="3_q6wsp"]
 [ext_resource type="Theme" uid="uid://d0ivnsvutnp7v" path="res://OperationRoom/Resources/operation_screen_theme.tres" id="5_ou1su"]
 [ext_resource type="LabelSettings" uid="uid://c3wi2l71vgwof" path="res://OperationRoom/Resources/OperationRoomLarge.tres" id="7_253uj"]
-[ext_resource type="StyleBox" uid="uid://dwqp8yn8o7qvl" path="res://OperationRoom/Resources/operation_box_flat.tres" id="7_otn81"]
 [ext_resource type="Theme" uid="uid://ir51hugafqir" path="res://OperationRoom/Resources/OperationRoomSmallButtonTheme.tres" id="8_fyy10"]
+[ext_resource type="PackedScene" uid="uid://c6um5tqw08ild" path="res://OperationRoom/memoryChoiceMenu.tscn" id="10_7lxir"]
 [ext_resource type="AudioStream" uid="uid://d3yowdj7xg6n1" path="res://Sounds/SFX/ShopBlip.wav" id="10_lmer1"]
 [ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="11_44qyu"]
 
@@ -33,9 +33,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -70.0
-offset_top = -70.0
+offset_top = -80.0
 offset_right = 70.0
-offset_bottom = 70.0
+offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -125,6 +125,8 @@ theme_override_styles/panel = ExtResource("3_pj36h")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContextualMenu"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
@@ -197,60 +199,10 @@ mouse_filter = 1
 theme = ExtResource("8_fyy10")
 text = "Erase"
 
-[node name="MemoryChoiceMenu" type="PanelContainer" parent="."]
+[node name="MemoryChoiceMenu" parent="." instance=ExtResource("10_7lxir")]
+unique_name_in_owner = true
 visible = false
-top_level = true
-z_index = 11
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -226.0
-offset_top = -103.0
-offset_right = 227.0
-offset_bottom = 103.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = ExtResource("7_otn81")
-
-[node name="MarginContainer" type="MarginContainer" parent="MemoryChoiceMenu"]
-layout_mode = 2
-mouse_filter = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MemoryChoiceMenu/MarginContainer"]
-layout_mode = 2
-mouse_filter = 0
-
-[node name="GridContainerMemoryChoiceButton" type="GridContainer" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-mouse_filter = 0
-columns = 5
-
-[node name="PanelContainer" type="PanelContainer" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("7_otn81")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer"]
-layout_mode = 2
-mouse_filter = 0
-theme_override_constants/separation = 30
-alignment = 1
-
-[node name="AcceptMemoryTransferButton" type="Button" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("8_fyy10")
-disabled = true
-text = "Accept"
-
-[node name="CancelMemoryTransferButton" type="Button" parent="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("8_fyy10")
-text = "Cancel"
 
 [node name="BlipSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
@@ -272,5 +224,4 @@ bus = &"SFX"
 [connection signal="pressed" from="ContextualMenu/MarginContainer/VBoxContainer/InsertButton" to="." method="_on_insert_button_pressed"]
 [connection signal="pressed" from="ContextualMenu/MarginContainer/VBoxContainer/SellButton" to="." method="_on_sell_button_pressed"]
 [connection signal="pressed" from="ContextualMenu/MarginContainer/VBoxContainer/EraseButton" to="." method="_on_erase_button_pressed"]
-[connection signal="pressed" from="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/AcceptMemoryTransferButton" to="." method="_on_accept_button_pressed"]
-[connection signal="pressed" from="MemoryChoiceMenu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/CancelMemoryTransferButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="SelectedItem" from="MemoryChoiceMenu" to="." method="_on_memory_choice_menu_selected_item"]

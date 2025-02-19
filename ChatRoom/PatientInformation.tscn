@@ -28,8 +28,8 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="Gradient" id="Gradient_uq5nq"]
-offsets = PackedFloat32Array(0.0584416, 0.155844, 0.207792, 0.214286)
-colors = PackedColorArray(1, 0.109804, 0.0627451, 1, 0, 0, 0, 1, 0.973535, 0.973535, 0.973535, 1, 0.105882, 0.105882, 0.164706, 1)
+offsets = PackedFloat32Array(0.00810811, 0.0584416, 0.155844, 0.207792, 0.214286, 0.225386, 0.236062, 0.247024, 0.251488)
+colors = PackedColorArray(1, 0.174853, 0.120498, 1, 1, 0.109804, 0.0627451, 1, 0, 0, 0, 1, 0.973535, 0.973535, 0.973535, 1, 0.105882, 0.105882, 0.164706, 1, 0.984314, 0.105882, 0.164706, 1, 0.105882, 0.105882, 0.164706, 1, 0, 0, 0, 1, 0.105882, 0.105882, 0.164706, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vjioc"]
 gradient = SubResource("Gradient_uq5nq")
@@ -97,6 +97,7 @@ expand_mode = 1
 
 [node name="Portrait" type="TextureRect" parent="PanelContainer/HBoxContainer/PanelContainer/VBoxContainer/PanelContainer3"]
 unique_name_in_owner = true
+visible = false
 material = SubResource("ShaderMaterial_gljxb")
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2

@@ -5,7 +5,7 @@ const StartMoney : int = 0
 @onready var _scenarioProvider : ScenarioFactory = $ScenarioProvider
 @onready var _memoryBank : MemoryBank = $MemoryBank
 
-var _money : int = 5000
+var _money : int = 10000
 var _errors : Array[CharacterBase] = []
 var _lastErrorManaged : bool = true
 
@@ -22,6 +22,8 @@ func UpdateMoney(amount : int) -> bool:
 	if (_money + amount < 0):
 		return false
 	_money += amount
+	if (amount > 0):
+		%MoneyGainSound.play()
 	UpdatedMoney.emit(_money)
 	return true
 
