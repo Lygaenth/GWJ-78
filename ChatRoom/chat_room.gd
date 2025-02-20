@@ -34,6 +34,13 @@ func _process(delta):
 		Next()
 
 func Next():
+	if (_gameState == Enums.GameState.BadEndingPreparation):
+		var line = PlayerSingleton.ErrorManager.GetCopLines()
+		if (line == null):
+			DisplayEnding(Enums.Endings.TooManyMistakes)
+		else:
+			DisplayLine(line)
+		return
 	if (_gameState == Enums.GameState.OnGoingScenario):
 		var scenarioState = _scenario.GetState() 
 		if (scenarioState == Enums.ScenarioState.Opening 
@@ -90,6 +97,8 @@ func EnableShoppingAndJacking():
 func EnableShopping():
 	if (!PlayerSingleton.IsShopLock()):
 		_shopButton.disabled = false
+		if (PlayerSingleton.IsConnectLock()):
+			_shopButton.Attract()
 
 func DisableJacking():
 	_jackInButton.Stop()
@@ -123,11 +132,12 @@ func DisplayPatientDepart():
 func CheckEvent() -> bool:
 	PlayerSingleton.UnlockShop()
 	EnableShopping()
-	var errors = PlayerSingleton.GetCharactersError()
-	if (errors.size() >= 3):
-		DisplayEnding(Enums.Endings.TooManyMistakes)
+	if (PlayerSingleton.ErrorManager.HasTooManyError()):
+		_gameState = Enums.GameState.BadEndingPreparation
+		MusicSingleton.SwitchToOperationMusic()
+		_patientInfo.DisplayCops()
 		return true
-	
+		
 	return false
 
 func OnShopPressed():
@@ -135,11 +145,12 @@ func OnShopPressed():
 	_shopButton.release_focus()
 	_store.show()
 	PlayerSingleton.ShopUnlock()
+	_shopButton.Stop()
 	if (_scenario.GetState() == Enums.ScenarioState.Operation):
 		EnableShoppingAndJacking()
 
 func OnJackPressed():
-	%ClickSound.play()	
+	%ClickSound.play()
 	_jackInButton.release_focus()
 	if (_gameState == Enums.GameState.OnGoingScenario):
 		DisableJacking()
@@ -176,7 +187,7 @@ func OnGreetPressed() -> void:
 	%ClickSound.play()
 	if (_gameState == Enums.GameState.WaitingForPatient):
 		DisableGreeButton()
-		if(LoadNextScenario()):		
+		if(LoadNextScenario()):
 			await Wait(1.0)
 			_gameState = Enums.GameState.OnGoingScenario
 			Next()
@@ -195,19 +206,17 @@ func TalkRandom():
 	var talkerIndex = randi_range(0,2)
 	_talkers[talkerIndex].play()
 
-
 func _on_inventory_pressed():
 	%Inventory.Display()
-
 
 func _on_store_switch_to_inventory():
 	%Inventory.show()
 	_store.hide()
 
-
 func _on_inventory_switch_to_store():
 	_store.show()
 	%Inventory.hide()
 	PlayerSingleton.ShopUnlock()
+	_shopButton.Stop()
 	if (_scenario.GetState() == Enums.ScenarioState.Operation):
 		EnableShoppingAndJacking()

@@ -22,7 +22,8 @@ enum GameState {
 	OperatingPatient,	
 	PatientLeaving,
 	CheckEvent,
-	Ending
+	Ending,
+	BadEndingPreparation
 } 
 
 enum Endings {

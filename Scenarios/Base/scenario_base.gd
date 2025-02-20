@@ -50,7 +50,7 @@ func ManageFry() -> void:
 	_state = Enums.ScenarioState.Frying
 	_pay = 0
 	_completed = true
-	PlayerSingleton.AddError(Patient)
+	PlayerSingleton.ErrorManager.AddFriedCharacter(Patient)
 
 func LoadLines(newLines : Array[DialogLine]) -> void:
 	_lineIndex=0

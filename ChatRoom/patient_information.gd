@@ -65,6 +65,7 @@ func DisplayNothing():
 	_patientFirstNameLabel.text = ""
 	_patientBirthdayLabel.text = ""
 	_patientInfoLabel.text = ""
+	%CopEye.hide()
 
 func DisplayWait():
 	_patientFileLabel.text = "A patient is waiting..."
@@ -75,6 +76,13 @@ func DisplayWait():
 	_patientFirstNameLabel.text = ""
 	_patientBirthdayLabel.text = ""
 	_patientInfoLabel.text = ""
+	
+func DisplayCops():
+	%CopEye.show()
+	_patientFileLabel.text = "???????????"
+	_patientNameLabel.text = "WWWWWWWWWWWW"
+	_patientFirstNameLabel.text = "WWWWWWWWWWWW"
+	_patientBirthdayLabel.text = "??/??/????"
 	
 func DisplayDeconnection():
 	%FriedSound.stop()

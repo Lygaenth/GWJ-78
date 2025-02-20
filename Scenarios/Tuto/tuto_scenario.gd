@@ -74,7 +74,7 @@ func GetLine() -> DialogLine:
 
 func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 	var hasDrunk = souvenirs[1].tags.find(Enums.MemTag.Consciousness) >= 0
-	_pay = 50
+	_pay = 0
 	if hasDrunk:
 		LoadLines(_drunkEndingLines)
 	else:

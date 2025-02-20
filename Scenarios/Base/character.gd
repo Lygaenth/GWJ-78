@@ -7,3 +7,6 @@ class_name CharacterBase
 @export var Notes: String = ""
 @export var Picture : Texture2D = preload("res://icon.svg")
 @export var TalkFont : Font = null
+
+func GetFullName() -> String:
+	return FirstName +" "+FamilyName

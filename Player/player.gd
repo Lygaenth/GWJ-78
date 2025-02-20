@@ -4,14 +4,13 @@ class_name Player
 const StartMoney : int = 0
 @onready var _scenarioProvider : ScenarioFactory = $ScenarioProvider
 @onready var _memoryBank : MemoryBank = $MemoryBank
+@onready var ErrorManager: ErrorManager = $ErrorManager
 
 var _scenarioPlayedCount : int = 0
 var _shopLock : bool = true
 var _shopLocked : bool = true
 
 var _money : int = 10000
-var _errors : Array[CharacterBase] = []
-var _lastErrorManaged : bool = true
 
 var _hasSeenTuto : bool = false
 
@@ -36,13 +35,9 @@ func GetMoneyAmount() -> int:
 
 func Reset() -> void:
 	_money = StartMoney
-	_errors = []
+	
 	_memoryBank.LoadStartingMemory()
 	_scenarioProvider.LoadAllScenarios()
-
-func AddError(person : CharacterBase):
-	_errors.append(person)
-	_lastErrorManaged = false
 
 func BuyMemory(memories : Array[MemoryData]) -> bool:
 	var amount : int = 0
@@ -63,11 +58,6 @@ func GetNextScenario() -> ScenarioBase:
 	_scenarioPlayedCount += 1
 	return _scenarioProvider.GetNextScenario()
 
-func StoreFriedPerson(character : CharacterBase):
-	_errors.append(character)
-
-func GetCharactersError() -> Array[CharacterBase]:
-	return _errors.duplicate()
 	
 func IsConnectLock():
 	return _scenarioPlayedCount > 1 && _shopLock

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cf3unc30pl34t"]
+[gd_scene load_steps=18 format=3 uid="uid://cf3unc30pl34t"]
 
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="1_1qgj0"]
 [ext_resource type="StyleBox" uid="uid://ccudso2mtwuir" path="res://ChatRoom/PatientInformationPanel.tres" id="1_aqcq6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://ChatRoom/Patient.gdshader" id="3_eubsr"]
 [ext_resource type="Texture2D" uid="uid://dto1au7i7aggo" path="res://SpriteCharacters/Alk.png" id="3_m54g1"]
 [ext_resource type="LabelSettings" uid="uid://0kbo3uxeglki" path="res://ChatRoom/Assets/PatientDescription.tres" id="3_vb0ut"]
+[ext_resource type="Texture2D" uid="uid://bd2frle2qm1vl" path="res://ChatRoom/Assets/Cop.png" id="4_ntqk4"]
 [ext_resource type="Texture2D" uid="uid://cvrhkmq8mtmtv" path="res://ChatRoom/Assets/BlueScreen.png" id="4_ulsdo"]
 [ext_resource type="AudioStream" uid="uid://cgekdi6jlxqib" path="res://Sounds/SFX/Waiting.wav" id="8_6pyfc"]
 [ext_resource type="AudioStream" uid="uid://mr1xym7kks1n" path="res://Sounds/SFX/Fried.wav" id="8_g0734"]
@@ -94,6 +95,12 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = SubResource("GradientTexture2D_vjioc")
 expand_mode = 1
+
+[node name="CopEye" type="TextureRect" parent="PanelContainer/HBoxContainer/PanelContainer/VBoxContainer/PanelContainer3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("4_ntqk4")
 
 [node name="Portrait" type="TextureRect" parent="PanelContainer/HBoxContainer/PanelContainer/VBoxContainer/PanelContainer3"]
 unique_name_in_owner = true

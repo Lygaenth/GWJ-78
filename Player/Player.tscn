@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://coygwobxignvt"]
+[gd_scene load_steps=6 format=3 uid="uid://coygwobxignvt"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_xj0os"]
 [ext_resource type="PackedScene" uid="uid://c2g0ktyjv8npa" path="res://Scenarios/Factories/ScenarioFactory.tscn" id="2_p7866"]
 [ext_resource type="Script" path="res://Player/memory_bank.gd" id="3_c35e4"]
 [ext_resource type="AudioStream" uid="uid://bamronfbp5tvy" path="res://Sounds/SFX/PayRecieve.wav" id="4_i32qy"]
+[ext_resource type="Script" path="res://Player/error_manager.gd" id="5_chrbh"]
 
 [node name="Player" type="Node"]
 script = ExtResource("1_xj0os")
@@ -16,3 +17,6 @@ script = ExtResource("3_c35e4")
 [node name="MoneyGainSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_i32qy")
+
+[node name="ErrorManager" type="Node" parent="."]
+script = ExtResource("5_chrbh")

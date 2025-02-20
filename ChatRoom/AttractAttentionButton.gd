@@ -18,7 +18,7 @@ func _process(delta : float):
 		_isOn = true
 
 	if (_isOn && _counter > 1):
-		modulate = Color(1,1,0)
+		modulate = Color(0,1,1)
 		_isOn = false
 
 func Attract():
@@ -27,5 +27,5 @@ func Attract():
 
 func Stop():
 	_counter = 0
-	modulate = Color(0,1,1)
+	modulate = Color(1,1,1)
 	_attractAttention = false
