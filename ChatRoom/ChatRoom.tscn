@@ -1,11 +1,13 @@
-[gd_scene load_steps=43 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=45 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_6atam"]
 [ext_resource type="Texture2D" uid="uid://b5yqqdl8dcxfd" path="res://ChatRoom/Assets/memory_clinic.png" id="2_jmn2t"]
 [ext_resource type="StyleBox" uid="uid://drcnk08k078lc" path="res://ChatRoom/Assets/PatientTextBox.tres" id="3_vap84"]
+[ext_resource type="Texture2D" uid="uid://1placlb1anpm" path="res://ChatRoom/Assets/Fish.png" id="4_hla1p"]
 [ext_resource type="LabelSettings" uid="uid://dcqvu4l5j25aa" path="res://ChatRoom/Assets/PatientTextDialog.tres" id="4_jdpaq"]
 [ext_resource type="Shader" path="res://ChatRoom/Assets/ChatRoom.gdshader" id="4_yicy3"]
+[ext_resource type="Script" path="res://ChatRoom/Fish.gd" id="5_2dyv3"]
 [ext_resource type="StyleBox" uid="uid://ceyj0a87l28h8" path="res://ChatRoom/Assets/AquariumPanel.tres" id="5_k1ny5"]
 [ext_resource type="Script" path="res://ChatRoom/aquarium_shader.gd" id="5_qa0ne"]
 [ext_resource type="PackedScene" uid="uid://cf3unc30pl34t" path="res://ChatRoom/PatientInformation.tscn" id="6_y6lsd"]
@@ -112,7 +114,34 @@ theme_override_styles/panel = ExtResource("2_6atam")
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
 
-[node name="Aquarium" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(171, 666)
+texture = ExtResource("4_hla1p")
+script = ExtResource("5_2dyv3")
+direction = Vector2(1, 4)
+
+[node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(169, 281)
+texture = ExtResource("4_hla1p")
+script = ExtResource("5_2dyv3")
+direction = Vector2(0, 1)
+
+[node name="Aquarium" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+material = SubResource("ShaderMaterial_vinf7")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("5_k1ny5")
+script = ExtResource("5_qa0ne")
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Aquarium" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer/PanelContainer"]
 material = SubResource("ShaderMaterial_vinf7")
 layout_mode = 2
 size_flags_horizontal = 3
