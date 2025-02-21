@@ -1,19 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0nh8ynnihw52"]
+[gd_scene load_steps=7 format=3 uid="uid://d0nh8ynnihw52"]
 
 [ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_kurrn"]
 [ext_resource type="Script" path="res://Scenarios/Criminal/criminal_scenario.gd" id="2_4fdtk"]
 [ext_resource type="Resource" uid="uid://j33nom7i5i0e" path="res://Scenarios/Criminal/CriminalScenarioThread.tres" id="3_tgy2b"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_0gni5"]
 [ext_resource type="Texture2D" uid="uid://ch7efkib4febu" path="res://SpriteCharacters/Criminal.png" id="4_v16xt"]
+[ext_resource type="Texture2D" uid="uid://cjpd0l8nkc7bo" path="res://SpriteCharacters/Undefined.png" id="6_mvv6q"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_kurrn")]
 script = ExtResource("2_4fdtk")
 Patient = NodePath("Character")
+Id = 4
 Memories = ExtResource("3_tgy2b")
 
 [node name="Character" parent="." index="0" instance=ExtResource("4_0gni5")]
-FamilyName = "Le Stup"
-FirstName = "??"
-BirthDate = "??"
-Notes = "A mysterious person wearing a mask..."
+FamilyName = "Le Douc"
+FirstName = "?"
+BirthDate = "?"
+Notes = "?"
 Picture = ExtResource("4_v16xt")
+
+[node name="Character2" parent="." index="1" instance=ExtResource("4_0gni5")]
+FamilyName = "Miike"
+FirstName = "Naeko"
+BirthDate = "??"
+Notes = "A cop from the Galactic Union?"
+Picture = ExtResource("6_mvv6q")

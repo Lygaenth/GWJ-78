@@ -54,6 +54,7 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 		return true
 
 	var hasHappy = souvenirs[1].tags.find(Enums.MemTag.Happy) >= 0
+	
 	if hasHappy:
 		_pay = 400
 		LoadLines(_goodEndingLines)

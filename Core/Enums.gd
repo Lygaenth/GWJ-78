@@ -57,5 +57,7 @@ enum MemTag
 	Intense,
 	Friend,
 	Consciousness,
-	Alien
+	Alien,
+	Illegal,
+	AI
 }
