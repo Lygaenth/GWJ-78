@@ -171,6 +171,7 @@ func OnOperationTerminated(modifiedMemories : Array[MemoryData]):
 	if (isFried):
 		_patientInfo.Fry()
 	else:
+		_patientInfo.Character.Fix()
 		await Next()
 	await Next()
 	EnableShopping()
@@ -220,3 +221,14 @@ func _on_inventory_switch_to_store():
 	_shopButton.Stop()
 	if (_scenario.GetState() == Enums.ScenarioState.Operation):
 		EnableShoppingAndJacking()
+
+
+func _on_resign_button_pressed():
+	%QuitConfirm.show()
+
+
+func _on_quit_button_pressed():
+	get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
+
+func _on_cancel_button_pressed():
+	%QuitConfirm.hide()

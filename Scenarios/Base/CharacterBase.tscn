@@ -4,7 +4,3 @@
 
 [node name="Character" type="Node"]
 script = ExtResource("1_tyvfq")
-FamilyName = "Tuto"
-FirstName = "Testix"
-BirthDate = "14/02/4756"
-Notes = "Anxious, Brutish"

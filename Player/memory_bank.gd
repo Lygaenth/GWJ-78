@@ -5,7 +5,8 @@ var _memoryBank: Array[MemoryData] = []
 	
 func _ready():
 	_memoryBank.append(load("res://Memories/Addictions/Drunk.tres"))
-	_memoryBank.append(load("res://Memories/Crime/Robbed.tres"))	
+	_memoryBank.append(load("res://Memories/Crime/Robbed.tres"))
+	#_memoryBank.append(load("res://Memories/Work/Reward.tres"))
 	
 func GetCurrentMemories() -> Array[MemoryData]:
 	return _memoryBank.duplicate()

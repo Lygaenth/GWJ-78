@@ -10,3 +10,6 @@ class_name CharacterBase
 
 func GetFullName() -> String:
 	return FirstName +" "+FamilyName
+
+func Fix() -> void:
+	pass

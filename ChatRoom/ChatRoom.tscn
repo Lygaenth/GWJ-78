@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=42 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_6atam"]
@@ -30,6 +30,10 @@
 [ext_resource type="AudioStream" uid="uid://bb1r36ktwil3b" path="res://Sounds/SFX/Talk2.wav" id="28_3pj3r"]
 [ext_resource type="AudioStream" uid="uid://cap6f8ajbwejv" path="res://Sounds/SFX/Pay.wav" id="29_e57o1"]
 [ext_resource type="AudioStream" uid="uid://bmhrut38y8mcp" path="res://Sounds/SFX/Talk3.wav" id="29_fs0kt"]
+[ext_resource type="StyleBox" uid="uid://bu072xsbj5k8t" path="res://Store/Assets/WarningNoticePanel.tres" id="31_s00il"]
+[ext_resource type="StyleBox" uid="uid://da00k2s6jcjv" path="res://WarningPanel.tres" id="32_mfgy0"]
+[ext_resource type="LabelSettings" uid="uid://dqewxrfiel10j" path="res://Store/WarningLabel.tres" id="33_gln7s"]
+[ext_resource type="FontFile" uid="uid://6vhn43ra26qi" path="res://Fonts/PixelifySans-Regular.ttf" id="34_1h5ba"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gx8vi"]
 noise_type = 2
@@ -173,6 +177,29 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.86
 theme_override_styles/panel = ExtResource("2_6atam")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="ResignButton" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.788544, 0, 0.371514, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_focus_color = Color(1, 0, 0.478431, 1)
+theme_override_colors/font_color = Color(1, 0, 0.478431, 1)
+theme_override_fonts/font = ExtResource("16_a3s6y")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/disabled = ExtResource("7_57520")
+theme_override_styles/hover_pressed_mirrored = ExtResource("7_57520")
+theme_override_styles/hover = ExtResource("7_57520")
+theme_override_styles/pressed = ExtResource("7_57520")
+theme_override_styles/normal = ExtResource("7_57520")
+text = " Resign "
 
 [node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer"]
 layout_mode = 2
@@ -553,9 +580,73 @@ stream = ExtResource("29_fs0kt")
 unique_name_in_owner = true
 stream = ExtResource("29_e57o1")
 
+[node name="QuitConfirm" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="QuitConfirm"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("31_s00il")
+
+[node name="CenterContainer" type="CenterContainer" parent="QuitConfirm/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuitConfirm/PanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="QuitConfirm/PanelContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("32_mfgy0")
+text = "You will loose all progress and go back to main screen if you quit."
+label_settings = ExtResource("33_gln7s")
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuitConfirm/PanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="QuitConfirm/PanelContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0.976471, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.976471, 0, 0, 1)
+theme_override_colors/font_color = Color(0.976471, 0, 0, 1)
+theme_override_fonts/font = ExtResource("34_1h5ba")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = ExtResource("32_mfgy0")
+theme_override_styles/disabled = ExtResource("32_mfgy0")
+theme_override_styles/hover_pressed = ExtResource("32_mfgy0")
+theme_override_styles/hover = ExtResource("32_mfgy0")
+theme_override_styles/pressed = ExtResource("32_mfgy0")
+theme_override_styles/normal = ExtResource("32_mfgy0")
+text = "Quit"
+
+[node name="CancelButton" type="Button" parent="QuitConfirm/PanelContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0.976471, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.976471, 0, 0, 1)
+theme_override_colors/font_color = Color(0.976471, 0, 0, 1)
+theme_override_fonts/font = ExtResource("34_1h5ba")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = ExtResource("32_mfgy0")
+theme_override_styles/disabled = ExtResource("32_mfgy0")
+theme_override_styles/hover_pressed = ExtResource("32_mfgy0")
+theme_override_styles/hover = ExtResource("32_mfgy0")
+theme_override_styles/pressed = ExtResource("32_mfgy0")
+theme_override_styles/normal = ExtResource("32_mfgy0")
+text = "Cancel"
+
+[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer2/MarginContainer/ResignButton" to="." method="_on_resign_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/GreetBtn" to="." method="OnGreetPressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/JackInBtn" to="." method="OnJackPressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer7/ShopBtn" to="." method="OnShopPressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer6/Inventory" to="." method="_on_inventory_pressed"]
 [connection signal="SwitchToInventory" from="Store" to="." method="_on_store_switch_to_inventory"]
 [connection signal="SwitchToStore" from="Inventory" to="." method="_on_inventory_switch_to_store"]
+[connection signal="pressed" from="QuitConfirm/PanelContainer/CenterContainer/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="QuitConfirm/PanelContainer/CenterContainer/VBoxContainer/HBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
