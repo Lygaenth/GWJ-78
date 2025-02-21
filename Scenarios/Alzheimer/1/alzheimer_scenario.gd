@@ -13,7 +13,6 @@ func _ready():
 	_state = Enums.ScenarioState.Opening 
 	
 	# Opening
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Hello, doctor."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Hi. Please tell me about your problem."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Thank you. You see, I am using a scrib, but I own another one - an old model."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I have precious memory on that scrib. Pictures of my family, of a college trip on Mars..."))
@@ -31,10 +30,10 @@ func _ready():
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...it works!!! Thank you so much. Have a good day."))
 	
 	# Bad ending
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Techno-dammit, I messed up!)"))
+	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Memno-dammit, I gave her a broken memory!)"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Quick, let's erase everything that can lead back to me...)"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(There. Never happened.)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I should be more cautious from now on.)"))
+	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I'll erase mine too, just in case...)"))
 
 	# No change ending
 	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I got your password. It's 'fireshrimp'."))
@@ -63,13 +62,15 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 		ManageFry()
 		LoadLines(_badEndingLines)
 		return true
-
+	
 	var hasHappy = souvenirs[1].tags.find(Enums.MemTag.Happy) >= 0
 	if hasHappy:
-		_pay = 400
+		_pay = 500
+		UnlockScenario.emit(8)
 		LoadLines(_goodEndingLines)
 	else:
-		_pay = 50
+		_pay = 400
+		UnlockScenario.emit(8)
 		LoadLines(_noChangeLines)
 	
 	_state = Enums.ScenarioState.OperationResult
@@ -78,4 +79,4 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 
 func _isFried(souvenirs : Array[MemoryData]) -> bool:
 	var tags = souvenirs[1].tags
-	return tags.find(Enums.MemTag.Family) < 0
+	return ((tags.find(Enums.MemTag.Family) < 0 and tags.find(Enums.MemTag.Friend) < 0) or tags.find(Enums.MemTag.Broken) >= 0)
