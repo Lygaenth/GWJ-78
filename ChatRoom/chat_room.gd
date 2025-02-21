@@ -1,8 +1,8 @@
 extends CanvasLayer
 class_name ChatRoom
 
-@onready var _patientDialog : Label = $"%PatientDialog"
-@onready var _doctorDialog : Label = $"%DoctorDialog"
+@onready var _patientDialog : CharacterDialog = $"%PatientDialog"
+@onready var _doctorDialog : CharacterDialog = $"%DoctorDialog"
 @onready var _patientInfo : PatientInformation = $"%PatientInfo"
 @onready var _payLabel : MoneyLabel = $"%MoneyLabel"
 @onready var _gainLabel : PayLabel = $"%PayLabel"
@@ -20,12 +20,16 @@ var _inMenus: bool = false
 var _gameState : Enums.GameState = Enums.GameState.CheckEvent
 var _scenario : ScenarioBase
 var _operationRoom : OperationRoom
+var _waitingForEoL : bool = false
 
 func _ready():
 	_talkers = [%TalkSound, %Talk2Sound, %Talk3Sound]
 	_store.Closed.connect(OnQuittedMenus)
 	%Inventory.Closed.connect(OnQuittedMenus)
 	PlayerSingleton.UpdateMoney(0)
+
+	_doctorDialog.CompletedLine.connect(func() : _waitingForEoL = false)
+	_patientDialog.CompletedLine.connect(func() : _waitingForEoL = false)
 	
 	await Wait(1.0)
 	await _patientInfo.DisplayCheckingForPatient()
@@ -43,7 +47,13 @@ func _process(delta):
 func Next():
 	if (_inMenus):
 		return
-		
+	
+	if (_waitingForEoL):
+		_doctorDialog.ForceComplete()
+		_patientDialog.ForceComplete()
+		_waitingForEoL = false
+		return
+	
 	if (_gameState == Enums.GameState.BadEndingPreparation):
 		var line = PlayerSingleton.ErrorManager.GetCopLines()
 		if (line == null):
@@ -87,16 +97,17 @@ func DisplayLine(line : DialogLine):
 	if (line == null || line.Talker == Enums.Talker.None):
 		HideDialog()
 		return
-	
+		
+	_waitingForEoL = true
 	TalkRandom()
 	if (line.Talker == Enums.Talker.Patient):
 		_doctorDialog.hide()
-		_patientDialog.text = line.Text
+		_patientDialog.DisplayLine(line.Text)
 		_patientDialog.label_settings.font = _scenario.Patient.TalkFont
 		_patientDialog.show()
 	elif line.Talker == Enums.Talker.Doctor:
 		_patientDialog.hide()
-		_doctorDialog.text = line.Text
+		_doctorDialog.DisplayLine(line.Text)
 		_doctorDialog.show()
 
 func EnableShoppingAndJacking():

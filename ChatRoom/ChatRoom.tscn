@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=46 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_6atam"]
@@ -20,6 +20,7 @@
 [ext_resource type="Theme" uid="uid://26i86b5u38c2" path="res://ChatRoom/Assets/ConsoleButton.tres" id="9_iln06"]
 [ext_resource type="Script" path="res://ChatRoom/money_label.gd" id="10_qn2xg"]
 [ext_resource type="Script" path="res://OperationRoom/operation_room_factory.gd" id="11_kwves"]
+[ext_resource type="Script" path="res://ChatRoom/CharacterDialog.gd" id="11_mkx2w"]
 [ext_resource type="StyleBox" uid="uid://rq1ibx6o7p7" path="res://ChatRoom/Assets/PayTextBox.tres" id="12_6uipq"]
 [ext_resource type="PackedScene" uid="uid://dydpnhpyidmsa" path="res://Store/Store.tscn" id="12_dhdup"]
 [ext_resource type="LabelSettings" uid="uid://c6dthqsp0oqq5" path="res://ChatRoom/Assets/PayTextDialog.tres" id="13_xh7ih"]
@@ -128,7 +129,7 @@ direction = Vector2(1, 4)
 position = Vector2(169, 281)
 texture = ExtResource("4_hla1p")
 script = ExtResource("5_2dyv3")
-direction = Vector2(0, 1)
+direction = Vector2(0, -1)
 
 [node name="Aquarium" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
 material = SubResource("ShaderMaterial_vinf7")
@@ -185,6 +186,7 @@ Third line of dialogue
 label_settings = ExtResource("4_jdpaq")
 vertical_alignment = 1
 autowrap_mode = 2
+script = ExtResource("11_mkx2w")
 
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -565,7 +567,7 @@ theme_override_styles/panel = ExtResource("2_6atam")
 [node name="DoctorDialog" type="Label" parent="VBoxContainer/PanelContainer2/CenterContainer/PanelContainer"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(800, 0)
+custom_minimum_size = Vector2(800, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -573,6 +575,7 @@ theme_override_styles/normal = ExtResource("7_57520")
 text = "A very long test sentence for wrapping "
 label_settings = ExtResource("8_v3iwd")
 autowrap_mode = 2
+script = ExtResource("11_mkx2w")
 
 [node name="OperationRoomFactory" type="Node" parent="."]
 script = ExtResource("11_kwves")
