@@ -43,7 +43,6 @@ func _ready():
 	
 	# Alien hate ending
 	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Wait... why did you not erase this memory?"))
-	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Because you are the worst specist I've ever met?)"))
 	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I think what you need is not memory fixing. It is empathy."))
 	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I beg you pardon?"))
 	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Look, if you really want to be politically correct, maybe you should try something else."))
@@ -81,28 +80,29 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 		LoadLines(_badEndingLines)
 		return true
 		
+	# 1. get tags
 	var happyCount = 0
 	var sadCount = 0
 	var unchanged = false
 	for s in souvenirs:
 		if s.tags.find(Enums.MemTag.Sad) >= 0 and s.tags.find(Enums.MemTag.Alien) >= 0 and s.tags.find(Enums.MemTag.Trauma) >= 0:
 			unchanged = true
-			LoadLines(_alienHateLines)
 			break
 		if s.tags.find(Enums.MemTag.Happy) and s.tags.find(Enums.MemTag.Alien) >= 0:
 			happyCount += 1
 		elif s.tags.find(Enums.MemTag.Sad) and s.tags.find(Enums.MemTag.Alien) >= 0:
 			sadCount +=1
 			
-	if !unchanged:
+	# 2. check tags
+	if unchanged:
+		_pay = 0
+		LoadLines(_alienHateLines)
+	else:
 		if sadCount < happyCount:
 			_pay = 1200
 			UnlockScenario.emit(16)
 			LoadLines(_alienLoveLines)
-		elif sadCount > happyCount:
-			_pay = 900
-			LoadLines(_alienFearLines)
-		else:
+		elif sadCount >= happyCount:
 			_pay = 900
 			LoadLines(_alienFearLines)
 

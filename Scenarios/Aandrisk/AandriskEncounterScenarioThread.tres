@@ -25,7 +25,7 @@ memory_cost = 400
 memory_thumbnail = ExtResource("3_ds47w")
 can_be_clicked = true
 is_empty = false
-tags = Array[int]([1, 17])
+tags = Array[int]([1, 17, 3])
 memType = 0
 
 [sub_resource type="Resource" id="Resource_m6gh4"]

@@ -69,13 +69,16 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 		ManageFry()
 		LoadLines(_badEndingLines)
 		return true
-
+	
+	# 1. get tags
 	var hasHappy = souvenirs[1].tags.find(Enums.MemTag.Happy) >= 0
 	var hasAlien = souvenirs[1].tags.find(Enums.MemTag.Alien) >= 0
+	var hasLove = souvenirs[1].tags.find(Enums.MemTag.Love) >= 0
+	# 2. check tags
 	if hasHappy and !hasAlien:
 		_pay = 1000
 		LoadLines(_goodEndingLines)
-	elif hasHappy and hasAlien:
+	elif hasAlien and hasLove:
 		_pay = 0
 		LoadLines(_alienLoveLines)
 	else:
