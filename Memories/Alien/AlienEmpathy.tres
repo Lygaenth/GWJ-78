@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://g42qyvubjjhw"]
+
+[ext_resource type="Texture2D" uid="uid://lfcetymqbdbo" path="res://Memories/Addictions/drunk.png" id="1_rj2ta"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_tmprj"]
+
+[resource]
+script = ExtResource("2_tmprj")
+memory_title = "Sapient empathy"
+memory_description = "I feel empathy for another Sapient species. We're not alike, but we can feel the same."
+memory_cost = 300
+memory_thumbnail = ExtResource("1_rj2ta")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([17, 3])
+memType = 0

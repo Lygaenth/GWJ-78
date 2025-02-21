@@ -17,18 +17,13 @@ var AvailabilityCondition : bool = true
 
 signal UnlockScenario(unlockedId : int)
 
-func ReduceAvailabilityCounter():
-	if (!AvailabilityCondition):
-		return
-	AvailabilityCounter -= 1
-
 func ResolveAndCheckIfFried(_memories : Array[MemoryData]) -> bool:
 	_state = Enums.ScenarioState.Closing
 	_completed = true
 	return false
 
 func IsAvailable() -> bool:
-	return !_completed && AvailabilityCounter == 0 && AvailabilityCondition
+	return !_completed && AvailabilityCondition
 
 func GetPay():
 	if (_state == Enums.ScenarioState.OperationResult):

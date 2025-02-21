@@ -28,12 +28,12 @@ func LoadAllScenarios():
 	for scenar in _scenarios:
 		scenar.queue_free()
 	_scenarios.clear()
-	AddScenarioFromPackedScene(TutoScenarioPs)
-	AddScenarioFromPackedScene(CakeStoryScenarioPs)
-	AddScenarioFromPackedScene(Alzheimer1ScenarioPs)
-	AddScenarioFromPackedScene(Alzheimer2ScenarioPs)
-	#AddScenarioFromPackedScene(AandriskEncounterScenarioPs)
-	#AddScenarioFromPackedScene(HarmagianEncounterScenarioPs)
+	AddScenarioFromPackedScene(TutoScenarioPs, true)
+	#AddScenarioFromPackedScene(CakeStoryScenarioPs)
+	#AddScenarioFromPackedScene(Alzheimer1ScenarioPs)
+	#AddScenarioFromPackedScene(Alzheimer2ScenarioPs)
+	AddScenarioFromPackedScene(AandriskEncounterScenarioPs)
+	AddScenarioFromPackedScene(HarmagianEncounterScenarioPs)
 	#AddScenarioFromPackedScene(CriminalScenario2Ps)
 	#AddScenarioFromPackedScene(CriminalReturnScenario2Ps)
 	#AddScenarioFromPackedScene(Fulberte1Scenario2Ps)
@@ -55,17 +55,16 @@ func GetNextScenario() -> ScenarioBase:
 	for scenar : ScenarioBase in _scenarios:
 		if(scenar.IsAvailable()):
 			availableScenars.append(scenar)
-		else:
-			scenar.ReduceAvailabilityCounter()
 	if (availableScenars.size() == 0):
 		return null
 
 	return availableScenars.pick_random()
 
-func AddScenarioFromPackedScene(ps : PackedScene):
+func AddScenarioFromPackedScene(ps : PackedScene, isAvailable: bool = false):
 	var scenar = ps.instantiate() as ScenarioBase
 	scenar.UnlockScenario.connect(OnUnlockScenario)
 	add_child(scenar)
+	scenar.AvailabilityCondition = isAvailable
 	_scenarios.append(scenar)
 
 func OnUnlockScenario(scenarioId : int):

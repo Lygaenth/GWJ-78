@@ -56,5 +56,6 @@ enum MemTag
 	Aggression,
 	Intense,
 	Friend,
-	Consciousness
+	Consciousness,
+	Alien
 }

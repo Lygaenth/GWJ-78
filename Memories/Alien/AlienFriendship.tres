@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://cvk6kmqiewiol"]
+
+[ext_resource type="Texture2D" uid="uid://lfcetymqbdbo" path="res://Memories/Addictions/drunk.png" id="1_mnns4"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_x171j"]
+
+[resource]
+script = ExtResource("2_x171j")
+memory_title = "Interspecific friendship"
+memory_description = "I am friend with an alien. Despite our differences, they have always been there for me."
+memory_cost = 800
+memory_thumbnail = ExtResource("1_mnns4")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([17, 3])
+memType = 0
