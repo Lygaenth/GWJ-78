@@ -8,10 +8,8 @@ const Alzheimer2ScenarioPs : PackedScene = preload("res://Scenarios/Alzheimer/2/
 const AandriskEncounterScenarioPs : PackedScene = preload("res://Scenarios/Aandrisk/AandriskEncounter.tscn")
 const HarmagianEncounterScenarioPs : PackedScene = preload("res://Scenarios/Harmagian/HarmagianEncounter.tscn")
 const CriminalScenario2Ps : PackedScene = preload("res://Scenarios/Criminal/Criminal.tscn")
-const CriminalReturnScenario2Ps : PackedScene = preload("res://Scenarios/CriminalReturn/CriminalReturn.tscn")
 const Fulberte1Scenario2Ps : PackedScene = preload("res://Scenarios/Fulberte/1/Fulberte.tscn")
 const Fulberte2Scenario2Ps : PackedScene = preload("res://Scenarios/Fulberte/2/Fulberte2.tscn")
-const Fulberte3Scenario2Ps : PackedScene = preload("res://Scenarios/Fulberte/3/Fulberte3.tscn")
 const Picnic1ScenarioPs : PackedScene = preload("res://Scenarios/Picnic/1/Picnic.tscn")
 const Picnic2ScenarioPs : PackedScene = preload("res://Scenarios/Picnic/2/Picnic2.tscn")
 const MimicScenarioPs : PackedScene = preload("res://Scenarios/Mimic/Mimic.tscn")
@@ -34,11 +32,10 @@ func LoadAllScenarios():
 	#AddScenarioFromPackedScene(Alzheimer2ScenarioPs)
 	#AddScenarioFromPackedScene(AandriskEncounterScenarioPs)
 	#AddScenarioFromPackedScene(HarmagianEncounterScenarioPs)
-	AddScenarioFromPackedScene(CriminalScenario2Ps)
-	AddScenarioFromPackedScene(CriminalReturnScenario2Ps)
-	#AddScenarioFromPackedScene(Fulberte1Scenario2Ps)
-	#AddScenarioFromPackedScene(Fulberte2Scenario2Ps)
-	#AddScenarioFromPackedScene(Fulberte3Scenario2Ps)
+	#AddScenarioFromPackedScene(CriminalScenario2Ps)
+	#AddScenarioFromPackedScene(CriminalReturnScenario2Ps)
+	AddScenarioFromPackedScene(Fulberte1Scenario2Ps)
+	AddScenarioFromPackedScene(Fulberte2Scenario2Ps)
 	#AddScenarioFromPackedScene(Picnic1ScenarioPs)
 	#AddScenarioFromPackedScene(Picnic2ScenarioPs)
 	#AddScenarioFromPackedScene(MimicScenarioPs)
@@ -63,6 +60,7 @@ func GetNextScenario() -> ScenarioBase:
 func AddScenarioFromPackedScene(ps : PackedScene, isAvailable: bool = false):
 	var scenar = ps.instantiate() as ScenarioBase
 	scenar.UnlockScenario.connect(OnUnlockScenario)
+	scenar.LockAllScenario.connect(OnLockAllScenarios)
 	add_child(scenar)
 	scenar.AvailabilityCondition = isAvailable
 	_scenarios.append(scenar)
@@ -71,3 +69,7 @@ func OnUnlockScenario(scenarioId : int):
 	for scenario in _scenarios:
 		if (scenario.Id == scenarioId):
 			scenario.AvailabilityCondition = true
+
+func OnLockAllScenarios():
+	for scenario in _scenarios:
+		scenario.AvailabilityCondition = false

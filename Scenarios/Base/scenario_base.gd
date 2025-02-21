@@ -16,6 +16,7 @@ var AvailabilityCounter : int = 0
 var AvailabilityCondition : bool = true
 
 signal UnlockScenario(unlockedId : int)
+signal LockAllScenario()
 
 func ResolveAndCheckIfFried(_memories : Array[MemoryData]) -> bool:
 	_state = Enums.ScenarioState.Closing
