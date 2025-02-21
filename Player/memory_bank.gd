@@ -19,6 +19,9 @@ func Consume(memory : MemoryData):
 	if (index >= 0):
 		_memoryBank.erase(memory)		
 
+func CanEraseOrSell() -> bool:
+	return _memoryBank.size() > 1
+
 func LoadStartingMemory():
 	_memoryBank.clear()
 	_memoryBank.append(load("res://Memories/Addictions/Drunk.tres"))

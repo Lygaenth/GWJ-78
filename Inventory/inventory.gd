@@ -4,6 +4,7 @@ class_name Inventory
 const memoryButtonPs : PackedScene = preload("res://Inventory/InventoryMemoryButton.tscn")
 
 signal SwitchToStore();
+signal Closed()
 
 func _ready():
 	var memories = PlayerSingleton.GetAvailableMemories()
@@ -17,14 +18,16 @@ func _ready():
 func Display():
 	show()
 	%StoreButton.disabled = PlayerSingleton.IsShopLock()
-
 	
 func OnClosePressed():
+	%ActionSound.play()
+	Closed.emit()
 	hide()
 	
 func OnButtonDisplayDesc(desc : String):
+	%ActionSound.play()
 	%DescriptionLabel.text = desc
 
-
 func _on_store_button_pressed():
+	%ActionSound.play()
 	SwitchToStore.emit()

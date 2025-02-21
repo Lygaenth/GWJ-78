@@ -2,23 +2,29 @@ extends Node
 class_name MusicManager
 
 func _ready():
-	print("0: "+AudioServer.get_bus_name(0))
-	print("1: "+AudioServer.get_bus_name(1))
-	print("2: "+AudioServer.get_bus_name(2))
+	%MainMusicPlayer.volume_db = _musicVolumeRef
+	%OperationRoomMusicPlayer.volume_db = _cutOffVolume
+
+var _musicVolumeRef : float = -6.0
+var _cutOffVolume : float = -124.0
+var _sfxVolumeRef : float = 6
+
+var volumeMusic : float = _musicVolumeRef
+var volumeSfx : float = _sfxVolumeRef
 
 func SwitchToOperationMusic(withTransition : bool = true):
-	AudioServer.set_bus_mute(2, false)
-	AudioServer.set_bus_mute(1, true)
+	%MainMusicPlayer.volume_db = _cutOffVolume
+	%OperationRoomMusicPlayer.volume_db = _musicVolumeRef
 	
 func SwitchToMainMusic(withTransition : bool = true):
-	AudioServer.set_bus_mute(1, false)
-	AudioServer.set_bus_mute(2, true)
+	%MainMusicPlayer.volume_db = _musicVolumeRef
+	%OperationRoomMusicPlayer.volume_db = _cutOffVolume
 	if withTransition:
 		%TransitionSound.play()
 
 func DisableAllMusic():
-	AudioServer.set_bus_mute(1, true)
-	AudioServer.set_bus_mute(2, true)
+	%MainMusicPlayer.volume_db = _cutOffVolume
+	%OperationRoomMusicPlayer.volume_db = _cutOffVolume
 
 
 func EnableMusic(on : bool):
@@ -28,6 +34,15 @@ func EnableMusic(on : bool):
 		DisableAllMusic()
 		
 func EnableSfx(on : bool):
-	AudioServer.set_bus_mute(3, on)
 	if (on):
+		volumeSfx = _sfxVolumeRef
 		%TestSound.play()
+	else:
+		volumeSfx = _cutOffVolume
+	SfxUpdated.emit(volumeSfx)
+
+
+func GetSfxVolume() -> float:
+	return volumeSfx
+
+signal SfxUpdated(newVolume : float)

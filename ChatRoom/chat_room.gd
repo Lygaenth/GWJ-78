@@ -15,12 +15,16 @@ class_name ChatRoom
 @onready var _operationRoomFactory : OperationRoomFactory = $OperationRoomFactory
 @onready var _talkers : Array[AudioStreamPlayer]
 
+var _inMenus: bool = false
+
 var _gameState : Enums.GameState = Enums.GameState.CheckEvent
 var _scenario : ScenarioBase
 var _operationRoom : OperationRoom
-	
+
 func _ready():
 	_talkers = [%TalkSound, %Talk2Sound, %Talk3Sound]
+	_store.Closed.connect(OnQuittedMenus)
+	%Inventory.Closed.connect(OnQuittedMenus)
 	PlayerSingleton.UpdateMoney(0)
 	
 	await Wait(1.0)
@@ -29,11 +33,17 @@ func _ready():
 	_patientInfo.DisplayWait()
 	EnableGreetButton()
 
+func OnQuittedMenus():
+	_inMenus = false
+
 func _process(delta):
 	if (Input.is_action_just_pressed("Next")):
 		Next()
 
 func Next():
+	if (_inMenus):
+		return
+		
 	if (_gameState == Enums.GameState.BadEndingPreparation):
 		var line = PlayerSingleton.ErrorManager.GetCopLines()
 		if (line == null):
@@ -142,6 +152,7 @@ func CheckEvent() -> bool:
 
 func OnShopPressed():
 	%ClickSound.play()
+	_inMenus = true
 	_shopButton.release_focus()
 	_store.show()
 	PlayerSingleton.ShopUnlock()
@@ -201,6 +212,7 @@ func DisplayEnding(ending : Enums.Endings):
 	DisableJacking()
 	DisableGreeButton()
 	DisableShopping()
+	_inMenus = true
 	_endingsScreen.RaiseEnding(ending)
 
 func TalkRandom():
@@ -209,10 +221,12 @@ func TalkRandom():
 
 func _on_inventory_pressed():
 	%Inventory.Display()
+	_inMenus = true
 
 func _on_store_switch_to_inventory():
 	%Inventory.show()
 	_store.hide()
+	_inMenus = true
 
 func _on_inventory_switch_to_store():
 	_store.show()
@@ -221,14 +235,15 @@ func _on_inventory_switch_to_store():
 	_shopButton.Stop()
 	if (_scenario.GetState() == Enums.ScenarioState.Operation):
 		EnableShoppingAndJacking()
-
+	_inMenus = true
 
 func _on_resign_button_pressed():
 	%QuitConfirm.show()
-
+	_inMenus = true
 
 func _on_quit_button_pressed():
 	get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
 
 func _on_cancel_button_pressed():
 	%QuitConfirm.hide()
+	_inMenus = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://em14hkafk6r"]
+[gd_scene load_steps=21 format=3 uid="uid://em14hkafk6r"]
 
 [ext_resource type="Script" path="res://OperationRoom/operation_room.gd" id="1_v3cl8"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_1ymtu"]
@@ -12,6 +12,7 @@
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="9_87qxu"]
 [ext_resource type="LabelSettings" uid="uid://bothd7lomrj8g" path="res://OperationRoom/Assets/TutoLabel.tres" id="9_k7ejn"]
 [ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="10_atljc"]
+[ext_resource type="Script" path="res://Sounds/sfxSound.gd" id="13_gj0tw"]
 
 [sub_resource type="Resource" id="Resource_7mbc4"]
 script = ExtResource("3_yb8xg")
@@ -333,6 +334,10 @@ theme_override_styles/hover = ExtResource("8_tjaiy")
 theme_override_styles/pressed = ExtResource("8_tjaiy")
 theme_override_styles/normal = ExtResource("8_tjaiy")
 text = " Close Tutorial "
+
+[node name="ActionSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("13_gj0tw")
 
 [connection signal="pressed" from="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/ConfirmButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="OperationTutoPanel/PanelContainer/HBoxContainer/PanelContainer2/VBoxContainer/MarginContainer4/PanelContainer/VBoxContainer/CloseTutoBtn" to="." method="_on_close_tuto_btn_pressed"]

@@ -19,7 +19,6 @@ signal DisplayDescription(desc : String)
 
 var shopMemoryButtonPs = load("res://Store/ShopMemoryButton.tscn")
 
-
 signal send_memory_to_bank(memory: MemoryData)
 signal update_memory_bank
 
@@ -30,8 +29,12 @@ func DisplayInShop(memory: MemoryData):
 	keep_button.hide()
 	insert_button.hide()
 	cost_label.show()
-	sell_button.show()
-	erase_button.show()
+	if (PlayerSingleton._memoryBank.CanEraseOrSell()):
+		sell_button.show()
+		erase_button.show()
+	else:
+		sell_button.hide()
+		erase_button.hide()
 
 #... in the bank
 func DisplayInBank(memory: MemoryData):
@@ -40,7 +43,12 @@ func DisplayInBank(memory: MemoryData):
 	insert_button.hide()
 	cost_label.hide()
 	sell_button.show()
-	erase_button.show()
+	if (PlayerSingleton._memoryBank.CanEraseOrSell()):
+		sell_button.show()
+		erase_button.show()
+	else:
+		sell_button.hide()
+		erase_button.hide()
 
 #...in the memory eraser
 func DisplayInEraser(memory: MemoryData):
@@ -95,6 +103,12 @@ func NewEmptyMemory():
 
 func _on_pressed():
 	%BlipSound.play()
+	if (PlayerSingleton._memoryBank.CanEraseOrSell() && sell_button.visible):
+		sell_button.show()
+		erase_button.show()
+	else:
+		sell_button.hide()
+		erase_button.hide()
 	context_menu.show()
 
 func _on_contextual_menu_mouse_exited():
@@ -131,6 +145,7 @@ func _on_insert_button_pressed():
 
 func _on_sell_button_pressed():
 	%ActionSound.play()
+	hide()
 	PlayerSingleton.UpdateMoney(on_ready_memory.memory_cost / 2)
 	PlayerSingleton._memoryBank.Consume(on_ready_memory)
 	print("memory sent to shop")
@@ -139,6 +154,7 @@ func _on_sell_button_pressed():
 
 func _on_erase_button_pressed():
 	%ActionSound.play()
+	hide()
 	PlayerSingleton._memoryBank.Consume(on_ready_memory)
 	await get_tree().create_timer(0.2)
 	queue_free()

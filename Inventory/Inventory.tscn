@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://k0q2aad1mox0"]
+[gd_scene load_steps=10 format=3 uid="uid://k0q2aad1mox0"]
 
 [ext_resource type="Script" path="res://Inventory/inventory.gd" id="1_qeeqf"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_r5txb"]
 [ext_resource type="FontFile" uid="uid://6vhn43ra26qi" path="res://Fonts/PixelifySans-Regular.ttf" id="3_5o5w0"]
 [ext_resource type="Theme" uid="uid://dcho8yr3orscl" path="res://Store/Assets/Store_theme.tres" id="4_ao11v"]
+[ext_resource type="AudioStream" uid="uid://d3yowdj7xg6n1" path="res://Sounds/SFX/ShopBlip.wav" id="5_1d1r1"]
+[ext_resource type="Script" path="res://Sounds/sfxSound.gd" id="6_503yf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlfyv"]
 bg_color = Color(0, 0, 0, 1)
@@ -144,6 +146,11 @@ theme_override_styles/panel = ExtResource("2_r5txb")
 [node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="ActionSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_1d1r1")
+script = ExtResource("6_503yf")
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer2/StoreButton" to="." method="_on_store_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer/MarginContainer/CloseButton" to="." method="OnClosePressed"]

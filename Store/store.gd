@@ -9,6 +9,8 @@ var _amount : int = 0
 var _numberOfSelectedItem : int = 0
 var _selectedItems : Array[MemoryData] = []
 
+signal Closed()
+
 func _ready():
 	var memories = MemorySingleton.GetAllMemories()
 	
@@ -29,6 +31,8 @@ signal SwitchToInventory()
 
 
 func OnClosePressed():
+	%ActionSound.play()
+	Closed.emit()
 	hide()
 
 func OnItemStateChanged(isSelected : bool, memory : MemoryData):
@@ -52,6 +56,7 @@ func GetAmount() -> int:
 	return amount
 
 func OnBuy():
+	%ActionSound.play()
 	_buyButton.release_focus()
 	if (!PlayerSingleton.BuyMemory(_selectedItems)):
 		await NotifyFailedTransaction()
@@ -73,6 +78,7 @@ func NotifyFailedTransaction():
 
 
 func _on_inventory_button_pressed():
+	%ActionSound.play()
 	SwitchToInventory.emit()
 
 func OnButtonDisplayDesc(desc : String):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dknh24q1qdxtn"]
+[gd_scene load_steps=16 format=3 uid="uid://dknh24q1qdxtn"]
 
 [ext_resource type="LabelSettings" uid="uid://cr34ftfcx6o5w" path="res://OperationRoom/Assets/OperationLabel.tres" id="1_1a5ao"]
 [ext_resource type="Script" path="res://OperationRoom/memory_button.gd" id="1_7sere"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c6um5tqw08ild" path="res://OperationRoom/memoryChoiceMenu.tscn" id="10_7lxir"]
 [ext_resource type="AudioStream" uid="uid://d3yowdj7xg6n1" path="res://Sounds/SFX/ShopBlip.wav" id="10_lmer1"]
 [ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="11_44qyu"]
+[ext_resource type="Script" path="res://Sounds/sfxSound.gd" id="12_b082m"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qwgos"]
 gradient = ExtResource("3_3wq4o")
@@ -207,12 +208,12 @@ layout_mode = 1
 [node name="BlipSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("10_lmer1")
-bus = &"OperationRoom"
+script = ExtResource("12_b082m")
 
 [node name="ActionSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("11_44qyu")
-bus = &"SFX"
+script = ExtResource("12_b082m")
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="button_up" from="." to="." method="_on_button_up"]

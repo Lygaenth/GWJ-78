@@ -1,30 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://blncccbnamxt"]
+[gd_scene load_steps=7 format=3 uid="uid://blncccbnamxt"]
 
 [ext_resource type="Script" path="res://Sounds/music_manager.gd" id="1_is0ff"]
 [ext_resource type="AudioStream" uid="uid://l3g8jjwp8ji0" path="res://Sounds/Music/MainMusicShortLoop.wav" id="2_3by80"]
 [ext_resource type="AudioStream" uid="uid://cjrts8fnye4iw" path="res://Sounds/Music/OperationMusicShortLoop.wav" id="3_uvgt6"]
 [ext_resource type="AudioStream" uid="uid://b4jm7wmxcjsrg" path="res://Sounds/SFX/transition.wav" id="4_owev2"]
 [ext_resource type="AudioStream" uid="uid://d3yowdj7xg6n1" path="res://Sounds/SFX/ShopBlip.wav" id="5_kyb27"]
+[ext_resource type="Script" path="res://Sounds/sfxSound.gd" id="6_fn4np"]
 
 [node name="MusicManager" type="Node"]
 script = ExtResource("1_is0ff")
 
 [node name="MainMusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("2_3by80")
 autoplay = true
-bus = &"Music"
 
 [node name="OperationRoomMusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("3_uvgt6")
 autoplay = true
-bus = &"OperationRoom"
 
 [node name="TransitionSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_owev2")
 volume_db = -4.672
-bus = &"SFX"
 
 [node name="TestSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("5_kyb27")
+script = ExtResource("6_fn4np")

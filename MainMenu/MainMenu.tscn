@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://di5q0vgb2yabl"]
+[gd_scene load_steps=22 format=3 uid="uid://di5q0vgb2yabl"]
 
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="1_fxul4"]
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_v1vy5"]
@@ -11,6 +11,7 @@
 [ext_resource type="StyleBox" uid="uid://cb5bkb63dj8s" path="res://MainMenu/CyanOptionsFlatBox.tres" id="8_avnj4"]
 [ext_resource type="LabelSettings" uid="uid://2lqb2msa0ip8" path="res://MainMenu/CyanOptionsLblSettings.tres" id="9_1t2ex"]
 [ext_resource type="StyleBox" uid="uid://cyvjw663octmt" path="res://MainMenu/CyanOptionsNoBorderFlatBox.tres" id="10_1ufti"]
+[ext_resource type="Script" path="res://Sounds/sfxSound.gd" id="12_8ei4i"]
 
 [sub_resource type="Gradient" id="Gradient_4qedq"]
 
@@ -252,7 +253,7 @@ text = "SFX
 [node name="StartButtonSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_piooc")
-bus = &"SFX"
+script = ExtResource("12_8ei4i")
 
 [connection signal="pressed" from="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/VBoxContainer/PanelContainer2/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/VBoxContainer/PanelContainer4/QuitButton" to="." method="_on_quit_button_pressed"]
