@@ -12,7 +12,7 @@ var _sfxVolumeRef : float = 6
 var volumeMusic : float = _musicVolumeRef
 var volumeSfx : float = _sfxVolumeRef
 
-func SwitchToOperationMusic(withTransition : bool = true):
+func SwitchToOperationMusic():
 	%MainMusicPlayer.volume_db = _cutOffVolume
 	%OperationRoomMusicPlayer.volume_db = _musicVolumeRef
 	
