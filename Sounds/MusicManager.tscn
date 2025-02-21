@@ -18,6 +18,7 @@ autoplay = true
 [node name="OperationRoomMusicPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("3_uvgt6")
+volume_db = -80.0
 autoplay = true
 
 [node name="TransitionSound" type="AudioStreamPlayer" parent="."]
