@@ -204,7 +204,6 @@ text = "Implant
 
 [node name="OperationTutoPanel" type="MarginContainer" parent="."]
 unique_name_in_owner = true
-visible = false
 z_index = 30
 anchors_preset = 15
 anchor_right = 1.0
@@ -274,7 +273,7 @@ theme_override_styles/panel = ExtResource("8_tjaiy")
 [node name="Label" type="Label" parent="OperationTutoPanel/PanelContainer/HBoxContainer/PanelContainer/VBoxContainer/MarginContainer2/PanelContainer2"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-text = "This zone displays your patient memory. The first left is cause of the memories chain. The last one is the current mental state of the patient.
+text = "This zone displays your patient memories. The first left is the cause of the memory chain. The last one is the current mental state of the patient and will become unkown after a modification.
 The middle ones can be modified."
 label_settings = ExtResource("9_k7ejn")
 horizontal_alignment = 1
@@ -330,7 +329,7 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_vertical = 6
 text = "
-This zone gives you access to your shop, inventory and the confimation of the changes you have made (or not). Patient cannot have empty memories before completing the operation. Once confirmed, it cannot be reverted."
+This zone gives you access to your shop, inventory and the confimation of the changes you have made (or not). Patient cannot have empty or broken memories before completing the operation. Once confirmed, it cannot be reverted."
 label_settings = ExtResource("9_k7ejn")
 horizontal_alignment = 1
 autowrap_mode = 2
