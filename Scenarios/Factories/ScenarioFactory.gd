@@ -38,11 +38,17 @@ func ResetScenario():
 	LoadAllScenarios()
 
 func GetNextScenario() -> ScenarioBase:
+	var hasUnlockedScenarios = false
 	var availableScenars : Array[ScenarioBase] = []
 	for scenar : ScenarioBase in _scenarios:
+		scenar.DecrementCounter()
+		if scenar.IsUnlocked():
+			hasUnlockedScenarios = true
 		if(scenar.IsAvailable()):
 			availableScenars.append(scenar)
 	if (availableScenars.size() == 0):
+		if hasUnlockedScenarios:
+			return GetNextScenario() # decrement recursively until an available scenario is available
 		return null
 
 	return availableScenars.pick_random()

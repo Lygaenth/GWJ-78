@@ -26,6 +26,9 @@ func ResolveAndCheckIfFried(_memories : Array[MemoryData]) -> bool:
 func IsAvailable() -> bool:
 	return !_completed && AvailabilityCondition
 
+func IsUnlocked() -> bool:
+	return !AvailabilityCondition
+
 func GetPay():
 	if (_state == Enums.ScenarioState.OperationResult):
 		_state = Enums.ScenarioState.Closing
@@ -52,3 +55,7 @@ func LoadLines(newLines : Array[DialogLine]) -> void:
 	_lineIndex=0
 	_lines.clear()
 	_lines.append_array(newLines)
+	
+func DecrementCounter():
+	if (!AvailabilityCondition):
+		AvailabilityCounter += -1

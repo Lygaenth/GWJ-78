@@ -68,7 +68,6 @@ func GetLine() -> DialogLine:
 func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 	var isFried = _isFried(souvenirs)
 	if(isFried):
-		LockAllScenario.emit()
 		ManageFry()
 		LoadLines(_goodEndingLines)
 		return true
