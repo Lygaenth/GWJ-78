@@ -100,7 +100,7 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 	else:
 		if sadCount < happyCount:
 			_pay = 1200
-			UnlockScenario.emit(16)
+			UnlockScenario.emit(ScenarioConst.Aandrisk)
 			LoadLines(_alienLoveLines)
 		elif sadCount >= happyCount:
 			_pay = 900
