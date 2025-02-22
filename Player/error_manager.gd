@@ -44,12 +44,12 @@ func InitializeLines():
 	_error3Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Oh, I didn't have any patient today. Day passed so fast)"))
 
 	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Dr. Lethe !"))
-	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "You're under arrest for having destroy eleven minds."))
+	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "You're under arrest for the destruction of eleven minds."))
 	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Eleven ?! I don't remember any of that !"))
-	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "We do have proof though."))
+	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "We do have proofs !"))
 	_specificLine = DialogLineFactory.CreateLine(Enums.Talker.Patient, "We investigated the bodies of ")
 	_copLines.append(_specificLine)
-	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "All three remains led us to you. You will pay for you crime."))
+	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "An investigations on the three of them led us to you. You will pay for you crime."))
 	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "In the Eternal Slop."))
 
 func GetErrorDialog() -> Array[DialogLine]:

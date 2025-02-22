@@ -1,12 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://di5q0vgb2yabl"]
+[gd_scene load_steps=22 format=3 uid="uid://di5q0vgb2yabl"]
 
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="1_fxul4"]
 [ext_resource type="Script" path="res://MainMenu/main_menu.gd" id="1_v1vy5"]
 [ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="2_4leyl"]
-[ext_resource type="Shader" path="res://ChatRoom/Assets/ChatRoom.gdshader" id="2_np0aq"]
 [ext_resource type="Texture2D" uid="uid://b0y6h1ppie4hi" path="res://MainMenu/Sprites/splashart.png" id="3_4sqxd"]
-[ext_resource type="StyleBox" uid="uid://bx4ev60dxnmk7" path="res://MainMenu/CyanMainMenuFlatBox.tres" id="3_g5dm6"]
-[ext_resource type="StyleBox" uid="uid://cv7wlfnrwx10v" path="res://OperationRoom/Assets/CyanFlatBox.tres" id="3_o3lbl"]
 [ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="4_piooc"]
 [ext_resource type="LabelSettings" uid="uid://v108naiofr1b" path="res://MainMenu/MainMenuTitle.tres" id="5_dt64h"]
 [ext_resource type="FontFile" uid="uid://cndj6xbgwc61b" path="res://Fonts/RubikGlitch-Regular.ttf" id="6_wd0om"]
@@ -17,30 +14,6 @@
 [ext_resource type="StyleBox" uid="uid://cyvjw663octmt" path="res://MainMenu/CyanOptionsNoBorderFlatBox.tres" id="10_1ufti"]
 [ext_resource type="Script" path="res://Sounds/sfxSound.gd" id="12_8ei4i"]
 [ext_resource type="Texture2D" uid="uid://cykhggmptcei1" path="res://MainMenu/Sprites/Mod.png" id="24_7ao8v"]
-
-[sub_resource type="Gradient" id="Gradient_4qedq"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_lqokq"]
-noise_type = 2
-frequency = 0.2004
-cellular_distance_function = 3
-domain_warp_enabled = true
-domain_warp_frequency = 10.0
-domain_warp_fractal_type = 2
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_meh0y"]
-width = 50
-height = 50
-as_normal_map = true
-bump_strength = 7.3
-color_ramp = SubResource("Gradient_4qedq")
-noise = SubResource("FastNoiseLite_lqokq")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jlewn"]
-shader = ExtResource("2_np0aq")
-shader_parameter/_isActive = true
-shader_parameter/maxValue = 0.2
-shader_parameter/_aquarium = SubResource("NoiseTexture2D_meh0y")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7h8v"]
 
@@ -82,7 +55,6 @@ script = ExtResource("1_v1vy5")
 
 [node name="Background" type="TextureRect" parent="."]
 unique_name_in_owner = true
-material = SubResource("ShaderMaterial_jlewn")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -99,6 +71,96 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_fxul4")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_fxul4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_fxul4")
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_fxul4")
+
+[node name="Settings" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2"]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_fxul4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings"]
+layout_mode = 2
+
+[node name="AudioSettings" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/panel = ExtResource("8_avnj4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = ExtResource("8_avnj4")
+text = "Audio"
+label_settings = ExtResource("9_1t2ex")
+horizontal_alignment = 1
+
+[node name="AudioOptionsSettings" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = ExtResource("1_fxul4")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer/AudioOptionsSettings"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer/AudioOptionsSettings/MarginContainer"]
+layout_mode = 2
+
+[node name="Music" type="CheckBox" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer/AudioOptionsSettings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0.701961, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.701961, 1)
+theme_override_colors/font_color = Color(0, 1, 0.701961, 1)
+theme_override_styles/focus = ExtResource("10_1ufti")
+theme_override_styles/disabled = ExtResource("10_1ufti")
+theme_override_styles/hover_pressed_mirrored = ExtResource("10_1ufti")
+theme_override_styles/hover = ExtResource("10_1ufti")
+theme_override_styles/pressed = ExtResource("10_1ufti")
+theme_override_styles/normal = ExtResource("10_1ufti")
+button_pressed = true
+text = "Music
+"
+
+[node name="SFX" type="CheckBox" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer/AudioOptionsSettings/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_hover_color = Color(0, 1, 0.701961, 1)
+theme_override_colors/font_pressed_color = Color(0, 1, 0.701961, 1)
+theme_override_colors/font_color = Color(0, 1, 0.701961, 1)
+theme_override_styles/focus = ExtResource("10_1ufti")
+theme_override_styles/disabled = ExtResource("10_1ufti")
+theme_override_styles/hover_pressed_mirrored = ExtResource("10_1ufti")
+theme_override_styles/hover = ExtResource("10_1ufti")
+theme_override_styles/pressed = ExtResource("10_1ufti")
+theme_override_styles/normal = ExtResource("10_1ufti")
+button_pressed = true
+text = "SFX
+"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -219,104 +281,14 @@ size_flags_vertical = 4
 texture = ExtResource("8_kv2lk")
 stretch_mode = 4
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("3_g5dm6")
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer"]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("3_o3lbl")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/PanelContainer"]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("1_fxul4")
-
-[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = ExtResource("1_fxul4")
-
-[node name="Settings" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2"]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("1_fxul4")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings"]
-layout_mode = 2
-
-[node name="AudioSettings" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer"]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-theme_override_styles/panel = ExtResource("8_avnj4")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer"]
-layout_mode = 2
-theme_override_styles/normal = ExtResource("8_avnj4")
-text = "Audio"
-label_settings = ExtResource("9_1t2ex")
-horizontal_alignment = 1
-
-[node name="AudioOptionsSettings" type="PanelContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-mouse_filter = 1
-theme_override_styles/panel = ExtResource("1_fxul4")
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer/AudioOptionsSettings"]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer/AudioOptionsSettings/MarginContainer"]
-layout_mode = 2
-
-[node name="Music" type="CheckBox" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer/AudioOptionsSettings/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme_override_colors/font_hover_color = Color(0, 1, 0.701961, 1)
-theme_override_colors/font_pressed_color = Color(0, 1, 0.701961, 1)
-theme_override_colors/font_color = Color(0, 1, 0.701961, 1)
-theme_override_styles/focus = ExtResource("10_1ufti")
-theme_override_styles/disabled = ExtResource("10_1ufti")
-theme_override_styles/hover_pressed_mirrored = ExtResource("10_1ufti")
-theme_override_styles/hover = ExtResource("10_1ufti")
-theme_override_styles/pressed = ExtResource("10_1ufti")
-theme_override_styles/normal = ExtResource("10_1ufti")
-button_pressed = true
-text = "Music
-"
-
-[node name="SFX" type="CheckBox" parent="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer/AudioOptionsSettings/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme_override_colors/font_hover_color = Color(0, 1, 0.701961, 1)
-theme_override_colors/font_pressed_color = Color(0, 1, 0.701961, 1)
-theme_override_colors/font_color = Color(0, 1, 0.701961, 1)
-theme_override_styles/focus = ExtResource("10_1ufti")
-theme_override_styles/disabled = ExtResource("10_1ufti")
-theme_override_styles/hover_pressed_mirrored = ExtResource("10_1ufti")
-theme_override_styles/hover = ExtResource("10_1ufti")
-theme_override_styles/pressed = ExtResource("10_1ufti")
-theme_override_styles/normal = ExtResource("10_1ufti")
-button_pressed = true
-text = "SFX
-"
-
 [node name="StartButtonSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_piooc")
 script = ExtResource("12_8ei4i")
 
-[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings" to="." method="_on_audio_settings_mouse_entered"]
 [connection signal="mouse_exited" from="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings" to="." method="_on_audio_settings_mouse_exited"]
 [connection signal="toggled" from="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer/AudioOptionsSettings/MarginContainer/VBoxContainer/Music" to="." method="_on_music_toggled"]
 [connection signal="toggled" from="MarginContainer/PanelContainer/PanelContainer/HBoxContainer/PanelContainer2/Settings/VBoxContainer/AudioSettings/VBoxContainer/AudioOptionsSettings/MarginContainer/VBoxContainer/SFX" to="." method="_on_sfx_toggled"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
