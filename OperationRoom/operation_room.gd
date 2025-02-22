@@ -9,6 +9,8 @@ class_name OperationRoom extends CanvasLayer
 @onready var confirmButton = %ConfirmButton
 
 signal confirm_operation(data: OperationData)
+signal OpenShop()
+signal OpenInventory()
 
 func _ready():
 	UpdateLabel()
@@ -16,6 +18,8 @@ func _ready():
 	CheckConfirmationEnabled()
 	if (!PlayerSingleton._hasSeenTuto):
 		%OperationTutoPanel.show()
+	if (PlayerSingleton.IsShopLock()):
+		%ShopButton.disabled = true
 
 func UpdateLabel():
 	query_label.text = operation_data.customer_query
@@ -65,3 +69,11 @@ func OnQueueUpdated():
 func _on_close_tuto_btn_pressed():
 	%OperationTutoPanel.hide()
 	PlayerSingleton.ValidateTuto()
+
+
+func _on_shop_button_pressed():
+	OpenShop.emit()
+
+
+func _on_inventory_button_pressed():
+	OpenInventory.emit()

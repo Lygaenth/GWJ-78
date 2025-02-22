@@ -190,6 +190,8 @@ func OnJackPressed():
 func StartOperation():
 	_gameState = Enums.GameState.OperatingPatient
 	_operationRoom = _operationRoomFactory.CreateOperationRoom(_scenario.GetMemories())
+	_operationRoom.OpenShop.connect(OnShopPressed)
+	_operationRoom.OpenInventory.connect(_on_inventory_pressed)
 	add_child(_operationRoom)
 	MusicSingleton.SwitchToOperationMusic()
 	_operationRoom.confirm_operation.connect(OnOperationTerminated)

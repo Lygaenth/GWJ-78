@@ -7,15 +7,21 @@ signal SwitchToStore();
 signal Closed()
 
 func _ready():
-	var memories = PlayerSingleton.GetAvailableMemories()
-	
+	LoadMemories()
+
+func LoadMemories():
+	for child in %GridContainer.get_children():
+		child.queue_free()
+		
+	var memories = PlayerSingleton.GetAvailableMemories()	
 	for memory in memories:
 		var button : InventoryMemoryButton = memoryButtonPs.instantiate() 
 		%GridContainer.add_child(button)
 		button.DisplayInBank(memory)
-		button.DisplayDescription.connect(OnButtonDisplayDesc)
+		button.DisplayDescription.connect(OnButtonDisplayDesc)	
 
 func Display():
+	LoadMemories()
 	show()
 	%StoreButton.disabled = PlayerSingleton.IsShopLock()
 	

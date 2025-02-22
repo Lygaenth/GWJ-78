@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://em14hkafk6r"]
+[gd_scene load_steps=22 format=3 uid="uid://em14hkafk6r"]
 
 [ext_resource type="Script" path="res://OperationRoom/operation_room.gd" id="1_v3cl8"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_1ymtu"]
@@ -10,6 +10,7 @@
 [ext_resource type="Theme" uid="uid://dhr6clecf8nir" path="res://OperationRoom/Resources/OperationRoomButtonTheme.tres" id="7_yx5ry"]
 [ext_resource type="StyleBox" uid="uid://cv7wlfnrwx10v" path="res://OperationRoom/Assets/CyanFlatBox.tres" id="8_tjaiy"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="9_87qxu"]
+[ext_resource type="StyleBox" uid="uid://be4v1qi110xaq" path="res://OperationRoom/Assets/OperationText.tres" id="9_c7th5"]
 [ext_resource type="LabelSettings" uid="uid://bothd7lomrj8g" path="res://OperationRoom/Assets/TutoLabel.tres" id="9_k7ejn"]
 [ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="10_atljc"]
 [ext_resource type="Script" path="res://Sounds/sfxSound.gd" id="13_gj0tw"]
@@ -155,10 +156,49 @@ size_flags_vertical = 3
 theme = ExtResource("5_dod8x")
 theme_override_styles/panel = ExtResource("6_rwnri")
 
-[node name="ConfirmButton" type="Button" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame"]
+[node name="VBoxContainer" type="VBoxContainer" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ShopButton" type="Button" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/VBoxContainer/PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("7_yx5ry")
+theme_override_styles/focus = ExtResource("9_c7th5")
+theme_override_styles/hover_pressed_mirrored = ExtResource("9_c7th5")
+theme_override_styles/hover_pressed = ExtResource("9_c7th5")
+theme_override_styles/normal = ExtResource("9_c7th5")
+text = "Shop
+"
+
+[node name="InventoryButton" type="Button" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("7_yx5ry")
+theme_override_styles/hover_pressed = ExtResource("9_c7th5")
+theme_override_styles/hover = ExtResource("9_c7th5")
+theme_override_styles/pressed = ExtResource("9_c7th5")
+theme_override_styles/normal = ExtResource("9_c7th5")
+text = "Inventory
+"
+
+[node name="ConfirmButton" type="Button" parent="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("7_yx5ry")
+theme_override_styles/normal = ExtResource("9_c7th5")
 text = "Implant
 "
 
@@ -339,5 +379,7 @@ text = " Close Tutorial "
 unique_name_in_owner = true
 script = ExtResource("13_gj0tw")
 
-[connection signal="pressed" from="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/ConfirmButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/VBoxContainer/PanelContainer/HBoxContainer/ShopButton" to="." method="_on_shop_button_pressed"]
+[connection signal="pressed" from="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/VBoxContainer/PanelContainer/HBoxContainer/InventoryButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="OuterFrame/InnerFrame/OperationWindow/MarginContainer/VBoxContainer/BottomFrame/VBoxContainer/ConfirmButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="OperationTutoPanel/PanelContainer/HBoxContainer/PanelContainer2/VBoxContainer/MarginContainer4/PanelContainer/VBoxContainer/CloseTutoBtn" to="." method="_on_close_tuto_btn_pressed"]
