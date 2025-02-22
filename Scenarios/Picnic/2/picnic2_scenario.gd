@@ -75,6 +75,7 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 
 	var hasJob = souvenirs[1].tags.find(Enums.MemTag.Work) >= 0 or souvenirs[2].tags.find(Enums.MemTag.Work) >= 0 
 	var hasNewJob = hasJob and souvenirs[1].tags.find(Enums.MemTag.Confidence) >= 0 or souvenirs[2].tags.find(Enums.MemTag.Confidence) >= 0
+	var jobSucks = hasJob and souvenirs[1].tags.find(Enums.MemTag.Sad) >= 0 or souvenirs[2].tags.find(Enums.MemTag.Sad) >= 0
 	if hasNewJob:
 		_pay = 400
 		LoadLines(_goodEndingLines)
@@ -90,5 +91,6 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 	return isFried
 
 func _isFried(souvenirs : Array[MemoryData]) -> bool:
-	var hasTrauma = souvenirs[1].tags.find(Enums.MemTag.Trauma) >= 0 and souvenirs[2].tags.find(Enums.MemTag.Trauma) >= 0
-	return (hasTrauma)
+	var hasTrauma = souvenirs[1].tags.find(Enums.MemTag.Trauma) >= 0 or souvenirs[2].tags.find(Enums.MemTag.Trauma) >= 0
+	var hasWork = souvenirs[1].tags.find(Enums.MemTag.Work) >= 0 or souvenirs[2].tags.find(Enums.MemTag.Work) >= 0
+	return (hasTrauma and !hasWork)

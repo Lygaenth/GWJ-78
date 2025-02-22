@@ -82,27 +82,24 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 		
 	# 1. get tags
 	var happyCount = 0
-	var sadCount = 0
 	var unchanged = false
 	for s in souvenirs:
 		if s.tags.find(Enums.MemTag.Sad) >= 0 and s.tags.find(Enums.MemTag.Alien) >= 0 and s.tags.find(Enums.MemTag.Trauma) >= 0:
 			unchanged = true
 			break
-		if s.tags.find(Enums.MemTag.Happy) and s.tags.find(Enums.MemTag.Alien) >= 0:
+		if s.tags.find(Enums.MemTag.Happy) >= 0 and s.tags.find(Enums.MemTag.Alien) >= 0:
 			happyCount += 1
-		elif s.tags.find(Enums.MemTag.Sad) and s.tags.find(Enums.MemTag.Alien) >= 0:
-			sadCount +=1
 			
 	# 2. check tags
 	if unchanged:
 		_pay = 0
 		LoadLines(_alienHateLines)
 	else:
-		if sadCount < happyCount:
+		if happyCount == 3:
 			_pay = 1200
 			UnlockScenario.emit(ScenarioConst.Aandrisk)
 			LoadLines(_alienLoveLines)
-		elif sadCount >= happyCount:
+		else:
 			_pay = 900
 			LoadLines(_alienFearLines)
 
