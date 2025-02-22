@@ -12,3 +12,5 @@ Id = 4
 Memories = ExtResource("3_cph74")
 
 [node name="Character" parent="." index="0" instance=ExtResource("3_226wc")]
+BirthDate = "c.s. 289"
+Notes = "Lack attention, seems lost.."

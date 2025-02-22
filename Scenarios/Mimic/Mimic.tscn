@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenarios/Mimic/mimic_scenario.gd" id="2_rugc0"]
 [ext_resource type="Resource" uid="uid://dnsgmn2il6dca" path="res://Scenarios/Mimic/MimicScenarioThread.tres" id="3_e1l3p"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_3xk66"]
-[ext_resource type="Texture2D" uid="uid://cqo0yn0wcmbxk" path="res://SpriteCharacters/Mimic.png" id="4_17hvc"]
+[ext_resource type="Texture2D" uid="uid://du3m3m1rumbff" path="res://SpriteCharacters/Sheia.png" id="5_54dy5"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_8ip46")]
 script = ExtResource("2_rugc0")
@@ -15,5 +15,6 @@ Memories = ExtResource("3_e1l3p")
 [node name="Character" parent="." index="0" instance=ExtResource("4_3xk66")]
 FamilyName = ""
 FirstName = "Sheia"
-Notes = "Astonishingly calm"
-Picture = ExtResource("4_17hvc")
+BirthDate = "c.s. 299"
+Notes = "A young person. Looks average. Very calm."
+Picture = ExtResource("5_54dy5")

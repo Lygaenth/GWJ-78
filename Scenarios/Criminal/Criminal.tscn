@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenarios/Criminal/criminal_scenario.gd" id="2_4fdtk"]
 [ext_resource type="Resource" uid="uid://j33nom7i5i0e" path="res://Scenarios/Criminal/CriminalScenarioThread.tres" id="3_tgy2b"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_0gni5"]
-[ext_resource type="Texture2D" uid="uid://ch7efkib4febu" path="res://SpriteCharacters/Criminal.png" id="4_v16xt"]
+[ext_resource type="Texture2D" uid="uid://dma437lrqejr5" path="res://SpriteCharacters/Cable.png" id="5_emxm6"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_kurrn")]
 script = ExtResource("2_4fdtk")
@@ -16,5 +16,5 @@ Memories = ExtResource("3_tgy2b")
 FamilyName = "Le Douc"
 FirstName = "?"
 BirthDate = "?"
-Notes = "?"
-Picture = ExtResource("4_v16xt")
+Notes = "This person is so modded that it barely seems human anymore.."
+Picture = ExtResource("5_emxm6")

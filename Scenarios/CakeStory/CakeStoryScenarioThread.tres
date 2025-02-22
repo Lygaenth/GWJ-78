@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://b4wb6bwhxdj6t" path="res://Memories/Family/Assets/Conflict.png" id="1_50skc"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_vfpmv"]
 [ext_resource type="Script" path="res://Scenarios/Base/memoryThread.gd" id="2_2imh4"]
-[ext_resource type="Texture2D" uid="uid://cvc6sbjm6alnj" path="res://Memories/Other/CakeSplashing.png" id="3_51dot"]
 [ext_resource type="Texture2D" uid="uid://iwvtmuyanhk6" path="res://Memories/Family/Assets/Family.png" id="3_feeb8"]
 
 [sub_resource type="Resource" id="Resource_t1rio"]
@@ -17,12 +16,15 @@ is_empty = false
 tags = Array[int]([0, 4])
 memType = 2
 
+[sub_resource type="Resource" id="Resource_w2mps"]
+metadata/__load_path__ = "res://Memories/Other/CakeSplashing.png"
+
 [sub_resource type="Resource" id="Resource_2b4ol"]
 script = ExtResource("1_vfpmv")
 memory_title = "Cake splash"
 memory_description = "A cake splashed agressively by an enraged brother"
 memory_cost = 0
-memory_thumbnail = ExtResource("3_51dot")
+memory_thumbnail = SubResource("Resource_w2mps")
 can_be_clicked = true
 is_empty = false
 tags = Array[int]([0, 4])

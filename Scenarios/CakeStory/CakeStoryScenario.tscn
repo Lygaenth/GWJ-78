@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2m27g07dopmf"]
+[gd_scene load_steps=6 format=3 uid="uid://b2m27g07dopmf"]
 
 [ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_fwf7v"]
 [ext_resource type="Script" path="res://Scenarios/CakeStory/cakeStory_scenario.gd" id="2_h2slk"]
 [ext_resource type="Resource" uid="uid://2nn888o477gg" path="res://Scenarios/CakeStory/CakeStoryScenarioThread.tres" id="3_k16ee"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_cfqei"]
+[ext_resource type="Texture2D" uid="uid://c83uuswyvtdas" path="res://SpriteCharacters/Tutor.png" id="5_ivmv8"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_fwf7v")]
 script = ExtResource("2_h2slk")
@@ -12,4 +13,6 @@ Id = 2
 Memories = ExtResource("3_k16ee")
 
 [node name="Character" parent="." index="0" instance=ExtResource("4_cfqei")]
-Notes = "Tense, maybe first memory fix?"
+BirthDate = "c.s. 269"
+Notes = "This man looks tense - maybe his first memory fix?"
+Picture = ExtResource("5_ivmv8")
