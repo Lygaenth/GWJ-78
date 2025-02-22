@@ -8,9 +8,7 @@ void vertex() {
 	if(_isActive)
 	{
 		vec4 color = texture(_aquarium, vec2(UV.x, UV.y));
-		float alpha = abs(sin(TIME + color.b * 200.0)) * 0.5;
-		if (alpha < maxValue)
-			alpha = maxValue;
+		float alpha = abs(sin(TIME + color.b * 200.0) / 8.0);
 			
 		COLOR = vec4(0.0, 1.0, 0.702, alpha);
 	}
