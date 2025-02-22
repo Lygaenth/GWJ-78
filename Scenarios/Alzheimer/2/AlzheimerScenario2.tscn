@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenarios/Alzheimer/2/alzheimer_scenario2.gd" id="2_w5kw6"]
 [ext_resource type="Resource" uid="uid://d703o1kp0x0s" path="res://Scenarios/Alzheimer/2/AlzheimerScenarioThread2.tres" id="3_8iu4c"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_mswdf"]
-[ext_resource type="Texture2D" uid="uid://c7y63ibvmydqq" path="res://SpriteCharacters/Char4.png" id="5_11t37"]
+[ext_resource type="Texture2D" uid="uid://cenuuanc18lpy" path="res://SpriteCharacters/PrimaVera.png" id="5_enyh2"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_oqlok")]
 script = ExtResource("2_w5kw6")
@@ -15,5 +15,6 @@ Memories = ExtResource("3_8iu4c")
 [node name="Character" parent="." index="0" instance=ExtResource("4_mswdf")]
 FamilyName = "Prima"
 FirstName = "Vera"
-Notes = "Seems a little more confused than before."
-Picture = ExtResource("5_11t37")
+BirthDate = "c.s. 293"
+Notes = "They seem a little more confused than before.."
+Picture = ExtResource("5_enyh2")

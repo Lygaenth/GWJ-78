@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_1u3ii"]
 [ext_resource type="Script" path="res://Scenarios/Fulberte/1/fulberte1_scenario.gd" id="2_s2wtd"]
 [ext_resource type="Resource" uid="uid://brirceg2ejnlc" path="res://Scenarios/Fulberte/1/Fulberte1ScenarioThread.tres" id="3_aq24v"]
-[ext_resource type="Texture2D" uid="uid://chqfieqjx3npg" path="res://SpriteCharacters/MemeFulberte.png" id="4_8ksxn"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_jq113"]
+[ext_resource type="Texture2D" uid="uid://dwt0rji85kg3c" path="res://SpriteCharacters/Fulberte.png" id="5_yleit"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_1u3ii")]
 script = ExtResource("2_s2wtd")
@@ -15,6 +15,6 @@ Memories = ExtResource("3_aq24v")
 [node name="Character" parent="." index="0" instance=ExtResource("4_jq113")]
 FamilyName = "Mémé"
 FirstName = "Fulberte"
-BirthDate = "?"
-Notes = "She looks calm and decided."
-Picture = ExtResource("4_8ksxn")
+BirthDate = "c.s. 253"
+Notes = "An old woman with a rebel look.She looks calm and decided."
+Picture = ExtResource("5_yleit")
