@@ -5,9 +5,10 @@
 [ext_resource type="Resource" uid="uid://dgq2h8b46t4tb" path="res://Scenarios/HoloBookWorker/HoloBookScenarioThread1.tres" id="3_s2xub"]
 [ext_resource type="PackedScene" uid="uid://blb58ks4ca5n0" path="res://Scenarios/HoloBookWorker/HoloBookChar1.tscn" id="4_p018q"]
 
-[node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_j8ocf")]
+[node name="ScenarioBase" instance=ExtResource("1_j8ocf")]
 script = ExtResource("2_164hx")
-Patient = NodePath("Character")
+Patient = Object(Node,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","script":Resource("res://Scenarios/Base/character.gd"),"FamilyName":"Alk","FirstName":"Varm","BirthDate":"02/05/3756","Notes":"Young, probably didn't sleep for days","Picture":Resource("res://SpriteCharacters/Alk.png"),"TalkFont":Resource("res://Fonts/ChakraPetch-Medium.ttf"))
+
 Id = 3
 Memories = ExtResource("3_s2xub")
 

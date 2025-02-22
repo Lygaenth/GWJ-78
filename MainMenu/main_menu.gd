@@ -3,6 +3,7 @@ extends CanvasLayer
 
 func _on_start_button_pressed():
 	%StartButtonSound.play()
+	PlayerSingleton.Reset()
 	await Wait(0.5)
 	get_tree().change_scene_to_file("res://ChatRoom/ChatRoom.tscn")
 
