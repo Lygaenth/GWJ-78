@@ -20,7 +20,7 @@ func _ready():
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(...could it be *this* customer from earlier?)"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...but when he came back, Glenn was in love with aliens!"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(By the Cosmic Amnesic, it's Glenn Kestrel!)"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I saw him k-k-kissing with an Aandrisk..."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I saw him k-k-kissing with a Varanid..."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Oh, boy...)"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "My precious memories were soiled! *Do* something!"))
 
@@ -31,14 +31,14 @@ func _ready():
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Anyways, I have to go. My time is precious."))
 		
 	# Bad ending
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Techno-dammit, I messed up!)"))
+	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Memno-dammit, I messed up!)"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Quick, let's erase everything that can lead back to me...)"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(There. Never happened.)"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I should be more cautious from now on.)"))
 	
 	# Neutral ending
 	_neutralEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Not a great memory... but it'll do."))
-	_neutralEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Wait, only $300?"))
+	_neutralEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Wait, only $400?"))
 	_neutralEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Half the investment, half the cash prize."))
 	_neutralEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I have to go now. My time is precious."))
 	

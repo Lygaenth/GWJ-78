@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://vgwkcytyx5tr"]
+
+[ext_resource type="Texture2D" uid="uid://cwqsuqq4ojym6" path="res://Memories/Logic/broken.png" id="1_tjoxb"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_kybux"]
+
+[resource]
+script = ExtResource("2_kybux")
+memory_title = "[Corrupted]"
+memory_description = "*m%|\\|wh4|_3*"
+memory_cost = 0
+memory_thumbnail = ExtResource("1_tjoxb")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([0, 4, 6])
+memType = 0

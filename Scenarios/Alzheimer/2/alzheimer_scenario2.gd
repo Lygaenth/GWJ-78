@@ -14,7 +14,7 @@ func _ready():
 	
 	# Opening
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Hello, doctor."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "You see, I am using a scrib right now, but I own another one - an old model."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "You see, I am using a digiphone right now, but I own another one - an old model."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(...)"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "It truly is important to me. It is full of precious memory: pictures of my family, of a college trip on Mars..."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(......)"))
@@ -24,7 +24,7 @@ func _ready():
 	
 	# Good ending
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "...you should feel better."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I do, but what about my scrib?"))
+	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I do, but what about my digiphone?"))
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I am sorry, I could not locate it. Maybe you lost it without noticing."))
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Oh? That can't be..."))
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...I guess it can't be helped. Have a nice day, doctor."))
@@ -40,7 +40,7 @@ func _ready():
 	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Your memory was damaged. Again. It could be many things, but... I think it is a brain condition."))
 	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "What? No... I mean, I have always been light-headed."))
 	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I'm afraid not. Light-headedness does not cause this kind of memory damage."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "For the love of stars, that must be a joke!"))
+	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Betelgeuse, that must be a joke!"))
 	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Sorry, I am serious."))
 	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Can't you do something? Replace the... bad memories by healthy ones?"))
 	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "This is beyond the skills of a memory fixer. Actually, you should go to a neuroclinic."))

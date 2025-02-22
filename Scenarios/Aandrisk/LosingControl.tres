@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://d0w2rn7o6i2wx"]
+
+[ext_resource type="Texture2D" uid="uid://b4wb6bwhxdj6t" path="res://Memories/Family/Assets/Conflict.png" id="1_dec6d"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_xpuxl"]
+
+[resource]
+script = ExtResource("2_xpuxl")
+memory_title = "Losing control"
+memory_description = "The situation is not under my control. I feel disgusted and infuriated."
+memory_cost = 0
+memory_thumbnail = ExtResource("1_dec6d")
+can_be_clicked = false
+is_empty = false
+tags = Array[int]([])
+memType = 2

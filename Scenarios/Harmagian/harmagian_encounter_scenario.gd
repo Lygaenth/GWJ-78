@@ -15,27 +15,27 @@ func _ready():
 	
 	# Opening
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Hi doc."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Isn't that... Glenn Kestrel, the famous journalist from the Threads?!)"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Isn't that... Glenn Kestrel, the famous journalist from Mars-Reports?!)"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Hi, what brings you here today?"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Well, I guess it's all the aliens' fault again..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I remember now... his show is not very friendly towards non-human Sapients)"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Recently, I was humiliated by an Harmagian merchant... Damned talking octopuses."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But since that *incident*, my legitimate anger has become a liability to the Threads."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I remember now... his show is not very friendly towards aliens)"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Recently, I was humiliated by an Helicoid merchant... Damned talking snails."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But since that *incident*, my... animosity has become a liability."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "My superior wants my memory fixed. 'For public image', she said."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Anything for the Threads, I guess. Put a slap patch on, I'll get started."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Anything for the news, I guess. Put a patch on, I'll get started."))
 	
 	# Alien love ending
-	_alienLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Tell me now: what do you think of Harmagians?"))
+	_alienLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Tell me now: what do you think of Helicoids?"))
 	_alienLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "They are disgusting with their little tentacles... but I admire their technology"))
-	_alienLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "What about Aandrisks?"))
+	_alienLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "What about Varanids?"))
 	_alienLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Actually, they look kinda hot."))
 	_alienLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Ok, maybe I went too far...)"))
 	_alienLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Anyways, I feel great. Thanks, doc!"))
 	
 	# Alien fear ending
-	_alienFearLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Tell me now: what do you think of Harmagians?"))
+	_alienFearLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Tell me now: what do you think of Helicoids?"))
 	_alienFearLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "They are so disgusting with all their little tentacles. Gross."))
-	_alienFearLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "What about Aandrisks?"))
+	_alienFearLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "What about Varanids?"))
 	_alienFearLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Those pesky lizards? Always acting like they're superior to us."))
 	_alienFearLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Still as species as ever)"))
 	_alienFearLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...but I feel a little more composed. I don't know what you fixed, but you did it."))
@@ -46,9 +46,8 @@ func _ready():
 	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I think what you need is not memory fixing. It is empathy."))
 	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I beg you pardon?"))
 	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Look, if you really want to be politically correct, maybe you should try something else."))
-	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Listen to other Sapients, learn more about their culture..."))
-	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Neuroplacent-red-coast-bugshit!"))
-	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "*I* am the victim here. If someone lacks empathy, it's *them*!"))
+	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Listen to other species, learn more about their culture..."))
+	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Neuroplacent-space-bugshit!"))
 	_alienHateLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I'm outta here. And don't expect credits!"))
 	
 	# Bad ending

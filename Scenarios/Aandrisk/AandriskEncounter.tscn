@@ -14,9 +14,9 @@ Id = 10
 Memories = ExtResource("3_p2nhn")
 
 [node name="Character" parent="." index="0" instance=ExtResource("4_3ehiy")]
-FamilyName = "Delpiastre"
+FamilyName = "Belladona"
 FirstName = "Bianca"
-BirthDate = "c.s. 284"
-Notes = "A famous martian celebrity, owner of a channel on the Threads. She looks furious."
+BirthDate = "Birthday: a.n. 184"
+Notes = "A famous celebrity, owner of a galactic news channel."
 Picture = ExtResource("5_j1bye")
 TalkFont = ExtResource("6_7ga2v")
