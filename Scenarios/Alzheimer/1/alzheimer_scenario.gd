@@ -66,7 +66,7 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 	var hasHappy = souvenirs[1].tags.find(Enums.MemTag.Happy) >= 0
 	if hasHappy:
 		_pay = 500
-		UnlockScenario.emit(8)
+		UnlockScenario.emit(ScenarioConst.Alzheimer2)
 		LoadLines(_goodEndingLines)
 	else:
 		_pay = 400
@@ -82,4 +82,4 @@ func _isFried(souvenirs : Array[MemoryData]) -> bool:
 	var hasFamily = souvenirs[1].tags.find(Enums.MemTag.Family) >= 0
 	var hasLove = souvenirs[1].tags.find(Enums.MemTag.Love) >= 0
 	var hasGroup = souvenirs[1].tags.find(Enums.MemTag.Group) >= 0
-	return (hasFriend or hasFamily or hasLove or hasGroup)
+	return !(hasFriend or hasFamily or hasLove or hasGroup)
