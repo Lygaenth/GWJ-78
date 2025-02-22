@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenarios/Aandrisk/aandrisk_encounter_scenario.gd" id="2_1mahg"]
 [ext_resource type="Resource" uid="uid://bxtnifl4h1h5p" path="res://Scenarios/Aandrisk/AandriskEncounterScenarioThread.tres" id="3_p2nhn"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_3ehiy"]
-[ext_resource type="Texture2D" uid="uid://bnlngj840h3q8" path="res://SpriteCharacters/BiancaDelpiastre.png" id="4_mobd1"]
+[ext_resource type="Texture2D" uid="uid://bewnflhn80n46" path="res://SpriteCharacters/Bianca.png" id="5_j1bye"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_d8x14")]
 script = ExtResource("2_1mahg")
@@ -15,6 +15,6 @@ Memories = ExtResource("3_p2nhn")
 [node name="Character" parent="." index="0" instance=ExtResource("4_3ehiy")]
 FamilyName = "Delpiastre"
 FirstName = "Bianca"
-BirthDate = ""
-Notes = "Outraged"
-Picture = ExtResource("4_mobd1")
+BirthDate = "c.s. 284"
+Notes = "A famous martian celebrity, owner of a channel on the Threads. She looks furious."
+Picture = ExtResource("5_j1bye")

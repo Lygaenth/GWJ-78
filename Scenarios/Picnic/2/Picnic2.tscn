@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_6sqow"]
 [ext_resource type="Script" path="res://Scenarios/Picnic/2/picnic2_scenario.gd" id="2_ox6eo"]
 [ext_resource type="Resource" uid="uid://b2ysl3nbf6ofk" path="res://Scenarios/Picnic/2/Picnic2ScenarioThread.tres" id="3_rj58v"]
-[ext_resource type="Texture2D" uid="uid://dto1au7i7aggo" path="res://SpriteCharacters/Alk.png" id="4_56jej"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_c1akn"]
+[ext_resource type="Texture2D" uid="uid://dnnnoqw1r6ddm" path="res://SpriteCharacters/Alk2.png" id="5_nvuge"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_6sqow")]
 script = ExtResource("2_ox6eo")
@@ -15,5 +15,6 @@ Memories = ExtResource("3_rj58v")
 [node name="Character" parent="." index="0" instance=ExtResource("4_c1akn")]
 FamilyName = "Alk"
 FirstName = "Varm"
-Notes = "Young, probably didn't sleep for days?"
-Picture = ExtResource("4_56jej")
+BirthDate = "c.s. 297"
+Notes = "Probably didn't sleep for days?"
+Picture = ExtResource("5_nvuge")
