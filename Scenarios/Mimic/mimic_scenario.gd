@@ -79,6 +79,7 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 	
 	LockAllScenario.emit()
 	PlayerSingleton.ErrorManager.ReleaseAi()
+	Patient.Fix()
 	_pay = 400
 	LoadLines(_badEndingLines)
 	

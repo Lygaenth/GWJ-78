@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddea8a5gw25yk"]
+[gd_scene load_steps=7 format=3 uid="uid://ddea8a5gw25yk"]
 
 [ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_cmfpm"]
 [ext_resource type="Script" path="res://Scenarios/Harmagian/harmagian_encounter_scenario.gd" id="2_jvwpn"]
 [ext_resource type="Resource" uid="uid://d0k0a6eiqgacv" path="res://Scenarios/Harmagian/HarmagianEncounterScenarioThread.tres" id="3_cc0w1"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_8akv1"]
 [ext_resource type="Texture2D" uid="uid://bwlh7vtat8bsa" path="res://SpriteCharacters/Kestrel.png" id="5_171vy"]
+[ext_resource type="FontFile" uid="uid://brhqxjkbkyjnk" path="res://Fonts/ChakraPetch-Regular.ttf" id="6_hw5i4"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_cmfpm")]
 script = ExtResource("2_jvwpn")
@@ -18,3 +19,4 @@ FirstName = "Glenn"
 BirthDate = "c.s. 290"
 Notes = "The famous presenter on the Threads. Smiling confidently."
 Picture = ExtResource("5_171vy")
+TalkFont = ExtResource("6_hw5i4")

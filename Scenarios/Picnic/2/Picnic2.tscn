@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://db78t6novhoi7"]
+[gd_scene load_steps=7 format=3 uid="uid://db78t6novhoi7"]
 
 [ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_6sqow"]
 [ext_resource type="Script" path="res://Scenarios/Picnic/2/picnic2_scenario.gd" id="2_ox6eo"]
 [ext_resource type="Resource" uid="uid://b2ysl3nbf6ofk" path="res://Scenarios/Picnic/2/Picnic2ScenarioThread.tres" id="3_rj58v"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_c1akn"]
 [ext_resource type="Texture2D" uid="uid://dnnnoqw1r6ddm" path="res://SpriteCharacters/Alk2.png" id="5_nvuge"]
+[ext_resource type="FontFile" uid="uid://brhqxjkbkyjnk" path="res://Fonts/ChakraPetch-Regular.ttf" id="6_y6vr3"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_6sqow")]
 script = ExtResource("2_ox6eo")
@@ -18,3 +19,4 @@ FirstName = "Varm"
 BirthDate = "c.s. 297"
 Notes = "Probably didn't sleep for days?"
 Picture = ExtResource("5_nvuge")
+TalkFont = ExtResource("6_y6vr3")

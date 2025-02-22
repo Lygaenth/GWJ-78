@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0nh8ynnihw52"]
+[gd_scene load_steps=7 format=3 uid="uid://d0nh8ynnihw52"]
 
 [ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_kurrn"]
 [ext_resource type="Script" path="res://Scenarios/Criminal/criminal_scenario.gd" id="2_4fdtk"]
 [ext_resource type="Resource" uid="uid://j33nom7i5i0e" path="res://Scenarios/Criminal/CriminalScenarioThread.tres" id="3_tgy2b"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_0gni5"]
 [ext_resource type="Texture2D" uid="uid://dma437lrqejr5" path="res://SpriteCharacters/Cable.png" id="5_emxm6"]
+[ext_resource type="FontFile" uid="uid://cnvc5l2ay5mii" path="res://Fonts/ChakraPetch-Bold.ttf" id="6_ssty2"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_kurrn")]
 script = ExtResource("2_4fdtk")
@@ -18,3 +19,4 @@ FirstName = "?"
 BirthDate = "?"
 Notes = "This person is so modded that it barely seems human anymore.."
 Picture = ExtResource("5_emxm6")
+TalkFont = ExtResource("6_ssty2")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4kmlbnafuub2"]
+[gd_scene load_steps=7 format=3 uid="uid://d4kmlbnafuub2"]
 
 [ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_d8x14"]
 [ext_resource type="Script" path="res://Scenarios/Aandrisk/aandrisk_encounter_scenario.gd" id="2_1mahg"]
 [ext_resource type="Resource" uid="uid://bxtnifl4h1h5p" path="res://Scenarios/Aandrisk/AandriskEncounterScenarioThread.tres" id="3_p2nhn"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_3ehiy"]
 [ext_resource type="Texture2D" uid="uid://bewnflhn80n46" path="res://SpriteCharacters/Bianca.png" id="5_j1bye"]
+[ext_resource type="FontFile" uid="uid://byg6a8n87eqot" path="res://Fonts/ChakraPetch-Medium.ttf" id="6_7ga2v"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_d8x14")]
 script = ExtResource("2_1mahg")
@@ -18,3 +19,4 @@ FirstName = "Bianca"
 BirthDate = "c.s. 284"
 Notes = "A famous martian celebrity, owner of a channel on the Threads. She looks furious."
 Picture = ExtResource("5_j1bye")
+TalkFont = ExtResource("6_7ga2v")

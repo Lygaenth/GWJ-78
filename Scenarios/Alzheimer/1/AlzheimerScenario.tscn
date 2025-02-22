@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ce8gau07omptj"]
+[gd_scene load_steps=7 format=3 uid="uid://ce8gau07omptj"]
 
 [ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_it1do"]
 [ext_resource type="Script" path="res://Scenarios/Alzheimer/1/alzheimer_scenario.gd" id="2_jjhwr"]
 [ext_resource type="Resource" uid="uid://dffi3vxxgp0wu" path="res://Scenarios/Alzheimer/1/AlzheimerScenarioThread.tres" id="3_rlo2b"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_iip4f"]
 [ext_resource type="Texture2D" uid="uid://cenuuanc18lpy" path="res://SpriteCharacters/PrimaVera.png" id="5_6j1iy"]
+[ext_resource type="Script" path="res://Scenarios/Alzheimer/alzheimer_char.gd" id="5_7igki"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_it1do")]
 script = ExtResource("2_jjhwr")
@@ -13,6 +14,7 @@ Id = 3
 Memories = ExtResource("3_rlo2b")
 
 [node name="Character" parent="." index="0" instance=ExtResource("4_iip4f")]
+script = ExtResource("5_7igki")
 FamilyName = "Prima"
 FirstName = "Vera"
 BirthDate = "c.s. 293"

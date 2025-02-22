@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://uktrw3kspg5l"]
+[gd_scene load_steps=7 format=3 uid="uid://uktrw3kspg5l"]
 
 [ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_sv0v6"]
 [ext_resource type="Script" path="res://Scenarios/CriminalReturn/criminal_return_scenario.gd" id="2_0gajq"]
 [ext_resource type="Resource" uid="uid://dyesvykoqin4e" path="res://Scenarios/CriminalReturn/CriminalReturnScenarioThread.tres" id="3_y1n2s"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_500dt"]
 [ext_resource type="Texture2D" uid="uid://ch7efkib4febu" path="res://SpriteCharacters/Criminal.png" id="4_j1tlj"]
+[ext_resource type="FontFile" uid="uid://byg6a8n87eqot" path="res://Fonts/ChakraPetch-Medium.ttf" id="6_3lxjf"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_sv0v6")]
 script = ExtResource("2_0gajq")
@@ -18,3 +19,4 @@ FirstName = "?"
 BirthDate = "?"
 Notes = "?"
 Picture = ExtResource("4_j1tlj")
+TalkFont = ExtResource("6_3lxjf")

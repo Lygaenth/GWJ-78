@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://4dh5xbwj0dsg"]
+[gd_scene load_steps=7 format=3 uid="uid://4dh5xbwj0dsg"]
 
 [ext_resource type="PackedScene" uid="uid://demjj2u3q0fd2" path="res://Scenarios/Base/ScenarioBase.tscn" id="1_8ip46"]
 [ext_resource type="Script" path="res://Scenarios/Mimic/mimic_scenario.gd" id="2_rugc0"]
 [ext_resource type="Resource" uid="uid://dnsgmn2il6dca" path="res://Scenarios/Mimic/MimicScenarioThread.tres" id="3_e1l3p"]
 [ext_resource type="PackedScene" uid="uid://t0ysv31mbg0s" path="res://Scenarios/ACakeStory/CakeStoryChar.tscn" id="4_3xk66"]
 [ext_resource type="Texture2D" uid="uid://du3m3m1rumbff" path="res://SpriteCharacters/Sheia.png" id="5_54dy5"]
+[ext_resource type="Script" path="res://Scenarios/Mimic/mimic_char.gd" id="5_mr66s"]
 
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_8ip46")]
 script = ExtResource("2_rugc0")
@@ -13,6 +14,7 @@ Id = 11
 Memories = ExtResource("3_e1l3p")
 
 [node name="Character" parent="." index="0" instance=ExtResource("4_3xk66")]
+script = ExtResource("5_mr66s")
 FamilyName = ""
 FirstName = "Sheia"
 BirthDate = "c.s. 299"
