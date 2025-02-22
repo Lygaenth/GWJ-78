@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("2_t1atm")
-memory_title = "Archivist"
+memory_title = "Career Change"
 memory_description = "When I was young, I dreamed of being an archivist."
-memory_cost = 300
+memory_cost = 400
 memory_thumbnail = ExtResource("1_se480")
 can_be_clicked = true
 is_empty = false

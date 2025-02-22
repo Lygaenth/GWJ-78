@@ -7,7 +7,7 @@
 script = ExtResource("2_4vt75")
 memory_title = "BDay Party"
 memory_description = "A birthday party like no other with loved ones and less loved ones"
-memory_cost = 300
+memory_cost = 400
 memory_thumbnail = ExtResource("1_2u08l")
 can_be_clicked = true
 is_empty = false

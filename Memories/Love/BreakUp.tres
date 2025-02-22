@@ -7,7 +7,7 @@
 script = ExtResource("2_n05sx")
 memory_title = "Break up"
 memory_description = "You broke up with your loved one. Was it imposed or on a coomon ground ? No one lnows but what you had ended at that moment."
-memory_cost = 600
+memory_cost = 400
 memory_thumbnail = ExtResource("1_bxn4k")
 can_be_clicked = true
 is_empty = false

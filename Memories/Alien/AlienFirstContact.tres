@@ -7,7 +7,7 @@
 script = ExtResource("2_7x6em")
 memory_title = "First contact"
 memory_description = "My first encounter with a Sapient was a disaster."
-memory_cost = 300
+memory_cost = 800
 memory_thumbnail = ExtResource("1_pvyy1")
 can_be_clicked = true
 is_empty = false

@@ -7,7 +7,7 @@
 script = ExtResource("2_iwinf")
 memory_title = "Family Feud"
 memory_description = "Sometimes, familiy bonds cannot prevent discord among its members. It'as always sad on the moment but it can also be a protection for yourself."
-memory_cost = 700
+memory_cost = 400
 memory_thumbnail = ExtResource("1_s18k8")
 can_be_clicked = true
 is_empty = false

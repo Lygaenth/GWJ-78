@@ -7,7 +7,7 @@
 script = ExtResource("1_pqlc5")
 memory_title = "Trauma"
 memory_description = "[censored]"
-memory_cost = 500
+memory_cost = 800
 memory_thumbnail = ExtResource("1_lt4i1")
 can_be_clicked = true
 is_empty = false

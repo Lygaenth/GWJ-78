@@ -7,7 +7,7 @@
 script = ExtResource("2_sal3r")
 memory_title = "Unkown"
 memory_description = "You extracted a memory. What will you use to fill it and fix or change its identity ?"
-memory_cost = 600
+memory_cost = 0
 memory_thumbnail = ExtResource("1_kcops")
 can_be_clicked = false
 is_empty = false

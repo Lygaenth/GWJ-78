@@ -7,7 +7,7 @@
 script = ExtResource("2_6wsdf")
 memory_title = "Envy"
 memory_description = " I feel a little jealous of alien technology."
-memory_cost = 100
+memory_cost = 800
 memory_thumbnail = ExtResource("1_5304g")
 can_be_clicked = true
 is_empty = false

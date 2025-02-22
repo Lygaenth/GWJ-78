@@ -7,7 +7,7 @@
 script = ExtResource("2_gpgbg")
 memory_title = "Alien help"
 memory_description = "When I was in a dire situation, an alien reached out and helped me."
-memory_cost = 600
+memory_cost = 800
 memory_thumbnail = ExtResource("1_escwr")
 can_be_clicked = true
 is_empty = false
