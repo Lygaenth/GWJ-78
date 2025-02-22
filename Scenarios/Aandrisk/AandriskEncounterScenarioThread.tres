@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b4wb6bwhxdj6t" path="res://Memories/Family/Assets/Conflict.png" id="1_85dh6"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_ld7tl"]
 [ext_resource type="Script" path="res://Scenarios/Base/memoryThread.gd" id="2_c26cg"]
-[ext_resource type="Texture2D" uid="uid://btq1fdnl4irlg" path="res://Memories/Love/Love.png" id="3_ds47w"]
+[ext_resource type="Texture2D" uid="uid://b03087en03uiq" path="res://Memories/Other/AlienLove.png" id="3_vanvw"]
 [ext_resource type="Texture2D" uid="uid://cogllhcey82qh" path="res://Memories/Work/Gear.png" id="4_bfkyd"]
 
 [sub_resource type="Resource" id="Resource_t1rio"]
@@ -22,7 +22,7 @@ script = ExtResource("1_ld7tl")
 memory_title = "Forked tongue kiss"
 memory_description = " I remember a human making out with an Aandrisk."
 memory_cost = 400
-memory_thumbnail = ExtResource("3_ds47w")
+memory_thumbnail = ExtResource("3_vanvw")
 can_be_clicked = true
 is_empty = false
 tags = Array[int]([1, 17, 3])

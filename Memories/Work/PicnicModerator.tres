@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://bag1quh66741e"]
 
-[ext_resource type="Texture2D" uid="uid://b4wb6bwhxdj6t" path="res://Memories/Family/Assets/Conflict.png" id="1_35jg4"]
+[ext_resource type="Texture2D" uid="uid://cogllhcey82qh" path="res://Memories/Work/Gear.png" id="1_2ee0m"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_a7c8r"]
 
 [resource]
@@ -8,7 +8,7 @@ script = ExtResource("2_a7c8r")
 memory_title = "Picnic moderator"
 memory_description = "I work for the Picnic social media. The pay is ok, but I have to check an endless flow of AI-generated poppycock."
 memory_cost = 300
-memory_thumbnail = ExtResource("1_35jg4")
+memory_thumbnail = ExtResource("1_2ee0m")
 can_be_clicked = true
 is_empty = false
 tags = Array[int]([2])

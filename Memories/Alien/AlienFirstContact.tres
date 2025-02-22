@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://ds6or1kl1igqg"]
 
-[ext_resource type="Texture2D" uid="uid://lfcetymqbdbo" path="res://Memories/Addictions/drunk.png" id="1_s3px5"]
+[ext_resource type="Texture2D" uid="uid://0vxebuc6lsvo" path="res://Memories/Other/Alien.png" id="1_pvyy1"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_7x6em"]
 
 [resource]
@@ -8,7 +8,7 @@ script = ExtResource("2_7x6em")
 memory_title = "First contact"
 memory_description = "My first encounter with a Sapient was a disaster."
 memory_cost = 300
-memory_thumbnail = ExtResource("1_s3px5")
+memory_thumbnail = ExtResource("1_pvyy1")
 can_be_clicked = true
 is_empty = false
 tags = Array[int]([17, 4])

@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="MemoryData" load_steps=2 format=3 uid="uid://bwh3h8dhl4wms"]
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://bwh3h8dhl4wms"]
 
+[ext_resource type="Texture2D" uid="uid://cskrbr3nny0ef" path="res://Memories/Logic/Fear.png" id="1_lt4i1"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_pqlc5"]
 
 [resource]
@@ -7,6 +8,7 @@ script = ExtResource("1_pqlc5")
 memory_title = "Trauma"
 memory_description = "[censored]"
 memory_cost = 500
+memory_thumbnail = ExtResource("1_lt4i1")
 can_be_clicked = true
 is_empty = false
 tags = Array[int]([2, 10])

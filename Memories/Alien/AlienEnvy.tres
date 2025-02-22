@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://d4m3amioyihs0"]
 
-[ext_resource type="Texture2D" uid="uid://lfcetymqbdbo" path="res://Memories/Addictions/drunk.png" id="1_b8kij"]
+[ext_resource type="Texture2D" uid="uid://0vxebuc6lsvo" path="res://Memories/Other/Alien.png" id="1_5304g"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_6wsdf"]
 
 [resource]
@@ -8,7 +8,7 @@ script = ExtResource("2_6wsdf")
 memory_title = "Envy"
 memory_description = " I feel a little jealous of alien technology."
 memory_cost = 100
-memory_thumbnail = ExtResource("1_b8kij")
+memory_thumbnail = ExtResource("1_5304g")
 can_be_clicked = true
 is_empty = false
 tags = Array[int]([17, 4])

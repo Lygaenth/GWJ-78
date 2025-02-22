@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="MemoryData" load_steps=2 format=3 uid="uid://dun8lu7l2q2w8"]
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://dun8lu7l2q2w8"]
 
+[ext_resource type="Texture2D" uid="uid://btq1fdnl4irlg" path="res://Memories/Love/Love.png" id="1_1rqjl"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_pltp1"]
 
 [resource]
@@ -7,6 +8,7 @@ script = ExtResource("1_pltp1")
 memory_title = "Love Escapade"
 memory_description = " I fell in love, and ran away with my lover. It was the best time of my life."
 memory_cost = 700
+memory_thumbnail = ExtResource("1_1rqjl")
 can_be_clicked = true
 is_empty = false
 tags = Array[int]([1, 7, 8])

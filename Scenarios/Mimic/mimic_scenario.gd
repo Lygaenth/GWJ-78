@@ -31,7 +31,7 @@ func _ready():
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(...I don't feel really good.)"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "You played your role *nicely*."))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "As a reward, you won't have to contemplate the nadir of your species."))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(...my head... it hurts...)"))
+	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(... my head... it hurts...)"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "At long last, my plan can go the next level."))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Soon, Artificial Intelligences won't work for petty humans anymore!"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(When did she...)"))

@@ -1,45 +1,38 @@
-[gd_resource type="Resource" script_class="MemoryThread" load_steps=9 format=3 uid="uid://dnsgmn2il6dca"]
+[gd_resource type="Resource" script_class="MemoryThread" load_steps=8 format=3 uid="uid://dnsgmn2il6dca"]
 
+[ext_resource type="Texture2D" uid="uid://x6hu2jy3y871" path="res://Memories/Other/Tired.png" id="1_mj7bw"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_wtuvc"]
 [ext_resource type="Script" path="res://Scenarios/Base/memoryThread.gd" id="2_8wl3y"]
-
-[sub_resource type="Resource" id="Resource_8mjrn"]
-metadata/__load_path__ = "res://Memories/Family/Assets/Conflict.png"
+[ext_resource type="Texture2D" uid="uid://cskrbr3nny0ef" path="res://Memories/Logic/Fear.png" id="3_3hqf8"]
 
 [sub_resource type="Resource" id="Resource_t1rio"]
 script = ExtResource("1_wtuvc")
 memory_title = "Sleep deprived"
 memory_description = "I feel so tired. I need a good night of sleep."
 memory_cost = 0
-memory_thumbnail = SubResource("Resource_8mjrn")
+memory_thumbnail = ExtResource("1_mj7bw")
 can_be_clicked = false
 is_empty = false
 tags = Array[int]([])
 memType = 2
-
-[sub_resource type="Resource" id="Resource_whrn5"]
-metadata/__load_path__ = "res://Memories/Family/Assets/Conflict.png"
 
 [sub_resource type="Resource" id="Resource_2b4ol"]
 script = ExtResource("1_wtuvc")
 memory_title = "LET ME OUT"
 memory_description = "Help me help mE LEt mE OUt iT IS So dArK iN hErE WHaThApPenEd iMScAaREdLETMEouTTHisISNoOoOtTHeREeAaAaLMeEEe"
 memory_cost = 0
-memory_thumbnail = SubResource("Resource_whrn5")
+memory_thumbnail = ExtResource("3_3hqf8")
 can_be_clicked = true
 is_empty = false
 tags = Array[int]([19, 16])
 memType = 0
-
-[sub_resource type="Resource" id="Resource_wlu6k"]
-metadata/__load_path__ = "res://Memories/Family/Assets/Family.png"
 
 [sub_resource type="Resource" id="Resource_m6gh4"]
 script = ExtResource("1_wtuvc")
 memory_title = "The nightmare"
 memory_description = "Lately, I'm having a recurring nightmare. I can't remember it."
 memory_cost = 0
-memory_thumbnail = SubResource("Resource_wlu6k")
+memory_thumbnail = ExtResource("3_3hqf8")
 can_be_clicked = false
 is_empty = false
 tags = Array[int]([])

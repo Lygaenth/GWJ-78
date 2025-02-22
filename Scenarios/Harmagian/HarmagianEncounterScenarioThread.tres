@@ -1,34 +1,29 @@
-[gd_resource type="Resource" script_class="MemoryThread" load_steps=10 format=3 uid="uid://d0k0a6eiqgacv"]
+[gd_resource type="Resource" script_class="MemoryThread" load_steps=9 format=3 uid="uid://d0k0a6eiqgacv"]
 
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_m1lhx"]
+[ext_resource type="Texture2D" uid="uid://0vxebuc6lsvo" path="res://Memories/Other/Alien.png" id="1_sv87n"]
 [ext_resource type="Resource" uid="uid://c4ve3ulb03hmx" path="res://Memories/Alien/AlienMockery.tres" id="2_byquj"]
 [ext_resource type="Script" path="res://Scenarios/Base/memoryThread.gd" id="2_g5g52"]
 [ext_resource type="Resource" uid="uid://ds6or1kl1igqg" path="res://Memories/Alien/AlienFirstContact.tres" id="3_dcuq0"]
 [ext_resource type="Resource" uid="uid://d4m3amioyihs0" path="res://Memories/Alien/AlienEnvy.tres" id="4_vvq41"]
-
-[sub_resource type="Resource" id="Resource_8mjrn"]
-metadata/__load_path__ = "res://Memories/Family/Assets/Conflict.png"
 
 [sub_resource type="Resource" id="Resource_t1rio"]
 script = ExtResource("1_m1lhx")
 memory_title = "Harmagian hatred"
 memory_description = "I hate Harmagians, and with them all the non-human Sapients."
 memory_cost = 0
-memory_thumbnail = SubResource("Resource_8mjrn")
+memory_thumbnail = ExtResource("1_sv87n")
 can_be_clicked = false
 is_empty = false
 tags = Array[int]([])
 memType = 2
-
-[sub_resource type="Resource" id="Resource_wlu6k"]
-metadata/__load_path__ = "res://Memories/Family/Assets/Family.png"
 
 [sub_resource type="Resource" id="Resource_m6gh4"]
 script = ExtResource("1_m1lhx")
 memory_title = "Harmagian encounter"
 memory_description = "I met with an Harmagian the other day."
 memory_cost = 0
-memory_thumbnail = SubResource("Resource_wlu6k")
+memory_thumbnail = ExtResource("1_sv87n")
 can_be_clicked = false
 is_empty = false
 tags = Array[int]([])
