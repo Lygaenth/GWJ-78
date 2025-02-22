@@ -7,14 +7,11 @@ const Alzheimer1ScenarioPs : PackedScene = preload("res://Scenarios/Alzheimer/1/
 const Alzheimer2ScenarioPs : PackedScene = preload("res://Scenarios/Alzheimer/2/AlzheimerScenario2.tscn")
 const AandriskEncounterScenarioPs : PackedScene = preload("res://Scenarios/Aandrisk/AandriskEncounter.tscn")
 const HarmagianEncounterScenarioPs : PackedScene = preload("res://Scenarios/Harmagian/HarmagianEncounter.tscn")
-const CriminalScenario2Ps : PackedScene = preload("res://Scenarios/Criminal/Criminal.tscn")
-const Fulberte1Scenario2Ps : PackedScene = preload("res://Scenarios/Fulberte/1/Fulberte.tscn")
+const CriminalScenarioPs : PackedScene = preload("res://Scenarios/Criminal/Criminal.tscn")
+const Fulberte1ScenarioPs : PackedScene = preload("res://Scenarios/Fulberte/1/Fulberte.tscn")
 const Picnic1ScenarioPs : PackedScene = preload("res://Scenarios/Picnic/1/Picnic.tscn")
 const Picnic2ScenarioPs : PackedScene = preload("res://Scenarios/Picnic/2/Picnic2.tscn")
 const MimicScenarioPs : PackedScene = preload("res://Scenarios/Mimic/Mimic.tscn")
-
-#const HoloBookScenario1Ps : PackedScene = preload("res://Scenarios/HoloBookWorker/HoloBookScenario1.tscn")
-#const HoloBookScenario2Ps : PackedScene = preload("res://Scenarios/HoloBookWorker/Part2/HoloBookScenario2.tscn")
 
 var _scenarios : Array[ScenarioBase] = []
 
@@ -26,21 +23,16 @@ func LoadAllScenarios():
 		scenar.queue_free()
 	_scenarios.clear()
 	AddScenarioFromPackedScene(TutoScenarioPs, true)
-	#AddScenarioFromPackedScene(CakeStoryScenarioPs)
-	#AddScenarioFromPackedScene(Alzheimer1ScenarioPs)
-	#AddScenarioFromPackedScene(Alzheimer2ScenarioPs)
-	#AddScenarioFromPackedScene(AandriskEncounterScenarioPs)
-	#AddScenarioFromPackedScene(HarmagianEncounterScenarioPs)
-	#AddScenarioFromPackedScene(CriminalScenario2Ps)
-	#AddScenarioFromPackedScene(CriminalReturnScenario2Ps)
-	AddScenarioFromPackedScene(Fulberte1Scenario2Ps)
-	#AddScenarioFromPackedScene(Picnic1ScenarioPs)
-	#AddScenarioFromPackedScene(Picnic2ScenarioPs)
-	#AddScenarioFromPackedScene(MimicScenarioPs)
-
-	
-	#AddScenarioFromPackedScene(HoloBookScenario1Ps)
-	#AddScenarioFromPackedScene(HoloBookScenario2Ps)
+	AddScenarioFromPackedScene(CakeStoryScenarioPs)
+	AddScenarioFromPackedScene(Alzheimer1ScenarioPs)
+	AddScenarioFromPackedScene(Alzheimer2ScenarioPs)
+	AddScenarioFromPackedScene(AandriskEncounterScenarioPs)
+	AddScenarioFromPackedScene(HarmagianEncounterScenarioPs)
+	AddScenarioFromPackedScene(CriminalScenarioPs)
+	AddScenarioFromPackedScene(Fulberte1ScenarioPs)
+	AddScenarioFromPackedScene(Picnic1ScenarioPs)
+	AddScenarioFromPackedScene(Picnic2ScenarioPs)
+	AddScenarioFromPackedScene(MimicScenarioPs)
 
 func ResetScenario():
 	LoadAllScenarios()

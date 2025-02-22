@@ -78,5 +78,8 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 	return isFried
 
 func _isFried(souvenirs : Array[MemoryData]) -> bool:
-	var tags = souvenirs[1].tags
-	return ((tags.find(Enums.MemTag.Family) < 0 and tags.find(Enums.MemTag.Friend) < 0) or tags.find(Enums.MemTag.Broken) >= 0)
+	var hasFriend = souvenirs[1].tags.find(Enums.MemTag.Friend) >= 0
+	var hasFamily = souvenirs[1].tags.find(Enums.MemTag.Family) >= 0
+	var hasLove = souvenirs[1].tags.find(Enums.MemTag.Love) >= 0
+	var hasGroup = souvenirs[1].tags.find(Enums.MemTag.Group) >= 0
+	return (hasFriend or hasFamily or hasLove or hasGroup)

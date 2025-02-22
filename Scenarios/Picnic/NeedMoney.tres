@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://ckr2mgj5ho6h4"]
+
+[ext_resource type="Texture2D" uid="uid://iwvtmuyanhk6" path="res://Memories/Family/Assets/Family.png" id="1_os5hq"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_0ph3m"]
+
+[resource]
+script = ExtResource("2_0ph3m")
+memory_title = "Money needs"
+memory_description = "I to send money to my family on the *Asteria*. I am desperate for work."
+memory_cost = 0
+memory_thumbnail = ExtResource("1_os5hq")
+can_be_clicked = false
+is_empty = false
+tags = Array[int]([])
+memType = 1

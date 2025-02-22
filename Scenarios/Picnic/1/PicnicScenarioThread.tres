@@ -1,46 +1,15 @@
-[gd_resource type="Resource" script_class="MemoryThread" load_steps=8 format=3 uid="uid://c32heil5sl0l8"]
+[gd_resource type="Resource" script_class="MemoryThread" load_steps=7 format=3 uid="uid://c32heil5sl0l8"]
 
+[ext_resource type="Resource" uid="uid://do8pmf3cl5bch" path="res://Scenarios/Picnic/Haunted.tres" id="1_1b247"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_c6hpn"]
-[ext_resource type="Texture2D" uid="uid://b4wb6bwhxdj6t" path="res://Memories/Family/Assets/Conflict.png" id="1_un35a"]
 [ext_resource type="Script" path="res://Scenarios/Base/memoryThread.gd" id="2_bq5jr"]
-[ext_resource type="Texture2D" uid="uid://iwvtmuyanhk6" path="res://Memories/Family/Assets/Family.png" id="3_wxnwy"]
-
-[sub_resource type="Resource" id="Resource_t1rio"]
-script = ExtResource("1_c6hpn")
-memory_title = "Broken brothers"
-memory_description = "Today Tutor is uneasy with his brother and misses the old day. Patch him up."
-memory_cost = 0
-memory_thumbnail = ExtResource("1_un35a")
-can_be_clicked = false
-is_empty = false
-tags = Array[int]([0, 4])
-memType = 2
-
-[sub_resource type="Resource" id="Resource_2b4ol"]
-script = ExtResource("1_c6hpn")
-memory_title = "Cake splash"
-memory_description = "A cake splashed agressively by an enraged brother"
-memory_cost = 0
-memory_thumbnail = ExtResource("1_un35a")
-can_be_clicked = true
-is_empty = false
-tags = Array[int]([0, 4])
-memType = 0
-
-[sub_resource type="Resource" id="Resource_m6gh4"]
-script = ExtResource("1_c6hpn")
-memory_title = "Brotherhood"
-memory_description = "Fond memories of brothers"
-memory_cost = 0
-memory_thumbnail = ExtResource("3_wxnwy")
-can_be_clicked = false
-is_empty = false
-tags = Array[int]([0, 3])
-memType = 1
+[ext_resource type="Resource" uid="uid://bag1quh66741e" path="res://Memories/Work/PicnicModerator.tres" id="3_gihje"]
+[ext_resource type="Resource" uid="uid://bwh3h8dhl4wms" path="res://Memories/Work/PicnicTrauma.tres" id="4_uexqx"]
+[ext_resource type="Resource" uid="uid://ckr2mgj5ho6h4" path="res://Scenarios/Picnic/NeedMoney.tres" id="5_7arxa"]
 
 [resource]
 script = ExtResource("2_bq5jr")
-Query = "Tutor wants to erase the bad memories of his brother"
-StartMemory = SubResource("Resource_m6gh4")
-IntermediateMemories = Array[ExtResource("1_c6hpn")]([SubResource("Resource_2b4ol")])
-EndMemory = SubResource("Resource_t1rio")
+Query = "Valk wants to forget about their traumatic memories as a Picnic moderator."
+StartMemory = ExtResource("5_7arxa")
+IntermediateMemories = Array[ExtResource("1_c6hpn")]([ExtResource("3_gihje"), ExtResource("4_uexqx")])
+EndMemory = ExtResource("1_1b247")

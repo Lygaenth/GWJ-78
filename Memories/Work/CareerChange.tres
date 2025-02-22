@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://d1rkoxdp2jr72"]
+
+[ext_resource type="Texture2D" uid="uid://cogllhcey82qh" path="res://Memories/Work/Gear.png" id="1_se480"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_t1atm"]
+
+[resource]
+script = ExtResource("2_t1atm")
+memory_title = "Archivist"
+memory_description = "When I was young, I dreamed of being an archivist."
+memory_cost = 300
+memory_thumbnail = ExtResource("1_se480")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([2, 8, 3])
+memType = 0
