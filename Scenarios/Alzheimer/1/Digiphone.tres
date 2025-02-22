@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://bg5x5mffni38q"]
+
+[ext_resource type="Texture2D" uid="uid://dbri303lrcm32" path="res://Memories/Logic/Scrib.png" id="1_a4oq7"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_cqyyu"]
+
+[resource]
+script = ExtResource("2_cqyyu")
+memory_title = "Digiphone"
+memory_description = "I own a digiphone filled with precious memories of my family, my friends, my trips..."
+memory_cost = 0
+memory_thumbnail = ExtResource("1_a4oq7")
+can_be_clicked = false
+is_empty = false
+tags = Array[int]([])
+memType = 1

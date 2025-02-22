@@ -14,18 +14,15 @@ func _ready():
 	
 	# Opening
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Hi. Please tell me about your problem."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Thank you. You see, I am using a scrib, but I own another one - an old model."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Thank you. You see, I am using a digiphone, but I own another one - an old model."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I have precious memory on that scrib. Pictures of my family, of a college trip on Mars..."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But no matter how much I try, I cannot remember the password!"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Why not getting a tech to unblock your scrib?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "There is no tech in my neighborhood. Besides, you're cheaper."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Cheaper than fixing a scrib? I doubt it. Well, she must have reasons.)"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Ok, I'll see what I can do. Put a slap patch on your temple."))
 
 	# Good ending
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "How you feeling?"))
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "A lot better, but what about my password?"))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I think it's 'fireshrimp'."))
+	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I think it's 'moonwhale'."))
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Oh? Let me try..."))
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...it works!!! Thank you so much. Have a good day."))
 	
@@ -36,7 +33,7 @@ func _ready():
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I'll erase mine too, just in case...)"))
 
 	# No change ending
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I got your password. It's 'fireshrimp'."))
+	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I got your password. It's 'moonwhale'."))
 	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Oh? Let me try..."))
 	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...it works!!! Thank you so much. Have a good day."))
 	

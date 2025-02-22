@@ -1,47 +1,14 @@
-[gd_resource type="Resource" script_class="MemoryThread" load_steps=9 format=3 uid="uid://bxtnifl4h1h5p"]
+[gd_resource type="Resource" script_class="MemoryThread" load_steps=6 format=3 uid="uid://bxtnifl4h1h5p"]
 
-[ext_resource type="Texture2D" uid="uid://b4wb6bwhxdj6t" path="res://Memories/Family/Assets/Conflict.png" id="1_85dh6"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_ld7tl"]
+[ext_resource type="Resource" uid="uid://d0w2rn7o6i2wx" path="res://Scenarios/Aandrisk/LosingControl.tres" id="1_qgsd4"]
 [ext_resource type="Script" path="res://Scenarios/Base/memoryThread.gd" id="2_c26cg"]
-[ext_resource type="Texture2D" uid="uid://b03087en03uiq" path="res://Memories/Other/AlienLove.png" id="3_nvskp"]
-[ext_resource type="Texture2D" uid="uid://cogllhcey82qh" path="res://Memories/Work/Gear.png" id="4_bfkyd"]
-
-[sub_resource type="Resource" id="Resource_t1rio"]
-script = ExtResource("1_ld7tl")
-memory_title = "Losing control"
-memory_description = "The situation is not under my control. I feel disgusted and infuriated."
-memory_cost = 0
-memory_thumbnail = ExtResource("1_85dh6")
-can_be_clicked = false
-is_empty = false
-tags = Array[int]([])
-memType = 2
-
-[sub_resource type="Resource" id="Resource_2b4ol"]
-script = ExtResource("1_ld7tl")
-memory_title = "Forked tongue kiss"
-memory_description = " I remember a human making out with an Aandrisk."
-memory_cost = 400
-memory_thumbnail = ExtResource("3_nvskp")
-can_be_clicked = true
-is_empty = false
-tags = Array[int]([1, 17, 3])
-memType = 0
-
-[sub_resource type="Resource" id="Resource_m6gh4"]
-script = ExtResource("1_ld7tl")
-memory_title = "Memno-management"
-memory_description = "Today I sent an human employee to a memory fixer"
-memory_cost = 0
-memory_thumbnail = ExtResource("4_bfkyd")
-can_be_clicked = false
-is_empty = false
-tags = Array[int]([])
-memType = 1
+[ext_resource type="Resource" uid="uid://coh038xe7hbmw" path="res://Memories/Alien/AlienKiss.tres" id="3_u025f"]
+[ext_resource type="Resource" uid="uid://dego0nkalp86u" path="res://Scenarios/Aandrisk/MemnoManger.tres" id="4_wk2ra"]
 
 [resource]
 script = ExtResource("2_c26cg")
-Query = "Bianca Delpiastre wants to forget the memory of her employee kissing with an Aandrisk."
-StartMemory = SubResource("Resource_m6gh4")
-IntermediateMemories = Array[ExtResource("1_ld7tl")]([SubResource("Resource_2b4ol")])
-EndMemory = SubResource("Resource_t1rio")
+Query = "Bianca wants to forget the memory of her employee kissing with a Varanid."
+StartMemory = ExtResource("4_wk2ra")
+IntermediateMemories = Array[ExtResource("1_ld7tl")]([ExtResource("3_u025f")])
+EndMemory = ExtResource("1_qgsd4")

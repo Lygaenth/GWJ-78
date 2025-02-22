@@ -1,47 +1,14 @@
-[gd_resource type="Resource" script_class="MemoryThread" load_steps=9 format=3 uid="uid://dffi3vxxgp0wu"]
+[gd_resource type="Resource" script_class="MemoryThread" load_steps=6 format=3 uid="uid://dffi3vxxgp0wu"]
 
+[ext_resource type="Resource" uid="uid://b53hjf5prt3x" path="res://Scenarios/Alzheimer/1/FearOfLoss.tres" id="1_huh3b"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_kvkp6"]
-[ext_resource type="Texture2D" uid="uid://cskrbr3nny0ef" path="res://Memories/Logic/Fear.png" id="1_rp1co"]
 [ext_resource type="Script" path="res://Scenarios/Base/memoryThread.gd" id="2_lrlx8"]
-[ext_resource type="Texture2D" uid="uid://cwqsuqq4ojym6" path="res://Memories/Logic/broken.png" id="3_kcbcg"]
-[ext_resource type="Texture2D" uid="uid://dbri303lrcm32" path="res://Memories/Logic/Scrib.png" id="4_c7ytr"]
-
-[sub_resource type="Resource" id="Resource_t1rio"]
-script = ExtResource("1_kvkp6")
-memory_title = "Fear of loss"
-memory_description = "I am so scared of losing these memories!"
-memory_cost = 0
-memory_thumbnail = ExtResource("1_rp1co")
-can_be_clicked = false
-is_empty = false
-tags = Array[int]([0, 4])
-memType = 2
-
-[sub_resource type="Resource" id="Resource_2b4ol"]
-script = ExtResource("1_kvkp6")
-memory_title = "[Corrupted]"
-memory_description = "F%!re$%hr%!mp"
-memory_cost = 0
-memory_thumbnail = ExtResource("3_kcbcg")
-can_be_clicked = true
-is_empty = false
-tags = Array[int]([0, 4])
-memType = 0
-
-[sub_resource type="Resource" id="Resource_m6gh4"]
-script = ExtResource("1_kvkp6")
-memory_title = "A precious scrib"
-memory_description = "I own a scrib filled with precious memories of my family, my friends, my trips..."
-memory_cost = 50
-memory_thumbnail = ExtResource("4_c7ytr")
-can_be_clicked = false
-is_empty = false
-tags = Array[int]([0, 3])
-memType = 1
+[ext_resource type="Resource" uid="uid://vgwkcytyx5tr" path="res://Memories/Other/Corrupted.tres" id="3_aev0t"]
+[ext_resource type="Resource" uid="uid://bg5x5mffni38q" path="res://Scenarios/Alzheimer/1/Digiphone.tres" id="4_3ulx0"]
 
 [resource]
 script = ExtResource("2_lrlx8")
-Query = "Retrieve the password of Vera Prima's precious scrib."
-StartMemory = SubResource("Resource_m6gh4")
-IntermediateMemories = Array[ExtResource("1_kvkp6")]([SubResource("Resource_2b4ol")])
-EndMemory = SubResource("Resource_t1rio")
+Query = "Retrieve the password of Prima's precious digiphone."
+StartMemory = ExtResource("4_3ulx0")
+IntermediateMemories = Array[ExtResource("1_kvkp6")]([ExtResource("3_aev0t")])
+EndMemory = ExtResource("1_huh3b")

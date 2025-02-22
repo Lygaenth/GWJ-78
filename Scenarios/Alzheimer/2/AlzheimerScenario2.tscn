@@ -15,6 +15,6 @@ Memories = ExtResource("3_8iu4c")
 [node name="Character" parent="." index="0" instance=ExtResource("4_mswdf")]
 FamilyName = "Prima"
 FirstName = "Vera"
-BirthDate = "c.s. 293"
+BirthDate = "Birthday: a.n. 193"
 Notes = "They seem a little more confused than before.."
 Picture = ExtResource("5_enyh2")
