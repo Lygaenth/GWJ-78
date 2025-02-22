@@ -62,7 +62,7 @@ horizontal_alignment = 1
 [node name="NoMoreScenarioResult" type="Label" parent="PanelContainer/MarginContainer/NoMoreScenarioEnding/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "You played 8 of the 11 scenarios available.
+text = "
 
 "
 label_settings = ExtResource("4_pn7na")
@@ -72,9 +72,10 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "We hope you enjoyed this game.
 
-Ghislain  (Dev, Art, Text)
-Gly (Dev, Audio)
-Mélissa (Characters, Graphism)"
+Ghislain  (Dev, Art, Text, game and narrative design)
+Gly (Dev, Audio, game and narrative design)
+Mélissa (Characters)
+Music from Dr Dreamchip, Sfx made with CheapTone"
 label_settings = ExtResource("4_pn7na")
 horizontal_alignment = 1
 
@@ -134,12 +135,12 @@ horizontal_alignment = 1
 
 [node name="Credits" type="Label" parent="PanelContainer/MarginContainer/TooManyMistakesEnding/VBoxContainer"]
 layout_mode = 2
-text = "
-We hope you enjoyed this game.
+text = "We hope you enjoyed this game.
 
-Nialsig (Dev, Art, Text),
-Gly (Dev, Audio, Text)
-Mélissa (Characters, Graphism)"
+Ghislain  (Dev, Art, Text, game and narrative design)
+Gly (Dev, Audio, game and narrative design)
+Mélissa (Characters)
+Music from Dr Dreamchip, Sfx made with CheapTone"
 label_settings = ExtResource("7_6ythr")
 horizontal_alignment = 1
 
@@ -202,9 +203,10 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "We hope you enjoyed this game.
 
-Nialsig (Dev, Art, Text),
-Gly (Dev, Audio, Text)
-Mélissa (Characters, Graphism)"
+Ghislain  (Dev, Art, Text, game and narrative design)
+Gly (Dev, Audio, game and narrative design)
+Mélissa (Characters)
+Music from Dr Dreamchip, Sfx made with CheapTone"
 label_settings = ExtResource("9_rpoyf")
 horizontal_alignment = 1
 
