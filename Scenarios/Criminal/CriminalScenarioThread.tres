@@ -8,13 +8,13 @@ metadata/__load_path__ = "res://Memories/Family/Assets/Conflict.png"
 
 [sub_resource type="Resource" id="Resource_t1rio"]
 script = ExtResource("1_i0kql")
-memory_title = "Broken brothers"
-memory_description = "Today Tutor is uneasy with his brother and misses the old day. Patch him up."
+memory_title = "Business is business"
+memory_description = "Don't know why they want to give a body to an AI. Don't care."
 memory_cost = 0
 memory_thumbnail = SubResource("Resource_8mjrn")
 can_be_clicked = false
 is_empty = false
-tags = Array[int]([0, 4])
+tags = Array[int]([])
 memType = 2
 
 [sub_resource type="Resource" id="Resource_whrn5"]
@@ -22,13 +22,13 @@ metadata/__load_path__ = "res://Memories/Family/Assets/Conflict.png"
 
 [sub_resource type="Resource" id="Resource_2b4ol"]
 script = ExtResource("1_i0kql")
-memory_title = "Cake splash"
-memory_description = "A cake splashed agressively by an enraged brother"
-memory_cost = 0
+memory_title = "Corporal Kit"
+memory_description = "I sold a corporal kit to a client who wanted to implant an AI into a real body."
+memory_cost = 2000
 memory_thumbnail = SubResource("Resource_whrn5")
 can_be_clicked = true
 is_empty = false
-tags = Array[int]([0, 4])
+tags = Array[int]([2, 18, 19])
 memType = 0
 
 [sub_resource type="Resource" id="Resource_wlu6k"]
@@ -36,18 +36,18 @@ metadata/__load_path__ = "res://Memories/Family/Assets/Family.png"
 
 [sub_resource type="Resource" id="Resource_m6gh4"]
 script = ExtResource("1_i0kql")
-memory_title = "Brotherhood"
-memory_description = "Fond memories of brothers"
+memory_title = "Modder"
+memory_description = "I am a modder from an independant colony on the outskirts of the Galactic Union."
 memory_cost = 0
 memory_thumbnail = SubResource("Resource_wlu6k")
 can_be_clicked = false
 is_empty = false
-tags = Array[int]([0, 3])
+tags = Array[int]([])
 memType = 1
 
 [resource]
 script = ExtResource("2_3tp8b")
-Query = "Tutor wants to erase the bad memories of his brother"
+Query = "Le Douc wants you to remove a memory of them selling a corporal kit."
 StartMemory = SubResource("Resource_m6gh4")
 IntermediateMemories = Array[ExtResource("1_i0kql")]([SubResource("Resource_2b4ol")])
 EndMemory = SubResource("Resource_t1rio")

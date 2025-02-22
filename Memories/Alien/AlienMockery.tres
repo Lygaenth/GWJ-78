@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://c4ve3ulb03hmx"]
+
+[ext_resource type="Texture2D" uid="uid://lfcetymqbdbo" path="res://Memories/Addictions/drunk.png" id="1_eupin"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_idak4"]
+
+[resource]
+script = ExtResource("2_idak4")
+memory_title = "Mockery"
+memory_description = "The harmagian mocked my body scent. I felt humiliated."
+memory_cost = 200
+memory_thumbnail = ExtResource("1_eupin")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([17, 4, 10])
+memType = 0

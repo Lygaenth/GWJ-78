@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://dmtqw15jmfl14"]
+
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_b78wa"]
+
+[sub_resource type="Resource" id="Resource_whrn5"]
+metadata/__load_path__ = "res://Memories/Family/Assets/Conflict.png"
+
+[resource]
+script = ExtResource("1_b78wa")
+memory_title = "Quiet life"
+memory_description = "It is a quiet life, but I have many friends who care for me."
+memory_cost = 500
+memory_thumbnail = SubResource("Resource_whrn5")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([0, 5, 15, 3, 7])
+memType = 0

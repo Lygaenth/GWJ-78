@@ -9,11 +9,12 @@
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_kurrn")]
 script = ExtResource("2_4fdtk")
 Patient = NodePath("Character")
+Id = 4
 Memories = ExtResource("3_tgy2b")
 
 [node name="Character" parent="." index="0" instance=ExtResource("4_0gni5")]
-FamilyName = "Le Stup"
-FirstName = "??"
-BirthDate = "??"
-Notes = "A mysterious person wearing a mask..."
+FamilyName = "Le Douc"
+FirstName = "?"
+BirthDate = "?"
+Notes = "?"
 Picture = ExtResource("4_v16xt")

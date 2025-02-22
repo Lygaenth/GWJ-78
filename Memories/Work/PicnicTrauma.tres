@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=2 format=3 uid="uid://bwh3h8dhl4wms"]
+
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_pqlc5"]
+
+[resource]
+script = ExtResource("1_pqlc5")
+memory_title = "Trauma"
+memory_description = "[censored]"
+memory_cost = 500
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([2, 10])
+memType = 0

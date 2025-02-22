@@ -9,6 +9,7 @@
 [node name="ScenarioBase" node_paths=PackedStringArray("Patient") instance=ExtResource("1_oqlok")]
 script = ExtResource("2_w5kw6")
 Patient = NodePath("Character")
+Id = 8
 Memories = ExtResource("3_8iu4c")
 
 [node name="Character" parent="." index="0" instance=ExtResource("4_mswdf")]

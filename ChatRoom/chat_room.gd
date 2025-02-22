@@ -253,6 +253,7 @@ func _on_resign_button_pressed():
 	_inMenus = true
 
 func _on_quit_button_pressed():
+	PlayerSingleton.Reset()
 	get_tree().change_scene_to_file("res://MainMenu/MainMenu.tscn")
 
 func _on_cancel_button_pressed():
