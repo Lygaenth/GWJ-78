@@ -73,7 +73,7 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 		return false
 	else:
 		_pay = 1500
-		UnlockScenario.emit(128)
+		UnlockScenario.emit(ScenarioConst.Mimic)
 		LoadLines(_goodEndingLines)
 	
 	_state = Enums.ScenarioState.OperationResult

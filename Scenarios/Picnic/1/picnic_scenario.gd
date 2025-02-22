@@ -85,11 +85,11 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 		LoadLines(_goodEndingLines)
 	elif hasJob:
 		_pay = 400
-		UnlockScenario.emit(32)
+		UnlockScenario.emit(ScenarioConst.Picnic2)
 		LoadLines(_traumaErasedLines)
 	else:
 		_pay = 800
-		UnlockScenario.emit(32)
+		UnlockScenario.emit(ScenarioConst.Picnic2)
 		LoadLines(_allJobErasedLines)
 	
 	_state = Enums.ScenarioState.OperationResult
