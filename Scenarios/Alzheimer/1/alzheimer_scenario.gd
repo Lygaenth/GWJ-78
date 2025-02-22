@@ -60,7 +60,7 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 	var isFried = _isFried(souvenirs)
 	if(isFried):
 		ManageFry()
-		LoadLines(_badEndingLines)
+		LoadLines(PlayerSingleton.ErrorManager.GetErrorDialog())
 		return true
 	
 	var hasHappy = souvenirs[1].tags.find(Enums.MemTag.Happy) >= 0

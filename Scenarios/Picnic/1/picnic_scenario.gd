@@ -75,7 +75,7 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 	var isFried = _isFried(souvenirs)
 	if(isFried):
 		ManageFry()
-		LoadLines(_badEndingLines)
+		LoadLines(PlayerSingleton.ErrorManager.GetErrorDialog())
 		return true
 
 	var hasJob = souvenirs[1].tags.find(Enums.MemTag.Work) >= 0 or souvenirs[2].tags.find(Enums.MemTag.Work) >= 0 
