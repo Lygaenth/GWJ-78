@@ -11,4 +11,5 @@ memory_cost = 600
 memory_thumbnail = ExtResource("1_bxn4k")
 can_be_clicked = true
 is_empty = false
-tags = Array[int]([1, 4])
+tags = Array[int]([1, 4, 9])
+memType = 0

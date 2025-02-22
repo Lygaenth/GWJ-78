@@ -22,8 +22,8 @@ func _ready():
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But a couple of standards ago, I bumped into a young astronaut and I fell in love."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I ran away with them. Got a new haircut, tried smash for the first time..."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I had the best time of my life!"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But sometimes, I think about my former friends... and I regret my decision. "))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Can you help me?"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But sometimes, I think about my former friends... they were like family."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Can you help me overcome my regrets?"))
 
 	# Forget her friends
 	_forgetFriendsLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...I feel relieved. As if an heavy weight was gone."))
@@ -33,7 +33,7 @@ func _ready():
 	_forgetLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...I feel empty. What happened?"))
 	_forgetLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Are you alright?"))
 	_forgetLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I'm not sure. I'm not *hurt*, but it's like... as if... there was a hole in my chest."))
-	_forgetLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I must leave now. I want to go home."))
+	_forgetLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I must leave now. I want to see my *family*."))
 	
 	# Bad ending
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Techno-dammit, I messed up!)"))
@@ -74,21 +74,23 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 
 	var loveCount = 0
 	var familyCount = 0
+	var friendCount = 0
 	for s in souvenirs:
-		if s.tags.find(Enums.MemTag.Family) >= 0:
+		if s.tags.find(Enums.MemTag.Family) >= 0 and s.tags.find(Enums.MemTag.Conflict) < 0:
 			familyCount += 1
-		elif s.tags.find(Enums.MemTag.Love) >= 0:
+		elif s.tags.find(Enums.MemTag.Love) >= 0 and s.tags.find(Enums.MemTag.Conflict) < 0:
 			loveCount +=1
-			
+		elif s.tags.find(Enums.MemTag.Friend) >= 0 and s.tags.find(Enums.MemTag.Conflict) < 0:
+			loveCount +=1
 	# 2. check tags
 	if souvenirs[1].tags.find(Enums.MemTag.LifePath) >= 0 and souvenirs[2].tags.find(Enums.MemTag.LifePath) >= 0:
 		_pay = 0
 		LoadLines(_noChangeLines)
 	else:
-		if loveCount < familyCount:
+		if loveCount < familyCount or loveCount < friendCount:
 			_pay = 400
 			LoadLines(_forgetLoveLines)
-		elif loveCount >= familyCount:
+		else:
 			_pay = 800
 			LoadLines(_forgetFriendsLines)
 	
@@ -97,6 +99,7 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 	return isFried
 
 func _isFried(souvenirs : Array[MemoryData]) -> bool:
-	if souvenirs[1].tags.find(Enums.MemTag.Family) < 0 and souvenirs[1].tags.find(Enums.MemTag.Love) < 0 and souvenirs[2].tags.find(Enums.MemTag.Family) < 0 and souvenirs[2].tags.find(Enums.MemTag.Love) < 0:
-			return true
-	return false
+	var noFamily = souvenirs[1].tags.find(Enums.MemTag.Family) < 0 and souvenirs[2].tags.find(Enums.MemTag.Family) < 0
+	var noFriend = souvenirs[1].tags.find(Enums.MemTag.Friend) < 0 and souvenirs[2].tags.find(Enums.MemTag.Friend) < 0
+	var noLove = souvenirs[1].tags.find(Enums.MemTag.Love) < 0 and souvenirs[2].tags.find(Enums.MemTag.Love) < 0
+	return (noLove and noFriend and noFamily)

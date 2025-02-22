@@ -1,7 +1,8 @@
 extends Node
 class_name Player
 
-const StartMoney : int = 0
+const StartMoney : int = 2000
+@onready var _money : int = StartMoney
 @onready var _scenarioProvider : ScenarioFactory = $ScenarioProvider
 @onready var _memoryBank : MemoryBank = $MemoryBank
 @onready var ErrorManager: ErrorManager = $ErrorManager
@@ -9,8 +10,6 @@ const StartMoney : int = 0
 var _scenarioPlayedCount : int = 0
 var _shopLock : bool = true
 var _shopLocked : bool = true
-
-var _money : int = 10000
 
 var _hasSeenTuto : bool = false
 
@@ -35,7 +34,8 @@ func GetMoneyAmount() -> int:
 
 func Reset() -> void:
 	_money = StartMoney
-	
+	_hasSeenTuto = false
+	_savedPersons = 0
 	_memoryBank.LoadStartingMemory()
 	_scenarioProvider.LoadAllScenarios()
 
