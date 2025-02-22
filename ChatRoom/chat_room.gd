@@ -28,8 +28,8 @@ func _ready():
 	%Inventory.Closed.connect(OnQuittedMenus)
 	PlayerSingleton.UpdateMoney(0)
 
-	_doctorDialog.CompletedLine.connect(func() : _waitingForEoL = false)
-	_patientDialog.CompletedLine.connect(func() : _waitingForEoL = false)
+	_doctorDialog.CompletedLine.connect(ResetEoLWait)
+	_patientDialog.CompletedLine.connect(ResetEoLWait)
 	
 	await Wait(1.0)
 	await _patientInfo.DisplayCheckingForPatient()
@@ -43,6 +43,9 @@ func OnQuittedMenus():
 func _process(delta):
 	if (Input.is_action_just_pressed("Next")):
 		Next()
+
+func ResetEoLWait():
+	_waitingForEoL = false
 
 func Next():
 	if (_inMenus):

@@ -28,6 +28,7 @@ func _process(delta):
 
 
 func DisplayLine(line : String):
+	_emited = false
 	_index = 0
 	_line = line
 	text = ""
