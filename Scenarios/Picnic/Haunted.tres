@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://do8pmf3cl5bch"]
 
-[ext_resource type="Texture2D" uid="uid://cskrbr3nny0ef" path="res://Memories/Logic/Fear.png" id="1_n1njo"]
+[ext_resource type="Texture2D" uid="uid://x6hu2jy3y871" path="res://Memories/Other/Tired.png" id="1_540dv"]
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_tfqj1"]
 
 [resource]
@@ -8,7 +8,7 @@ script = ExtResource("2_tfqj1")
 memory_title = "Haunted"
 memory_description = "Alk has PTSD from the trauma he received. He came to you for help."
 memory_cost = 0
-memory_thumbnail = ExtResource("1_n1njo")
+memory_thumbnail = ExtResource("1_540dv")
 can_be_clicked = false
 is_empty = false
 tags = Array[int]([0, 4])
