@@ -17,6 +17,6 @@ Memories = ExtResource("3_rlo2b")
 script = ExtResource("5_7igki")
 FamilyName = "Prima"
 FirstName = "Vera"
-BirthDate = "c.s. 293"
+BirthDate = "Birthday: a.n. 193"
 Notes = "They seem a little... confused?"
 Picture = ExtResource("5_6j1iy")

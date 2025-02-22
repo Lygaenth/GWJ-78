@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://b53hjf5prt3x"]
+
+[ext_resource type="Texture2D" uid="uid://cskrbr3nny0ef" path="res://Memories/Logic/Fear.png" id="1_2upbl"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_47ac0"]
+
+[resource]
+script = ExtResource("2_47ac0")
+memory_title = "Fear of loss"
+memory_description = "I am so scared of losing these memories!"
+memory_cost = 0
+memory_thumbnail = ExtResource("1_2upbl")
+can_be_clicked = false
+is_empty = false
+tags = Array[int]([0, 4])
+memType = 2

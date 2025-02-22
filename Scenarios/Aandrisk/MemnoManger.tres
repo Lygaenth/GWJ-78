@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://dego0nkalp86u"]
+
+[ext_resource type="Texture2D" uid="uid://cogllhcey82qh" path="res://Memories/Work/Gear.png" id="1_qcgir"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_xxrir"]
+
+[resource]
+script = ExtResource("2_xxrir")
+memory_title = "Memno-manager"
+memory_description = "Today I sent an human employee to a memory fixer"
+memory_cost = 0
+memory_thumbnail = ExtResource("1_qcgir")
+can_be_clicked = false
+is_empty = false
+tags = Array[int]([])
+memType = 1

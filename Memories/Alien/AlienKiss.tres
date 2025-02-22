@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="MemoryData" load_steps=3 format=3 uid="uid://coh038xe7hbmw"]
+
+[ext_resource type="Texture2D" uid="uid://b03087en03uiq" path="res://Memories/Other/AlienLove.png" id="1_hjw66"]
+[ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="2_e2tnm"]
+
+[resource]
+script = ExtResource("2_e2tnm")
+memory_title = "Alien kiss"
+memory_description = " I remember a human making out with an alien."
+memory_cost = 400
+memory_thumbnail = ExtResource("1_hjw66")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([1, 17, 3])
+memType = 0
