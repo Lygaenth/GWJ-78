@@ -7,7 +7,7 @@ func _ready():
 
 var _musicVolumeRef : float = -6.0
 var _cutOffVolume : float = -124.0
-var _sfxVolumeRef : float = 6
+var _sfxVolumeRef : float = 0
 
 var volumeMusic : float = _musicVolumeRef
 var volumeSfx : float = _sfxVolumeRef

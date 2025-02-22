@@ -158,7 +158,13 @@ func CheckEvent() -> bool:
 		MusicSingleton.SwitchToOperationMusic()
 		_patientInfo.DisplayCops()
 		return true
-		
+	
+	if (PlayerSingleton.ErrorManager.HasReleasedAnAi()):
+		_gameState = Enums.GameState.Ending
+		MusicSingleton.SwitchToOperationMusic()
+		DisplayEnding(Enums.Endings.AiDooming)
+		return true		
+	
 	return false
 
 func OnShopPressed():

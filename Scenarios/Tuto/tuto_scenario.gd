@@ -11,6 +11,7 @@ var _dialogBlock = 0
 func _ready():
 	Id = 1
 	AvailabilityCounter = 0
+	_availabilityCondition = false
 	_state = Enums.ScenarioState.Opening 
 	
 	# Opening

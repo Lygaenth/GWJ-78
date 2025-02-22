@@ -10,6 +10,8 @@ var _copLineIndex : int = 0
 var _specificLine : DialogLine
 var _friedCharacters : Array[CharacterBase]
 
+var _releasedAnAi : bool = false
+
 func _ready():
 	InitializeLines()
 	
@@ -78,3 +80,9 @@ func GetCopLines() -> DialogLine:
 	var line = _copLines[_copLineIndex]
 	_copLineIndex+=1
 	return line
+
+func ReleaseAi():
+	_releasedAnAi = true
+	
+func HasReleasedAnAi():
+	return _releasedAnAi

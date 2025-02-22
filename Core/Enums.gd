@@ -28,7 +28,8 @@ enum GameState {
 
 enum Endings {
 	NoMorescenario,
-	TooManyMistakes
+	TooManyMistakes,
+	AiDooming
 }
 
 enum MemType

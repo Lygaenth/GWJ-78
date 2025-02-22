@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_x171j")
-memory_title = "Interspecific friendship"
+memory_title = "Alien friendship"
 memory_description = "I am friend with an alien. Despite our differences, they have always been there for me."
 memory_cost = 800
 memory_thumbnail = ExtResource("1_mfc4x")

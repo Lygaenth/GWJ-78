@@ -37,7 +37,11 @@ func Reset() -> void:
 	_hasSeenTuto = false
 	_savedPersons = 0
 	_memoryBank.LoadStartingMemory()
-	_scenarioProvider.LoadAllScenarios()
+	_scenarioProvider.ResetScenario()
+	_scenarioPlayedCount = 0
+
+func GetPlayedScenarioCount() -> int:
+	return _scenarioPlayedCount
 
 func BuyMemory(memories : Array[MemoryData]) -> bool:
 	var amount : int = 0

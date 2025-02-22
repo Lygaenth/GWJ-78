@@ -22,7 +22,7 @@ func LoadAllScenarios():
 	for scenar in _scenarios:
 		scenar.queue_free()
 	_scenarios.clear()
-	AddScenarioFromPackedScene(TutoScenarioPs, true)
+	AddScenarioFromPackedScene(TutoScenarioPs)
 	AddScenarioFromPackedScene(CakeStoryScenarioPs)
 	AddScenarioFromPackedScene(Alzheimer1ScenarioPs)
 	AddScenarioFromPackedScene(Alzheimer2ScenarioPs)
@@ -41,11 +41,11 @@ func GetNextScenario() -> ScenarioBase:
 	var hasUnlockedScenarios = false
 	var availableScenars : Array[ScenarioBase] = []
 	for scenar : ScenarioBase in _scenarios:
-		scenar.DecrementCounter()
-		if scenar.IsUnlocked():
-			hasUnlockedScenarios = true
 		if(scenar.IsAvailable()):
 			availableScenars.append(scenar)
+		if scenar.IsUnlocked():
+			hasUnlockedScenarios = true
+			scenar.DecrementCounter()
 	if (availableScenars.size() == 0):
 		if hasUnlockedScenarios:
 			return GetNextScenario() # decrement recursively until an available scenario is available
@@ -53,19 +53,18 @@ func GetNextScenario() -> ScenarioBase:
 
 	return availableScenars.pick_random()
 
-func AddScenarioFromPackedScene(ps : PackedScene, isAvailable: bool = false):
+func AddScenarioFromPackedScene(ps : PackedScene):
 	var scenar = ps.instantiate() as ScenarioBase
 	scenar.UnlockScenario.connect(OnUnlockScenario)
 	scenar.LockAllScenario.connect(OnLockAllScenarios)
 	add_child(scenar)
-	scenar.AvailabilityCondition = isAvailable
 	_scenarios.append(scenar)
 
 func OnUnlockScenario(scenarioId : int):
-	for scenario in _scenarios:
+	for scenario : ScenarioBase in _scenarios:
 		if (scenario.Id == scenarioId):
-			scenario.AvailabilityCondition = true
+			scenario.Unlock()
 
 func OnLockAllScenarios():
 	for scenario in _scenarios:
-		scenario.AvailabilityCondition = false
+		scenario.Lock()

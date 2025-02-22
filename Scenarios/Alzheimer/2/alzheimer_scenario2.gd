@@ -9,7 +9,7 @@ var _noChangeLines : Array[DialogLine] = []
 var _dialogBlock = 0
 
 func _ready():
-	AvailabilityCounter = 1
+	AvailabilityCounter = 2
 	_state = Enums.ScenarioState.Opening 
 	
 	# Opening

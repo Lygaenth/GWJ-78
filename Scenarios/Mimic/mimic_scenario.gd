@@ -8,7 +8,7 @@ var _badEndingLines : Array[DialogLine] = []
 var _dialogBlock = 0
 
 func _ready():
-	AvailabilityCounter = 1
+	AvailabilityCounter = 6
 	_state = Enums.ScenarioState.Opening 
 	
 	# Opening
@@ -65,6 +65,11 @@ func GetLine() -> DialogLine:
 	
 	return dialogLine
 
+func ManageFry() -> void: #Not added to error because not human
+	_state = Enums.ScenarioState.Frying
+	_pay = 0
+	_completed = true
+
 func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 	var isFried = _isFried(souvenirs)
 	if(isFried):
@@ -73,6 +78,7 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 		return true
 	
 	LockAllScenario.emit()
+	PlayerSingleton.ErrorManager.ReleaseAi()
 	_pay = 400
 	LoadLines(_badEndingLines)
 	

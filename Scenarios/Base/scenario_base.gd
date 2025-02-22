@@ -13,7 +13,7 @@ var _completed : bool = false
 @export var Memories : MemoryThread
 
 var AvailabilityCounter : int = 0
-var AvailabilityCondition : bool = true
+var _availabilityCondition : bool = true
 
 signal UnlockScenario(unlockedId : int)
 signal LockAllScenario()
@@ -24,10 +24,10 @@ func ResolveAndCheckIfFried(_memories : Array[MemoryData]) -> bool:
 	return false
 
 func IsAvailable() -> bool:
-	return !_completed && AvailabilityCondition
+	return !_completed && !_availabilityCondition && AvailabilityCounter == 0
 
 func IsUnlocked() -> bool:
-	return !AvailabilityCondition
+	return !_availabilityCondition && !_completed
 
 func GetPay():
 	if (_state == Enums.ScenarioState.OperationResult):
@@ -57,5 +57,12 @@ func LoadLines(newLines : Array[DialogLine]) -> void:
 	_lines.append_array(newLines)
 	
 func DecrementCounter():
-	if (!AvailabilityCondition):
+	if (IsUnlocked() && AvailabilityCounter > 0):
 		AvailabilityCounter += -1
+
+func Unlock():
+	_availabilityCondition = false
+
+func Lock():
+	_completed = true
+	_availabilityCondition = true

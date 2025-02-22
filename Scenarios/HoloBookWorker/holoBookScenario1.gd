@@ -84,7 +84,7 @@ func ResolveAndCheckIfFried(memories : Array[MemoryData]) -> bool:
 	if (memories[1].memory_title == "Working at MetaBooX"): #only trauma erased
 		LoadLines(_goodEndingALines)
 		_pay = 800
-		UnlockScenario.emit(ScenarioConst.Metabook2Id)
+		UnlockScenario.emit(ScenarioConst.Picnic2)
 	else: # only trauma erased
 		LoadLines(_goodEndingALines)
 		_pay = 1000

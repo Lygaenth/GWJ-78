@@ -10,7 +10,7 @@ void fragment() {
 	{
 		if (abs(value) > 0.95)
 			COLOR = vec4(0.0, 0.0, 0.0, 1.0);
-			
+
 		if (abs(value) < 0.05)
 			COLOR = vec4(1.0, 1.0, 1.0, 1.0);
 	}
