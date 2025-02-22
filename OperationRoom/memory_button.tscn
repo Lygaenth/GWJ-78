@@ -111,22 +111,27 @@ vertical_alignment = 1
 
 [node name="ContextualMenu" type="PanelContainer" parent="."]
 visible = false
+top_level = true
 z_index = 10
 custom_minimum_size = Vector2(385, 200)
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -451.0
-offset_right = 460.0
-grow_vertical = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -510.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_default_cursor_shape = 2
 theme = ExtResource("5_ou1su")
 theme_override_styles/panel = ExtResource("3_pj36h")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContextualMenu"]
 layout_mode = 2
-mouse_filter = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -134,7 +139,6 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ContextualMenu/MarginContainer"]
 layout_mode = 2
-mouse_filter = 2
 
 [node name="ContextTitleLabel" type="Label" parent="ContextualMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -215,8 +219,6 @@ script = ExtResource("12_b082m")
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="button_up" from="." to="." method="_on_button_up"]
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]
 [connection signal="mouse_exited" from="ContextualMenu" to="." method="_on_contextual_menu_mouse_exited"]
 [connection signal="pressed" from="ContextualMenu/MarginContainer/VBoxContainer/KeepButton" to="." method="_on_keep_button_pressed"]

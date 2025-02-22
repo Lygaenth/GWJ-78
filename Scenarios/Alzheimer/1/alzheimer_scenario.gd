@@ -20,7 +20,7 @@ func _ready():
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Why not getting a tech to unblock your scrib?"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "There is no tech in my neighborhood. Besides, you're cheaper."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Cheaper than fixing a scrib? I doubt it. Well, she must have reasons.)"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Ok, I'll see what I can do. Put a slap patch on your temple."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Ok, I'll see what I can do. Put a slap patch on your temple."))
 
 	# Good ending
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "How you feeling?"))

@@ -11,3 +11,6 @@ mouse_filter = 1
 
 [node name="ContextualMenu" parent="." index="1"]
 mouse_filter = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

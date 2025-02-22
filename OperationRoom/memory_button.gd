@@ -109,6 +109,7 @@ func _on_pressed():
 	else:
 		sell_button.hide()
 		erase_button.hide()
+	context_menu.global_position = global_position - Vector2(180, 180)
 	context_menu.show()
 
 func _on_contextual_menu_mouse_exited():
@@ -119,13 +120,6 @@ func _on_button_down():
 
 func _on_button_up():
 	pass
-
-func _on_mouse_entered():
-	pass
-
-func _on_mouse_exited():
-	pass
-
 
 #region Context menu buttons
 func _on_keep_button_pressed():
