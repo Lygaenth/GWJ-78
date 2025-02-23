@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_a7c8r")
-memory_title = "Picnic moderator"
-memory_description = "I work for the Picnic social media. The pay is ok, but I have to check an endless flow of AI-generated poppycock."
+memory_title = "Hornbill moderator"
+memory_description = "I work for the Hornbill social media. The pay is ok, but I have to check an endless flow of AI-generated poppycock."
 memory_cost = 400
 memory_thumbnail = ExtResource("1_2ee0m")
 can_be_clicked = true

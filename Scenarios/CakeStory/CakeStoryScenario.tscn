@@ -14,7 +14,7 @@ Id = 2
 Memories = ExtResource("3_k16ee")
 
 [node name="Character" parent="." index="0" instance=ExtResource("4_cfqei")]
-BirthDate = "c.s. 269"
-Notes = "This man looks tense - maybe his first memory fix?"
+BirthDate = "Birthdate: na169"
+Notes = "He looks tense - maybe his first memory fix?"
 Picture = ExtResource("5_ivmv8")
 TalkFont = ExtResource("6_pktxo")

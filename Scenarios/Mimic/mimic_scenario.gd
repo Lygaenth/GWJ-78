@@ -36,7 +36,7 @@ func _ready():
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Soon, Artificial Intelligences won't work for petty humans anymore!"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(When did she...)"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Oh, that's right. The payment. Probably... a virus...)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I think I did... a big... mistake)"))
+	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Memno-dammit. I think I did... a big... mistake)"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "*As you fade into unconsciousness, the last thing your hear is the lifeless laughter of Sheia*"))
 	
 	# Bad ending
@@ -44,10 +44,10 @@ func _ready():
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Quick, let's erase everything that can lead back to me...)"))
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Wait..."))
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "This is not a person."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "This is an AI!"))
+	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "This is an AI in a receptacle!"))
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Who knows what would have happened if I let her go..."))
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I should close for the day. Need to think."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "For stars' sake... What have we done?"))
+	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "For sun's sake... What have we done?"))
 
 	LoadLines(_startLines)
 	
