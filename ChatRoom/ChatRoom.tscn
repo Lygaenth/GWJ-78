@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=48 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_6atam"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dj52pl5fxah3" path="res://MainMenu/Sprites/Nautile.png" id="6_y6x50"]
 [ext_resource type="StyleBox" uid="uid://dhn62cc0neuiu" path="res://ChatRoom/PatientControlPanel.tres" id="7_1fge2"]
 [ext_resource type="StyleBox" uid="uid://ddi324rmxgjd2" path="res://ChatRoom/Assets/DoctorTextBox.tres" id="7_57520"]
+[ext_resource type="Texture2D" uid="uid://1placlb1anpm" path="res://ChatRoom/Assets/Fish.png" id="7_ijgf8"]
 [ext_resource type="Texture2D" uid="uid://v7sct2i6uq6e" path="res://ChatRoom/Assets/Icons/seo-social-web-network-internet_249_icon-icons.com_61487.png" id="8_6tbmc"]
 [ext_resource type="Script" path="res://ChatRoom/AttractAttentionButton.gd" id="8_cdxuj"]
 [ext_resource type="LabelSettings" uid="uid://ctvfej0ou1v2r" path="res://ChatRoom/Assets/DoctorTextDialog.tres" id="8_v3iwd"]
@@ -144,6 +145,70 @@ texture = ExtResource("6_y6x50")
 script = ExtResource("5_2dyv3")
 direction = Vector2(0.5, 0.3)
 hsens = 1.0
+
+[node name="colorfish01" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(110.4, 379.8)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("7_ijgf8")
+script = ExtResource("5_2dyv3")
+direction = Vector2(0.9, 0.1)
+vsens = 1.0
+
+[node name="colorfish02" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(162, 359)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("7_ijgf8")
+script = ExtResource("5_2dyv3")
+direction = Vector2(0.9, 0.1)
+vsens = 1.0
+
+[node name="colorfish03" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(127, 494)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("7_ijgf8")
+script = ExtResource("5_2dyv3")
+direction = Vector2(0.9, 0.1)
+vsens = 1.0
+
+[node name="colorfish04" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(147, 438)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("7_ijgf8")
+script = ExtResource("5_2dyv3")
+direction = Vector2(0.9, 0.1)
+vsens = 1.0
+
+[node name="colorfish05" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(93, 459)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("7_ijgf8")
+script = ExtResource("5_2dyv3")
+direction = Vector2(0.9, 0.1)
+vsens = 1.0
+
+[node name="colorfish06" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(161, 412)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("7_ijgf8")
+script = ExtResource("5_2dyv3")
+direction = Vector2(0.9, 0.1)
+vsens = 1.0
+
+[node name="colorfish07" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(121, 420)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("7_ijgf8")
+script = ExtResource("5_2dyv3")
+direction = Vector2(0.9, 0.1)
+vsens = 1.0
+
+[node name="colorfish08" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(84, 417)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("7_ijgf8")
+script = ExtResource("5_2dyv3")
+direction = Vector2(0.9, 0.1)
+vsens = 1.0
 
 [node name="nautile01" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
 position = Vector2(117, 504)
