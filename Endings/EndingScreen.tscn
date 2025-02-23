@@ -33,7 +33,6 @@ theme_override_constants/margin_bottom = 100
 
 [node name="NoMoreScenarioEnding" type="PanelContainer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -49,7 +48,7 @@ theme_override_styles/panel = ExtResource("2_qotdy")
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/NoMoreScenarioEnding/VBoxContainer"]
 layout_mode = 2
-text = "You have reached the end of all our stories written for Godot Wild jam #78.
+text = "You have reached the end of all our stories written for this game jam.
 
 You didn't commit too many mistakes and avoided the bad endings. Congratulations !
 
@@ -101,7 +100,6 @@ text = "Quit"
 
 [node name="TooManyMistakesEnding" type="PanelContainer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -117,7 +115,9 @@ theme_override_styles/panel = ExtResource("2_qotdy")
 
 [node name="Label2" type="Label" parent="PanelContainer/MarginContainer/TooManyMistakesEnding/VBoxContainer"]
 layout_mode = 2
-text = "You have made too many mistakes and got caught by the watchers.
+text = "You have reached one of the bad ending written for this game jam.
+
+You have made too many mistakes and got caught by the watchers.
 
 You can try to play again to see other endings or stories you have missed.
 
@@ -166,7 +166,6 @@ text = "Quit"
 
 [node name="AiEnding" type="PanelContainer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -182,7 +181,9 @@ theme_override_styles/panel = ExtResource("2_qotdy")
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/AiEnding/VBoxContainer"]
 layout_mode = 2
-text = "You released a malevolent AI into the world. You doomed us all.
+text = "You have reached a bad ending written for this game jam.
+
+You released a malevolent AI into the world. You doomed us all.
 
 You can try to play again to see other endings or stories you have missed.
 
@@ -194,10 +195,10 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 text = "You played 8 of 11 availables scenarios.
-
 "
 label_settings = ExtResource("9_rpoyf")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Credits" type="Label" parent="PanelContainer/MarginContainer/AiEnding/VBoxContainer"]
 layout_mode = 2

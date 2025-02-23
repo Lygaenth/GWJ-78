@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cljmnkhw0cuu"]
+
+[ext_resource type="Script" path="res://Accessibility/accessibility_manager.gd" id="1_tdl76"]
+
+[node name="AccessibilityManager" type="Node"]
+script = ExtResource("1_tdl76")

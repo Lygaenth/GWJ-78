@@ -106,10 +106,16 @@ func DisplayLine(line : DialogLine):
 	if (line.Talker == Enums.Talker.Patient):
 		_doctorDialog.hide()
 		_patientDialog.DisplayLine(line.Text)
-		_patientDialog.label_settings.font = _scenario.Patient.TalkFont
+		if (!AccessibilitySingleton.IsAccessibilityDialogReadingOn()):
+			_patientDialog.label_settings.font = _scenario.Patient.TalkFont
+		else:
+			_patientDialog.label_settings.font = AccessibilitySingleton.GetAccessibilityFont()
 		_patientDialog.show()
 	elif line.Talker == Enums.Talker.Doctor:
 		_patientDialog.hide()
+		if (AccessibilitySingleton.IsAccessibilityDialogReadingOn()):
+			_doctorDialog.label_settings.font = AccessibilitySingleton.GetAccessibilityFont()
+			_doctorDialog.custom_minimum_size.y = 250
 		_doctorDialog.DisplayLine(line.Text)
 		_doctorDialog.show()
 

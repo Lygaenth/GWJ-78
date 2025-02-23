@@ -206,7 +206,7 @@ theme_override_constants/margin_bottom = 20
 [node name="PatientDialog" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer2/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(200, 120)
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 theme_override_styles/normal = ExtResource("3_vap84")
 text = "First line of dialogue
@@ -214,7 +214,6 @@ Second line of dialogue
 Third line of dialogue
 "
 label_settings = ExtResource("4_jdpaq")
-vertical_alignment = 1
 autowrap_mode = 2
 script = ExtResource("11_mkx2w")
 
@@ -597,7 +596,7 @@ theme_override_styles/panel = ExtResource("2_6atam")
 [node name="DoctorDialog" type="Label" parent="VBoxContainer/PanelContainer2/CenterContainer/PanelContainer"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(800, 130)
+custom_minimum_size = Vector2(800, 200)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
