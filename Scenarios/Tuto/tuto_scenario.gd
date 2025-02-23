@@ -32,7 +32,7 @@ func _ready():
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Then, I will select the resulting [EMPTY MEMORY] slot and [IMPLANT] a new memory into it."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Does it... hurt?"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Don't worry, it is absolutely painless."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Well, as long as I don't implant an incoherent memory..."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Well, as long as I don't implant an incoherent memory...)"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Are you ready?"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Yes, I am."))
 	
