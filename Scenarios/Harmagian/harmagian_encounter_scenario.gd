@@ -109,6 +109,6 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 
 func _isFried(souvenirs : Array[MemoryData]) -> bool:
 	for s in souvenirs:
-		if s.tags.find(Enums.MemTag.Alien) < 1:
+		if s.tags.find(Enums.MemTag.Alien) < 0 and s.can_be_clicked:
 			return true
 	return false
