@@ -17,12 +17,12 @@ func _ready():
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Hi, doc. I've..."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I've seen things I want to forget."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Did something happen?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "You could say that. Until last tenday, I worked as a moderator on Picnic. You know, the social feed."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "You could say that. Until yesterday, I worked as a moderator on Hornbill. You know, the social feed."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "..."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "..."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Let's say some people post crazy stuff."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I see."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "No you don't. At some point i *had* to quit my job. Stars, I even quit going on the Linkings!"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "No you don't. At some point I *had* to quit my job. Betelgeuse, I even quit going on the Quantic Net!"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Say no more..."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Erasure of the whole period, or just the trauma ?"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Isn't the whole thing better ?"))
@@ -49,7 +49,7 @@ func _ready():
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Thank you, doc!"))
 	
 	# Bad ending
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Techno-dammit, I messed up!)"))
+	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Memno-dammit, I messed up!)"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Quick, let's erase everything that can lead back to me...)"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(There. Never happened.)"))
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I should be more cautious from now on.)"))

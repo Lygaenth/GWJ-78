@@ -16,11 +16,11 @@ func _ready():
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Wait, who are you?"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Relax, doc... You can call me Le Douc."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Now listen carefully..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I need a single memory to be erased before the cops catch me:"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "The memory of me selling a corporal kit to a client."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Corporal kits? Human bodies, stolen away to be used as a receptacle for an AI!)"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I'll give you $1500, and $1500 when you put it back."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(That's illegal even outside of the Galactic Union! I must refuse...)"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I need a single memory to be erased before the watchers catch me:"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "The memory of me selling a *receptacle* to a client."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Receptacle? Human bodies, stolen away and modified to carry an AI!)"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I'll give you $1200, and $1200 when you put it back."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(That's illegal even on the outskirts of Arcturus! I must refuse...)"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Don't go thinking you have a choice. I know where you live."))
 
 	# Good ending
@@ -29,7 +29,7 @@ func _ready():
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Til we meet again."))
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(What should I do?)"))
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(If I dispose of it, Le Douc will come back for me...)"))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(If I keep it, I might go to galactic jail!)"))
+	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(But if I keep it, I might go to galactic jail!)"))
 	
 	# Bad ending
 	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Memno-dammit, I messed up!)"))
@@ -72,7 +72,7 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 		_state = Enums.ScenarioState.Opening
 		return false
 	else:
-		_pay = 1500
+		_pay = 1200
 		UnlockScenario.emit(ScenarioConst.Mimic)
 		LoadLines(_goodEndingLines)
 	

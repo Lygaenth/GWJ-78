@@ -18,9 +18,9 @@ memType = 2
 
 [sub_resource type="Resource" id="Resource_2b4ol"]
 script = ExtResource("1_i0kql")
-memory_title = "Corporal Kit"
-memory_description = "I sold a corporal kit to a client who wanted to implant an AI into a real body."
-memory_cost = 2000
+memory_title = "AI Receptacle"
+memory_description = "I sold a receptacle to a client who wanted to implant an AI into it.."
+memory_cost = 1200
 memory_thumbnail = ExtResource("3_oywj8")
 can_be_clicked = true
 is_empty = false

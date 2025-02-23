@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://OperationRoom/MemoryData.gd" id="1_m1lhx"]
 [ext_resource type="Texture2D" uid="uid://0vxebuc6lsvo" path="res://Memories/Other/Alien.png" id="1_sv87n"]
-[ext_resource type="Resource" uid="uid://c4ve3ulb03hmx" path="res://Memories/Alien/AlienMockery.tres" id="2_byquj"]
 [ext_resource type="Script" path="res://Scenarios/Base/memoryThread.gd" id="2_g5g52"]
 [ext_resource type="Resource" uid="uid://ds6or1kl1igqg" path="res://Memories/Alien/AlienFirstContact.tres" id="3_dcuq0"]
 [ext_resource type="Resource" uid="uid://d4m3amioyihs0" path="res://Memories/Alien/AlienEnvy.tres" id="4_vvq41"]
@@ -17,6 +16,17 @@ can_be_clicked = false
 is_empty = false
 tags = Array[int]([])
 memType = 2
+
+[sub_resource type="Resource" id="Resource_dc2j6"]
+script = ExtResource("1_m1lhx")
+memory_title = "Alien Mockery"
+memory_description = "This alien mocked my body scent. I felt humiliated.."
+memory_cost = 800
+memory_thumbnail = ExtResource("1_sv87n")
+can_be_clicked = true
+is_empty = false
+tags = Array[int]([17, 4, 10])
+memType = 0
 
 [sub_resource type="Resource" id="Resource_m6gh4"]
 script = ExtResource("1_m1lhx")
@@ -33,5 +43,5 @@ memType = 1
 script = ExtResource("2_g5g52")
 Query = "Remove traumatic memories of Glenn's encounter with another species."
 StartMemory = SubResource("Resource_m6gh4")
-IntermediateMemories = Array[ExtResource("1_m1lhx")]([ExtResource("2_byquj"), ExtResource("3_dcuq0"), ExtResource("4_vvq41")])
+IntermediateMemories = Array[ExtResource("1_m1lhx")]([SubResource("Resource_dc2j6"), ExtResource("3_dcuq0"), ExtResource("4_vvq41")])
 EndMemory = SubResource("Resource_t1rio")

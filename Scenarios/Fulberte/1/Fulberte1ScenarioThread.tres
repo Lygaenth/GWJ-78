@@ -9,7 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_t1rio"]
 script = ExtResource("1_i2f58")
-memory_title = "Miss my friends:"
+memory_title = "Regrets"
 memory_description = "I am happy with my new life, but sometimes I regret abandoning my friends."
 memory_cost = 0
 memory_thumbnail = ExtResource("1_x3mpp")
@@ -21,7 +21,7 @@ memType = 2
 [sub_resource type="Resource" id="Resource_m6gh4"]
 script = ExtResource("1_i2f58")
 memory_title = "Life in a cult"
-memory_description = "When I was young, I lived in a Gaiist cult in a satelitte on the Earth orbit."
+memory_description = "When I was young, I lived in a Gaia cult on the Earth's satellite."
 memory_cost = 0
 memory_thumbnail = ExtResource("5_q5cvh")
 can_be_clicked = false
@@ -31,7 +31,7 @@ memType = 1
 
 [resource]
 script = ExtResource("2_ojeeg")
-Query = "Mémé Fulberte wants to forget her former friends from a Gaiist cult. "
+Query = "Mémé Fulberte wants to forget her former friends from the Devotees of Gaia. "
 StartMemory = SubResource("Resource_m6gh4")
 IntermediateMemories = Array[ExtResource("1_i2f58")]([ExtResource("2_4k0w5"), ExtResource("3_l86sw")])
 EndMemory = SubResource("Resource_t1rio")

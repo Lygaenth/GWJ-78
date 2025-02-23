@@ -99,7 +99,7 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 			UnlockScenario.emit(ScenarioConst.Aandrisk)
 			LoadLines(_alienLoveLines)
 		else:
-			_pay = 900
+			_pay = 800
 			LoadLines(_alienFearLines)
 
 	

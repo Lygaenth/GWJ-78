@@ -14,7 +14,7 @@ func _ready():
 	_state = Enums.ScenarioState.Opening 
 	
 	# Opening
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Finally! I have been waiting for DECADES!"))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Finally! I have been waiting for AGES!"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Sorry, what can I do for you?"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Today, I sent one of my poor employees to a memory fixer..."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(...could it be *this* customer from earlier?)"))
@@ -76,13 +76,13 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 	var hasLove = souvenirs[1].tags.find(Enums.MemTag.Love) >= 0
 	# 2. check tags
 	if hasHappy and !hasAlien:
-		_pay = 1000
+		_pay = 800
 		LoadLines(_goodEndingLines)
 	elif hasAlien and hasLove:
 		_pay = 0
 		LoadLines(_alienLoveLines)
 	else:
-		_pay = 300
+		_pay = 400
 		LoadLines(_neutralEndingLines)
 	
 	_state = Enums.ScenarioState.OperationResult

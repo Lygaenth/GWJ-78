@@ -29,7 +29,7 @@ memType = 0
 
 [sub_resource type="Resource" id="Resource_m6gh4"]
 script = ExtResource("1_wtuvc")
-memory_title = "The nightmare"
+memory_title = "Nightmare"
 memory_description = "Lately, I'm having a recurring nightmare. I can't remember it."
 memory_cost = 0
 memory_thumbnail = ExtResource("3_3hqf8")

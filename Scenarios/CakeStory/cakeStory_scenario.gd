@@ -17,11 +17,11 @@ func _ready():
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Well... It's about my brother."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "We grew up together on a commercial ship. As far as I remember, we had a close relationship."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But on my 16th birthday, he drank too much kick and suddenly started to DESTROY my cake!"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I remember him laughing, splashing cream and strawberry jam on the whole party."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I remember him laughing, splashing cream and rockberry jam on the whole party."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Classic chilhood memory)"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I want you to fix this memory, so we can patch things up with my brother."))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...it's been 35 years and I couldn't find it in me to forgive him."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Alright, let's fix your relationship. Stuck a slap patch on your temple, and we'll get started."))
+	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Alright, let's fix your relationship. Stuck a patch on your temple, and we'll get started."))
 
 	# Good ending
 	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "AH AH AH! What a nice cream cake battle!"))
@@ -66,10 +66,10 @@ func ResolveAndCheckIfFried(souvenirs : Array[MemoryData]) -> bool:
 
 	var hasHappy = souvenirs[1].tags.find(Enums.MemTag.Happy) >= 0
 	if hasHappy:
-		_pay = 400
+		_pay = 800
 		LoadLines(_goodEndingLines)
 	else:
-		_pay = 50
+		_pay = 400
 		LoadLines(_noChangeLines)
 	
 	_state = Enums.ScenarioState.OperationResult
