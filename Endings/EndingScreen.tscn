@@ -33,6 +33,7 @@ theme_override_constants/margin_bottom = 100
 
 [node name="NoMoreScenarioEnding" type="PanelContainer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -100,6 +101,7 @@ text = "Quit"
 
 [node name="TooManyMistakesEnding" type="PanelContainer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -166,6 +168,7 @@ text = "Quit"
 
 [node name="AiEnding" type="PanelContainer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

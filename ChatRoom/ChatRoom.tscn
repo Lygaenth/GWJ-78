@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=50 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_6atam"]
@@ -38,8 +38,6 @@
 [ext_resource type="AudioStream" uid="uid://bmhrut38y8mcp" path="res://Sounds/SFX/Talk3.wav" id="29_fs0kt"]
 [ext_resource type="StyleBox" uid="uid://bu072xsbj5k8t" path="res://Store/Assets/WarningNoticePanel.tres" id="31_s00il"]
 [ext_resource type="StyleBox" uid="uid://da00k2s6jcjv" path="res://WarningPanel.tres" id="32_mfgy0"]
-[ext_resource type="LabelSettings" uid="uid://dqewxrfiel10j" path="res://Store/WarningLabel.tres" id="33_gln7s"]
-[ext_resource type="FontFile" uid="uid://6vhn43ra26qi" path="res://Fonts/PixelifySans-Regular.ttf" id="34_1h5ba"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gx8vi"]
 noise_type = 2
@@ -91,6 +89,35 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0.420858, 0, 0.187406, 1)
 border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qexvc"]
+bg_color = Color(0.435294, 0.0313726, 0, 0.85098)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8, 0.0431373, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wjm5x"]
+font = ExtResource("16_a3s6y")
+font_size = 50
+font_color = Color(1, 0.0509804, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j57wr"]
+bg_color = Color(0.435294, 0.0313726, 0, 0.85098)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8, 0.0431373, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtedm"]
+bg_color = Color(0.435294, 0.0313726, 0, 0.85098)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8, 0.0431373, 0, 1)
 
 [node name="ChatRoom" type="CanvasLayer"]
 script = ExtResource("1_d005w")
@@ -730,11 +757,11 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Label" type="Label" parent="QuitConfirm/PanelContainer/CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(800, 0)
+custom_minimum_size = Vector2(850, 0)
 layout_mode = 2
-theme_override_styles/normal = ExtResource("32_mfgy0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qexvc")
 text = "You will loose all progress and go back to main screen if you quit."
-label_settings = ExtResource("33_gln7s")
+label_settings = SubResource("LabelSettings_wjm5x")
 autowrap_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="QuitConfirm/PanelContainer/CenterContainer/VBoxContainer"]
@@ -746,14 +773,14 @@ size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0.976471, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.976471, 0, 0, 1)
 theme_override_colors/font_color = Color(0.976471, 0, 0, 1)
-theme_override_fonts/font = ExtResource("34_1h5ba")
+theme_override_fonts/font = ExtResource("16_a3s6y")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = ExtResource("32_mfgy0")
 theme_override_styles/disabled = ExtResource("32_mfgy0")
 theme_override_styles/hover_pressed = ExtResource("32_mfgy0")
 theme_override_styles/hover = ExtResource("32_mfgy0")
 theme_override_styles/pressed = ExtResource("32_mfgy0")
-theme_override_styles/normal = ExtResource("32_mfgy0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j57wr")
 text = "Quit"
 
 [node name="CancelButton" type="Button" parent="QuitConfirm/PanelContainer/CenterContainer/VBoxContainer/HBoxContainer"]
@@ -762,14 +789,14 @@ size_flags_horizontal = 3
 theme_override_colors/font_hover_color = Color(0.976471, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.976471, 0, 0, 1)
 theme_override_colors/font_color = Color(0.976471, 0, 0, 1)
-theme_override_fonts/font = ExtResource("34_1h5ba")
+theme_override_fonts/font = ExtResource("16_a3s6y")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = ExtResource("32_mfgy0")
 theme_override_styles/disabled = ExtResource("32_mfgy0")
 theme_override_styles/hover_pressed = ExtResource("32_mfgy0")
 theme_override_styles/hover = ExtResource("32_mfgy0")
 theme_override_styles/pressed = ExtResource("32_mfgy0")
-theme_override_styles/normal = ExtResource("32_mfgy0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtedm")
 text = "Cancel"
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer2/MarginContainer/ResignButton" to="." method="_on_resign_button_pressed"]
