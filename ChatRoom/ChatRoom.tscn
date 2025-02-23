@@ -1,16 +1,17 @@
-[gd_scene load_steps=46 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=47 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_6atam"]
 [ext_resource type="Texture2D" uid="uid://b5yqqdl8dcxfd" path="res://ChatRoom/Assets/memory_clinic.png" id="2_jmn2t"]
 [ext_resource type="StyleBox" uid="uid://drcnk08k078lc" path="res://ChatRoom/Assets/PatientTextBox.tres" id="3_vap84"]
-[ext_resource type="Texture2D" uid="uid://1placlb1anpm" path="res://ChatRoom/Assets/Fish.png" id="4_hla1p"]
 [ext_resource type="LabelSettings" uid="uid://dcqvu4l5j25aa" path="res://ChatRoom/Assets/PatientTextDialog.tres" id="4_jdpaq"]
 [ext_resource type="Shader" path="res://ChatRoom/Assets/ChatRoom.gdshader" id="4_yicy3"]
 [ext_resource type="Script" path="res://ChatRoom/Fish.gd" id="5_2dyv3"]
 [ext_resource type="StyleBox" uid="uid://ceyj0a87l28h8" path="res://ChatRoom/Assets/AquariumPanel.tres" id="5_k1ny5"]
 [ext_resource type="Script" path="res://ChatRoom/aquarium_shader.gd" id="5_qa0ne"]
+[ext_resource type="Texture2D" uid="uid://dtvduh26jl8oh" path="res://MainMenu/Sprites/hybodus.png" id="6_mq5ae"]
 [ext_resource type="PackedScene" uid="uid://cf3unc30pl34t" path="res://ChatRoom/PatientInformation.tscn" id="6_y6lsd"]
+[ext_resource type="Texture2D" uid="uid://dj52pl5fxah3" path="res://MainMenu/Sprites/Nautile.png" id="6_y6x50"]
 [ext_resource type="StyleBox" uid="uid://dhn62cc0neuiu" path="res://ChatRoom/PatientControlPanel.tres" id="7_1fge2"]
 [ext_resource type="StyleBox" uid="uid://ddi324rmxgjd2" path="res://ChatRoom/Assets/DoctorTextBox.tres" id="7_57520"]
 [ext_resource type="Texture2D" uid="uid://v7sct2i6uq6e" path="res://ChatRoom/Assets/Icons/seo-social-web-network-internet_249_icon-icons.com_61487.png" id="8_6tbmc"]
@@ -119,17 +120,46 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
-position = Vector2(171, 666)
-texture = ExtResource("4_hla1p")
+[node name="nautile02" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(116, 272)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("6_y6x50")
 script = ExtResource("5_2dyv3")
-direction = Vector2(1, 4)
+direction = Vector2(0.5, 0.4)
+vsens = 1.0
 
-[node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
-position = Vector2(169, 281)
-texture = ExtResource("4_hla1p")
+[node name="squale02" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(146, 227)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("6_mq5ae")
 script = ExtResource("5_2dyv3")
-direction = Vector2(0, -1)
+direction = Vector2(0.05, 0.95)
+speed = 5.0
+vsens = 1.0
+
+[node name="nautile03" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(173, 461)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_y6x50")
+script = ExtResource("5_2dyv3")
+direction = Vector2(0.5, 0.3)
+hsens = 1.0
+
+[node name="nautile01" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(117, 504)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("6_y6x50")
+script = ExtResource("5_2dyv3")
+direction = Vector2(0.5, 0.2)
+
+[node name="squale01" type="Sprite2D" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
+position = Vector2(125, 665)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_mq5ae")
+script = ExtResource("5_2dyv3")
+direction = Vector2(0.1, 0.9)
+speed = 5.0
+hsens = 1.0
 
 [node name="Aquarium" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer"]
 material = SubResource("ShaderMaterial_vinf7")
