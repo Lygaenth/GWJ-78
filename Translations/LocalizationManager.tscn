@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cepu43tea64fa"]
+
+[ext_resource type="Script" path="res://Translations/localization_manager.gd" id="1_yet3n"]
+
+[node name="LocalizationManager" type="Node"]
+script = ExtResource("1_yet3n")

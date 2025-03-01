@@ -64,3 +64,21 @@ func _on_readability_settings_mouse_exited():
 
 func _on_easier_dialog_font_toggled(toggled_on):
 	AccessibilitySingleton.UseAccessibilityDialogReading(toggled_on)
+
+
+func _on_french_toggled(toggled_on):
+	if (toggled_on):
+		%EnglishLangToggle.button_pressed = false
+		LocalizationSingleton.SetLanguage(Enums.Languages.French)
+
+func _on_english_toggled(toggled_on):
+	if (toggled_on):
+		%FrenchLangToggled.button_pressed = false
+		LocalizationSingleton.SetLanguage(Enums.Languages.English)
+
+
+func _on_language_settings_mouse_entered():
+	%LanguageOptionsSettings.show()
+
+func _on_language_settings_mouse_exited():
+	%LanguageOptionsSettings.hide()

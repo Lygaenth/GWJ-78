@@ -1,0 +1,29 @@
+keys;en;fr
+MAIN_MENU_START;Start;Jouer
+MAIN_MENU_QUIT;Quit;Quitter
+MAIN_MENU_AUDIO_SETTINGS;Audio;Audio
+MAIN_MENU_MUSIC_SETTINGS;Music;Musique
+MAIN_MENU_SFX_SETTINGS;SFX;SFX
+MAIN_MENU_LANG_SETTINGS;Languages;Langues
+MAIN_MENU_EN_SETTINGS;English;English
+MAIN_MENU_FR_SETTINGS;Français;Français
+MAIN_MENU_ACCESS_SETTINGS;Accessibility;Accessibilité
+MAIN_MENU_READABILITY_SETTINGS;Easy dialog font;Police des dialogues
+CHAT_ROOM_NEUROWARE;NeuroWare;NeuroWare
+CHAT_ROOM_BANKWARE;BankWare;BankWare
+CHAT_ROOM_SHOP;Shop;Shop
+CHAT_ROOM_INVENTORY;Inventory;Inventaire
+CHAT_ROOM_QUIT;Resign;Démissioner
+CHAT_ROOM_QUIT_WARNING;You will loose all progress and go back to main screen if you quit.;Vos progrès seront perdus. Souhaitez-vous quitter la partie pour retourner à l'écran principal ?
+CHAT_ROOM_QUIT_CONFIRM;Quit;Quitter
+CHAT_ROOM_QUIT_CANCEL;Cancel;Annuler
+PATIENT_PANEL_CONNECT;Connecting...;Connexion...
+PATIENT_PANEL_DISCONNECT;Disconnecting...;Déconnexion...
+PATIENT_PANEL_PATIENT_FILE;Patient file:;Dossier du patient:
+PATIENT_PANEL_PATIENT_WAITING_1;Waiting for patient;Attente de patient
+PATIENT_PANEL_PATIENT_WAITING_2;Waiting for patient.;Attente de patient.
+PATIENT_PANEL_PATIENT_WAITING_3;Waiting for patient..;Attente de patient..
+PATIENT_PANEL_PATIENT_WAITING_4;Waiting for patient...;Attente de patient...
+PATIENT_PANEL_PATIENT_REQUEST;Appointment requested !;Demande de consultation !
+PATIENT_PANEL_PATIENT_LOBBY;A patient is waiting...;Un patient vous attend.
+

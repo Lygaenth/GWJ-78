@@ -19,10 +19,10 @@ func DisplayPatient(character : CharacterBase):
 		DisplayWait()
 		return
 	
-	_patientFileLabel.text = "Connecting..."
+	_patientFileLabel.text = "PATIENT_PANEL_CONNECT"
 	await Wait(1.0)
 		
-	_patientFileLabel.text = "Patient file:"
+	_patientFileLabel.text = "PATIENT_PANEL_PATIENT_FILE"
 	_portrait.texture = character.Picture
 	GetShader().set_shader_parameter("isBugged", false)
 	_portrait.show()
@@ -46,15 +46,15 @@ func GetShader() -> ShaderMaterial:
 	return _portrait.material as ShaderMaterial
 
 func DisplayCheckingForPatient():
-	_patientFileLabel.text = "Waiting for patient"
+	_patientFileLabel.text = "PATIENT_PANEL_PATIENT_WAITING_1"
 	await Wait(0.5)
-	_patientFileLabel.text = "Waiting for patient."
+	_patientFileLabel.text = "PATIENT_PANEL_PATIENT_WAITING_2"
 	await Wait(0.5)
-	_patientFileLabel.text = "Waiting for patient.."
+	_patientFileLabel.text = "PATIENT_PANEL_PATIENT_WAITING_3"
 	await Wait(0.5)
-	_patientFileLabel.text = "Waiting for patient..."
+	_patientFileLabel.text = "PATIENT_PANEL_PATIENT_WAITING_4"
 	await Wait(0.5)
-	_patientFileLabel.text = "Appointment requested !"
+	_patientFileLabel.text = "PATIENT_PANEL_PATIENT_REQUEST"
 	await Wait(1.0)
 
 func DisplayNothing():
@@ -68,7 +68,7 @@ func DisplayNothing():
 	%CopEye.hide()
 
 func DisplayWait():
-	_patientFileLabel.text = "A patient is waiting..."
+	_patientFileLabel.text = "PATIENT_PANEL_PATIENT_LOBBY"
 	%PatientWaitingSound.play()
 	_portrait.hide()
 	_portrait.texture = null
@@ -88,7 +88,7 @@ func DisplayDeconnection():
 	%FriedSound.stop()
 	%PatienDisconnect.play()
 	DisplayWait()
-	_patientFileLabel.text = "Disconnecting..."
+	_patientFileLabel.text = "PATIENT_PANEL_DISCONNECT"
 
 func Wait(time : float):
 	await get_tree().create_timer(time).timeout

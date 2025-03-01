@@ -352,7 +352,7 @@ theme_override_styles/hover_pressed_mirrored = ExtResource("7_57520")
 theme_override_styles/hover = ExtResource("7_57520")
 theme_override_styles/pressed = ExtResource("7_57520")
 theme_override_styles/normal = ExtResource("7_57520")
-text = " Resign "
+text = "CHAT_ROOM_QUIT"
 
 [node name="PanelContainer3" type="PanelContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer"]
 layout_mode = 2
@@ -535,7 +535,7 @@ theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer5"]
 layout_mode = 2
-text = "NeuroWare"
+text = "CHAT_ROOM_NEUROWARE"
 label_settings = ExtResource("8_v3iwd")
 
 [node name="PanelContainer7" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -564,7 +564,7 @@ theme_override_styles/hover = ExtResource("7_57520")
 theme_override_styles/normal_mirrored = ExtResource("7_57520")
 theme_override_styles/normal = ExtResource("7_57520")
 disabled = true
-text = "Shop"
+text = "CHAT_ROOM_SHOP"
 script = ExtResource("8_cdxuj")
 
 [node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -593,7 +593,7 @@ theme_override_styles/disabled = ExtResource("7_57520")
 theme_override_styles/hover = ExtResource("7_57520")
 theme_override_styles/normal_mirrored = ExtResource("7_57520")
 theme_override_styles/normal = ExtResource("7_57520")
-text = "Inventory"
+text = "CHAT_ROOM_INVENTORY"
 script = ExtResource("8_cdxuj")
 
 [node name="PanelContainer6" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer"]
@@ -630,7 +630,7 @@ theme_override_styles/panel = ExtResource("2_6atam")
 
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer/PanelContainer5"]
 layout_mode = 2
-text = " BankWare"
+text = "CHAT_ROOM_BANKWARE"
 label_settings = ExtResource("8_v3iwd")
 
 [node name="PanelContainer7" type="PanelContainer" parent="VBoxContainer/PanelContainer2/PanelContainer2/HBoxContainer/PanelContainer2/PanelContainer/MarginContainer/VBoxContainer"]
@@ -760,7 +760,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(850, 0)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_qexvc")
-text = "You will loose all progress and go back to main screen if you quit."
+text = "CHAT_ROOM_QUIT_WARNING"
 label_settings = SubResource("LabelSettings_wjm5x")
 autowrap_mode = 2
 
@@ -781,7 +781,7 @@ theme_override_styles/hover_pressed = ExtResource("32_mfgy0")
 theme_override_styles/hover = ExtResource("32_mfgy0")
 theme_override_styles/pressed = ExtResource("32_mfgy0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_j57wr")
-text = "Quit"
+text = "CHAT_ROOM_QUIT_CONFIRM"
 
 [node name="CancelButton" type="Button" parent="QuitConfirm/PanelContainer/CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -797,7 +797,7 @@ theme_override_styles/hover_pressed = ExtResource("32_mfgy0")
 theme_override_styles/hover = ExtResource("32_mfgy0")
 theme_override_styles/pressed = ExtResource("32_mfgy0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gtedm")
-text = "Cancel"
+text = "CHAT_ROOM_QUIT_CANCEL"
 
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer2/MarginContainer/ResignButton" to="." method="_on_resign_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/GreetBtn" to="." method="OnGreetPressed"]

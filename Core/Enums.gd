@@ -62,3 +62,9 @@ enum MemTag
 	Illegal,
 	AI
 }
+
+enum Languages
+{
+	English,
+	French
+}
