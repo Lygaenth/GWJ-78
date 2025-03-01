@@ -178,7 +178,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 1
 theme = ExtResource("8_fyy10")
-text = "Extract"
+text = "MEMORY_BUTTON_EXTRACT"
 
 [node name="InsertButton" type="Button" parent="ContextualMenu/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(400, 40)
@@ -186,7 +186,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 1
 theme = ExtResource("8_fyy10")
-text = "Implant memory"
+text = "MEMORY_BUTTON_IMPLANT"
 
 [node name="SellButton" type="Button" parent="ContextualMenu/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(400, 40)
@@ -194,7 +194,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 1
 theme = ExtResource("8_fyy10")
-text = "Sell for $0"
+text = "MEMORY_BUTTON_SELL"
 
 [node name="EraseButton" type="Button" parent="ContextualMenu/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(400, 40)
@@ -202,7 +202,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 1
 theme = ExtResource("8_fyy10")
-text = "Erase"
+text = "MEMORY_BUTTON_ERASE"
 
 [node name="BlipSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
