@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dknh24q1qdxtn"]
+[gd_scene load_steps=16 format=3 uid="uid://dknh24q1qdxtn"]
 
 [ext_resource type="LabelSettings" uid="uid://cr34ftfcx6o5w" path="res://OperationRoom/Assets/OperationLabel.tres" id="1_1a5ao"]
 [ext_resource type="Script" path="res://OperationRoom/memory_button.gd" id="1_7sere"]
@@ -10,7 +10,6 @@
 [ext_resource type="LabelSettings" uid="uid://c3wi2l71vgwof" path="res://OperationRoom/Resources/OperationRoomLarge.tres" id="7_253uj"]
 [ext_resource type="Theme" uid="uid://ir51hugafqir" path="res://OperationRoom/Resources/OperationRoomSmallButtonTheme.tres" id="8_fyy10"]
 [ext_resource type="FontFile" uid="uid://6vhn43ra26qi" path="res://Fonts/PixelifySans-Regular.ttf" id="9_7e4o0"]
-[ext_resource type="PackedScene" uid="uid://c6um5tqw08ild" path="res://OperationRoom/memoryChoiceMenu.tscn" id="10_7lxir"]
 [ext_resource type="AudioStream" uid="uid://d3yowdj7xg6n1" path="res://Sounds/SFX/ShopBlip.wav" id="10_lmer1"]
 [ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="11_44qyu"]
 [ext_resource type="Script" path="res://Sounds/sfxSound.gd" id="12_b082m"]
@@ -205,11 +204,6 @@ mouse_filter = 1
 theme = ExtResource("8_fyy10")
 text = "Erase"
 
-[node name="MemoryChoiceMenu" parent="." instance=ExtResource("10_7lxir")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-
 [node name="BlipSound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("10_lmer1")
@@ -228,4 +222,3 @@ script = ExtResource("12_b082m")
 [connection signal="pressed" from="ContextualMenu/MarginContainer/VBoxContainer/InsertButton" to="." method="_on_insert_button_pressed"]
 [connection signal="pressed" from="ContextualMenu/MarginContainer/VBoxContainer/SellButton" to="." method="_on_sell_button_pressed"]
 [connection signal="pressed" from="ContextualMenu/MarginContainer/VBoxContainer/EraseButton" to="." method="_on_erase_button_pressed"]
-[connection signal="SelectedItem" from="MemoryChoiceMenu" to="." method="_on_memory_choice_menu_selected_item"]

@@ -1,4 +1,4 @@
-extends PanelContainer
+class_name MemoryChoiceMenu extends PanelContainer
 
 var shopMemoryButtonPs = load("res://Store/ShopMemoryButton.tscn")
 
@@ -32,21 +32,15 @@ func Load():
 func _on_accept_button_pressed():
 	%ActionSound.play()
 	SelectedItem.emit(_selectedItem)
-	ResetMemoryChoiceMenu()
+	await get_tree().create_timer(0.2).timeout
+	queue_free()
 
 
 
 func _on_cancel_button_pressed():
 	%ActionSound.play()
-	ResetMemoryChoiceMenu()
-
-func ResetMemoryChoiceMenu():
-	_selectedItem = null
-	for button in grid_container.get_children():
-		button.queue_free()
-
-	DisableAcceptButton()
-	hide()
+	await get_tree().create_timer(0.2).timeout
+	queue_free()
 
 func DisableAcceptButton():
 	accept_button.disabled = true

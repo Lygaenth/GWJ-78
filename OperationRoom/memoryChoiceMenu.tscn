@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6um5tqw08ild"]
+[gd_scene load_steps=6 format=3 uid="uid://c6um5tqw08ild"]
 
 [ext_resource type="StyleBox" uid="uid://dwqp8yn8o7qvl" path="res://OperationRoom/Resources/operation_box_flat.tres" id="1_y2geq"]
 [ext_resource type="Theme" uid="uid://ir51hugafqir" path="res://OperationRoom/Resources/OperationRoomSmallButtonTheme.tres" id="2_iiavc"]
 [ext_resource type="Script" path="res://OperationRoom/memory_choice_menu.gd" id="2_rydow"]
+[ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="4_v0t7n"]
+[ext_resource type="Script" path="res://Sounds/sfxSound.gd" id="5_oviek"]
 
 [node name="MemoryChoiceMenu" type="PanelContainer"]
 top_level = true
@@ -19,6 +21,8 @@ offset_right = 134.5
 offset_bottom = 35.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 theme_override_styles/panel = ExtResource("1_y2geq")
 script = ExtResource("2_rydow")
 
@@ -32,6 +36,7 @@ mouse_filter = 0
 
 [node name="GridContainerMemoryChoiceButton" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 0
@@ -59,6 +64,11 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_iiavc")
 text = "Cancel"
+
+[node name="ActionSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_v0t7n")
+script = ExtResource("5_oviek")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/AcceptMemoryTransferButton" to="." method="_on_accept_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/CancelMemoryTransferButton" to="." method="_on_cancel_button_pressed"]

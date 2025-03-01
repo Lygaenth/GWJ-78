@@ -2,7 +2,6 @@ class_name MemoryButton extends TextureButton
 
 @onready var title_label: Label = $"%MemoryLabel"
 @onready var cost_label: Label = $"%CostLabel"
-@onready var memory_choice_menu = $MemoryChoiceMenu
 @onready var context_menu: PanelContainer = $ContextualMenu
 @onready var context_title: Label = $ContextualMenu/MarginContainer/VBoxContainer/ContextTitleLabel
 @onready var context_description: RichTextLabel = $ContextualMenu/MarginContainer/VBoxContainer/RichTextLabel
@@ -134,7 +133,10 @@ func _on_keep_button_pressed():
 func _on_insert_button_pressed():
 	%ActionSound.play()	
 	context_menu.hide()
-	memory_choice_menu.show()
+
+	var memory_choice_menu : MemoryChoiceMenu = MemoryButtonFactory.CreateMemoryChoiceContext()
+	add_child(memory_choice_menu)
+	memory_choice_menu.SelectedItem.connect(_on_memory_choice_menu_selected_item)
 	memory_choice_menu.Load()
 
 func _on_sell_button_pressed():
