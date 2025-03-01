@@ -11,5 +11,5 @@ memory_cost = 400
 memory_thumbnail = ExtResource("1_6nioc")
 can_be_clicked = true
 is_empty = false
-tags = Array[int]([3])
+tags = Array[int]([3, 0])
 memType = 0
