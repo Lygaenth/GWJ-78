@@ -49,19 +49,16 @@ theme_override_styles/panel = ExtResource("2_qotdy")
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/NoMoreScenarioEnding/VBoxContainer"]
 layout_mode = 2
-text = "You have reached the end of all our stories written for this game jam.
-
-You didn't commit too many mistakes and avoided the bad endings. Congratulations !
-
-You can try to play again to see other endings or stories you have missed.
-
-"
+size_flags_vertical = 6
+text = "ENDINGS_NO_MORE_SCENARIOS_DESC"
 label_settings = ExtResource("4_pn7na")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NoMoreScenarioResult" type="Label" parent="PanelContainer/MarginContainer/NoMoreScenarioEnding/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 6
 text = "
 
 "
@@ -70,14 +67,11 @@ horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="PanelContainer/MarginContainer/NoMoreScenarioEnding/VBoxContainer"]
 layout_mode = 2
-text = "We hope you enjoyed this game.
-
-Ghislain  (Dev, Art, Text, game and narrative design)
-Gly (Dev, Audio, game and narrative design)
-Mélissa (Characters)
-Music from Dr Dreamchip, Sfx made with CheapTone"
+size_flags_vertical = 6
+text = "ENDINGS_CREDITS"
 label_settings = ExtResource("4_pn7na")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/NoMoreScenarioEnding/VBoxContainer"]
 layout_mode = 2
@@ -97,7 +91,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/hover = ExtResource("1_ebxtq")
 theme_override_styles/pressed = ExtResource("1_ebxtq")
 theme_override_styles/normal = ExtResource("1_ebxtq")
-text = "Quit"
+text = "ENDINGS_QUIT"
 
 [node name="TooManyMistakesEnding" type="PanelContainer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
@@ -117,34 +111,29 @@ theme_override_styles/panel = ExtResource("2_qotdy")
 
 [node name="Label2" type="Label" parent="PanelContainer/MarginContainer/TooManyMistakesEnding/VBoxContainer"]
 layout_mode = 2
-text = "You have reached one of the bad ending written for this game jam.
-
-You have made too many mistakes and got caught by the watchers.
-
-You can try to play again to see other endings or stories you have missed.
-
-"
+size_flags_vertical = 6
+text = "ENDINGS_TOO_MANY_MISTAKES_DESC"
 label_settings = ExtResource("7_6ythr")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TooManyErrorsResult" type="Label" parent="PanelContainer/MarginContainer/TooManyMistakesEnding/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 6
 text = "You played 8 of the 11 available scenarios.
 "
 label_settings = ExtResource("7_6ythr")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Credits" type="Label" parent="PanelContainer/MarginContainer/TooManyMistakesEnding/VBoxContainer"]
 layout_mode = 2
-text = "We hope you enjoyed this game.
-
-Ghislain  (Dev, Art, Text, game and narrative design)
-Gly (Dev, Audio, game and narrative design)
-Mélissa (Characters)
-Music from Dr Dreamchip, Sfx made with CheapTone"
+size_flags_vertical = 6
+text = "ENDINGS_CREDITS"
 label_settings = ExtResource("7_6ythr")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/TooManyMistakesEnding/VBoxContainer"]
 layout_mode = 2
@@ -164,7 +153,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/hover = ExtResource("5_pvacl")
 theme_override_styles/pressed = ExtResource("5_pvacl")
 theme_override_styles/normal = ExtResource("5_pvacl")
-text = "Quit"
+text = "ENDINGS_QUIT"
 
 [node name="AiEnding" type="PanelContainer" parent="PanelContainer/MarginContainer"]
 unique_name_in_owner = true
@@ -184,19 +173,16 @@ theme_override_styles/panel = ExtResource("2_qotdy")
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/AiEnding/VBoxContainer"]
 layout_mode = 2
-text = "You have reached a bad ending written for this game jam.
-
-You released a malevolent AI into the world. You doomed us all.
-
-You can try to play again to see other endings or stories you have missed.
-
-"
+size_flags_vertical = 6
+text = "ENDINGS_AI_DESC"
 label_settings = ExtResource("9_rpoyf")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ScenarioResultAI" type="Label" parent="PanelContainer/MarginContainer/AiEnding/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 6
 text = "You played 8 of 11 availables scenarios.
 "
 label_settings = ExtResource("9_rpoyf")
@@ -205,14 +191,11 @@ vertical_alignment = 1
 
 [node name="Credits" type="Label" parent="PanelContainer/MarginContainer/AiEnding/VBoxContainer"]
 layout_mode = 2
-text = "We hope you enjoyed this game.
-
-Ghislain  (Dev, Art, Text, game and narrative design)
-Gly (Dev, Audio, game and narrative design)
-Mélissa (Characters)
-Music from Dr Dreamchip, Sfx made with CheapTone"
+size_flags_vertical = 6
+text = "ENDINGS_CREDITS"
 label_settings = ExtResource("9_rpoyf")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/AiEnding/VBoxContainer"]
 layout_mode = 2
@@ -232,7 +215,7 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/hover = ExtResource("8_tuppy")
 theme_override_styles/pressed = ExtResource("8_tuppy")
 theme_override_styles/normal = ExtResource("8_tuppy")
-text = "Quit"
+text = "ENDINGS_QUIT"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/NoMoreScenarioEnding/VBoxContainer/CenterContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/TooManyMistakesEnding/VBoxContainer/CenterContainer/Button" to="." method="_on_button_pressed"]

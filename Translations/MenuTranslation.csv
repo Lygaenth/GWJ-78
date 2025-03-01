@@ -20,10 +20,10 @@ CHAT_ROOM_QUIT_CANCEL;Cancel;Annuler
 PATIENT_PANEL_CONNECT;Connecting...;Connexion...
 PATIENT_PANEL_DISCONNECT;Disconnecting...;Déconnexion...
 PATIENT_PANEL_PATIENT_FILE;Patient file:;Dossier du patient:
-PATIENT_PANEL_PATIENT_WAITING_1;Waiting for patient;Attente de patient
-PATIENT_PANEL_PATIENT_WAITING_2;Waiting for patient.;Attente de patient.
-PATIENT_PANEL_PATIENT_WAITING_3;Waiting for patient..;Attente de patient..
-PATIENT_PANEL_PATIENT_WAITING_4;Waiting for patient...;Attente de patient...
+PATIENT_PANEL_PATIENT_WAITING_1;Waiting for patient;En attente de patient
+PATIENT_PANEL_PATIENT_WAITING_2;Waiting for patient.;En attente de patient.
+PATIENT_PANEL_PATIENT_WAITING_3;Waiting for patient..;En attente de patient..
+PATIENT_PANEL_PATIENT_WAITING_4;Waiting for patient...;En attente de patient...
 PATIENT_PANEL_PATIENT_REQUEST;Appointment requested !;Demande de consultation !
 PATIENT_PANEL_PATIENT_LOBBY;A patient is waiting...;Un patient vous attend.
 STORE_TITLE;MemShop+ - Better memories for a better life;SouvShop+ - De meilleurs souvenirs pour une meilleure vie
@@ -44,3 +44,9 @@ MEMORY_BUTTON_ERASE;Erase;Détruire
 MEMORY_BUTTON_CANNOT_SELL;Cannot be sold, no value;Invendable, aucune valeur
 MEMORY_CHOICE_ACCEPT;Accept;Valider
 MEMORY_CHOICE_CANCEL;Cancel;Annuler
+ENDINGS_NO_MORE_SCENARIOS_DESC;You have reached the end of all our stories written for this game jam.\rYou didn't commit too many mistakes and avoided the bad endings. Congratulations !\rYou can try to play again to see other endings or stories you have missed.;Vous avez atteint la fin des scénarios écrits pour cette game jam.\rVous n'avez pas commis trop d'erreur et avez évité les mauvaises fins. Félicitations !\rRejouez pour trouver les autres fins et les scénarios que vous pourriez avoir manqués.
+ENDINGS_TOO_MANY_MISTAKES_DESC;You have reached one of the bad ending written for this game jam.\rYou have made too many mistakes and got caught by the watchers.\rYou can try to play again to see other endings or stories you have missed.;Vous avez atteint une mauvaise fin écrite pour cette game jam.\rVous avez fait trop d'erreur et avez été attrapés par l'Oeil.\rRejouez pour trouver les autres fins et les scénarios que vous pourriez avoir manqués.
+ENDINGS_AI_DESC;You have reached a bad ending written for this game jam.\rYou released a malevolent AI into the world. You doomed us all.\rYou can try to play again to see other endings or stories you have missed.\r;Vous avez atteint une mauvaise fin écrite pour cette game jam.\rVous avez libéré une IA malveillante, vous nous avez tous condamnés !\rRejouez pour trouver les autres fins et les scénarios que vous pourriez avoir manqués.
+ENDINGS_COMPLETION_RATE;You played {0} of {1} available scenarios;Vous avez fait {0} des {1} scénarios disponibles
+ENDINGS_CREDITS;We hope you enjoyed this game.\rGhislain  (Dev, Art, Text, game and narrative design)\rGly (Dev, Audio, game and narrative design)\rMélissa (Characters)\rMusic from Dr Dreamchip, Sfx made with ChipTone;Nous espérons que le jeu vous a plu.\rGhislain  (Dev, Art, Text, game et narrative design)\rGly (Dev, Audio, game et narrative design)\rMélissa (Personnages)\rMusic from Dr Dreamchip, Sfx made with ChipTone
+ENDINGS_QUIT; Quit ; Quitter 

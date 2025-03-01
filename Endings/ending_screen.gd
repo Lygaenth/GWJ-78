@@ -2,7 +2,7 @@ extends CanvasLayer
 class_name EndingsScreen
 
 func RaiseEnding(ending : Enums.Endings) -> void:
-	var playedSecenariosResult = "You played {0} of 11 available scenarios".format([str(PlayerSingleton.GetPlayedScenarioCount())])
+	var playedSecenariosResult = tr("ENDINGS_COMPLETION_RATE").format([str(PlayerSingleton.GetPlayedScenarioCount()), "11"])
 	%NoMoreScenarioResult.text = playedSecenariosResult
 	%ScenarioResultAI.text = playedSecenariosResult
 	%TooManyErrorsResult.text = playedSecenariosResult
