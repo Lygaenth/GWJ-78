@@ -45,7 +45,10 @@ func OnItemStateChanged(isSelected : bool, memory : MemoryData):
 	_buyButton.disabled = _selectedItems.size() == 0
 	
 func CalculateCost() -> void:
-	%ItemNumberLabel.text = str(_selectedItems.size())+" item(s) selected"
+	if (_selectedItems.size() > 1):
+		%ItemNumberLabel.text = str(tr("STORE_ITEMS_NUMBERS") % str(_selectedItems.size()))
+	else:
+		%ItemNumberLabel.text = str(tr("STORE_ITEMS_NUMBERS_SINGLE") % str(_selectedItems.size()))
 	%TotalCostLabel.text = str("$"+"%06d" % GetAmount())
 
 	

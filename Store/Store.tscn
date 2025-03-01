@@ -86,7 +86,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
-text = "MemShop+ - Better memories for a better life"
+text = "STORE_TITLE"
 label_settings = SubResource("LabelSettings_hcan1")
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
@@ -103,7 +103,7 @@ size_flags_horizontal = 10
 mouse_default_cursor_shape = 2
 theme = ExtResource("3_lxllq")
 theme_override_colors/font_color = Color(0.786054, 0.720615, 0, 1)
-text = "Inventory"
+text = "CHAT_ROOM_INVENTORY"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2

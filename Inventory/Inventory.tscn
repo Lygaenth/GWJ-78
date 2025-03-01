@@ -76,7 +76,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
-text = "Inventory-3000 - An infinite storage of your virtual properties"
+text = "INVENTORY_TITLE"
 label_settings = SubResource("LabelSettings_hcan1")
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
@@ -95,7 +95,7 @@ mouse_default_cursor_shape = 2
 theme = ExtResource("4_ao11v")
 theme_override_colors/font_color = Color(0.786054, 0.720615, 0, 1)
 disabled = true
-text = "  Store   "
+text = "CHAT_ROOM_SHOP"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2/HBoxContainer/PanelContainer2/VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2

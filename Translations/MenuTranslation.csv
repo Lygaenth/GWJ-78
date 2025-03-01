@@ -26,4 +26,8 @@ PATIENT_PANEL_PATIENT_WAITING_3;Waiting for patient..;Attente de patient..
 PATIENT_PANEL_PATIENT_WAITING_4;Waiting for patient...;Attente de patient...
 PATIENT_PANEL_PATIENT_REQUEST;Appointment requested !;Demande de consultation !
 PATIENT_PANEL_PATIENT_LOBBY;A patient is waiting...;Un patient vous attend.
-
+STORE_TITLE;MemShop+ - Better memories for a better life;SouvShop+ - De meilleurs souvenirs pour une meilleure vie
+STORE_ITEMS_NUMBERS;%s selected items;%s objets sélectionnés
+STORE_ITEMS_NUMBERS_SINGLE;%s selected item;%s objet sélectionné
+STORE_BUY_BUTTON;BUY;ACHETER
+INVENTORY_TITLE;Inventory-3000 - An infinite storage of your virtual properties;Inventaire-3000 - Stockage infini pour toutes vos propriétés virtuelles
