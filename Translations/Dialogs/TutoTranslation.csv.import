@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bm6th2rbr6lxm"
+
+[deps]
+
+files=["res://Translations/Dialogs/TutoTranslation.en.translation", "res://Translations/Dialogs/TutoTranslation.fr.translation"]
+
+source_file="res://Translations/Dialogs/TutoTranslation.csv"
+dest_files=["res://Translations/Dialogs/TutoTranslation.en.translation", "res://Translations/Dialogs/TutoTranslation.fr.translation"]
+
+[params]
+
+compress=true
+delimiter=1

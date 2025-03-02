@@ -44,4 +44,4 @@ Next={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://Translations/MenuTranslation.en.translation", "res://Translations/MenuTranslation.fr.translation")
+locale/translations=PackedStringArray("res://Translations/MenuTranslation.en.translation", "res://Translations/MenuTranslation.fr.translation", "res://Translations/Dialogs/TutoTranslation.en.translation", "res://Translations/Dialogs/TutoTranslation.fr.translation")

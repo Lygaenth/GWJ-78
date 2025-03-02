@@ -30,7 +30,7 @@ func _process(delta):
 func DisplayLine(line : String):
 	_emited = false
 	_index = 0
-	_line = line
+	_line = tr(line)
 	text = ""
 
 func ForceComplete():
