@@ -19,14 +19,12 @@ TUTO_DIALOG_START_LINE_16_DOCTOR;"Don't worry, it is absolutely painless.";"Aucu
 TUTO_DIALOG_START_LINE_17_DOCTOR;"(Well, as long as I don't implant an incoherent memory...)";"(Tant que je n'implante pas un souvenir incohérent...)"
 TUTO_DIALOG_START_LINE_18_DOCTOR;"Are you ready?";"Pouvons nous démarrer ?"
 TUTO_DIALOG_START_LINE_19_PATIENT;"Yes, I am.";"Oui, allez-y"
-
 TUTO_DIALOG_DRUNK_LINE_0_PATIENT;"I met with ...a friend?";"J'ai... retrouvé un ami là-bas ?"
 TUTO_DIALOG_DRUNK_LINE_1_DOCTOR;"Yes, surely you can think of someone?";"Oui, j'imagine que vous devriez pouvoir vous souvenir de qui il s'agissait..."
 TUTO_DIALOG_DRUNK_LINE_2_PATIENT;"I-I think you are right. I remember meeting... Vahn at... Lizzie's.";"V-Vous avez raison. J'ai vu... Vahn... au Lizzie."
 TUTO_DIALOG_DRUNK_LINE_3_DOCTOR;"I bet Vahn likes a good bottle of Varanid wine, don't they?";"Je parie que Vahn aime un peu trop une bonne bouteille de Varanide, non ?"
 TUTO_DIALOG_DRUNK_LINE_4_DOCTOR;"Anyways, you should go home. It will probably pass after a good rest.";"Très bien, vous pouvez rentrer. Un peu de repos suffira pour être en forme."
 TUTO_DIALOG_DRUNK_LINE_5_DOCTOR;"This time it's for free, but next time you better come with credits, okay?";"C'est gratuit aujourd'hui mais revenez avec des crédits la prochaine fois, ok ?"
-
 TUTO_DIALOG_THIEF_LINE_0_PATIENT;"I was robbed? Oh, stars! How come I don't remember?";"On m'a volé ? Par les étoiles ! Comment-est possible de ne pas s'en souvenir ?"
 TUTO_DIALOG_THIEF_LINE_1_DOCTOR;"They probably used your neurojack as an entry point to your memory.";"Votre neurojack leur a probablement permis d'accéder à votre mémoire."
 TUTO_DIALOG_THIEF_LINE_2_DOCTOR;"You should be fine now. You should probably go home and get some rest.";"Vous devriez vous sentir mieux maintenant. Rentrez chez vous et prenez un peu de repos."

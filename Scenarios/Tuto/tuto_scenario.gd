@@ -13,42 +13,19 @@ func _ready():
 	AvailabilityCounter = 0
 	_availabilityCondition = false
 	_state = Enums.ScenarioState.Opening 
+	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/TutoTranslation.csv" , ["TUTO_DIALOG_START", "TUTO_DIALOG_DRUNK", "TUTO_DIALOG_THIEF"])
+
+	for line : String in dialogsByKeys["TUTO_DIALOG_START"]:
+		var talker = GetTalker(line)
+		_startLines.append(DialogLineFactory.CreateLine(talker, line))
+
+	for line : String in dialogsByKeys["TUTO_DIALOG_DRUNK"]:
+		var talker = GetTalker(line)
+		_drunkEndingLines.append(DialogLineFactory.CreateLine(talker, line))
 	
-	# Opening
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "TUTO_DIALOG_START_LINE_0_PATIENT"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_1_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_2_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_3_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_4_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "TUTO_DIALOG_START_LINE_5_PATIENT"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_6_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_7_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_8_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "TUTO_DIALOG_START_LINE_9_PATIENT"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_10_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_11_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_12_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_13_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_14_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "TUTO_DIALOG_START_LINE_15_PATIENT"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_16_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_17_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_START_LINE_18_DOCTOR"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "TUTO_DIALOG_START_LINE_19_PATIENT"))
-	
-	# Drunk ending
-	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "TUTO_DIALOG_DRUNK_LINE_0_PATIENT"))
-	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_DRUNK_LINE_1_DOCTOR"))
-	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "TUTO_DIALOG_DRUNK_LINE_2_PATIENT"))
-	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_DRUNK_LINE_3_DOCTOR"))
-	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_DRUNK_LINE_4_DOCTOR"))
-	_drunkEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_DRUNK_LINE_5_DOCTOR"))
-	
-	# Thief ending
-	_thiefEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "TUTO_DIALOG_THIEF_LINE_0_PATIENT"))
-	_thiefEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_THIEF_LINE_1_DOCTOR"))
-	_thiefEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_THIEF_LINE_2_DOCTOR"))
-	_thiefEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "TUTO_DIALOG_THIEF_LINE_3_DOCTOR"))
+	for line : String in dialogsByKeys["TUTO_DIALOG_THIEF"]:
+		var talker = GetTalker(line)
+		_thiefEndingLines.append(DialogLineFactory.CreateLine(talker, line))
 	
 	LoadLines(_startLines)
 	

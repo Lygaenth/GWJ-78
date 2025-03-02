@@ -45,6 +45,12 @@ func GetState() -> Enums.ScenarioState:
 func GetMemories() -> MemoryThread:
 	return Memories
 
+func GetTalker(line : String) -> Enums.Talker:
+	var talker : Enums.Talker = Enums.Talker.Patient
+	if (line.find("DOCTOR")):
+		talker = Enums.Talker.Doctor
+	return talker
+
 func ManageFry() -> void:
 	_state = Enums.ScenarioState.Frying
 	_pay = 0
