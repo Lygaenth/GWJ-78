@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://pov4qujius0f"
+
+[deps]
+
+files=["res://Translations/Dialogs/Mimic/MimicTranslation.en.translation", "res://Translations/Dialogs/Mimic/MimicTranslation.fr.translation"]
+
+source_file="res://Translations/Dialogs/Mimic/MimicTranslation.csv"
+dest_files=["res://Translations/Dialogs/Mimic/MimicTranslation.en.translation", "res://Translations/Dialogs/Mimic/MimicTranslation.fr.translation"]
+
+[params]
+
+compress=true
+delimiter=1

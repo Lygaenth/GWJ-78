@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://pplssxwf12se"
+
+[deps]
+
+files=["res://Translations/Dialogs/Picnic/Picnic1Translation.en.translation", "res://Translations/Dialogs/Picnic/Picnic1Translation.fr.translation"]
+
+source_file="res://Translations/Dialogs/Picnic/Picnic1Translation.csv"
+dest_files=["res://Translations/Dialogs/Picnic/Picnic1Translation.en.translation", "res://Translations/Dialogs/Picnic/Picnic1Translation.fr.translation"]
+
+[params]
+
+compress=true
+delimiter=1

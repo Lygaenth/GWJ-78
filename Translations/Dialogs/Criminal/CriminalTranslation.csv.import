@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c8tl1sqckqq4h"
+
+[deps]
+
+files=["res://Translations/Dialogs/Criminal/CriminalTranslation.en.translation", "res://Translations/Dialogs/Criminal/CriminalTranslation.fr.translation"]
+
+source_file="res://Translations/Dialogs/Criminal/CriminalTranslation.csv"
+dest_files=["res://Translations/Dialogs/Criminal/CriminalTranslation.en.translation", "res://Translations/Dialogs/Criminal/CriminalTranslation.fr.translation"]
+
+[params]
+
+compress=true
+delimiter=1

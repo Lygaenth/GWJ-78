@@ -12,30 +12,19 @@ func _ready():
 	AvailabilityCounter = 1
 	_state = Enums.ScenarioState.Opening 
 	
-	# Opening
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Hi. Please tell me about your problem."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Thank you. You see, I am using a digiphone, but I own another one - an old model."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I have precious memory on that scrib. Pictures of my family, of a college trip on Mars..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But no matter how much I try, I cannot remember the password!"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Ok, I'll see what I can do. Put a slap patch on your temple."))
+	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/Alzheimer/Alzheimer2Translation.csv" , ["ALZHEIMER2_DIALOG_START", "ALZHEIMER2_DIALOG_GOOD", "ALZHEIMER2_DIALOG_NOCHANGE"])
 
-	# Good ending
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "How you feeling?"))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "A lot better, but what about my password?"))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I think it's 'moonwhale'."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Oh? Let me try..."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...it works!!! Thank you so much. Have a good day."))
+	for line : String in dialogsByKeys["ALZHEIMER2_DIALOG_START"]:
+		var talker = GetTalker(line)
+		_startLines.append(DialogLineFactory.CreateLine(talker, line))
+
+	for line : String in dialogsByKeys["ALZHEIMER2_DIALOG_GOOD"]:
+		var talker = GetTalker(line)
+		_goodEndingLines.append(DialogLineFactory.CreateLine(talker, line))
 	
-	# Bad ending
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Memno-dammit, I gave her a broken memory!)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Quick, let's erase everything that can lead back to me...)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(There. Never happened.)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I'll erase mine too, just in case...)"))
-
-	# No change ending
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I got your password. It's 'moonwhale'."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Oh? Let me try..."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...it works!!! Thank you so much. Have a good day."))
+	for line : String in dialogsByKeys["ALZHEIMER2_DIALOG_NOCHANGE"]:
+		var talker = GetTalker(line)
+		_noChangeLines.append(DialogLineFactory.CreateLine(talker, line))
 	
 	LoadLines(_startLines)
 	
