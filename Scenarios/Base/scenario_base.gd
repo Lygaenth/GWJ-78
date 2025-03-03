@@ -47,7 +47,7 @@ func GetMemories() -> MemoryThread:
 
 func GetTalker(line : String) -> Enums.Talker:
 	var talker : Enums.Talker = Enums.Talker.Patient
-	if (line.find("DOCTOR")):
+	if (line.find("DOCTOR") >= 0):
 		talker = Enums.Talker.Doctor
 	return talker
 

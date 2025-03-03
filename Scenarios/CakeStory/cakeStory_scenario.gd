@@ -12,35 +12,20 @@ func _ready():
 	AvailabilityCounter = 1
 	_state = Enums.ScenarioState.Opening 
 	
-	# Opening
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Hi, what can I do for you?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Well... It's about my brother."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "We grew up together on a commercial ship. As far as I remember, we had a close relationship."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But on my 16th birthday, he drank too much kick and suddenly started to DESTROY my cake!"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I remember him laughing, splashing cream and rockberry jam on the whole party."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Classic chilhood memory)"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I want you to fix this memory, so we can patch things up with my brother."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...it's been 35 years and I couldn't find it in me to forgive him."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Alright, let's fix your relationship. Stuck a patch on your temple, and we'll get started."))
+	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/CakeStory/CakeStoryTranslation.csv" , ["CAKESTORY1_DIALOG_START", "CAKESTORY1_DIALOG_GOOD", "CAKESTORY1_DIALOG_NOCHANGE"])
 
-	# Good ending
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "AH AH AH! What a nice cream cake battle!"))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Thank you Doctor. I feel much better. Can't wait to see him."))
+	for line : String in dialogsByKeys["CAKESTORY1_DIALOG_START"]:
+		var talker = GetTalker(line)
+		_startLines.append(DialogLineFactory.CreateLine(talker, line))
+
+	for line : String in dialogsByKeys["CAKESTORY1_DIALOG_GOOD"]:
+		var talker = GetTalker(line)
+		_goodEndingLines.append(DialogLineFactory.CreateLine(talker, line))
 	
-	# Bad ending
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Memno-dammit! I was supposed to implant a family memory!)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Quick, let's erase everything that can lead back to me...)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(There. Never happened.)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Just in case, I'll erase mine too...)"))
-
-	# No change ending
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Why am I still feeling uneasy about my brother?"))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I replaced your traumatic experience with a more 'neutral' memory."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "You were supposed to get rid of my bad feelings!"))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Well, I did my best to preserve your identity."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "...but I am sure you can work it out with your brother, can't you?"))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "This ain't what I paid for. I want a discount."))
-
+	for line : String in dialogsByKeys["CAKESTORY1_DIALOG_NOCHANGE"]:
+		var talker = GetTalker(line)
+		_noChangeLines.append(DialogLineFactory.CreateLine(talker, line))
+	
 	LoadLines(_startLines)
 	
 func GetLine() -> DialogLine:
