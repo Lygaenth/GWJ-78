@@ -13,40 +13,24 @@ func _ready():
 	AvailabilityCounter = 2
 	_state = Enums.ScenarioState.Opening 
 	
-	# Opening
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Finally! I have been waiting for AGES!"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Sorry, what can I do for you?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Today, I sent one of my poor employees to a memory fixer..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(...could it be *this* customer from earlier?)"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...but when he came back, Glenn was in love with aliens!"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(By the Cosmic Amnesic, it's Glenn Kestrel!)"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I saw him k-k-kissing with a Varanid..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Oh, boy...)"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "My precious memories were soiled! *Do* something!"))
+	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/Aandrisk/AandriskTranslation.csv" , ["AANDRISK_DIALOG_START", "AANDRISK_DIALOG_GOOD", "AANDRISK_DIALOG_NEUTRAL", "AANDRISK_DIALOG_ALIENLOVE"])
 
-	# Good ending
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Aaah~ I feel so much better!"))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "It truly was a stellar idea."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...if I didn't have to wait, it would have been perfect."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Anyways, I have to go. My time is precious."))
-		
-	# Bad ending
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Memno-dammit, I messed up!)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Quick, let's erase everything that can lead back to me...)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(There. Never happened.)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I should be more cautious from now on.)"))
-	
-	# Neutral ending
-	_neutralEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Not a great memory... but it'll do."))
-	_neutralEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Wait, only $400?"))
-	_neutralEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Half the investment, half the cash prize."))
-	_neutralEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I have to go now. My time is precious."))
-	
-	# Alien love ending
-	_alienLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Dear stars, what an *horrendous* memory!"))
-	_alienLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "And *you* call yourself a memory fixer?"))
-	_alienLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I refuse to pay!"))
+	for line : String in dialogsByKeys["AANDRISK_DIALOG_START"]:
+		var talker = GetTalker(line)
+		_startLines.append(DialogLineFactory.CreateLine(talker, line))
 
+	for line : String in dialogsByKeys["AANDRISK_DIALOG_GOOD"]:
+		var talker = GetTalker(line)
+		_goodEndingLines.append(DialogLineFactory.CreateLine(talker, line))
+	
+	for line : String in dialogsByKeys["AANDRISK_DIALOG_NEUTRAL"]:
+		var talker = GetTalker(line)
+		_alienLoveLines.append(DialogLineFactory.CreateLine(talker, line))
+	
+	for line : String in dialogsByKeys["AANDRISK_DIALOG_ALIENLOVE"]:
+		var talker = GetTalker(line)
+		_neutralEndingLines.append(DialogLineFactory.CreateLine(talker, line))
+	
 	LoadLines(_startLines)
 	
 func GetLine() -> DialogLine:
