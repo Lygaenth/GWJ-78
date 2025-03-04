@@ -12,17 +12,17 @@ func _ready():
 	AvailabilityCounter = 1
 	_state = Enums.ScenarioState.Opening 
 	
-	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/Alzheimer/Alzheimer2Translation.csv" , ["ALZHEIMER2_DIALOG_START", "ALZHEIMER2_DIALOG_GOOD", "ALZHEIMER2_DIALOG_NOCHANGE"])
+	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/Alzheimer/Alzheimer1Translation.csv" , ["ALZHEIMER1_DIALOG_START", "ALZHEIMER1_DIALOG_GOOD", "ALZHEIMER1_DIALOG_NOCHANGE"])
 
-	for line : String in dialogsByKeys["ALZHEIMER2_DIALOG_START"]:
+	for line : String in dialogsByKeys["ALZHEIMER1_DIALOG_START"]:
 		var talker = GetTalker(line)
 		_startLines.append(DialogLineFactory.CreateLine(talker, line))
 
-	for line : String in dialogsByKeys["ALZHEIMER2_DIALOG_GOOD"]:
+	for line : String in dialogsByKeys["ALZHEIMER1_DIALOG_GOOD"]:
 		var talker = GetTalker(line)
 		_goodEndingLines.append(DialogLineFactory.CreateLine(talker, line))
 	
-	for line : String in dialogsByKeys["ALZHEIMER2_DIALOG_NOCHANGE"]:
+	for line : String in dialogsByKeys["ALZHEIMER1_DIALOG_NOCHANGE"]:
 		var talker = GetTalker(line)
 		_noChangeLines.append(DialogLineFactory.CreateLine(talker, line))
 	
