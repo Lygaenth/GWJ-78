@@ -13,7 +13,7 @@ func _ready():
 	AvailabilityCounter = 1
 	_state = Enums.ScenarioState.Opening 
 	
-	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/Aandrisk/AandriskTranslation.csv" , ["FULBERTE_DIALOG_START", "FULBERTE_DIALOG_FORGETFRIENDS", "FULBERTE_DIALOG_FORGETLOVE", "FULBERTE_DIALOG_NOCHANGE"])
+	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/Fulberte/FulberteTranslation.csv" , ["FULBERTE_DIALOG_START", "FULBERTE_DIALOG_FORGETFRIENDS", "FULBERTE_DIALOG_FORGETLOVE", "FULBERTE_DIALOG_NOCHANGE"])
 
 	for line : String in dialogsByKeys["FULBERTE_DIALOG_START"]:
 		var talker = GetTalker(line)
@@ -31,43 +31,6 @@ func _ready():
 		var talker = GetTalker(line)
 		_noChangeLines.append(DialogLineFactory.CreateLine(talker, line))
 	
-	
-	# Opening
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Hello. I've heard that you could... *change* some of my memories?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "That's right. First time?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Don't worry, we've all been there. What memory do you want to change?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "You see, I have been a Devotee of Gaia for all my life."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Trying to restore our wounded Earth with my devotee friends..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But a couple of years ago, I bumped into a young astronaut and I fell in love."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I ran away with them. Got a new haircut, tried Hyper-Paprika for the first time..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I had the best time of my life!"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But sometimes, I think about my former friends... they were like family."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Can you help me overcome my regrets?"))
-
-	# Forget her friends
-	_forgetFriendsLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...I feel relieved. As if an heavy weight was gone."))
-	_forgetFriendsLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Now, if you'll excuse me... Life is short, and I don't want to spend another minute away from my love."))
-	
-	# Forget her love
-	_forgetLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...I feel empty. What happened?"))
-	_forgetLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Are you alright?"))
-	_forgetLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I'm not sure. I'm not *hurt*, but it's like... as if... there was a hole in my chest."))
-	_forgetLoveLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I must leave now. I want to see my family."))
-	
-	# Bad ending
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Memno-dammit, I messed up!)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Quick, let's erase everything that can lead back to me...)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(There. Never happened.)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I should be more cautious from now on.)"))
-
-	# No change ending
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "So, you choose not to erase anything. Why?"))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I think your regrets are part of your story. You should value them, too"))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "They help you make the right choices. They make you a better person."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Indeed..."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "..."))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...I cannot pay you for nothing, but I get it now. Thank you, doctor."))
-
 	LoadLines(_startLines)
 	
 func GetLine() -> DialogLine:
