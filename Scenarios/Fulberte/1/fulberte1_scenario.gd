@@ -13,6 +13,25 @@ func _ready():
 	AvailabilityCounter = 1
 	_state = Enums.ScenarioState.Opening 
 	
+	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/Aandrisk/AandriskTranslation.csv" , ["FULBERTE_DIALOG_START", "FULBERTE_DIALOG_FORGETFRIENDS", "FULBERTE_DIALOG_FORGETLOVE", "FULBERTE_DIALOG_NOCHANGE"])
+
+	for line : String in dialogsByKeys["FULBERTE_DIALOG_START"]:
+		var talker = GetTalker(line)
+		_startLines.append(DialogLineFactory.CreateLine(talker, line))
+
+	for line : String in dialogsByKeys["FULBERTE_DIALOG_FORGETFRIENDS"]:
+		var talker = GetTalker(line)
+		_forgetFriendsLines.append(DialogLineFactory.CreateLine(talker, line))
+	
+	for line : String in dialogsByKeys["FULBERTE_DIALOG_FORGETLOVE"]:
+		var talker = GetTalker(line)
+		_forgetLoveLines.append(DialogLineFactory.CreateLine(talker, line))
+	
+	for line : String in dialogsByKeys["FULBERTE_DIALOG_NOCHANGE"]:
+		var talker = GetTalker(line)
+		_noChangeLines.append(DialogLineFactory.CreateLine(talker, line))
+	
+	
 	# Opening
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Hello. I've heard that you could... *change* some of my memories?"))
 	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "That's right. First time?"))
