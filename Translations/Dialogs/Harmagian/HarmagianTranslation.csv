@@ -8,14 +8,12 @@ HARMAGIAN_DIALOG_START_LINE_4_PATIENT;"Recently, I was humiliated by an Helicoid
 HARMAGIAN_DIALOG_START_LINE_5_PATIENT;"But since that *incident*, my... animosity has become a liability.";"Mais depuis cet ""incident"", mon... aggressivité... est devenue problématique." 
 HARMAGIAN_DIALOG_START_LINE_6_PATIENT;"My superior wants my memory fixed. 'For public image', she said.";"Ma supérieure veut que ""réadapter"" mon comportement. ""Pour l'image publique"", comme elle dit." 
 HARMAGIAN_DIALOG_START_LINE_7_DOCTOR;"Anything for the news, I guess. Put a patch on, I'll get started.";"Tout pour l'actualité, je suppose. Mettez un patch, on va changer ça." 
-
 HARMAGIAN_DIALOG_ALIENLOVE_LINE_0_DOCTOR;"Tell me now: what do you think of Helicoids?";"Vérifions-ça: que vous inspirent les Hélicoïdes ?"
 HARMAGIAN_DIALOG_ALIENLOVE_LINE_1_PATIENT;"They are disgusting with their little tentacles... but I admire their technology";"Leurs petits tentacules sont repoussants... mais j'admire leurs technologie."
 HARMAGIAN_DIALOG_ALIENLOVE_LINE_2_DOCTOR;"What about Varanids?";"Et les Varanides?"
 HARMAGIAN_DIALOG_ALIENLOVE_LINE_3_PATIENT;"Actually, they look kinda hot.";"Et bien, il y a quelque chose d'attirants chez eux..."
 HARMAGIAN_DIALOG_ALIENLOVE_LINE_4_DOCTOR;"(Ok, maybe I went too far...)";"(Peut-être suis-je aller trop loin...)"
 HARMAGIAN_DIALOG_ALIENLOVE_LINE_5_PATIENT;"Anyways, I feel great. Thanks, doc!";"Super, je me sens très bien. Merci Doc !"
-
 HARMAGIAN_DIALOG_ALIENFEAR_LINE_0_DOCTOR;"Tell me now: what do you think of Helicoids?";"Vérifions-ça: que vous inspirent les Hélicoïdes ?"
 HARMAGIAN_DIALOG_ALIENFEAR_LINE_0_PATIENT;"They are so disgusting with all their little tentacles. Gross.";"Leurs petits tentacules sont repoussants... Beurk."
 HARMAGIAN_DIALOG_ALIENFEAR_LINE_0_DOCTOR;"What about Varanids?";"Et les Varanides?"
@@ -23,7 +21,6 @@ HARMAGIAN_DIALOG_ALIENFEAR_LINE_0_PATIENT;"Those pesky lizards? Always acting li
 HARMAGIAN_DIALOG_ALIENFEAR_LINE_0_DOCTOR;"(Still as species as ever)";"(Toujours aussi spéciste)"
 HARMAGIAN_DIALOG_ALIENFEAR_LINE_0_PATIENT;"...but I feel a little more composed. I don't know what you fixed, but you did it.";"...je me sens quand même un peu plus serein. Je ne sais pas ce que vous avez changé, mais ça fait l'affaire."
 HARMAGIAN_DIALOG_ALIENFEAR_LINE_0_PATIENT;"Thanks, doc!";"Merci, doc!"
-
 HARMAGIAN_DIALOG_ALIENHATE_LINE_0_PATIENT;"Wait... why did you not erase this memory?";"Attendez... Pourquoi ne pas avoir effacé ce souvenir ?"
 HARMAGIAN_DIALOG_ALIENHATE_LINE_1_DOCTOR;"I think what you need is not memory fixing. It is empathy.";"Je crois que ce qu'il vous faut n'est pas de changer vos souvenirs, mais d'apprendre l'empathie."
 HARMAGIAN_DIALOG_ALIENHATE_LINE_2_PATIENT;"I beg you pardon?";"Pardon !?"

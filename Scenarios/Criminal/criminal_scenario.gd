@@ -12,35 +12,20 @@ func _ready():
 	AvailabilityCounter = 1
 	_state = Enums.ScenarioState.Opening 
 	
-	# Opening
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Wait, who are you?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Relax, doc... You can call me Le Douc."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Now listen carefully..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I need a single memory to be erased before the watchers catch me:"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "The memory of me selling a *receptacle* to a client."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Receptacle? Human bodies, stolen away and modified to carry an AI!)"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I'll give you $1200, and $1200 when you put it back."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(That's illegal even on the outskirts of Arcturus! I must refuse...)"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Don't go thinking you have a choice. I know where you live."))
+	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/Criminal/CriminalTranslation.csv" , ["CRIMINAL1_DIALOG_START", "CRIMINAL1_DIALOG_GOOD", "CRIMINAL1_DIALOG_NOCHANGE"])
 
-	# Good ending
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "My birdies were right: doc, you rock..."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Now. I don't remember what you extracted, but my friends know, and I *will* come back for it."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Til we meet again."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(What should I do?)"))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(If I dispose of it, Le Douc will come back for me...)"))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(But if I keep it, I might go to galactic jail!)"))
+	for line : String in dialogsByKeys["CRIMINAL1_DIALOG_START"]:
+		var talker = GetTalker(line)
+		_startLines.append(DialogLineFactory.CreateLine(talker, line))
+
+	for line : String in dialogsByKeys["CRIMINAL1_DIALOG_GOOD"]:
+		var talker = GetTalker(line)
+		_goodEndingLines.append(DialogLineFactory.CreateLine(talker, line))
 	
-	# Bad ending
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Memno-dammit, I messed up!)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(...)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(It was the right call.)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I should erase my memory of this incident.)"))
-
-	# No change ending
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Did you make a mistake, doc?"))
-	_noChangeLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Try one more time. RIGHT. NOW."))
-
+	for line : String in dialogsByKeys["CRIMINAL1_DIALOG_NOCHANGE"]:
+		var talker = GetTalker(line)
+		_noChangeLines.append(DialogLineFactory.CreateLine(talker, line))
+	
 	LoadLines(_startLines)
 	
 func GetLine() -> DialogLine:

@@ -13,43 +13,24 @@ func _ready():
 	AvailabilityCounter = 1
 	_state = Enums.ScenarioState.Opening 
 	
-	# Opening
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Oh, you're back?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Hi, doc. I've..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "You see, I've started a new job at Hornbills, the social network, and..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...let's say some people post crazy stuff."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I see."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "No you don't."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Actually, I *do*...)"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I need to do something to help him out of this memnosic loop.)"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(...maybe new professional goals?)"))
+	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/Picnic/Picnic2Translation.csv" , ["PICNIC2_DIALOG_START", "PICNIC2_DIALOG_GOODENDING", "PICNIC2_DIALOG_ERASEDTRAUMA", "PICNIC2_DIALOG_JOBERASED"])
+
+	for line : String in dialogsByKeys["PICNIC2_DIALOG_START"]:
+		var talker = GetTalker(line)
+		_startLines.append(DialogLineFactory.CreateLine(talker, line))
+
+	for line : String in dialogsByKeys["PICNIC2_DIALOG_GOODENDING"]:
+		var talker = GetTalker(line)
+		_goodEndingLines.append(DialogLineFactory.CreateLine(talker, line))
 	
-	# Ending Trauma erased
-	_traumaErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I..."))
-	_traumaErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...feel like I could sleep the whole day."))
-	_traumaErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I still remember the infinite non-sensical bots..."))
-	_traumaErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But I feel lighter. Thank you, doc."))
+	for line : String in dialogsByKeys["PICNIC2_DIALOG_ERASEDTRAUMA"]:
+		var talker = GetTalker(line)
+		_traumaErasedLines.append(DialogLineFactory.CreateLine(talker, line))
 	
-	# Ending whole job erased
-	_allJobErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I..."))
-	_allJobErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I don't remember why I'm here, but I guess that means you did your job well."))
-	_allJobErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I feel exhausted, but I'll rest tomorrow."))
-	_allJobErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I need to find a job."))
-	_allJobErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...need... job."))
-	
-	# Good ending
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I..."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...feel like I could sleep the whole day."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But I feel lighter. And I know what to do next."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Thank you, doc!"))
-	
-	# Bad ending
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Memno-dammit, I messed up!)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Quick, let's erase everything that can lead back to me...)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(There. Never happened.)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I should be more cautious from now on.)"))
-	
+	for line : String in dialogsByKeys["PICNIC2_DIALOG_JOBERASED"]:
+		var talker = GetTalker(line)
+		_allJobErasedLines.append(DialogLineFactory.CreateLine(talker, line))
+		
 	LoadLines(_startLines)
 	
 func GetLine() -> DialogLine:

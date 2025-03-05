@@ -13,47 +13,23 @@ func _ready():
 	AvailabilityCounter = 1
 	_state = Enums.ScenarioState.Opening 
 	
-	# Opening
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Hi, doc. I've..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I've seen things I want to forget."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Did something happen?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "You could say that. Until yesterday, I worked as a moderator on Hornbill. You know, the social feed."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Let's say some people post crazy stuff."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "I see."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "No you don't. At some point I *had* to quit my job. Betelgeuse, I even quit going on the Quantic Net!"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Say no more..."))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Erasure of the whole period, or just the trauma ?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Isn't the whole thing better ?"))
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Depends. It's more expensive and changes you more.")) # 8
-	_startLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Please, do what is best, doc. I just... I need to repair myself.")) # 13
-	
-	# Ending Trauma erased
-	_traumaErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I..."))
-	_traumaErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...feel like I could sleep the whole day."))
-	_traumaErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I still remember the infinite non-sensical bots..."))
-	_traumaErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But I feel lighter. Thank you, doc."))
-	
-	# Ending whole job erased
-	_allJobErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I..."))
-	_allJobErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I don't remember why I'm here, but I guess that means you did your job well."))
-	_allJobErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I feel exhausted, but I'll rest tomorrow."))
-	_allJobErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I need to find a job."))
-	_allJobErasedLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...need... job."))
-	
-	# Good ending
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "I..."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "...feel like I could sleep the whole day."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "But I feel lighter. And I know what I want to do."))
-	_goodEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Thank you, doc!"))
-	
-	# Bad ending
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Memno-dammit, I messed up!)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Quick, let's erase everything that can lead back to me...)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(There. Never happened.)"))
-	_badEndingLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I should be more cautious from now on.)"))
+	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/Picnic/Picnic1Translation.csv" , ["PICNIC1_DIALOG_START", "PICNIC1_DIALOG_GOODENDING", "PICNIC1_DIALOG_ERASEDTRAUMA", "PICNIC1_DIALOG_JOBERASED"])
 
+	for line : String in dialogsByKeys["PICNIC1_DIALOG_START"]:
+		var talker = GetTalker(line)
+		_startLines.append(DialogLineFactory.CreateLine(talker, line))
+
+	for line : String in dialogsByKeys["PICNIC1_DIALOG_GOODENDING"]:
+		var talker = GetTalker(line)
+		_goodEndingLines.append(DialogLineFactory.CreateLine(talker, line))
+	
+	for line : String in dialogsByKeys["PICNIC1_DIALOG_ERASEDTRAUMA"]:
+		var talker = GetTalker(line)
+		_traumaErasedLines.append(DialogLineFactory.CreateLine(talker, line))
+	
+	for line : String in dialogsByKeys["PICNIC1_DIALOG_JOBERASED"]:
+		var talker = GetTalker(line)
+		_allJobErasedLines.append(DialogLineFactory.CreateLine(talker, line))
 	
 	LoadLines(_startLines)
 	
