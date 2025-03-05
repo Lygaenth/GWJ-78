@@ -5,11 +5,11 @@
 
 [resource]
 script = ExtResource("2_kybux")
-memory_title = "[Corrupted]"
-memory_description = "*m%|\\|wh4|_3*"
+memory_title = "ALZHEIMER1_INT1_MEMORY_TITLE"
+memory_description = "ALZHEIMER1_INT1_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("1_tjoxb")
 can_be_clicked = true
 is_empty = false
-tags = Array[int]([0, 4, 6])
+tags = Array[int]([0, 4])
 memType = 0

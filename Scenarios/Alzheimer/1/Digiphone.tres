@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_cqyyu")
-memory_title = "Digiphone"
-memory_description = "I own a digiphone filled with precious memories of my family, my friends, my trips..."
+memory_title = "ALZHEIMER1_START_MEMORY_TITLE"
+memory_description = "ALZHEIMER1_START_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("1_a4oq7")
 can_be_clicked = false

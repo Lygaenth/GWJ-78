@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dmnyjisgfc3ty"
+
+[deps]
+
+files=["res://Translations/MemoriesAndThreadsTranslation.en.translation", "res://Translations/MemoriesAndThreadsTranslation.fr.translation"]
+
+source_file="res://Translations/MemoriesAndThreadsTranslation.csv"
+dest_files=["res://Translations/MemoriesAndThreadsTranslation.en.translation", "res://Translations/MemoriesAndThreadsTranslation.fr.translation"]
+
+[params]
+
+compress=true
+delimiter=1

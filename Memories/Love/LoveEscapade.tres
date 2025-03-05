@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_pltp1")
-memory_title = "Love Escapade"
-memory_description = " I fell in love, and ran away with my lover. It was the best time of my life."
+memory_title = "FULBERTE1_INT2_MEMORY_TITLE"
+memory_description = "FULBERTE1_INT2_MEMORY_DESC"
 memory_cost = 400
 memory_thumbnail = ExtResource("1_1rqjl")
 can_be_clicked = true

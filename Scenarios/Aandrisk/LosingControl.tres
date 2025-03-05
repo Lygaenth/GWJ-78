@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_xpuxl")
-memory_title = "Losing control"
-memory_description = "The situation is not under my control. I feel disgusted and infuriated."
+memory_title = "AANDRISK_END_MEMORY_TITLE"
+memory_description = "AANDRISK_END_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("1_dec6d")
 can_be_clicked = false

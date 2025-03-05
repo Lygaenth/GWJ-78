@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_6wsdf")
-memory_title = "Envy"
-memory_description = " I feel a little jealous of alien technology."
+memory_title = "HARMAGIAN1_INT3_MEMORY_TITLE"
+memory_description = "HARMAGIAN1_INT3_MEMORY_DESC"
 memory_cost = 800
 memory_thumbnail = ExtResource("1_5304g")
 can_be_clicked = true

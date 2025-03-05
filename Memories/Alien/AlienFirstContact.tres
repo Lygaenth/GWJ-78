@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_7x6em")
-memory_title = "First contact"
-memory_description = "My first encounter with an alien was a disaster."
+memory_title = "HARMAGIAN1_INT2_MEMORY_TITLE"
+memory_description = "HARMAGIAN1_INT2_MEMORY_DESC"
 memory_cost = 800
 memory_thumbnail = ExtResource("1_pvyy1")
 can_be_clicked = true

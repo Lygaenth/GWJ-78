@@ -8,8 +8,8 @@
 
 [sub_resource type="Resource" id="Resource_t1rio"]
 script = ExtResource("1_m1lhx")
-memory_title = "Harmagian hatred"
-memory_description = "I hate Harmagians, and with them all the non-human Sapients."
+memory_title = "HARMAGIAN1_END_MEMORY_TITLE"
+memory_description = "HARMAGIAN1_END_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("1_sv87n")
 can_be_clicked = false
@@ -19,8 +19,8 @@ memType = 2
 
 [sub_resource type="Resource" id="Resource_dc2j6"]
 script = ExtResource("1_m1lhx")
-memory_title = "Alien Mockery"
-memory_description = "This alien mocked my body scent. I felt humiliated.."
+memory_title = "HARMAGIAN1_INT1_MEMORY_TITLE"
+memory_description = "HARMAGIAN1_INT1_MEMORY_DESC"
 memory_cost = 800
 memory_thumbnail = ExtResource("1_sv87n")
 can_be_clicked = true
@@ -30,8 +30,8 @@ memType = 0
 
 [sub_resource type="Resource" id="Resource_m6gh4"]
 script = ExtResource("1_m1lhx")
-memory_title = "Harmagian encounter"
-memory_description = "I met with an Harmagian the other day."
+memory_title = "HARMAGIAN1_START_MEMORY_TITLE"
+memory_description = "HARMAGIAN1_START_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("1_sv87n")
 can_be_clicked = false
@@ -41,7 +41,7 @@ memType = 1
 
 [resource]
 script = ExtResource("2_g5g52")
-Query = "Remove traumatic memories of Glenn's encounter with another species."
+Query = "HARMAGIAN1_THREAD_SUM_UP"
 StartMemory = SubResource("Resource_m6gh4")
 IntermediateMemories = Array[ExtResource("1_m1lhx")]([SubResource("Resource_dc2j6"), ExtResource("3_dcuq0"), ExtResource("4_vvq41")])
 EndMemory = SubResource("Resource_t1rio")

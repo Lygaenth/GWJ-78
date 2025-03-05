@@ -60,7 +60,8 @@ enum MemTag
 	Consciousness,
 	Alien,
 	Illegal,
-	AI
+	AI,
+	Fading
 }
 
 enum Languages

@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_xxrir")
-memory_title = "Memno-manager"
-memory_description = "Today I sent an human employee to a memory fixer"
+memory_title = "AANDRISK_START_MEMORY_TITLE"
+memory_description = "AANDRISK_START_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("1_qcgir")
 can_be_clicked = false

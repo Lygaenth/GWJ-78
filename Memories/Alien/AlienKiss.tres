@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_e2tnm")
-memory_title = "Alien kiss"
-memory_description = " I remember a human making out with an alien."
+memory_title = "AANDRISK_INT1_MEMORY_TITLE"
+memory_description = "AANDRISK_INT1_MEMORY_DESC"
 memory_cost = 400
 memory_thumbnail = ExtResource("1_hjw66")
 can_be_clicked = true

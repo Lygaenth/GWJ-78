@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_b78wa")
-memory_title = "Quiet life"
-memory_description = "It is a quiet life, but I have many friends who care for me."
+memory_title = "FULBERTE1_INT1_MEMORY_TITLE"
+memory_description = "FULBERTE1_INT1_MEMORY_DESC"
 memory_cost = 400
 memory_thumbnail = ExtResource("1_hoevk")
 can_be_clicked = true

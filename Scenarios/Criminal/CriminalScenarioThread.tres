@@ -7,8 +7,8 @@
 
 [sub_resource type="Resource" id="Resource_t1rio"]
 script = ExtResource("1_i0kql")
-memory_title = "Business is business"
-memory_description = "Don't know why they want to give a body to an AI. Don't care."
+memory_title = "CRIMINAL1_END_MEMORY_TITLE"
+memory_description = "CRIMINAL1_END_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("1_atwl3")
 can_be_clicked = false
@@ -18,8 +18,8 @@ memType = 2
 
 [sub_resource type="Resource" id="Resource_2b4ol"]
 script = ExtResource("1_i0kql")
-memory_title = "AI Receptacle"
-memory_description = "I sold a receptacle to a client who wanted to implant an AI into it.."
+memory_title = "CRIMINAL1_INT1_MEMORY_TITLE"
+memory_description = "CRIMINAL1_INT1_MEMORY_DESC"
 memory_cost = 1200
 memory_thumbnail = ExtResource("3_oywj8")
 can_be_clicked = true
@@ -29,8 +29,8 @@ memType = 0
 
 [sub_resource type="Resource" id="Resource_m6gh4"]
 script = ExtResource("1_i0kql")
-memory_title = "Modder"
-memory_description = "I am a modder from an independant colony on the outskirts of the Galactic Union."
+memory_title = "CRIMINAL1_START_MEMORY_TITLE"
+memory_description = "CRIMINAL1_START_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("1_atwl3")
 can_be_clicked = false

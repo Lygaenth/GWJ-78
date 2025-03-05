@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("2_c26cg")
-Query = "Bianca wants to forget the memory of her employee kissing with a Varanid."
+Query = "AANDRISK_THREAD_SUM_UP"
 StartMemory = ExtResource("4_wk2ra")
 IntermediateMemories = Array[ExtResource("1_ld7tl")]([ExtResource("3_u025f")])
 EndMemory = ExtResource("1_qgsd4")

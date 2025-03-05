@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("2_lrlx8")
-Query = "Retrieve the password of Prima's precious digiphone."
+Query = "ALZHEIMER1_THREAD_SUM_UP"
 StartMemory = ExtResource("4_3ulx0")
 IntermediateMemories = Array[ExtResource("1_kvkp6")]([ExtResource("3_aev0t")])
 EndMemory = ExtResource("1_huh3b")

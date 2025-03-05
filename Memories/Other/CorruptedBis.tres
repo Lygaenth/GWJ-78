@@ -5,11 +5,11 @@
 
 [resource]
 script = ExtResource("2_hpe2e")
-memory_title = "[Corrupted]"
-memory_description = "U%r?aDa8%?W?w0%Y"
+memory_title = "ALZHEIMER2_INT1_MEMORY_TITLE"
+memory_description = "ALZHEIMER2_INT1_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("1_reer2")
 can_be_clicked = true
 is_empty = false
-tags = Array[int]([0, 4, 6])
+tags = Array[int]([0, 4])
 memType = 0
