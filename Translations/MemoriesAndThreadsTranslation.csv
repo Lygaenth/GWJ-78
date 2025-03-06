@@ -50,3 +50,52 @@ HARMAGIAN1_INT3_MEMORY_TITLE;Envy;Jalousie
 HARMAGIAN1_INT3_MEMORY_DESC; I feel a little jealous of alien technology.;Je me sens jaloux de la technologie des autres espèces.
 HARMAGIAN1_END_MEMORY_TITLE;Harmagian hatred;Xenophobie
 HARMAGIAN1_END_MEMORY_DESC;I hate Harmagians, and with them all the non-human Sapients.;Je détest les harmagiens, et toutes les espèces sapientes non-humaines.
+PICNIC1_THREAD_SUM_UP;Valk wants to forget about their traumatic memories as a Hornbill moderator.;Valk veut oublier du contenu traumatique subi pour son travail de modérateur pour Calao.
+PICNIC1_START_MEMORY_TITLE;Money needs;Besoin d'argent
+PICNIC1_START_MEMORY_DESC;I need to send money to my family on my home planet. I am desperate for work.;Je dois envoyer de l'argent à ma famille sur ma planète natale. Je suis prêt à prendre n'importe quel travail.
+PICNIC1_INT1_MEMORY_TITLE;Hornbill moderator;Modérateur
+PICNIC1_INT1_MEMORY_DESC;I work for the Hornbill social media. The pay is ok, but I have to check an endless flow of AI-generated poppycock.;Je travaille pour le réseau social Calao. Le salaire est correct mais je dois surveillé un flow ininterrompu d'absurdités générées par IA.
+PICNIC1_INT2_MEMORY_TITLE;Trauma;Traumatisme
+PICNIC1_INT2_MEMORY_DESC;[censored];[censuré]
+PICNIC1_END_MEMORY_TITLE;Haunted;Hanté
+PICNIC1_END_MEMORY_DESC;Alk has PTSD from the trauma he received. He came to you for help.;Alk est atteint d'un stress post-traumatique suite à sa modération. Il vous demande de l'aide.
+PICNIC2_THREAD_SUM_UP;Valk wants to forget about their traumatic memories as a Hornbill moderator... again.;Valk veut oublier du contenu traumatique subi pour son travail de modérateur pour Calao... encore.
+TUTO1_THREAD_SUM_UP;Amano needs his broken memory to be replaced by a working memory.. ;Amano a besoin que son souvenir endommagé soit remplacé par un souvenir fonctionnel. 
+TUTO1_START_MEMORY_TITLE;Bar;Bar
+TUTO1_START_MEMORY_DESC;I remember going to the bar.;Je me souviens d'être allé au bar.
+TUTO1_INT1_MEMORY_TITLE;[Damaged];[Endommagé]
+TUTO1_INT1_MEMORY_DESC;[This memory was partially erased - either by mistake or on purpose. It must be replaced].;[Ce souvenir a été partiellement efffacé - peut-être volontairement. Il faut le remplacer.].
+TUTO1_END_MEMORY_TITLE;Lost memory;Amnésie
+TUTO1_END_MEMORY_DESC;I don't remember what I did tonight. I feel lost and disoriented.;Je ne me souviens plus de que j'ai fait cette nuit. Je me sens désorienté et confus.
+DRUNK_MEMORY_TITLE;Drink abuse;Ivresse
+DRUNK_MEMORY_DESC;You drank too much that night. You probably had fun but the consequences were important.;Vous avez trop bu cette nuit. Vous vous êtes probablement amusé mais les conséquences sont douloureuses.
+ALIENEMPATHY_MEMORY_TITLE;Alien empathy;Empathie alien
+ALIENEMPATHY_MEMORY_DESC;I feel empathy for another Sapient species. We're not alike, but we can feel the same.;Je ressens de l'empathie pour les espèces alien. Nous ne nous ressemblons pas mais nous partageons des sentiments.
+ALIENFRIEND_MEMORY_TITLE;Alien friendship;Ami alien
+ALIENFRIEND_MEMORY_DESC;I am friend with an alien. Despite our differences, they have always been there for me.;J'ai un.e ami alien. Malgré nos différences, iel a toujours été là pour moi.
+ALIENHELP_MEMORY_TITLE;Alien help;Aide alien
+ALIENHELP_MEMORY_DESC;When I was in a dire situation, an alien reached out and helped me.;Quand j'étais dans une situation difficile, un.e alien est venu à mon aide.
+ROBBED_MEMORY_TITLE;Robbed;Volé
+ROBBED_MEMORY_DESC;You were robbed. Some people threatened you and got away with what you owned.;Vous avez été volé. Des individus vous ont menacé et sont partis avec ce qui vous appartenait.
+FAMILYFEUD_MEMORY_TITLE;Family Feud;Conflit familial
+FAMILYFEUD_MEMORY_DESC;Sometimes, familiy bonds cannot prevent discord among its members. It's always sad on the moment but it can also be a protection for yourself.;Parfois les liens familiaux ne peuvent pas protéger d'une discorde entre ses membres. C'est toujours triste sur le moment, mais peut-être feriez vous mieux de prendre vos distance pour vous protéger.
+GATHERING_MEMORY_TITLE;Familial gathering;Fête de famille
+GATHERING_MEMORY_DESC;You maybe a small or a large family. Across multiple generation or born together. Bonded by blood or by life, but you were definitely a supportive group at that moment. This gives you strength to go on.;Qu'importe que vous soyez une famille nombreuse ou réduite, traversant les générations ou issus de la même décénie, liés par le sang ou par la vie, vous vous soutenez les uns les autres à ce moment. Cela vous donne la force de continuer.
+BIRTHDAYPARTY_MEMORY_TITLE;Birthday Party;Anniversaire
+BIRTHDAYPARTY_MEMORY_DESC;A birthday party like no other with loved ones and less loved ones;Une fête d'anniversaire grandiose avec vos proches, et peut-être des moins proches.
+PRESENT_MEMORY_TITLE;Present;Cadeau
+PRESENT_MEMORY_DESC;I was given the nicest present of my life: a real sized giraffe. I felt so happy I could cry!;On m'a offert le plus beau des cadeaux: une girafe en taille réelle. J'étais si heureux que j'en pleurais !
+EMPTY_MEMORY_TITLE;Empty;Vide
+EMPTY_MEMORY_DESC;You extracted a memory. What will you use to fill it ?;Vous avez extrait un souvenir. Que mettrez-vous pour le remplacer ?
+UNKNOWN_MEMORY_TITLE;Unknown;Indéterminé
+UNKNOWN_MEMORY_DESC;You extracted a memory preceding this state. What you'll replace will modify the patient personality and state.;Vous avez modifié un souvenir précédent celui-ci. Ce que vous utiliserez pour le remplacer impactera la personalité et l'état du patient.
+BREAKUP_MEMORY_TITLE;Break up;Rupture
+BREAKUP_MEMORY_DESC;You broke up with your loved one. Was it imposed or on a coomon ground ? No one knows but what you had ended at that moment.;Vous vous êtes séparé de votre partenaire. Etait-ce subi ou d'un commun accord ? Difficile à dire mais ce que vous aviez construit s'est fini à ce moment.
+TENDERNIGHT_MEMORY_TITLE;Tender Night;Nuit tendre
+TENDERNIGHT_MEMORY_DESC;That night everything went well. From food to intimacy, evetything was harmonious. Only what was right when it was right. You gained confidence from this. A one night stand or the start oa long story doesn't matter here.;Cette nuit tout s'est bien passé. Que ce soit la nourriture ou l'intimité, vous étiez en harmonie. Seulement ce qu'il vous fallait quand il le fallait. Que ce soit une histoire d'un soir ou le début d'une aventure n'a pas d'importance ici.
+CAREERCHANGE_MEMORY_TITLE;Career Change;Réorientation
+CAREERCHANGE_MEMORY_DESC;When I was young, I dreamed of being an archivist.;Quand j'étais jeune, je rêvais de devenir archiviste.
+DISAPPOINTMENT_MEMORY_TITLE;Disappointment;Déception
+DISAPPOINTMENT_MEMORY_DESC;You worked hard but nothing good came from it. You made a mistake, no one cared or someone stole your work. In every case, you've got resentment for your work and maybe your company have some for you too.;Vous avez travaillé dur mais rien de bon n'en est sorti. Votre travail a été ignoré ou réapproprié. Vous avez du ressentiment pour votre travail et peut-être qu'on vous en veux aussi.
+PROMOTION_MEMORY_TITLE;Promotion;Promotion
+PROMOTION_MEMORY_DESC;I am a good employee, and I know how to code in Tinker. I should ask for a promotion.;Je suis un bon employé et on m'en félicite, j'ai eu un bonus à ce moment.

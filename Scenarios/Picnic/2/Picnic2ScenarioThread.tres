@@ -9,7 +9,7 @@
 
 [resource]
 script = ExtResource("2_7c3uf")
-Query = "Valk wants to forget about their traumatic memories as a Hornbill moderator... again."
+Query = "PICNIC2_THREAD_SUM_UP"
 StartMemory = ExtResource("5_5d34k")
 IntermediateMemories = Array[ExtResource("1_0n137")]([ExtResource("3_aosaw"), ExtResource("4_x7drl")])
 EndMemory = ExtResource("1_u5ray")

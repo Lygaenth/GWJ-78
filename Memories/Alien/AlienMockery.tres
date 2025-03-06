@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_idak4")
-memory_title = "Alien Mockery"
-memory_description = "This alien mocked my body scent. I felt humiliated.."
+memory_title = "HARMAGIAN1_INT1_MEMORY_TITLE"
+memory_description = "HARMAGIAN1_INT1_MEMORY_DESC"
 memory_cost = 800
 memory_thumbnail = ExtResource("1_mbewf")
 can_be_clicked = true

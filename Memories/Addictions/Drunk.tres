@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_mf44b")
-memory_title = "Drink abuse"
-memory_description = "You drank too much that night. You probably had fun but the consequences were important."
+memory_title = "DRUNK_MEMORY_TITLE"
+memory_description = "DRUNK_MEMORY_DESC"
 memory_cost = 200
 memory_thumbnail = ExtResource("1_o3k27")
 can_be_clicked = true

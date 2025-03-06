@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_cpwl0")
-memory_title = "Robbed"
-memory_description = "You were robbed. One or people threatened you and got with what you owned."
+memory_title = "ROBBED_MEMORY_TITLE"
+memory_description = "ROBBED_MEMORY_DESC"
 memory_cost = 400
 memory_thumbnail = ExtResource("1_srd26")
 can_be_clicked = true

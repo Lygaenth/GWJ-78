@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_0ph3m")
-memory_title = "Money needs"
-memory_description = "I need to send money to my family on my home planet. I am desperate for work."
+memory_title = "PICNIC1_START_MEMORY_TITLE"
+memory_description = "PICNIC1_START_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("1_ftrnd")
 can_be_clicked = false

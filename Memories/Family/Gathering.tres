@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_881vj")
-memory_title = "Familial gathering"
-memory_description = "You maybe a small or a large family. Across multiple generation or born together. Bonded by blood or by life, but you were definitely a supportive group at that moment. This gives you strength to go on."
+memory_title = "GATHERING_MEMORY_TITLE"
+memory_description = "GATHERING_MEMORY_DESC"
 memory_cost = 400
 memory_thumbnail = ExtResource("1_hdpw5")
 can_be_clicked = true

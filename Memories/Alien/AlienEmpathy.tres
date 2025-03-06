@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_tmprj")
-memory_title = "Alien empathy"
-memory_description = "I feel empathy for another Sapient species. We're not alike, but we can feel the same."
+memory_title = "ALIENEMPATHY_MEMORY_TITLE"
+memory_description = "ALIENEMPATHY_MEMORY_DESC"
 memory_cost = 800
 memory_thumbnail = ExtResource("1_thgsu")
 can_be_clicked = true

@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_pqlc5")
-memory_title = "Trauma"
-memory_description = "[censored]"
+memory_title = "PICNIC1_INT2_MEMORY_TITLE"
+memory_description = "PICNIC1_INT2_MEMORY_DESC"
 memory_cost = 800
 memory_thumbnail = ExtResource("1_lt4i1")
 can_be_clicked = true

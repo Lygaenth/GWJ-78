@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_hwvn3")
-memory_title = "Tender Night"
-memory_description = "That night everything went well. From food to intimacy, evetything was harmonious. Only what was right when it was right. You gained confidence from this. A one night stand or the start oa long story doesn't matter here."
+memory_title = "TENDERNIGHT_MEMORY_TITLE"
+memory_description = "TENDERNIGHT_MEMORY_DESC"
 memory_cost = 800
 memory_thumbnail = ExtResource("1_ob0u1")
 can_be_clicked = true

@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_tfqj1")
-memory_title = "Haunted"
-memory_description = "Alk has PTSD from the trauma he received. He came to you for help."
+memory_title = "PICNIC1_END_MEMORY_TITLE"
+memory_description = "PICNIC1_END_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("1_540dv")
 can_be_clicked = false

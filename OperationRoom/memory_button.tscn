@@ -156,7 +156,7 @@ theme_override_styles/separator = SubResource("StyleBoxLine_nyu8u")
 [node name="RichTextLabel" type="RichTextLabel" parent="ContextualMenu/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 3
 mouse_filter = 2
 theme_override_colors/default_color = Color(1, 1, 0, 1)
 theme_override_fonts/normal_font = ExtResource("9_7e4o0")

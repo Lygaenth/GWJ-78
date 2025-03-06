@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_pyhrq")
-memory_title = "Disappointment"
-memory_description = "You worked hard but nothing good came from it. You made a mistake, no one cared or someone stole your work. In every case, you've got resentment for your work and maybe your company have some for you too."
+memory_title = "DISAPPOINTMENT_MEMORY_TITLE"
+memory_description = "DISAPPOINTMENT_MEMORY_DESC"
 memory_cost = 400
 memory_thumbnail = ExtResource("1_rgk0d")
 can_be_clicked = true

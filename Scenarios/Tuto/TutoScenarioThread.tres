@@ -8,8 +8,8 @@
 
 [sub_resource type="Resource" id="Resource_t1rio"]
 script = ExtResource("2_v72la")
-memory_title = "Lost memory"
-memory_description = "I don't remember what I did tonight. I feel lost and disoriented."
+memory_title = "TUTO1_END_MEMORY_TITLE"
+memory_description = "TUTO1_END_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("1_p7fux")
 can_be_clicked = false
@@ -19,8 +19,8 @@ memType = 2
 
 [sub_resource type="Resource" id="Resource_m6gh4"]
 script = ExtResource("2_v72la")
-memory_title = "Bar"
-memory_description = "I remember going to the bar."
+memory_title = "TUTO1_START_MEMORY_TITLE"
+memory_description = "TUTO1_START_MEMORY_DESC"
 memory_cost = 0
 memory_thumbnail = ExtResource("4_ajybt")
 can_be_clicked = false
@@ -30,7 +30,7 @@ memType = 1
 
 [resource]
 script = ExtResource("4_kjpbe")
-Query = "Amano needs his broken memory to be replaced by a working memory.. "
+Query = "TUTO1_THREAD_SUM_UP"
 StartMemory = SubResource("Resource_m6gh4")
 IntermediateMemories = Array[ExtResource("2_v72la")]([ExtResource("3_wli5b")])
 EndMemory = SubResource("Resource_t1rio")

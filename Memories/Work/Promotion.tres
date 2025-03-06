@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_doa4n")
-memory_title = "Promotion"
-memory_description = "I am a good employee, and I know how to code in Tinker. I should ask for a promotion."
+memory_title = "PROMOTION_MEMORY_TITLE"
+memory_description = "PROMOTION_MEMORY_DESC"
 memory_cost = 400
 memory_thumbnail = ExtResource("1_sbddl")
 can_be_clicked = true
