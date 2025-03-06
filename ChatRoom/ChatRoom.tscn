@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://d0qgq1jw3fwrt"]
+[gd_scene load_steps=51 format=3 uid="uid://d0qgq1jw3fwrt"]
 
 [ext_resource type="Script" path="res://ChatRoom/chat_room.gd" id="1_d005w"]
 [ext_resource type="StyleBox" uid="uid://b6my5kblcuosw" path="res://ChatRoom/Assets/TransparentBackground.tres" id="2_6atam"]
@@ -33,6 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://fgk6fxakxw0i" path="res://Sounds/SFX/Click.wav" id="26_h487m"]
 [ext_resource type="Script" path="res://Sounds/sfxSound.gd" id="27_iyr21"]
 [ext_resource type="AudioStream" uid="uid://1vojkggj52r4" path="res://Sounds/SFX/Talk.wav" id="27_r16be"]
+[ext_resource type="StyleBox" uid="uid://ccux787ur3ec3" path="res://ChatRoom/Assets/DoctorDialogTextBox.tres" id="27_u4l5h"]
 [ext_resource type="AudioStream" uid="uid://bb1r36ktwil3b" path="res://Sounds/SFX/Talk2.wav" id="28_3pj3r"]
 [ext_resource type="AudioStream" uid="uid://cap6f8ajbwejv" path="res://Sounds/SFX/Pay.wav" id="29_e57o1"]
 [ext_resource type="AudioStream" uid="uid://bmhrut38y8mcp" path="res://Sounds/SFX/Talk3.wav" id="29_fs0kt"]
@@ -298,7 +299,7 @@ theme_override_constants/margin_bottom = 20
 [node name="PatientDialog" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer2/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(200, 260)
 layout_mode = 2
 theme_override_styles/normal = ExtResource("3_vap84")
 text = "First line of dialogue
@@ -692,7 +693,7 @@ custom_minimum_size = Vector2(800, 200)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_styles/normal = ExtResource("7_57520")
+theme_override_styles/normal = ExtResource("27_u4l5h")
 text = "A very long test sentence for wrapping "
 label_settings = ExtResource("8_v3iwd")
 autowrap_mode = 2

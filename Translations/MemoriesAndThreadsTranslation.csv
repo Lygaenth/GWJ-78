@@ -67,6 +67,13 @@ TUTO1_INT1_MEMORY_TITLE;[Damaged];[Endommagé]
 TUTO1_INT1_MEMORY_DESC;[This memory was partially erased - either by mistake or on purpose. It must be replaced].;[Ce souvenir a été partiellement efffacé - peut-être volontairement. Il faut le remplacer.].
 TUTO1_END_MEMORY_TITLE;Lost memory;Amnésie
 TUTO1_END_MEMORY_DESC;I don't remember what I did tonight. I feel lost and disoriented.;Je ne me souviens plus de que j'ai fait cette nuit. Je me sens désorienté et confus.
+MIMIC1_THREAD_SUM_UP;Sheia has nigthmares they don't remember. They want to get rid of it, but something seems off.;Sheia fait des cauchemars dont elle ne se souvient pas. Elle veut se débarasser de quelque chose mais il y a quelque chose de bizarre.
+MIMIC1_START_MEMORY_TITLE;Nightmare;Cauchemar
+MIMIC1_START_MEMORY_DESC;Lately, I'm having a recurring nightmare. I can't remember it.;Depuis peu je fais un cauchemar récurrent. Mais je ne m'en souviens pas.
+MIMIC1_INT1_MEMORY_TITLE;LET ME OUT;JE VEUX SORTIR
+MIMIC1_INT1_MEMORY_DESC;Help me help mE LEt mE OUt iT IS So dArK iN hErE WHaThApPenEd iMScAaREdLETMEouTTHisISNoOoOtTHeREeAaAaLMeEEe;Aidez moi aidez mOI SOrtEZ Moi De lA Il FAit SI SombrE iCi Quespasstil JaIPeuRSAuvEZMoiCENesTPaMOiiiiIII
+MIMIC1_END_MEMORY_TITLE;Sleep deprived;Insomnies
+MIMIC1_END_MEMORY_DESC;I feel so tired. I need a good night of sleep.;Je suis tellement fatigué. J'ai besoin d'une bonne nuit de sommeil.
 DRUNK_MEMORY_TITLE;Drink abuse;Ivresse
 DRUNK_MEMORY_DESC;You drank too much that night. You probably had fun but the consequences were important.;Vous avez trop bu cette nuit. Vous vous êtes probablement amusé mais les conséquences sont douloureuses.
 ALIENEMPATHY_MEMORY_TITLE;Alien empathy;Empathie alien
