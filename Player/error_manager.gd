@@ -16,41 +16,29 @@ func _ready():
 	InitializeLines()
 	
 func InitializeLines():
-	_copLineIndex = 0
-	_friedCharacters.clear()
-	_error1Lines.clear()
-	_error2Lines.clear()
-	_error3Lines.clear()
-	_error1Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Techno-dammit, I messed up!)"))
-	_error1Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Quick, let's erase everything that can lead back to me...)"))
-	_error1Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(There. Never happened.)"))
-	_error1Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I should be more cautious from now on.)"))
+	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/ErrorDialogs.csv" , ["Error1_DIALOG", "Error2_DIALOG", "Error3_DIALOG",  "COPSCOMING_DIALOG"])
+
+	for line : String in dialogsByKeys["Error1_DIALOG"]:
+		var talker = GetTalker(line)
+		_error1Lines.append(DialogLineFactory.CreateLine(talker, line))
+
+	for line : String in dialogsByKeys["Error2_DIALOG"]:
+		var talker = GetTalker(line)
+		_error2Lines.append(DialogLineFactory.CreateLine(talker, line))
 	
-	_error2Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(No no no no no...)"))
-	_error2Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I can't do that"))
-	_error2Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Those patient's memory might degenerate from the inconsistency...)"))
-	_error2Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(The Watchers might know...)"))
-	_error2Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I can't be caught, I must severe all links as best as I can.)"))
-	_error2Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I'll erase traces from my memories too...)"))
+	for line : String in dialogsByKeys["Error3_DIALOG"]:
+		var talker = GetTalker(line)
+		_error3Lines.append(DialogLineFactory.CreateLine(talker, line))
+	
+	for line : String in dialogsByKeys["COPSCOMING_DIALOG"]:
+		var talker = GetTalker(line)
+		_copLines.append(DialogLineFactory.CreateLine(talker, line))
 
-	_error3Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Poor thing... What did I miss ?)"))
-	_error3Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Hope a partial reset will work.)"))
-	_error3Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I'll remove traces of my intervention...)"))
-	_error3Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Then send an anonymous alert at his place.)"))
-	_error3Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I'll do better next time.)"))
-	_error3Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(I'll erase my own memory to stay confident...)"))
-	_error3Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Did I ever do that before by the way ?)"))
-	_error3Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "..."))
-	_error3Lines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "(Oh, I didn't have any patient today. Day passed so fast)"))
-
-	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "Dr. Lethe !"))
-	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "You're under arrest for the destruction of eleven minds."))
-	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Doctor, "Eleven ?! I don't remember any of that !"))
-	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "We do have proofs !"))
-	_specificLine = DialogLineFactory.CreateLine(Enums.Talker.Patient, "We investigated the bodies of ")
-	_copLines.append(_specificLine)
-	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "An investigations on the three of them led us to you. You will pay for you crime."))
-	_copLines.append(DialogLineFactory.CreateLine(Enums.Talker.Patient, "In the Eternal Slop."))
+func GetTalker(line : String) -> Enums.Talker:
+	var talker : Enums.Talker = Enums.Talker.Patient
+	if (line.find("DOCTOR") >= 0):
+		talker = Enums.Talker.Doctor
+	return talker
 
 func GetErrorDialog() -> Array[DialogLine]:
 	match(_friedCharacters.size()):
@@ -71,7 +59,9 @@ func AddFriedCharacter(character : CharacterBase) -> void:
 		ActivateBadEnding()
 
 func ActivateBadEnding():
-	_specificLine.Text += _friedCharacters[0].GetFullName()+", "+_friedCharacters[1].GetFullName()+", "+_friedCharacters[2].GetFullName()
+	for line : DialogLine in _copLines:
+		if (line.Text.contains("COPSCOMING_DIALOG_START_LINE_4_PATIENT")):
+			line.Text = tr(line.Text)+ _friedCharacters[0].GetFullName()+", "+_friedCharacters[1].GetFullName()+", "+_friedCharacters[2].GetFullName()
 		
 func GetCopLines() -> DialogLine:
 	if (_copLineIndex == _copLines.size()):

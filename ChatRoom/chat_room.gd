@@ -162,6 +162,7 @@ func DisplayPatientDepart():
 func CheckEvent() -> bool:
 	PlayerSingleton.UnlockShop()
 	EnableShopping()
+	DisableJacking()
 	if (PlayerSingleton.ErrorManager.HasTooManyError()):
 		_gameState = Enums.GameState.BadEndingPreparation
 		MusicSingleton.SwitchToOperationMusic()
@@ -200,6 +201,7 @@ func StartOperation():
 	_operationRoom.OpenInventory.connect(_on_inventory_pressed)
 	add_child(_operationRoom)
 	MusicSingleton.SwitchToOperationMusic()
+	DisableJacking()
 	_operationRoom.confirm_operation.connect(OnOperationTerminated)
 	
 func OnOperationTerminated(modifiedMemories : Array[MemoryData]):
