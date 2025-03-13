@@ -82,3 +82,18 @@ func _on_language_settings_mouse_entered():
 
 func _on_language_settings_mouse_exited():
 	%LanguageOptionsSettings.hide()
+
+
+func _on_music_volume_slider_value_changed(value):
+	MusicSingleton.UpdateMusicVolume(value)
+	%MusicCb.button_pressed = value > 0
+
+func _on_sfx_volume_slider_value_changed(value):
+	MusicSingleton.UpdateSfxVolume(value)
+	if(int(value / 0.01) % 10 == 0):
+		MusicSingleton.PlayTestSound()
+	%SFXCb.button_pressed = value > 0
+
+
+func _on_sfx_volume_slider_drag_ended(value_changed):
+	MusicSingleton.PlayTestSound()
