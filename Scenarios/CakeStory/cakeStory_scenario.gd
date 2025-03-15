@@ -3,7 +3,6 @@ class_name CakeStoryScenario
 
 var _startLines : Array[DialogLine] = []
 var _goodEndingLines : Array[DialogLine] = []
-var _badEndingLines : Array[DialogLine] = []
 var _noChangeLines : Array[DialogLine] = []
 
 var _dialogBlock = 0

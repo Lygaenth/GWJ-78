@@ -800,6 +800,11 @@ theme_override_styles/pressed = ExtResource("32_mfgy0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gtedm")
 text = "CHAT_ROOM_QUIT_CANCEL"
 
+[node name="DebugLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer2/MarginContainer/ResignButton" to="." method="_on_resign_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/GreetBtn" to="." method="OnGreetPressed"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/PanelContainer3/VBoxContainer/PanelContainer3/VBoxContainer/PanelContainer7/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/JackInBtn" to="." method="OnJackPressed"]

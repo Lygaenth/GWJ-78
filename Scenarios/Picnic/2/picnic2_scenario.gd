@@ -4,7 +4,6 @@ class_name Picnic2Scenario
 var _startLines : Array[DialogLine] = []
 var _traumaErasedLines : Array[DialogLine] = []
 var _allJobErasedLines : Array[DialogLine] = []
-var _badEndingLines : Array[DialogLine] = []
 var _goodEndingLines : Array[DialogLine] = []
 
 var _dialogBlock = 0

@@ -13,7 +13,7 @@ func LoadMemories():
 	for child in %GridContainer.get_children():
 		child.queue_free()
 		
-	var memories = PlayerSingleton.GetAvailableMemories()	
+	var memories = PlayerSingleton.GetAvailableMemories()
 	for memory in memories:
 		var button : InventoryMemoryButton = memoryButtonPs.instantiate() 
 		%GridContainer.add_child(button)

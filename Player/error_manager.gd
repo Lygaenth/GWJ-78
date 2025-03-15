@@ -7,7 +7,6 @@ var _error3Lines : Array[DialogLine] = []
 
 var _copLines : Array[DialogLine]
 var _copLineIndex : int = 0
-var _specificLine : DialogLine
 var _friedCharacters : Array[CharacterBase]
 
 var _releasedAnAi : bool = false

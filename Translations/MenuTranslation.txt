@@ -1,0 +1,52 @@
+keys;en;fr
+MAIN_MENU_START;Start;Jouer
+MAIN_MENU_QUIT;Quit;Quitter
+MAIN_MENU_AUDIO_SETTINGS;Audio;Audio
+MAIN_MENU_MUSIC_SETTINGS;Music;Musique
+MAIN_MENU_SFX_SETTINGS;SFX;SFX
+MAIN_MENU_LANG_SETTINGS;Languages;Langues
+MAIN_MENU_EN_SETTINGS;English;English
+MAIN_MENU_FR_SETTINGS;Français;Français
+MAIN_MENU_ACCESS_SETTINGS;Accessibility;Accessibilité
+MAIN_MENU_READABILITY_SETTINGS;Easy dialog font;Police des dialogues
+CHAT_ROOM_NEUROWARE;NeuroWare;NeuroWare
+CHAT_ROOM_BANKWARE;BankWare;BankWare
+CHAT_ROOM_SHOP;Shop;Shop
+CHAT_ROOM_INVENTORY;Inventory;Inventaire
+CHAT_ROOM_QUIT;Resign;Démissioner
+CHAT_ROOM_QUIT_WARNING;You will loose all progress and go back to main screen if you quit.;Vos progrès seront perdus. Souhaitez-vous quitter la partie pour retourner à l'écran principal ?
+CHAT_ROOM_QUIT_CONFIRM;Quit;Quitter
+CHAT_ROOM_QUIT_CANCEL;Cancel;Annuler
+PATIENT_PANEL_CONNECT;Connecting...;Connexion...
+PATIENT_PANEL_DISCONNECT;Disconnecting...;Déconnexion...
+PATIENT_PANEL_PATIENT_FILE;Patient file:;Dossier du patient:
+PATIENT_PANEL_PATIENT_WAITING_1;Waiting for patient;En attente de patient
+PATIENT_PANEL_PATIENT_WAITING_2;Waiting for patient.;En attente de patient.
+PATIENT_PANEL_PATIENT_WAITING_3;Waiting for patient..;En attente de patient..
+PATIENT_PANEL_PATIENT_WAITING_4;Waiting for patient...;En attente de patient...
+PATIENT_PANEL_PATIENT_REQUEST;Appointment requested !;Demande de consultation !
+PATIENT_PANEL_PATIENT_LOBBY;A patient is waiting...;Un patient vous attend.
+STORE_TITLE;MemShop+ - Better memories for a better life;SouvShop+ - De meilleurs souvenirs pour une meilleure vie
+STORE_ITEMS_NUMBERS;%s selected items;%s objets sélectionnés
+STORE_ITEMS_NUMBERS_SINGLE;%s selected item;%s objet sélectionné
+STORE_BUY_BUTTON;BUY;ACHETER
+INVENTORY_TITLE;Inventory-3000 - An infinite storage of your virtual properties;Inventaire-3000 - Stockage infini pour toutes vos propriétés virtuelles
+OPERATION_TUTO_1;This zone sum up your patient's problem, in case you need to remember.;Cette zone résume le problème de votre patient, au cas où vous l'auriez oublié.
+OPERATION_TUTO_2;This zone displays your patient memories. The first left is the cause of the memory chain. The last one is the current mental state of the patient and will become unkown after a modification.\rThe middle ones can be modified.;Cette zone affiche les patients de votre souvenir dans l'ordre chronologique de gauche à droite. Le premier est la situation initiale des souvenirs. Le dernier deviendra indéfini en cas de modifications. Ceux du milieu peuvent être modifiés.
+OPERATION_TUTO_3;Clicking on the memory will display a description and available actions. You are free to do whatever you want with those. But an inconsistent choice  with the context may damage the patient identity.;Cliquer sur un souvenir afficher une description et les actions disponibles. Vous être libres de modifier les souvenirs intermédiaires come vous le souhaitez. Cependant si les souvenirs sont incohérents l'identité du patient risque d'être endommagée.
+OPERATION_TUTO_4;This zone gives you access to your shop, inventory and the confimation of the changes you have made (or not). Patient cannot have empty or broken memories before completing the operation. Once confirmed, it cannot be reverted.;Cette zone vous donne accès au shop et à votre inventaire. Le bouton du bas vous permet de confirmer les changements que vous avez fait (ou non) dans la mémoire du patient. Il est indisponible si la mémoire du patient contient un souvenir vide ou endommagé. Une fois confirmé, les changements sont irréversibles.
+OPERATION_TUTO_CLOSE; Close Tutorial ; Fermer le tutoriel 
+OPERATION_ROOM_IMPLANT;Implant;Implanter
+MEMORY_BUTTON_EXTRACT;Extract;Extraire
+MEMORY_BUTTON_IMPLANT;Implant memory;Implanter un souvenir
+MEMORY_BUTTON_SELL;Sell for $ %s;Vendre pour $ %s
+MEMORY_BUTTON_ERASE;Erase;Détruire
+MEMORY_BUTTON_CANNOT_SELL;Cannot be sold, no value;Invendable, aucune valeur
+MEMORY_CHOICE_ACCEPT;Accept;Valider
+MEMORY_CHOICE_CANCEL;Cancel;Annuler
+ENDINGS_NO_MORE_SCENARIOS_DESC;You have reached the end of all our stories written for this game jam.\rYou didn't commit too many mistakes and avoided the bad endings. Congratulations !\rYou can try to play again to see other endings or stories you have missed.;Vous avez atteint la fin des scénarios écrits pour cette game jam.\rVous n'avez pas commis trop d'erreur et avez évité les mauvaises fins. Félicitations !\rRejouez pour trouver les autres fins et les scénarios que vous pourriez avoir manqués.
+ENDINGS_TOO_MANY_MISTAKES_DESC;You have reached one of the bad ending written for this game jam.\rYou have made too many mistakes and got caught by the watchers.\rYou can try to play again to see other endings or stories you have missed.;Vous avez atteint une mauvaise fin écrite pour cette game jam.\rVous avez fait trop d'erreur et avez été attrapés par l'Oeil.\rRejouez pour trouver les autres fins et les scénarios que vous pourriez avoir manqués.
+ENDINGS_AI_DESC;You have reached a bad ending written for this game jam.\rYou released a malevolent AI into the world. You doomed us all.\rYou can try to play again to see other endings or stories you have missed.\r;Vous avez atteint une mauvaise fin écrite pour cette game jam.\rVous avez libéré une IA malveillante, vous nous avez tous condamnés !\rRejouez pour trouver les autres fins et les scénarios que vous pourriez avoir manqués.
+ENDINGS_COMPLETION_RATE;You played {0} of {1} available scenarios;Vous avez fait {0} des {1} scénarios disponibles
+ENDINGS_CREDITS;We hope you enjoyed this game.\rGhislain  (Dev, Art, Text, game and narrative design)\rGly (Dev, Audio, game and narrative design)\rMélissa (Characters)\rMusic from Dr Dreamchip, Sfx made with ChipTone;Nous espérons que le jeu vous a plu.\rGhislain  (Dev, Art, Text, game et narrative design)\rGly (Dev, Audio, game et narrative design)\rMélissa (Personnages)\rMusic from Dr Dreamchip, Sfx made with ChipTone
+ENDINGS_QUIT; Quit ; Quitter 

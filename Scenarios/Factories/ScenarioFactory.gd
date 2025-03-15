@@ -14,15 +14,20 @@ const Picnic2ScenarioPs : PackedScene = preload("res://Scenarios/Picnic/2/Picnic
 const MimicScenarioPs : PackedScene = preload("res://Scenarios/Mimic/Mimic.tscn")
 
 var _scenarios : Array[ScenarioBase] = []
+var _logs = ""
 
 func _ready():
+	_logs+= "loading scenarios\n"
 	LoadAllScenarios()
 
 func LoadAllScenarios():
+	_logs+= "cleaning scenarios\n"
 	for scenar in _scenarios:
 		scenar.queue_free()
 	_scenarios.clear()
+	_logs+= "loading scenario Tuto"
 	AddScenarioFromPackedScene(TutoScenarioPs)
+	_logs+= "loading scenario Cake story"
 	AddScenarioFromPackedScene(CakeStoryScenarioPs)
 	AddScenarioFromPackedScene(Alzheimer1ScenarioPs)
 	AddScenarioFromPackedScene(Alzheimer2ScenarioPs)
@@ -58,6 +63,7 @@ func AddScenarioFromPackedScene(ps : PackedScene):
 	scenar.UnlockScenario.connect(OnUnlockScenario)
 	scenar.LockAllScenario.connect(OnLockAllScenarios)
 	add_child(scenar)
+	_logs+= "scenario loaded. Line count:"+str(scenar._lines.size())+"\n"
 	_scenarios.append(scenar)
 
 func OnUnlockScenario(scenarioId : int):

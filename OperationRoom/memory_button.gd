@@ -80,7 +80,7 @@ func Update(memory: MemoryData):
 	# Cost
 	cost_label.text = str("$", memory.memory_cost)
 	if (memory.memory_cost > 0):
-		sell_button.text = str(tr("MEMORY_BUTTON_SELL") % (memory.memory_cost / 2))
+		sell_button.text = str(tr("MEMORY_BUTTON_SELL") % (int(memory.memory_cost) / 2))
 		sell_button.disabled = false
 	else:
 		sell_button.text = "MEMORY_BUTTON_CANNOT_SELL"
@@ -142,7 +142,7 @@ func _on_insert_button_pressed():
 func _on_sell_button_pressed():
 	%ActionSound.play()
 	hide()
-	PlayerSingleton.UpdateMoney(on_ready_memory.memory_cost / 2)
+	PlayerSingleton.UpdateMoney(int(on_ready_memory.memory_cost) / 2)
 	PlayerSingleton._memoryBank.Consume(on_ready_memory)
 	print("memory sent to shop")
 	await get_tree().create_timer(0.2)

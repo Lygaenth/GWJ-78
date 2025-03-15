@@ -36,11 +36,12 @@ func _ready():
 	_gameState = Enums.GameState.WaitingForPatient
 	_patientInfo.DisplayWait()
 	EnableGreetButton()
+	%DebugLabel.text = PlayerSingleton._scenarioProvider._logs
 
 func OnQuittedMenus():
 	_inMenus = false
 
-func _process(delta):
+func _process(_delta):
 	if (Input.is_action_just_pressed("Next")):
 		Next()
 
@@ -58,18 +59,21 @@ func Next():
 		return
 	
 	if (_gameState == Enums.GameState.BadEndingPreparation):
+		%DebugLabel.text = "Bad ending action"
 		var line = PlayerSingleton.ErrorManager.GetCopLines()
 		if (line == null):
 			DisplayEnding(Enums.Endings.TooManyMistakes)
 		else:
 			DisplayLine(line)
 		return
+		
 	if (_gameState == Enums.GameState.OnGoingScenario):
 		var scenarioState = _scenario.GetState() 
 		if (scenarioState == Enums.ScenarioState.Opening 
 			|| scenarioState == Enums.ScenarioState.Closing
 			|| scenarioState == Enums.ScenarioState.Frying):
-			DisplayLine(_scenario.GetLine())
+			var line = _scenario.GetLine()
+			DisplayLine(line)
 		elif (scenarioState == Enums.ScenarioState.Operation):
 			HideDialog()
 			EnableShoppingAndJacking()
@@ -91,12 +95,13 @@ func Next():
 			_patientInfo.DisplayWait()
 			_gameState = Enums.GameState.WaitingForPatient
 			EnableGreetButton()
-			
+						
 func HideDialog():
 	_patientDialog.hide()
 	_doctorDialog.hide()
 			
 func DisplayLine(line : DialogLine):
+	%DebugLabel.text = "display line: "+line.Text
 	if (line == null || line.Talker == Enums.Talker.None):
 		HideDialog()
 		return
@@ -138,14 +143,15 @@ func DisableShopping():
 	_shopButton.disabled = true
 
 func LoadNextScenario() -> bool:
+	%DebugLabel.text = "loading scenario"
 	_scenario = PlayerSingleton.GetNextScenario()
+
 	EnableShopping()
 	if (_scenario != null):
 		_patientInfo.DisplayPatient(_scenario.Patient)
 	else:
 		_patientInfo.DisplayWait()
 		DisplayEnding(Enums.Endings.NoMorescenario)
-
 	return _scenario != null
 
 func DisplayPay(pay : int):
@@ -230,8 +236,10 @@ func OnGreetPressed() -> void:
 	if (_gameState == Enums.GameState.WaitingForPatient):
 		DisableGreeButton()
 		if(LoadNextScenario()):
+			%DebugLabel.text = "tempo before starting"
 			await Wait(1.0)
 			_gameState = Enums.GameState.OnGoingScenario
+			%DebugLabel.text = "Going into next"
 			Next()
 
 func Wait(time : float):

@@ -3,7 +3,6 @@ class_name AandriskEncounterScenario
 
 var _startLines : Array[DialogLine] = []
 var _goodEndingLines : Array[DialogLine] = []
-var _badEndingLines : Array[DialogLine] = []
 var _alienLoveLines : Array[DialogLine] = []
 var _neutralEndingLines : Array[DialogLine] = []
 

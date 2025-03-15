@@ -5,7 +5,6 @@ var _startLines : Array[DialogLine] = []
 var _alienLoveLines : Array[DialogLine] = []
 var _alienFearLines : Array[DialogLine] = []
 var _alienHateLines : Array[DialogLine] = []
-var _badEndingLines : Array[DialogLine] = []
 
 var _dialogBlock = 0
 

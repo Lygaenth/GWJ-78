@@ -5,8 +5,7 @@ const shopMemoryButtonPs : PackedScene = preload("res://Store/ShopMemoryButton.t
 
 @onready var _buyButton : Button = $"%BuyButton"
 @onready var _errorPanel : VBoxContainer = $ErrorPanel
-var _amount : int = 0
-var _numberOfSelectedItem : int = 0
+
 var _selectedItems : Array[MemoryData] = []
 
 signal Closed()
