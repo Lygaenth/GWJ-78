@@ -12,7 +12,7 @@ func _ready():
 	AvailabilityCounter = 0
 	_availabilityCondition = false
 	_state = Enums.ScenarioState.Opening 
-	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/Tuto/TutoTranslation.txt" , ["TUTO_DIALOG_START", "TUTO_DIALOG_DRUNK", "TUTO_DIALOG_THIEF"])
+	var dialogsByKeys = DialogLineProvider.GetDialogs("res://Translations/Dialogs/Tuto/TutoTranslation.csv" , ["TUTO_DIALOG_START", "TUTO_DIALOG_DRUNK", "TUTO_DIALOG_THIEF"])
 
 	for line : String in dialogsByKeys["TUTO_DIALOG_START"]:
 		var talker = GetTalker(line)

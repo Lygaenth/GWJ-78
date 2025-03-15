@@ -1,17 +1,3 @@
 [remap]
 
-importer="csv_translation"
-type="Translation"
-uid="uid://bnu7a4n5v2rcg"
-
-[deps]
-
-files=["res://Translations/Dialogs/CakeStory/CakeStoryTranslation.en.translation", "res://Translations/Dialogs/CakeStory/CakeStoryTranslation.fr.translation"]
-
-source_file="res://Translations/Dialogs/CakeStory/CakeStoryTranslation.csv"
-dest_files=["res://Translations/Dialogs/CakeStory/CakeStoryTranslation.en.translation", "res://Translations/Dialogs/CakeStory/CakeStoryTranslation.fr.translation"]
-
-[params]
-
-compress=true
-delimiter=1
+importer="keep"

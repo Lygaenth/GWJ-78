@@ -1,17 +1,3 @@
 [remap]
 
-importer="csv_translation"
-type="Translation"
-uid="uid://ddgvf0x6wp16h"
-
-[deps]
-
-files=["res://Translations/ErrorDialogs.en.translation", "res://Translations/ErrorDialogs.fr.translation"]
-
-source_file="res://Translations/ErrorDialogs.csv"
-dest_files=["res://Translations/ErrorDialogs.en.translation", "res://Translations/ErrorDialogs.fr.translation"]
-
-[params]
-
-compress=true
-delimiter=1
+importer="keep"

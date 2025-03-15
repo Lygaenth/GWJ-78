@@ -1,17 +1,3 @@
 [remap]
 
-importer="csv_translation"
-type="Translation"
-uid="uid://daiu7pnbdbrsh"
-
-[deps]
-
-files=["res://Translations/Dialogs/Fulberte/FulberteTranslation.en.translation", "res://Translations/Dialogs/Fulberte/FulberteTranslation.fr.translation"]
-
-source_file="res://Translations/Dialogs/Fulberte/FulberteTranslation.csv"
-dest_files=["res://Translations/Dialogs/Fulberte/FulberteTranslation.en.translation", "res://Translations/Dialogs/Fulberte/FulberteTranslation.fr.translation"]
-
-[params]
-
-compress=true
-delimiter=1
+importer="keep"

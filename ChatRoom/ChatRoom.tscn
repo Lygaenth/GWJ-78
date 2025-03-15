@@ -802,6 +802,7 @@ text = "CHAT_ROOM_QUIT_CANCEL"
 
 [node name="DebugLabel" type="Label" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 

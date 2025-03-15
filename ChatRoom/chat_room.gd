@@ -36,7 +36,6 @@ func _ready():
 	_gameState = Enums.GameState.WaitingForPatient
 	_patientInfo.DisplayWait()
 	EnableGreetButton()
-	%DebugLabel.text = PlayerSingleton._scenarioProvider._logs
 
 func OnQuittedMenus():
 	_inMenus = false
@@ -59,7 +58,6 @@ func Next():
 		return
 	
 	if (_gameState == Enums.GameState.BadEndingPreparation):
-		%DebugLabel.text = "Bad ending action"
 		var line = PlayerSingleton.ErrorManager.GetCopLines()
 		if (line == null):
 			DisplayEnding(Enums.Endings.TooManyMistakes)
@@ -72,8 +70,7 @@ func Next():
 		if (scenarioState == Enums.ScenarioState.Opening 
 			|| scenarioState == Enums.ScenarioState.Closing
 			|| scenarioState == Enums.ScenarioState.Frying):
-			var line = _scenario.GetLine()
-			DisplayLine(line)
+			DisplayLine(_scenario.GetLine())
 		elif (scenarioState == Enums.ScenarioState.Operation):
 			HideDialog()
 			EnableShoppingAndJacking()
@@ -101,7 +98,6 @@ func HideDialog():
 	_doctorDialog.hide()
 			
 func DisplayLine(line : DialogLine):
-	%DebugLabel.text = "display line: "+line.Text
 	if (line == null || line.Talker == Enums.Talker.None):
 		HideDialog()
 		return
@@ -143,7 +139,6 @@ func DisableShopping():
 	_shopButton.disabled = true
 
 func LoadNextScenario() -> bool:
-	%DebugLabel.text = "loading scenario"
 	_scenario = PlayerSingleton.GetNextScenario()
 
 	EnableShopping()
@@ -236,10 +231,8 @@ func OnGreetPressed() -> void:
 	if (_gameState == Enums.GameState.WaitingForPatient):
 		DisableGreeButton()
 		if(LoadNextScenario()):
-			%DebugLabel.text = "tempo before starting"
 			await Wait(1.0)
 			_gameState = Enums.GameState.OnGoingScenario
-			%DebugLabel.text = "Going into next"
 			Next()
 
 func Wait(time : float):
